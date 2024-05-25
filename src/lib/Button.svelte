@@ -1,5 +1,6 @@
 <script>
     let isError = 'hello'
+    export let content = 'Hi'
     export let ariaLabel
     export let id
     export let style
@@ -46,4 +47,4 @@
         }
     </style>
 
-    <button use:ARIAcheck={2} id={id} aria-label={ariaLabel} class={className} on:click {style}>Hi</button>
+    <button use:ARIAcheck={2} id={id} aria-label={ariaLabel} class={className} on:click {style}>{content}</button>

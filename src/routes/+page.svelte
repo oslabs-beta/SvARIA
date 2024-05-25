@@ -1,10 +1,12 @@
 <script>
-	import Button from '../lib/Button.svelte'
+	import Checkbox from '$lib/input_types/Checkbox.svelte';
+import Button from '../lib/Button.svelte'
 	function handleClick() {
 		console.log('button clicked')
 	}
 	let ID = 'five'
 	let className = "button2"
+	let content = 'hello'
 </script>
 
 <style>
@@ -19,4 +21,5 @@
 <p>Visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to read the documentation</p> -->
 <h1>Our OSP</h1>
 <title>Our OSP Project</title>
-<Button id={ID} ariaLabel='test aria label' on:click={handleClick}></Button>
+<Button id={ID} ariaLabel='test aria label' on:click={handleClick}>Hello</Button>
+<Checkbox></Checkbox>
