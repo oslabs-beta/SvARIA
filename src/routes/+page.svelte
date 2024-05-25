@@ -1,7 +1,18 @@
-<!-- <h1>Welcome to your library project</h1>
-<p>Create your package using @sveltejs/package and preview/showcase your work with SvelteKit</p>
-<p>Visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to read the documentation</p> -->
 
-<h1>Our OSP</h1>
-<title>Our OSP Project</title>
 
+<style>
+    :global(body) {
+        display: flex;
+        justify-content: center;
+        height: 100vh;
+    }
+
+  </style>
+  
+<div class='main-cont'>
+    <div class='splash-heading'>
+        <h1>Accessibility-first design made possible by SvARIA:</h1>
+        <h2>a robust library of ARIA-compliant components built specifically for Svelte</h2>
+        <a href='/gitHub'><button class='gitBut' type='button'>GitHub</button></a>
+    </div>
+</div>
