@@ -1,5 +1,3 @@
-
-
 <style>
     :global(body) {
         display: flex;
