@@ -3,6 +3,7 @@
 <script>
 	import Checkbox from '$lib/input_types/Checkbox.svelte';
 	import Button from '../../lib/Button.svelte';
+	import Modal from '$lib/Modal.svelte';
 	function handleClick() {
 		console.log('button clicked');
 	}
@@ -10,12 +11,15 @@
 	function handleCheck() {
 		console.log('checkbox checked');
 	}
-	let ID = 'button';
+	let showModal = false;
+	console.log()
 </script>
+
+<title>Our testing page</title>
 
 <div class="testDiv">
 	<!-- your component goes here -->
-	<Button id={ID} ariaLabel="test aria label" on:click={handleClick} content="Test button" />
+	<Button id='button' ariaLabel="test aria label" on:click={handleClick} content="Test button" />
 	<br />
 	<Checkbox
 		inputId="checkboxInput"
@@ -23,6 +27,24 @@
 		content="This is my checkbox"
 		on:click={handleCheck}
 	/>
+	<br />
+	<Button
+		id="openModal"
+		on:click={() => (showModal = true)}
+		content="show Modal"
+		ariaLabel="Open Modal"
+	></Button>
+	<Modal
+		bind:showModal
+		id="modal"
+		modalHeaderId="modalHeader"
+		modalDescribeId="dialoginfo"
+		closeModalMessage="X"
+		closeButtonId = 'close'
+	>
+		<h3 id="modalHeader">Modal</h3>
+		<p id="dialoginfo">This is my modal content</p>
+	</Modal>
 </div>
 
 <style>
@@ -36,5 +58,18 @@
 	}
 	:global(#checkboxInput) {
 		accent-color: purple;
+	}
+	:global(#openModal) {
+		font-size: smaller;
+		background-color: #003d3d;
+		color: aquamarine;
+	}
+	:global(#modal) {
+		background-color: #003d3d;
+		color: #b3b351;
+	}
+	:global(#close) {
+		background-color: black;
+		color: white
 	}
 </style>
