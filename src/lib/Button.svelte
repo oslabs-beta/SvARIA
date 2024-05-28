@@ -5,6 +5,7 @@
     export let id
     export let style = ''
     export let className = 'button'
+    export let type =''
 </script>
 
     <style>
@@ -18,4 +19,4 @@
         }
     </style>
 
-    <button use:ariaLabelcheck={2} use:colorContrastCheck id={id} aria-label={ariaLabel} class={className} on:click {style}>{content}</button>
+    <button use:ariaLabelcheck={2} use:colorContrastCheck id={id} aria-label={ariaLabel} class={className} on:click {style} {type}>{content}</button>

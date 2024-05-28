@@ -14,6 +14,17 @@
 	}
 	let showModal = false;
 	console.log()
+
+	let formElements = [
+        {"name":"address", "type":"input", "labelValue":"New Address"},
+        {"name":"firstName", "type": "input", "labelValue": "New First Name"},
+		{"name":"userName", "type": "input", "labelValue": "New User Name"},
+        {"name":"password", "type":"password", "labelValue": "New Password", "inputId":"newPw", "labelId":"pwLabel"},
+    ]
+
+	function onSubmit(e) {
+		console.log(e.target.firstName.value)
+	}
 </script>
 
 <title>Our testing page</title>
@@ -46,7 +57,7 @@
 		<h3 id="modalHeader">Modal</h3>
 		<p id="dialoginfo">This is my modal content</p>
 	</Modal>
-	<Form/>
+	<Form {formElements} on:submit={onSubmit} submitForm="svaria rules" submitButtonId="submitButton11" formId='form' ariaLabel="User Information Form"/>
 </div>
 
 <style>
@@ -74,4 +85,25 @@
 		background-color: black;
 		color: white
 	}
+	:global(#submitButton11) {
+		color: white;
+		background-color: black;
+		font-size: small;
+	}
+
+	:global(#form) {
+		background-color: white;
+	}
+
+	:global(#labeladdress) {
+		font-size: large;
+		color: blue;
+		background-color: white;
+	}
+	:global(#labeluserName) {
+		font-size: large;
+		background-color: blue;
+	}
+
+
 </style>

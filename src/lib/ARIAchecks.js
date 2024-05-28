@@ -11,7 +11,7 @@ export function ariaLabelcheck(curNode, parameters) {
         console.log(`${curNode.nodeName}, with id of ${curNode.id}: check passed: aria-label present`)
     }
     if (!curNode.attributes["aria-label"]) {
-        console.log(`${curNode.nodeName}, with id of ${curNode.id}: This type of element requires a property called an aria-label. Please add one`)
+        console.warn(`${curNode.nodeName}, with id of ${curNode.id}: This type of element requires a property called an aria-label. Please add one`)
     }
 }
 
@@ -20,18 +20,30 @@ export function colorContrastCheck(curNode, parameters) {
         return;
     }
     const compStyles = window.getComputedStyle(curNode);
-    // console.log(curNode.nodeName, compStyles.getPropertyValue("color"))
-    // console.log(curNode.nodeName, compStyles.getPropertyValue("background-color"))
+    // console.log(curNode.nodeName, curNode.id, compStyles.getPropertyValue("color"))
+    // console.log(curNode.nodeName, curNode.id,compStyles.getPropertyValue("background-color"))
+
+    let backgroundColor = compStyles.getPropertyValue("background-color")
+    if(backgroundColor == "rgba(0, 0, 0, 0)"){
+        console.log("No background color found defaulting to white")
+        backgroundColor = "rgb(255, 255, 255)"
+    }
+    let forergroundColor = compStyles.getPropertyValue("color")
+    if(forergroundColor === backgroundColor){
+        console.error(`${curNode.nodeName}, with id of ${curNode.id}: Background and text colors do not meet contrast requirement, please adjust colors`) 
+        return;
+    }
+    
     fetch('https://www.aremycolorsaccessible.com/api/are-they', {
         mode: 'cors',
         method: 'POST',
-        body: JSON.stringify({ colors: [compStyles.getPropertyValue("color"), compStyles.getPropertyValue("background-color")] }),
+        body: JSON.stringify({ colors: [backgroundColor, forergroundColor] }),
     })
         .then((response) => response.json())
         .then((json) => {
             //console.log(json)
             if (json.overall == 'Yup') { console.log(`${curNode.nodeName}, with id of ${curNode.id}: color contrast check passed`) }
-            else { console.log(`${curNode.nodeName}, with id of ${curNode.id}: Background and text colors do not meet contrast requirement, please adjust colors`) }
+            else { console.error(`${curNode.nodeName}, with id of ${curNode.id}: Background and text colors do not meet contrast requirement, please adjust colors`) }
         });
     //console.log('class', curNode.attributes["class"])
 }
