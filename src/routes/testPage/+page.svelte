@@ -4,6 +4,7 @@
 	import Checkbox from '$lib/input_types/Checkbox.svelte';
 	import Button from '../../lib/Button.svelte';
 	import Modal from '$lib/Modal.svelte';
+	import Form from '$lib/Form.svelte'
 	function handleClick() {
 		console.log('button clicked');
 	}
@@ -45,6 +46,7 @@
 		<h3 id="modalHeader">Modal</h3>
 		<p id="dialoginfo">This is my modal content</p>
 	</Modal>
+	<Form/>
 </div>
 
 <style>
