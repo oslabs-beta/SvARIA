@@ -1,7 +1,7 @@
 <script>
 	import { ariaLabelcheck, colorContrastCheck } from '../ARIAchecks.js';
 
-	import Button from '../Button.svelte'
+	import Button from '../Button.svelte';
 
 	export let method = 'POST';
 	export let formId = '';
@@ -16,7 +16,7 @@
 	export let labelStyle;
 	export let inputStyle;
 	export let labelClass;
-	export let inputClass
+	export let inputClass;
 	$: formElements = formElements.map((row) => {
 		if (!row['inputId']) {
 			row['inputId'] = row['name'];
@@ -36,18 +36,17 @@
 		<label
 			id={element.labelId}
 			for={element.inputId}
-            style= {labelStyle}
+			style={labelStyle}
 			class={labelClass}
 			use:ariaLabelcheck
-			use:colorContrastCheck
-			aria-label={element.ariaLabel}>{element.labelValue}</label
+c			aria-label={element.ariaLabel}>{element.labelValue}</label
 		>
 		<input
 			type={element.type}
 			name={element.name}
 			aria-label={`input box for, ${element.labelValue}`}
 			id={element.inputId}
-            style= {inputStyle}
+			style={inputStyle}
 			class={inputClass}
 			use:ariaLabelcheck
 			use:colorContrastCheck
