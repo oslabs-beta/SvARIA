@@ -28,7 +28,7 @@
 />
 
 <label
-	class = "sv-checkboxLabel"
+	class="sv-checkboxLabel"
 	id={labelId}
 	for="sv-checkbox"
 	aria-label={ariaLabel}
@@ -38,8 +38,8 @@
 >
 
 <style>
-	.sv-checkboxLabel{
-		color:red;
+	.sv-checkboxLabel {
+		color: red;
 		background-color: white;
 	}
 </style>

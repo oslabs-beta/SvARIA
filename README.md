@@ -57,6 +57,32 @@ To publish your library to [npm](https://www.npmjs.com):
 npm publish
 ```
 
+=================> basic layout for writing the read me <=================
+
+# componenet name
+
+## anatomy of componenet:
+
+## import component from our library:
+
+## Initalize componenet:
+
+## Initalize any optional extras
+
+## Default Settings:
+
+### aria-label
+
+explicitly lay out the aria label and how to edit it
+
+### componenet Elements:
+
+describe element and what can be done with them -**for each element**
+
+### any specifics for overiding
+
+## In-line Styling
+
 =================> starting the readme for user <=================
 
 # Navigation Bar component
@@ -68,7 +94,7 @@ This will hold a heading and set a links that will be initalized when the compon
 
 ## import NavBar from our library:
 
-```
+```JS
 import NavBar from "SvARIA"
 ```
 
@@ -80,16 +106,16 @@ Pass the properties **heading** and **routes** your data:
   `[{name, herf}]`
   Example:
 
-```
-<NavBar heading='this is my page's heading' routes=[{herf:route1, name:linktopage1} {herf:route2, name:linktopage2}]>
+```JS
+<NavBar heading='this is my page heading' routes={[{herf:route1, name:linktopage1} {herf:route2, name:linktopage2}]}>
 ```
 
 ## Set type of Navigation: (otional)
 
 To utalize a drop down panel in place of links in the NavBar pass the props dropDown a truthy value.
 
-```
- <NavBar dropDown=true>
+```JS
+ <NavBar dropDown={true}>
 ```
 
 ## Default Settings:
@@ -102,7 +128,7 @@ This aria label is what will be read by a screen reader when a user highlights a
 the **default aria-label** is set to what ever your heading is initalized to.
 It can be **over ridden** by passing the new value to ariaLabel
 
-```
+```JS
 <NavBar ariaLabel='my sites navigation bar'>
 ```
 
@@ -128,7 +154,7 @@ class: "sv-nav-link"
 
 id is overidable only in the NavBar, it will be **dynamically** updated for all child elements.
 
-```
+```JS
 <NavBar id="myNavBarElem">
 ```
 
@@ -143,3 +169,42 @@ Access via style props:
 Navigation bar div's = style
 Heading sub elements = 'h1style'
 List sub elements = 'linkstyle'
+
+# Checkbox Componenet
+
+## anatomy of Checkbox:
+
+SvAria's checkbox closly mimics any other checkbox component, some things are abstracted away. The imported component has wrapped the label and the checkbox together. When initalizing a SvARIA checkbox you specify the label at the same time.
+
+## import component from our library:
+
+```JS
+import Checkbox from 'SvARIA'
+```
+
+## Initalize componenet:
+
+```JS
+<Checkbox content='The label for this check box'>
+```
+
+### aria-label
+
+When initalized the ARIA label is dynamically created with your content in mind, and changes on check.
+
+- aria-label, unchecked:`${content}, is unchecked`
+- aria-label, checked: `${content}, is checked`
+
+to **overide** this label to meet your needs, you can use the ariaLabel property when initalizing the checkbox:
+
+```JS
+<Checkbox ariaLabel='updated ARIA label'>
+```
+
+## In-line Styling
+
+To utalize in-line styling on the individual elements you can set the props inputStyle for the checkbox and labelStyle for the label.
+
+```JS
+<Checkbox inputStyle='background-color=yellow' labelStyle='color=black'>
+```
