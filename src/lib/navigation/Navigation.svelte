@@ -1,38 +1,52 @@
 <script lang="js">
+	import { colorContrastCheck, ariaLabelcheck } from '../ARIAchecks.js';
 	export let heading = null;
 	export let link = null;
 	export let ariaLabel = 'navigation bar';
-	export let navId = 'navBar';
-	// do I need to have keybord navigation for this?
-	// have a boolean for if I want this so have a side view from the left or right
-	// add in ARIA checks
+	export let id = 'navBar';
+	export let style;
+	export let h1style;
+	export let linkStyle;
 </script>
 
-<nav class="sv-navagation" aria-label={ariaLabel} id={navId} style {heading} {link}>
+<div
+	role="navigation"
+	class="sv-navagation"
+	aria-label={ariaLabel}
+	{id}
+	{style}
+	{heading}
+	{link}
+	use:colorContrastCheck
+	use:ariaLabelcheck
+>
 	{#if heading}
-		<h2 class="sv-nav-heading" aria-label={heading} id={navId + '-heading'} style>{heading}</h2>
+		<h1 class="sv-nav-heading" id={id + '-heading'} {h1style}>
+			{heading}
+		</h1>
 	{/if}
 	{#if link}
-		<ul class="sv-nav-ul" id={navId + '-ul'} style>
+		<ul class="sv-nav-ul" id={id + '-ul'} style>
 			{#each link as linkElem, i}
 				<a
 					href={linkElem.link}
 					class="sv-nav-link"
-					id={navId + '-link-' + i}
+					id={id + '-link-' + i}
 					aria-label={`link to ${linkElem.name}`}
-					style
+					{linkStyle}
 				>
 					{linkElem.name}
 				</a>
 			{/each}
 		</ul>
 	{/if}
-</nav>
+</div>
 
 <style>
 	:global(.sv-navagation) {
 		background-color: rgb(60, 59, 59);
 		display: flex;
 		justify-content: space-between;
+		color: white;
 	}
 </style>

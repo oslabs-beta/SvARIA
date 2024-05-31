@@ -4,7 +4,8 @@
 	import Checkbox from '$lib/input_types/Checkbox.svelte';
 	import Button from '../../lib/Button.svelte';
 	import Modal from '$lib/Modal.svelte';
-	import Form from '$lib/Form.svelte';
+	import Form from '$lib/input_types/Form.svelte';
+	import Nav from '$lib/navigation/Navigation.svelte';
 	function handleClick() {
 		console.log('button clicked');
 	}
@@ -28,33 +29,34 @@
 		}
 	];
 
+	let navElem = [
+		{ link: 'https://github.com/oslabs-beta/SvARIA/tree/dev', name: "SvARIA's git repo" }
+	];
+
 	function onSubmit(e) {
 		console.log(e.target.firstName.value);
 	}
-	let tabItems = [
-		{
-			label: 'Content',
-			value: 0,
-			component: Tab1,
-			tabContentId: 'test-0'
-			//  tabLabelId,
-		},
-		{
-			label: 'Interactions',
-			value: 1,
-			component: Tab2,
-			tabContentId: 'test-1',
-			tabLabelId: 'label-1'
-		}
-	];
-
-	let links = [
-		{ link: '/', name: 'home' },
-		{ link: 'https://github.com/oslabs-beta/SvARIA', name: 'Our GitHub' }
-	];
+	// let tabItems = [
+	// 	{
+	// 		label: 'Content',
+	// 		value: 0,
+	// 		component: Tab1,
+	// 		tabContentId: 'test-0'
+	// 		//  tabLabelId,
+	// 	},
+	// 	{
+	// 		label: 'Interactions',
+	// 		value: 1,
+	// 		component: Tab2,
+	// 		tabContentId: 'test-1',
+	// 		tabLabelId: 'label-1'
+	// 	}
+	// ];
 </script>
 
 <title>Our testing page</title>
+
+<Nav heading="welcome to the test page!" link={navElem} id="newID" style="color: red"></Nav>
 
 <div class="testDiv">
 	<!-- your component goes here -->
