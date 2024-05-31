@@ -1,7 +1,7 @@
 <script>
     import "../app.css";
-    import Navbar from "$lib/Navbar.svelte";
-    import Footer from "$lib/Footer.svelte";
+    import Navbar from "../splashPageLib/Navbar.svelte";
+    import Footer from "../splashPageLib/Footer.svelte";
 </script>
 
 <Navbar />
