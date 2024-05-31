@@ -19,4 +19,4 @@
         }
     </style>
 
-    <button use:ariaLabelcheck={2} use:colorContrastCheck id={id} aria-label={ariaLabel} class={className} on:click {style} {type}>{content}</button>
+    <button use:ariaLabelcheck={2} use:colorContrastCheck {id} aria-label={ariaLabel} class={className} on:click {style} {type}>{content}</button>
