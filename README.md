@@ -110,18 +110,18 @@ It can be **over ridden** by passing the new value to ariaLabel
 
 each element has an id and a class.
 
-**NavBar (parent element)**
+-**NavBar (parent element)**
 id: 'navBar',
 class: "sv-navagation"
 
-**Heading (child element)**
+-**Heading (child element)**
 
 id: 'navBar-heading',
 class: "sv-nav-heading"
 
-**List (child elements)**
+-**List (child elements)**
 
-id: 'navBar-link-/<i>/' **(where i is the index of that list element)**,
+id: 'navBar-link-i' **(where i is the index of that list element)**,
 class: "sv-nav-link"
 
 ### Overiding the default ID:
@@ -135,7 +135,7 @@ id is overidable only in the NavBar, it will be **dynamically** updated for all 
 will update:
 
 - heading id to: 'myNavBarElem-heading'
-- list element id to: 'myNavBarElem-link-/<i>/' **(where i is the index of that list element)**
+- list element id to: 'myNavBarElem-link-i' **(where i is the index of that list element)**
 
 ## In-line Styling
 
