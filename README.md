@@ -56,3 +56,12 @@ To publish your library to [npm](https://www.npmjs.com):
 ```bash
 npm publish
 ```
+
+=================> starting the readme for user <=================
+
+Navigation Bar component:
+
+import NavBar from <what ever our npm package is called>
+default settings:
+id for the navigation bar div:'navBar' this can be written over by re assiging id
+id for sub element heading is navBar-heading
