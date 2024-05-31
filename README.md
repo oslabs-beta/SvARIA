@@ -59,54 +59,86 @@ npm publish
 
 =================> starting the readme for user <=================
 
-=> Navigation Bar component <=
+# Navigation Bar component
 
+## anatomy of a NavBar:
+
+typically the heading bar will have the NavBar component as the top level element.
+This will hold a heading and set a links that will be initalized when the componened is rendered. These are child elements inside of the NavBar component.
+
+## import NavBar from our library:
+
+```
 import NavBar from "SvARIA"
+```
 
-=> Set Heading: (optional)
-set the props heading to the heading for your navBar
-Ex:
-<NavBar heading='this is my pages heading'>
+## Initalize NavBar:
 
-=> Set Navigation Links: (optional)
-pass an array of object with name and link properties to the link props
-Ex:
-<NavBar links=[{link:href1, name:linktopage1} {link:herf2, name:linktopage2}]>
+Pass the properties **heading** and **links** your data:
 
-=> Set type of Navigation: (otional)
-To utalize a side panal navigation pass the props sideNav a truthy value
-Ex: <NavBar sideNav=true>
+- pass links an array of objects containing name and herf properties:
+  `    [{name, herf}]`
+  Example:
 
-=> Default Settings:
-aria-label = 'navigation'
+```
+<NavBar heading='this is my page's heading' links=[{link:href1, name:linktopage1} {link:herf2, name:linktopage2}]>
+```
 
-navigation bar div:
+## Set type of Navigation: (otional)
+
+To utalize a drop down panel in place of links in the NavBar pass the props dropDown a truthy value.
+
+```
+ <NavBar dropDown=true>
+```
+
+## Default Settings:
+
+Each element in our components come with a set of properties to make sure they are come aria complient. The default values are as listed below and can be edited by the developer to best suit their needs.
+
+### aria-label
+
+This aria label is what will be read by a screen reader when a user highlights an element.
+the **default aria-label** is set to 'navigation'
+It can be **over ridden** by passing the new value to ariaLabel
+
+```
+<NavBar ariaLabel='my sites navigation bar'>
+```
+
+### NavBar Elements:
+
+each element has an id and a class.
+
+**NavBar (parent element)**
 id = 'navBar'
 class = "sv-navagation"
 
-Heading sub element:
+**Heading (child element)**
+
 id = 'navBar-heading'
 class = "sv-nav-heading"
 
-List sub elements:
-id ='navBar-link-<i>' // i = index of this list element
+**List (child elements)**
+
+id ='navBar-link-<i>' (where i is the index of that list element)t
 class = "sv-nav-link"
 
-=> Override Deafaults:
+### Overiding the default ID:
 
-id: is overridable only for the top level div, it will be dynamically updated for all sub elements.
-Ex:
+id is overidable only in the NavBar, it will be **dynamically** updated for all child elements.
+
+```
 <NavBar id="myNavBarElem">
+```
+
 will update:
-heading id to 'myNavBarElem-heading'
-list element id to 'myNavBarElem-link-<i>'
 
-aria-label:
-use the props element ariaLabel
-Ex:
-<NavBar ariaLabel='my sites navigation bar'>
+- heading id to 'myNavBarElem-heading'
+- list element id to 'myNavBarElem-link-<i>' (where i is the index of that list element)
 
-=> In-line Styling
+## In-line Styling
+
 Access via style props:
 Navigation bar div's = style
 Heading sub elements = 'h1style'
