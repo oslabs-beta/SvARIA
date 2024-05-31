@@ -74,14 +74,14 @@ import NavBar from "SvARIA"
 
 ## Initalize NavBar:
 
-Pass the properties **heading** and **links** your data:
+Pass the properties **heading** and **routes** your data:
 
 - pass links an array of objects containing name and herf properties:
-  `    [{name, herf}]`
+  `[{name, herf}]`
   Example:
 
 ```
-<NavBar heading='this is my page's heading' links=[{link:href1, name:linktopage1} {link:herf2, name:linktopage2}]>
+<NavBar heading='this is my page's heading' routes=[{herf:route1, name:linktopage1} {herf:route2, name:linktopage2}]>
 ```
 
 ## Set type of Navigation: (otional)
@@ -94,12 +94,12 @@ To utalize a drop down panel in place of links in the NavBar pass the props drop
 
 ## Default Settings:
 
-Each element in our components come with a set of properties to make sure they are come aria complient. The default values are as listed below and can be edited by the developer to best suit their needs.
+Each element in our components comes with a set of properties to make sure they are come ARIA complient. The default values are as listed below and can be edited by the developer to best suit their needs.
 
 ### aria-label
 
 This aria label is what will be read by a screen reader when a user highlights an element.
-the **default aria-label** is set to 'navigation'
+the **default aria-label** is set to what ever your heading is initalized to.
 It can be **over ridden** by passing the new value to ariaLabel
 
 ```
@@ -111,18 +111,18 @@ It can be **over ridden** by passing the new value to ariaLabel
 each element has an id and a class.
 
 **NavBar (parent element)**
-id = 'navBar'
-class = "sv-navagation"
+id: 'navBar',
+class: "sv-navagation"
 
 **Heading (child element)**
 
-id = 'navBar-heading'
-class = "sv-nav-heading"
+id: 'navBar-heading',
+class: "sv-nav-heading"
 
 **List (child elements)**
 
-id ='navBar-link-<i>' (where i is the index of that list element)t
-class = "sv-nav-link"
+id: 'navBar-link-/<i>/' **(where i is the index of that list element)**,
+class: "sv-nav-link"
 
 ### Overiding the default ID:
 
@@ -134,8 +134,8 @@ id is overidable only in the NavBar, it will be **dynamically** updated for all 
 
 will update:
 
-- heading id to 'myNavBarElem-heading'
-- list element id to 'myNavBarElem-link-<i>' (where i is the index of that list element)
+- heading id to: 'myNavBarElem-heading'
+- list element id to: 'myNavBarElem-link-/<i>/' **(where i is the index of that list element)**
 
 ## In-line Styling
 
