@@ -59,9 +59,55 @@ npm publish
 
 =================> starting the readme for user <=================
 
-Navigation Bar component:
+=> Navigation Bar component <=
 
-import NavBar from <what ever our npm package is called>
-default settings:
-id for the navigation bar div:'navBar' this can be written over by re assiging id
-id for sub element heading is navBar-heading
+import NavBar from "SvARIA"
+
+=> Set Heading: (optional)
+set the props heading to the heading for your navBar
+Ex:
+<NavBar heading='this is my pages heading'>
+
+=> Set Navigation Links: (optional)
+pass an array of object with name and link properties to the link props
+Ex:
+<NavBar links=[{link:href1, name:linktopage1} {link:herf2, name:linktopage2}]>
+
+=> Set type of Navigation: (otional)
+To utalize a side panal navigation pass the props sideNav a truthy value
+Ex: <NavBar sideNav=true>
+
+=> Default Settings:
+aria-label = 'navigation'
+
+navigation bar div:
+id = 'navBar'
+class = "sv-navagation"
+
+Heading sub element:
+id = 'navBar-heading'
+class = "sv-nav-heading"
+
+List sub elements:
+id ='navBar-link-<i>' // i = index of this list element
+class = "sv-nav-link"
+
+=> Override Deafaults:
+
+id: is overridable only for the top level div, it will be dynamically updated for all sub elements.
+Ex:
+<NavBar id="myNavBarElem">
+will update:
+heading id to 'myNavBarElem-heading'
+list element id to 'myNavBarElem-link-<i>'
+
+aria-label:
+use the props element ariaLabel
+Ex:
+<NavBar ariaLabel='my sites navigation bar'>
+
+=> In-line Styling
+Access via style props:
+Navigation bar div's = style
+Heading sub elements = 'h1style'
+List sub elements = 'linkstyle'
