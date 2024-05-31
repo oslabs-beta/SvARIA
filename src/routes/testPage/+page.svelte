@@ -5,7 +5,8 @@
 	import Checkbox from '$lib/input_types/Checkbox.svelte';
 	import Button from '../../lib/Button.svelte';
 	import Modal from '$lib/Modal.svelte';
-	import Form from '$lib/Form.svelte'
+	import Form from '$lib/input_types/Form.svelte';
+	import Nav from '$lib/navigation/Navigation.svelte';
 
 	let radioValue;
 	
@@ -28,26 +29,54 @@
 		console.log('checkbox checked');
 	}
 	let showModal = false;
-	console.log()
+	console.log();
 
 	let formElements = [
-        {"name":"address", "type":"input", "labelValue":"New Address"},
-        {"name":"firstName", "type": "input", "labelValue": "New First Name"},
-		{"name":"userName", "type": "input", "labelValue": "New User Name"},
-        {"name":"password", "type":"password", "labelValue": "New Password", "inputId":"newPw", "labelId":"pwLabel"},
-    ]
+		{ name: 'address', type: 'input', labelValue: 'New Address' },
+		{ name: 'firstName', type: 'input', labelValue: 'New First Name' },
+		{ name: 'userName', type: 'input', labelValue: 'New User Name' },
+		{
+			name: 'password',
+			type: 'password',
+			labelValue: 'New Password',
+			inputId: 'newPw',
+			labelId: 'pwLabel'
+		}
+	];
+
+	let navElem = [
+		{ link: 'https://github.com/oslabs-beta/SvARIA/tree/dev', name: "SvARIA's git repo" }
+	];
 
 	function onSubmit(e) {
-		console.log(e.target.firstName.value)
+		console.log(e.target.firstName.value);
 	}
+	// let tabItems = [
+	// 	{
+	// 		label: 'Content',
+	// 		value: 0,
+	// 		component: Tab1,
+	// 		tabContentId: 'test-0'
+	// 		//  tabLabelId,
+	// 	},
+	// 	{
+	// 		label: 'Interactions',
+	// 		value: 1,
+	// 		component: Tab2,
+	// 		tabContentId: 'test-1',
+	// 		tabLabelId: 'label-1'
+	// 	}
+	// ];
 </script>
 
 <title>Our testing page</title>
 
+<Nav heading="welcome to the test page!" link={navElem} id="newID" style="color: red"></Nav>
+
 <div class="testDiv">
 	<RadioButton {options} fontSize={16} legend='Select a starter Pokemon' bind:userSelected={radioValue} />
 	<!-- your component goes here -->
-	<Button id='button' ariaLabel="test aria label" on:click={handleClick} content="Test button" />
+	<Button id="button" ariaLabel="test aria label" on:click={handleClick} content="Test button" />
 	<br />
 	<Checkbox
 		inputId="checkboxInput"
@@ -68,12 +97,19 @@
 		modalHeaderId="modalHeader"
 		modalDescribeId="dialoginfo"
 		closeModalMessage="X"
-		closeButtonId = 'close'
+		closeButtonId="close"
 	>
 		<h3 id="modalHeader">Modal</h3>
 		<p id="dialoginfo">This is my modal content</p>
 	</Modal>
-	<Form {formElements} on:submit={onSubmit} submitForm="svaria rules" submitButtonId="submitButton11" formId='form' ariaLabel="User Information Form"/>
+	<Form
+		{formElements}
+		on:submit={onSubmit}
+		submitForm="svaria rules"
+		submitButtonId="submitButton11"
+		formId="form"
+		ariaLabel="User Information Form"
+	/>
 </div>
 
 <style>
@@ -99,7 +135,7 @@
 	}
 	:global(#close) {
 		background-color: black;
-		color: white
+		color: white;
 	}
 	:global(#submitButton11) {
 		color: white;
@@ -120,6 +156,4 @@
 		font-size: large;
 		background-color: blue;
 	}
-
-
 </style>

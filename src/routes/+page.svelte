@@ -1,3 +1,4 @@
+<h1 class="text-green-400">This is SvARIA</h1>
 <style>
     :global(body) {
         display: flex;

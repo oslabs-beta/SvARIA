@@ -1,0 +1,26 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+    scroll-behavior: smooth;
+}
+
+* {
+    font-family: 'Roboto', sans-serif;
+}
+
+h1, h2, h3, .poppins {
+    font-family: 'Poppins', sans-serif;
+}
+
+span {
+    font-family: inherit;
+    font-weight: inherit;
+}
+
+.bgGrid {
+   background-size: 40px 40px;
+   background-image: linear-gradient(to right, grey 1px, transparent 1px), linear-gradient(to bottom, grey 1px, transparent 1px) 
+}
+
