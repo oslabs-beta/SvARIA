@@ -1,10 +1,25 @@
 <!-- use this page to test out components with URL "/testPage" -->
 
 <script>
+	import RadioButton from '$lib/RadioButton.svelte';
 	import Checkbox from '$lib/input_types/Checkbox.svelte';
 	import Button from '../../lib/Button.svelte';
 	import Modal from '$lib/Modal.svelte';
 	import Form from '$lib/Form.svelte'
+
+	let radioValue;
+	
+	const options = [{
+		value: 'green',
+		label: 'Bulbasaur',
+	}, {
+		value: 'red',
+		label: 'Charmander',
+	}, {
+		value: 'blue',
+		label: 'Squirtle',
+	}]
+
 	function handleClick() {
 		console.log('button clicked');
 	}
@@ -30,6 +45,7 @@
 <title>Our testing page</title>
 
 <div class="testDiv">
+	<RadioButton {options} fontSize={16} legend='Select a starter Pokemon' bind:userSelected={radioValue} />
 	<!-- your component goes here -->
 	<Button id='button' ariaLabel="test aria label" on:click={handleClick} content="Test button" />
 	<br />

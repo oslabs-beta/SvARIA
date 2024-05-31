@@ -28,7 +28,7 @@
     .footer-container ul ul {
       display: block;
     }
-  </style>
+</style>
   
 
 <footer>

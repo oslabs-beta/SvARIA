@@ -2,7 +2,7 @@
     import { ariaLabelcheck, colorContrastCheck } from './ARIAchecks.js'
     export let content = 'Hi'
     export let ariaLabel;
-    export let id
+    export let id = '';
     export let style = ''
     export let className = 'button'
     export let type =''
@@ -19,4 +19,4 @@
         }
     </style>
 
-    <button use:ariaLabelcheck={2} use:colorContrastCheck id={id} aria-label={ariaLabel} class={className} on:click {style} {type}>{content}</button>
+    <button use:ariaLabelcheck={2} use:colorContrastCheck {id} aria-label={ariaLabel} class={className} on:click {style} {type}>{content}</button>
