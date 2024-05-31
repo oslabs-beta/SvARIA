@@ -5,7 +5,6 @@
 	import Button from '../../lib/Button.svelte';
 	import Modal from '$lib/Modal.svelte';
 	import Form from '$lib/Form.svelte';
-	import NavBar from '$lib/navigation/Navigation.svelte';
 	function handleClick() {
 		console.log('button clicked');
 	}
@@ -32,6 +31,22 @@
 	function onSubmit(e) {
 		console.log(e.target.firstName.value);
 	}
+	let tabItems = [
+		{
+			label: 'Content',
+			value: 0,
+			component: Tab1,
+			tabContentId: 'test-0'
+			//  tabLabelId,
+		},
+		{
+			label: 'Interactions',
+			value: 1,
+			component: Tab2,
+			tabContentId: 'test-1',
+			tabLabelId: 'label-1'
+		}
+	];
 
 	let links = [
 		{ link: '/', name: 'home' },
@@ -41,11 +56,8 @@
 
 <title>Our testing page</title>
 
-<!-- your component goes here -->
-
-<NavBar heading="This is our test page!" link={links}></NavBar>
-
-<!-- <div class="testDiv">
+<div class="testDiv">
+	<!-- your component goes here -->
 	<Button id="button" ariaLabel="test aria label" on:click={handleClick} content="Test button" />
 	<br />
 	<Checkbox
@@ -80,7 +92,7 @@
 		formId="form"
 		ariaLabel="User Information Form"
 	/>
-</div> -->
+</div>
 
 <style>
 	:global(#button) {
