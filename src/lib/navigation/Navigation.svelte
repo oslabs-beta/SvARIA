@@ -1,8 +1,7 @@
 <script lang="js">
 	import { colorContrastCheck, ariaLabelcheck } from '../ARIAchecks.js';
 	export let heading = null;
-	export let link = null;
-	export let ariaLabel = 'navigation bar';
+	export let routes = null;
 	export let id = 'navBar';
 	export let style;
 	export let h1style;
@@ -12,11 +11,11 @@
 <div
 	role="navigation"
 	class="sv-navagation"
-	aria-label={ariaLabel}
+	aria-label={heading}
 	{id}
 	{style}
 	{heading}
-	{link}
+	{routes}
 	use:colorContrastCheck
 	use:ariaLabelcheck
 >
@@ -25,11 +24,11 @@
 			{heading}
 		</h1>
 	{/if}
-	{#if link}
+	{#if routes}
 		<ul class="sv-nav-ul" id={id + '-ul'} style>
-			{#each link as linkElem, i}
+			{#each routes as linkElem, i}
 				<a
-					href={linkElem.link}
+					href={linkElem.herf}
 					class="sv-nav-link"
 					id={id + '-link-' + i}
 					aria-label={`link to ${linkElem.name}`}

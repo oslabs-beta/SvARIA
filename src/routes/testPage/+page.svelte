@@ -30,7 +30,7 @@
 	];
 
 	let navElem = [
-		{ link: 'https://github.com/oslabs-beta/SvARIA/tree/dev', name: "SvARIA's git repo" }
+		{ herf: 'https://github.com/oslabs-beta/SvARIA/tree/dev', name: "SvARIA's git repo" }
 	];
 
 	function onSubmit(e) {
@@ -56,7 +56,7 @@
 
 <title>Our testing page</title>
 
-<Nav heading="welcome to the test page!" link={navElem} id="newID" style="color: red"></Nav>
+<Nav heading="welcome to the test page!" routes={navElem} id="newID" style="color: red"></Nav>
 
 <div class="testDiv">
 	<!-- your component goes here -->
