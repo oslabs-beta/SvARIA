@@ -3,6 +3,9 @@
 	export let link = null;
 	export let ariaLabel = 'navigation bar';
 	export let navId = 'navBar';
+	// do I need to have keybord navigation for this?
+	// have a boolean for if I want this so have a side view from the left or right
+	// add in ARIA checks
 </script>
 
 <nav class="sv-navagation" aria-label={ariaLabel} id={navId} style {heading} {link}>
