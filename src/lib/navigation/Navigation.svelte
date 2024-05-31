@@ -4,9 +4,11 @@
 	export let link = null;
 	export let ariaLabel = 'navigation bar';
 	export let id = 'navBar';
-	export let style;
-	export let h1style;
-	export let linkStyle;
+
+	export let style = '';
+	export let h1style = '';
+	export let linkStyle = '';
+
 </script>
 
 <div
@@ -21,7 +23,7 @@
 	use:ariaLabelcheck
 >
 	{#if heading}
-		<h1 class="sv-nav-heading" id={id + '-heading'} {h1style}>
+		<h1 class="sv-nav-heading" id={id + '-heading'} style={h1style} >
 			{heading}
 		</h1>
 	{/if}
@@ -33,7 +35,7 @@
 					class="sv-nav-link"
 					id={id + '-link-' + i}
 					aria-label={`link to ${linkElem.name}`}
-					{linkStyle}
+					style={linkStyle}
 				>
 					{linkElem.name}
 				</a>
