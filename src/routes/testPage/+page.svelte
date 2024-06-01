@@ -6,6 +6,10 @@
 	import Modal from '$lib/Modal.svelte';
 	import Form from '$lib/input_types/Form.svelte';
 	import Nav from '$lib/navigation/Navigation.svelte';
+	import Tab from '$lib/Tab.svelte';
+	import Tab1 from './tabsForTestPage/Tab1.svelte';
+	import Tab2 from './tabsForTestPage/Tab2.svelte';
+
 	function handleClick() {
 		console.log('button clicked');
 	}
@@ -14,7 +18,6 @@
 		console.log('checkbox checked');
 	}
 	let showModal = false;
-	console.log();
 
 	let formElements = [
 		{ name: 'address', type: 'input', labelValue: 'New Address' },
@@ -36,22 +39,20 @@
 	function onSubmit(e) {
 		console.log(e.target.firstName.value);
 	}
-	// let tabItems = [
-	// 	{
-	// 		label: 'Content',
-	// 		value: 0,
-	// 		component: Tab1,
-	// 		tabContentId: 'test-0'
-	// 		//  tabLabelId,
-	// 	},
-	// 	{
-	// 		label: 'Interactions',
-	// 		value: 1,
-	// 		component: Tab2,
-	// 		tabContentId: 'test-1',
-	// 		tabLabelId: 'label-1'
-	// 	}
-	// ];
+	let tabItems = [
+		{
+			label: 'Content',
+			component: Tab1,
+			tabContentId: 'test-0'
+			//  tabLabelId,
+		},
+		{
+			label: 'Interactions',
+			component: Tab2,
+			tabContentId: 'test-1',
+			tabLabelId: 'label-1'
+		}
+	];
 </script>
 
 <title>Our testing page</title>
@@ -99,6 +100,8 @@
 		formId="form"
 		ariaLabel="User Information Form"
 	/>
+
+	<Tab items={tabItems}></Tab>
 </div>
 
 <style>

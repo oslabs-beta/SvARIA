@@ -3,13 +3,14 @@
 	import Button from './Button.svelte';
 
 	export let showModal; // boolean
-	export let id;
+	export let id='';
 	export let closeModalMessage = 'Close Modal';
-	export let modalHeaderId;
-	export let modalDescribeId;
+	export let modalHeaderId ='';
+	export let modalDescribeId = '';
 	export let closeButtonId = 'closeModalButtonId';
 	export let closeButtonClassName = 'closeModalButton';
-	export let style='';
+	export let dialogClass = 'relative bg-white rounded-lg shadow dark:bg-gray-700'
+	export let style = '';
 
 	let dialog; // HTMLDialogElement
 	$: if (dialog && showModal) dialog.showModal();
@@ -40,6 +41,7 @@
 	on:click|self={() => dialog.close()}
 	use:colorContrastCheck
 	on:keydown={handleKeyDown}
+	class = {dialogClass}
 >
 	<div
 		role="dialog"
