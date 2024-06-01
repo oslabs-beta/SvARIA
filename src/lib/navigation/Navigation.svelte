@@ -3,9 +3,9 @@
 	export let heading = null;
 	export let routes = null;
 	export let id = 'navBar';
-	export let style;
-	export let linkStyle;
-	export let containerStyle;
+	export let style ='';
+	export let linkStyle = '';
+	export let containerStyle ='';
 </script>
 
 <div
@@ -40,7 +40,8 @@
 					class="sv-nav-link"
 					id={id + '-link-' + i}
 					aria-label={`link to ${linkElem.name}`}
-					{linkStyle}
+					style={linkStyle}
+					use:colorContrastCheck
 				>
 					{linkElem.name}
 				</a>

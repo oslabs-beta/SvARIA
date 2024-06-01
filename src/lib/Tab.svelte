@@ -2,15 +2,17 @@
 	export let items = [];
 	export let activeTabValue = 0;
 	export let itemComponents = [];
-	export let tabLabelClass = '';
-	export let tabContentClass = 'box';
+	export let tabLabelClass = 'inline-block p-4 rounded-t-lg hover:text-gray-600 hover:bg-gray-50 dark:hover:bg-gray-800 dark:hover:text-gray-300 focus:ring ';
+	export let tabContentClass = 'p-6 bg-gray-50 text-medium text-gray-500 dark:text-gray-400 dark:bg-gray-800 rounded-lg w-full';
 	export let tabLabelStyle = '';
 	export let tabContentStyle = '';
+	export let tabListClass = "flex flex-wrap"
     import { ariaLabelcheck, colorContrastCheck } from './ARIAchecks.js';
 
 
 	const handleClick = (tabValue) => () => {
 		activeTabValue = tabValue;
+
 	};
 
 	function handleKeyPress(e, tabValue) {
@@ -35,6 +37,10 @@
 		itemComponents[activeTabValue].focus();
 	}
 
+	$: for (let i = 0; i < items.length; i++) {
+		items[i]['value'] = i
+	}
+
 	$: items = items.map((row) => {
 		if (!row['tabLabelId']) {
 			row['tabLabelId'] = `tab-${row.value}`;
@@ -46,7 +52,7 @@
 	});
 </script>
 
-<ul>
+<ul class={tabListClass}>
 	{#each items as item}
 		<li class={activeTabValue === item.value ? 'active' : ''}>
 			<button
@@ -81,7 +87,7 @@
 	</div>
 {/each}
 
-<style>
+<!-- <style>
 	.box {
 		margin-bottom: 10px;
 		padding: 40px;
@@ -100,4 +106,4 @@
 	li {
 		margin-bottom: -1px;
 	}
-</style>
+</style> -->
