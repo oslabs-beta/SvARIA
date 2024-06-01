@@ -1,4 +1,6 @@
 <script>
+    import ButtonTab from "../../splashPageLib/ComponentDemos /ButtonTabs/ButtonTab.svelte";
+    import ModalTab from "../../splashPageLib/ComponentDemos /ModalTabs/ModalTab.svelte"
 </script>
 
 <style>
@@ -11,10 +13,15 @@
 
 <h3>Components</h3>
 <div class='lib-display'>
-    <h3>Component Name</h3>
+    <h3>Button Component</h3>
     <div class='component'>
     </div>
-    <div class='about'>
-        This is a button component. You can install it by following these instructions: install the button component. The code for this component looks like: \WOW THIS IS CODE\
+        <ButtonTab/>
+</div>
+
+<div class='lib-display'>
+    <h3>Modal Component</h3>
+    <div class='component'>
     </div>
+        <ModalTab/>
 </div>

@@ -18,7 +18,6 @@
 		console.log('checkbox checked');
 	}
 	let showModal = false;
-	console.log();
 
 	let formElements = [
 		{ name: 'address', type: 'input', labelValue: 'New Address' },
@@ -43,14 +42,12 @@
 	let tabItems = [
 		{
 			label: 'Content',
-			value: 0,
 			component: Tab1,
 			tabContentId: 'test-0'
 			//  tabLabelId,
 		},
 		{
 			label: 'Interactions',
-			value: 1,
 			component: Tab2,
 			tabContentId: 'test-1',
 			tabLabelId: 'label-1'
@@ -60,7 +57,8 @@
 
 <title>Our testing page</title>
 
-<Nav heading="welcome to the test page!" link={navElem} id="newID" h1style="color: orange" linkStyle='background-color:red'></Nav>
+<Nav heading="welcome to the test page!" link={navElem} id="newID" h1style="color: black;" 
+linkStyle='background-color:black; color:white'></Nav>
 
 <div class="testDiv">
 	<!-- your component goes here -->

@@ -23,7 +23,7 @@
 	use:ariaLabelcheck
 >
 	{#if heading}
-		<h1 class="sv-nav-heading" id={id + '-heading'} style={h1style} >
+		<h1 class="sv-nav-heading" id={id + '-heading'} style={h1style} use:colorContrastCheck>
 			{heading}
 		</h1>
 	{/if}
@@ -36,6 +36,7 @@
 					id={id + '-link-' + i}
 					aria-label={`link to ${linkElem.name}`}
 					style={linkStyle}
+					use:colorContrastCheck
 				>
 					{linkElem.name}
 				</a>
