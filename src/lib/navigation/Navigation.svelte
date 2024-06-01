@@ -4,8 +4,8 @@
 	export let routes = null;
 	export let id = 'navBar';
 	export let style;
-	export let h1style;
 	export let linkStyle;
+	export let containerStyle;
 </script>
 
 <div
@@ -19,11 +19,19 @@
 	use:colorContrastCheck
 	use:ariaLabelcheck
 >
-	{#if heading}
-		<h1 class="sv-nav-heading" id={id + '-heading'} {h1style}>
-			{heading}
-		</h1>
-	{/if}
+	<div
+		aria-label="container"
+		class="sv-nav-heading-container"
+		id={id + '-container'}
+		style={containerStyle}
+	>
+		{#if heading}
+			<h2 use:colorContrastCheck>
+				{heading}
+			</h2>
+		{/if}
+		<slot></slot>
+	</div>
 	{#if routes}
 		<ul class="sv-nav-ul" id={id + '-ul'} style>
 			{#each routes as linkElem, i}
