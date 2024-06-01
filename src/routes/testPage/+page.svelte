@@ -1,25 +1,12 @@
 <!-- use this page to test out components with URL "/testPage" -->
 
 <script>
-	import RadioButton from '$lib/RadioButton.svelte';
+	import RadioGroup from '$lib/RadioGroup.svelte';
 	import Checkbox from '$lib/input_types/Checkbox.svelte';
 	import Button from '../../lib/Button.svelte';
 	import Modal from '$lib/Modal.svelte';
 	import Form from '$lib/input_types/Form.svelte';
 	import Nav from '$lib/navigation/Navigation.svelte';
-
-	let radioValue;
-	
-	const options = [{
-		value: 'green',
-		label: 'Bulbasaur',
-	}, {
-		value: 'red',
-		label: 'Charmander',
-	}, {
-		value: 'blue',
-		label: 'Squirtle',
-	}]
 
 	function handleClick() {
 		console.log('button clicked');
@@ -67,16 +54,18 @@
 	// 		tabLabelId: 'label-1'
 	// 	}
 	// ];
+
+	let options = ['first option', 'second option', 'third option', 'fourth option'];
 </script>
 
 <title>Our testing page</title>
 
-<Nav heading="welcome to the test page!" link={navElem} id="newID" style="color: red"></Nav>
+<!-- <Nav heading="welcome to the test page!" link={navElem} id="newID" style="color: red"></Nav> -->
 
 <div class="testDiv">
-	<RadioButton {options} fontSize={16} legend='Select a starter Pokemon' bind:userSelected={radioValue} />
+	<RadioGroup options={options} id="radio" ariaLabel="Radio Selector"/>
 	<!-- your component goes here -->
-	<Button id="button" ariaLabel="test aria label" on:click={handleClick} content="Test button" />
+	<!-- <Button id="button" ariaLabel="test aria label" on:click={handleClick} content="Test button" />
 	<br />
 	<Checkbox
 		inputId="checkboxInput"
@@ -109,7 +98,7 @@
 		submitButtonId="submitButton11"
 		formId="form"
 		ariaLabel="User Information Form"
-	/>
+	/> -->
 </div>
 
 <style>
