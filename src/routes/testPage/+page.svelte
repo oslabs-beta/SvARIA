@@ -56,12 +56,7 @@
 
 <title>Our testing page</title>
 
-<Nav heading="welcome to the test page!" routes={navElem} id="newID" style="color: red">
-	<img
-		src="https://www.wfla.com/wp-content/uploads/sites/71/2023/05/GettyImages-1389862392.jpg?w=2560&h=1440&crop=1"
-		alt="a cat"
-	/>
-</Nav>
+<Nav heading="welcome to the test page!" routes={navElem} id="newID"></Nav>
 
 <div class="testDiv">
 	<!-- your component goes here -->
@@ -80,6 +75,7 @@
 		content="show Modal"
 		ariaLabel="Open Modal"
 	></Button>
+	<Button content="content"></Button>
 	<Modal
 		bind:showModal
 		id="modal"
