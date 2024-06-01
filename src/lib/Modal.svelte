@@ -9,7 +9,7 @@
 	export let modalDescribeId;
 	export let closeButtonId = 'closeModalButtonId';
 	export let closeButtonClassName = 'closeModalButton';
-	export let style='';
+	export let style = '';
 
 	let dialog; // HTMLDialogElement
 	$: if (dialog && showModal) dialog.showModal();
@@ -32,6 +32,7 @@
 <dialog
 	{id}
 	{style}
+	class="dialog"
 	bind:this={dialog}
 	on:close={() => {
 		showModal = false;
@@ -65,9 +66,17 @@
 </dialog>
 
 <style>
+	:global(.dialog) {
+		background-color: aqua;
+		height: 300px;
+		width: 500px;
+		border-radius: 5px;
+		border-color: black;
+		border-width: 2px;
+	}
 	:global(.closeModalButton) {
-		color: blue;
-		height: 30px;
+		position: relative;
+		margin-right: 100;
 		font-size: small;
 	}
 </style>

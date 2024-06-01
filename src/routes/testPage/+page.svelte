@@ -75,7 +75,6 @@
 		content="show Modal"
 		ariaLabel="Open Modal"
 	></Button>
-	<Button content="content"></Button>
 	<Modal
 		bind:showModal
 		id="modal"
@@ -109,15 +108,15 @@
 	:global(#checkboxInput) {
 		accent-color: purple;
 	}
-	:global(#openModal) {
+	/* :global(#openModal) {
 		font-size: smaller;
 		background-color: #003d3d;
 		color: aquamarine;
-	}
-	:global(#modal) {
+	} */
+	/* :global(#modal) {
 		background-color: #003d3d;
 		color: #b3b351;
-	}
+	} */
 	:global(#close) {
 		background-color: black;
 		color: white;
