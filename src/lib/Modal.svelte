@@ -3,13 +3,13 @@
 	import Button from './Button.svelte';
 
 	export let showModal; // boolean
-	export let id='';
+	export let modalId='';
+	export let modalClass = 'hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full'
 	export let closeModalMessage = 'Close Modal';
-	export let modalHeaderId ='';
-	export let modalDescribeId = '';
+	export let modalHeaderId = 'modalHeader';
+	export let modalDescribeId = 'modalContent';
 	export let closeButtonId = 'closeModalButtonId';
-	export let closeButtonClassName = 'closeModalButton';
-	export let dialogClass = 'relative bg-white rounded-lg shadow dark:bg-gray-700'
+	export let closeButtonClass = 'closeModalButton';
 	export let style = '';
 
 	let dialog; // HTMLDialogElement
@@ -31,7 +31,7 @@
 <!-- svelte-ignore a11y-click-events-have-key-events a11y-no-noninteractive-element-interactions -->
 
 <dialog
-	{id}
+	id = {modalId}
 	{style}
 	bind:this={dialog}
 	on:close={() => {
@@ -41,7 +41,7 @@
 	on:click|self={() => dialog.close()}
 	use:colorContrastCheck
 	on:keydown={handleKeyDown}
-	class = {dialogClass}
+	class = {modalClass}
 >
 	<div
 		role="dialog"
@@ -61,7 +61,7 @@
 			ariaLabel="Close Modal"
 			content={closeModalMessage}
 			id={closeButtonId}
-			className={closeButtonClassName}
+			className={closeButtonClass}
 		></Button>
 	</div>
 </dialog>
