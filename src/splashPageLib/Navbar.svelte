@@ -6,9 +6,25 @@ components used that we might need to make:
 <script>
     import logo from "./assets/SvARIALogo.png";
     import {openModal} from "../store";
+    import Nav from '../lib/navigation/Navigation.svelte'
+
+    const links = [{href: "#WhySvARIA", name: "Why SvARIA", linkClass: "duration-200 hover:text-indigo-400 cursor-pointer"}, {href: "#GettingStarted", name: "Getting Started", linkClass: "duration-200 hover:text-indigo-400 cursor-pointer"}, {href: "#CompTab", name: "Components", linkClass: "duration-200 hover:text-indigo-400 cursor-pointer"},{href: "https://github.com/oslabs-beta/SvARIA", name: "GitHub", linkClass: "duration-200 hover:text-indigo-400 cursor-pointer"}, {href: "#GitHubFAQ", name: "FAQ", linkClass: "duration-200 hover:text-indigo-400 cursor-pointer"}]
 </script>
 
-<header class="flex flex-col relative z-20">
+<header class= "flex flex-col relative z-20">
+    <Nav        
+        routes = {links}
+        navBarClass = "max-w-[1400] mx-auto w-full flex items-center justify-between px-4">
+        <a href="/">
+            <img class="min-w-[250px] h-[175px] w-[250px] -mt-8" alt="SvARIA Logo" src={logo} />
+        </a>
+        <button on:click={() => $openModal = true} class="md:hidden grid place-items-center">
+            <i class="fa-solid fa-bars"></i>
+        </button>
+    </Nav>
+</header>
+
+<!-- <header class="flex flex-col relative z-20">
     <div class="max-w-[1400] mx-auto w-full flex items-center justify-between px-4">
         <a href="/">
             <img class="min-w-[250px] h-[175px] w-[250px] -mt-8" alt="SvARIA Logo" src={logo} />
@@ -25,20 +41,9 @@ components used that we might need to make:
         <button on:click={() => $openModal = true} class="md:hidden grid place-items-center">
             <i class="fa-solid fa-bars"></i>
         </button>
-
     </div>
-  
-</header >
+</header > -->
 
 <style>
     /* css goes here */
 </style>
-
-<!-- <nav>
-    <ul class='navbar'>
-        <a href="/">Home</a>
-        <a href="https://github.com/oslabs-beta/SvARIA">GitHub</a>
-        <a href="/components">Components</a>
-        <a href="/about">About</a>
-    </ul>
-</nav> -->

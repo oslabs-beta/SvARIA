@@ -65,13 +65,13 @@
 
 	let navElem = [
 		{
-			herf: 'https://github.com/oslabs-beta/SvARIA/tree/dev',
+			href: 'https://github.com/oslabs-beta/SvARIA/tree/dev',
 			name: "SvARIA's git repo",
 			linkStyle: 'color: yellow',
 			linkClass: 'Class 1'
 		},
 		{
-			herf: 'https://github.com/oslabs-beta/SvARIA/tree/dev',
+			href: 'https://github.com/oslabs-beta/SvARIA/tree/dev',
 			name: "SvARIA's second test",
 			linkClass: 'text-2xl text-orange-500'
 		}
