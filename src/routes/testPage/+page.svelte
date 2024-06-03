@@ -44,14 +44,14 @@
 		{
 			label: 'blue',
 			onClick: function click() {
-				alert(items[1].label);
+				alert(menuItems[1].label);
 			},
 			linkClass: 'text-2xl text-orange-500'
 		},
 		{
 			label: 'yellow',
 			onClick: function click() {
-				alert(items[2].label);
+				alert(menuItems[2].label);
 			}
 		},
 		{
