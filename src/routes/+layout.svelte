@@ -22,7 +22,7 @@
             <a href="/">
                 <img class="min-w-[250px] h-[175px] w-[250px] -mt-8" alt="SvARIA Logo" src={logo} />
             </a>
-            <button on:click={() => $openModal = false} class="outline-none border-none">
+            <button on:click={() => {$openModal = false; console.log('clicked')}} class="outline-none border-none">
                     <i class="fa-solid fa-xmark text-2xl">
                     </i>
             </button> 
