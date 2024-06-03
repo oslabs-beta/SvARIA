@@ -1,39 +1,44 @@
 <script lang="js">
 	import { colorContrastCheck, ariaLabelcheck } from '../ARIAchecks.js';
 	export let heading = null;
-	export let link = null;
-	export let ariaLabel = 'navigation bar';
+	export let routes = null;
 	export let id = 'navBar';
-	export let style;
-	export let h1style;
-	export let linkStyle;
+	export let style = '';
+	export let containerStyle = '';
+	export let navBarClass = 'sv-navagation';
+	export let navHeadingClass = '';
+	export let navListClass = '';
 </script>
 
 <div
 	role="navigation"
-	class="sv-navagation"
-	aria-label={ariaLabel}
+	class={navBarClass}
+	aria-label={heading}
 	{id}
 	{style}
 	{heading}
-	{link}
+	{routes}
 	use:colorContrastCheck
 	use:ariaLabelcheck
 >
-	{#if heading}
-		<h1 class="sv-nav-heading" id={id + '-heading'} {h1style}>
-			{heading}
-		</h1>
-	{/if}
-	{#if link}
-		<ul class="sv-nav-ul" id={id + '-ul'} style>
-			{#each link as linkElem, i}
+	<div aria-label="container" class={navHeadingClass} id={id + '-container'} style={containerStyle}>
+		{#if heading}
+			<h2 use:colorContrastCheck>
+				{heading}
+			</h2>
+		{/if}
+		<slot></slot>
+	</div>
+	{#if routes}
+		<ul class={navListClass} id={id + '-ul'} style>
+			{#each routes as linkElem, i}
 				<a
-					href={linkElem.link}
-					class="sv-nav-link"
+					href={linkElem.herf}
+					class={linkElem.linkClass}
 					id={id + '-link-' + i}
 					aria-label={`link to ${linkElem.name}`}
-					{linkStyle}
+					style={linkElem.linkStyle}
+					use:colorContrastCheck
 				>
 					{linkElem.name}
 				</a>

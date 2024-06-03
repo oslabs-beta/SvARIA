@@ -22,14 +22,31 @@ export function colorContrastCheck(curNode, parameters) {
 		return;
 	}
 	const compStyles = window.getComputedStyle(curNode);
-	// console.log(curNode.nodeName, curNode.id, compStyles.getPropertyValue("color"))
-	// console.log(curNode.nodeName, curNode.id,compStyles.getPropertyValue("background-color"))
+	console.log('color: ', curNode.nodeName, curNode.id, compStyles.getPropertyValue("color"))
+	console.log('bg-color: ', curNode.nodeName, curNode.id,compStyles.getPropertyValue("background-color"))
 
 	let backgroundColor = compStyles.getPropertyValue('background-color');
+
+	let iterations = 0	
+	//check parent for background color for up to 3 iterations
+	let parentNode = curNode.parentNode
+	while(backgroundColor == 'rgba(0, 0, 0, 0)' && iterations < 3){
+		console.log('parent node: ',parentNode.nodeName, 'parent node id:', parentNode.id)
+		console.log('parent color', window.getComputedStyle(parentNode).getPropertyValue("background-color"))
+		const compStylesParent = window.getComputedStyle(parentNode)
+		backgroundColor = compStylesParent.getPropertyValue("background-color")
+		iterations++
+		parentNode = parentNode.parentNode
+		// if(backgroundColor != 'rgba(0, 0, 0, 0)'){
+		// 	console.log(`Using parent's background color for ${curNode.nodeName}, with id of ${curNode.id}`)
+		// }
+	}
+
 	if (backgroundColor == 'rgba(0, 0, 0, 0)') {
 		console.log('No background color found defaulting to white');
 		backgroundColor = 'rgb(255, 255, 255)';
 	}
+
 	let forergroundColor = compStyles.getPropertyValue('color');
 	if (forergroundColor === backgroundColor) {
 		console.error(
@@ -37,6 +54,7 @@ export function colorContrastCheck(curNode, parameters) {
 		);
 		return;
 	}
+
 
 	fetch('https://www.aremycolorsaccessible.com/api/are-they', {
 		mode: 'cors',
@@ -51,6 +69,9 @@ export function colorContrastCheck(curNode, parameters) {
 			} else {
 				console.error(
 					`${curNode.nodeName}, with id of ${curNode.id}: Background and text colors do not meet contrast requirement, please adjust colors`
+				);
+				console.error(
+					`${curNode.nodeName}, with id of ${curNode.id}: BG: ${backgroundColor} FG: ${forergroundColor}`
 				);
 			}
 		});

@@ -1,8 +1,8 @@
 <script>
     import { ariaLabelcheck, colorContrastCheck } from './ARIAchecks.js'
-    export let content = 'Hi'
-    export let ariaLabel;
-    export let id = '';
+    export let content = 'This is a button'
+    export let ariaLabel= content;
+    export let id = ''
     export let style = ''
     export let className = 'button'
     export let type =''

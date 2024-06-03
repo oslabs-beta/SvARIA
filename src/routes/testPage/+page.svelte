@@ -7,6 +7,10 @@
 	import Modal from '$lib/Modal.svelte';
 	import Form from '$lib/input_types/Form.svelte';
 	import Nav from '$lib/navigation/Navigation.svelte';
+	import Tab from '$lib/Tab.svelte';
+	import Tab1 from './tabsForTestPage/Tab1.svelte';
+	import Tab2 from './tabsForTestPage/Tab2.svelte';
+	import Menu from '$lib/Menu.svelte';
 
 	function handleClick() {
 		console.log('button clicked');
@@ -16,7 +20,6 @@
 		console.log('checkbox checked');
 	}
 	let showModal = false;
-	console.log();
 
 	let formElements = [
 		{ name: 'address', type: 'input', labelValue: 'New Address' },
@@ -31,37 +34,76 @@
 		}
 	];
 
+	let menuItems = [
+		{
+			label: 'purple',
+			onClick: function click() {
+				window.location.href = 'https://en.wikipedia.org/wiki/Purple';
+			},
+			linkStyle: 'color: black; background-color: orange',
+		},
+		{
+			label: 'blue',
+			onClick: function click() {
+				alert(items[1].label);
+			},
+			linkClass: 'text-2xl text-orange-500'
+		},
+		{
+			label: 'yellow',
+			onClick: function click() {
+				alert(items[2].label);
+			}
+		},
+		{
+			label: 'green',
+			onClick: function click() {
+				window.location.href = 'https://en.wikipedia.org/wiki/Greene';
+			}
+		}
+	];
+
 	let navElem = [
-		{ link: 'https://github.com/oslabs-beta/SvARIA/tree/dev', name: "SvARIA's git repo" },
-		{ link: "/", name: "Home"}
+		{
+			herf: 'https://github.com/oslabs-beta/SvARIA/tree/dev',
+			name: "SvARIA's git repo",
+			linkStyle: 'color: yellow',
+			linkClass: 'Class 1'
+		},
+		{
+			herf: 'https://github.com/oslabs-beta/SvARIA/tree/dev',
+			name: "SvARIA's second test",
+			linkClass: 'text-2xl text-orange-500'
+		}
 	];
 
 	function onSubmit(e) {
 		console.log(e.target.firstName.value);
 	}
-	// let tabItems = [
-	// 	{
-	// 		label: 'Content',
-	// 		value: 0,
-	// 		component: Tab1,
-	// 		tabContentId: 'test-0'
-	// 		//  tabLabelId,
-	// 	},
-	// 	{
-	// 		label: 'Interactions',
-	// 		value: 1,
-	// 		component: Tab2,
-	// 		tabContentId: 'test-1',
-	// 		tabLabelId: 'label-1'
-	// 	}
-	// ];
-
-	let options = ['first option', 'second option', 'third option', 'fourth option'];
+	let tabItems = [
+		{
+			label: 'Content',
+			component: Tab1,
+			tabContentId: 'test-0'
+			//  tabLabelId,
+		},
+		{
+			label: 'Interactions',
+			component: Tab2,
+			tabContentId: 'test-1',
+			tabLabelId: 'label-1'
+		}
+	];
 </script>
 
 <title>Our testing page</title>
 
-<Nav heading="welcome to the test page!" link={navElem} id="newID" style="color: red"></Nav>
+<Nav heading="welcome to the test page!" routes={navElem} id="newID">
+	<img
+		src="https://www.wfla.com/wp-content/uploads/sites/71/2023/05/GettyImages-1389862392.jpg?w=2560&h=1440&crop=1"
+		alt="a cat"
+	/>
+</Nav>
 
 <div class="testDiv">
 	<RadioGroup options={options} id="radio" ariaLabel="Radio Selector"/>
@@ -83,7 +125,7 @@
 	></Button>
 	<Modal
 		bind:showModal
-		id="modal"
+		modalId="modal"
 		modalHeaderId="modalHeader"
 		modalDescribeId="dialoginfo"
 		closeModalMessage="X"
@@ -99,7 +141,17 @@
 		submitButtonId="submitButton11"
 		formId="form"
 		ariaLabel="User Information Form"
-	/> -->
+	/>
+
+	<Tab items={tabItems}></Tab>
+	<Menu
+		items={menuItems}
+		buttonContent={'Menu button'}
+		buttonId="menuButton"
+		buttonAriaLabel={'menu button'}
+		buttonStyle="background-color:orange; color:black"
+		listClass='text-gray-500'
+	></Menu>
 </div>
 
 <style>

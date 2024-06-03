@@ -1,3 +1,4 @@
+<!-- This is where the footer lives -->
 <style>
     footer {
       background-color: #333;
