@@ -9,6 +9,7 @@
 	import Tab from '$lib/Tab.svelte';
 	import Tab1 from './tabsForTestPage/Tab1.svelte';
 	import Tab2 from './tabsForTestPage/Tab2.svelte';
+	import Menu from '$lib/Menu.svelte';
 
 	function handleClick() {
 		console.log('button clicked');
@@ -32,8 +33,47 @@
 		}
 	];
 
+	let menuItems = [
+		{
+			label: 'purple',
+			onClick: function click() {
+				window.location.href = 'https://en.wikipedia.org/wiki/Purple';
+			},
+			linkStyle: 'color: black; background-color: orange',
+		},
+		{
+			label: 'blue',
+			onClick: function click() {
+				alert(items[1].label);
+			},
+			linkClass: 'text-2xl text-orange-500'
+		},
+		{
+			label: 'yellow',
+			onClick: function click() {
+				alert(items[2].label);
+			}
+		},
+		{
+			label: 'green',
+			onClick: function click() {
+				window.location.href = 'https://en.wikipedia.org/wiki/Greene';
+			}
+		}
+	];
+
 	let navElem = [
-		{ herf: 'https://github.com/oslabs-beta/SvARIA/tree/dev', name: "SvARIA's git repo" }
+		{
+			herf: 'https://github.com/oslabs-beta/SvARIA/tree/dev',
+			name: "SvARIA's git repo",
+			linkStyle: 'color: yellow',
+			linkClass: 'Class 1'
+		},
+		{
+			herf: 'https://github.com/oslabs-beta/SvARIA/tree/dev',
+			name: "SvARIA's second test",
+			linkClass: 'text-2xl text-orange-500'
+		}
 	];
 
 	function onSubmit(e) {
@@ -57,7 +97,7 @@
 
 <title>Our testing page</title>
 
-<Nav heading="welcome to the test page!" routes={navElem} id="newID" style="color: red">
+<Nav heading="welcome to the test page!" routes={navElem} id="newID">
 	<img
 		src="https://www.wfla.com/wp-content/uploads/sites/71/2023/05/GettyImages-1389862392.jpg?w=2560&h=1440&crop=1"
 		alt="a cat"
@@ -83,7 +123,7 @@
 	></Button>
 	<Modal
 		bind:showModal
-		id="modal"
+		modalId="modal"
 		modalHeaderId="modalHeader"
 		modalDescribeId="dialoginfo"
 		closeModalMessage="X"
@@ -102,6 +142,14 @@
 	/>
 
 	<Tab items={tabItems}></Tab>
+	<Menu
+		items={menuItems}
+		buttonContent={'Menu button'}
+		buttonId="menuButton"
+		buttonAriaLabel={'menu button'}
+		buttonStyle="background-color:orange; color:black"
+		listClass='text-gray-500'
+	></Menu>
 </div>
 
 <style>

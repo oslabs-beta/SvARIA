@@ -4,7 +4,8 @@
 
 	export let showModal; // boolean
 	export let modalId='';
-	export let modalClass = 'hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full'
+	export let modalClass = 'bg-white rounded-lg shadow dark:bg-white-700 p-4 md:p-5 space-y-4'
+	//export let modalClass = ''
 	export let closeModalMessage = 'Close Modal';
 	export let modalHeaderId = 'modalHeader';
 	export let modalDescribeId = 'modalContent';
@@ -22,10 +23,13 @@
 	}
 
 	$: if (showModal) {
+		//document.body.style.overflowY = 'hidden';
 		document.body.style.overflow = 'hidden';
-		//const modal = document.getElementById(modalId);
+		// const modal = document.getElementById(modalId);
+		// modal.style.overflow = 'hidden';
 		dialog.focus();
 	}
+
 </script>
 
 <!-- svelte-ignore a11y-click-events-have-key-events a11y-no-noninteractive-element-interactions -->
