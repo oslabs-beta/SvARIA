@@ -3,14 +3,16 @@
 	export let heading = null;
 	export let routes = null;
 	export let id = 'navBar';
-	export let style ='';
-	export let linkStyle = '';
-	export let containerStyle ='';
+	export let style = '';
+	export let containerStyle = '';
+	export let navBarClass = 'sv-navagation';
+	export let navHeadingClass = '';
+	export let navListClass = '';
 </script>
 
 <div
 	role="navigation"
-	class="sv-navagation"
+	class={navBarClass}
 	aria-label={heading}
 	{id}
 	{style}
@@ -19,12 +21,7 @@
 	use:colorContrastCheck
 	use:ariaLabelcheck
 >
-	<div
-		aria-label="container"
-		class="sv-nav-heading-container"
-		id={id + '-container'}
-		style={containerStyle}
-	>
+	<div aria-label="container" class={navHeadingClass} id={id + '-container'} style={containerStyle}>
 		{#if heading}
 			<h2 use:colorContrastCheck>
 				{heading}
@@ -33,14 +30,14 @@
 		<slot></slot>
 	</div>
 	{#if routes}
-		<ul class="sv-nav-ul" id={id + '-ul'} style>
+		<ul class={navListClass} id={id + '-ul'} style>
 			{#each routes as linkElem, i}
 				<a
 					href={linkElem.herf}
-					class="sv-nav-link"
+					class={linkElem.linkClass}
 					id={id + '-link-' + i}
 					aria-label={`link to ${linkElem.name}`}
-					style={linkStyle}
+					style={linkElem.linkStyle}
 					use:colorContrastCheck
 				>
 					{linkElem.name}

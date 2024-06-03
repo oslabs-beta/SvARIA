@@ -2,7 +2,7 @@
     import "../app.css";
     import Navbar from "../splashPageLib/Navbar.svelte";
     import Footer from "../splashPageLib/Footer.svelte";
-    import logo from "/Users/jewelclarke/Desktop/PTRI Cohort 14/OSP - SvARIA/SvARIA/src/splashPageLib/assets/SvAriaLogo.png";
+    import logo from "../splashPageLib/assets/SvAriaLogo.png";
 
     import {openModal} from "../store";
 
