@@ -32,7 +32,8 @@
 	];
 
 	let navElem = [
-		{ link: 'https://github.com/oslabs-beta/SvARIA/tree/dev', name: "SvARIA's git repo" }
+		{ link: 'https://github.com/oslabs-beta/SvARIA/tree/dev', name: "SvARIA's git repo" },
+		{ link: "/", name: "Home"}
 	];
 
 	function onSubmit(e) {
@@ -60,7 +61,7 @@
 
 <title>Our testing page</title>
 
-<!-- <Nav heading="welcome to the test page!" link={navElem} id="newID" style="color: red"></Nav> -->
+<Nav heading="welcome to the test page!" link={navElem} id="newID" style="color: red"></Nav>
 
 <div class="testDiv">
 	<RadioGroup options={options} id="radio" ariaLabel="Radio Selector"/>
