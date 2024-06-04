@@ -12,8 +12,9 @@
             </h2>
         </div>
             <h3 class="text-2xl sm:text-3xl md:text-4xl max-w-[1000px] mx-auto w-full  text-center">
-                A comprehensive Svelte library built from the ground-up 
-                that offers plug-and-play ARIA compliant components and features to help make websites meet and exceed accessibility standards while streamlining the design process.
+                A comprehensive component library built from the ground-up for Svelte offering plug-and-play
+                ARIA compliant components + features to help your project meet and exceed accessibility standards
+                while streamlining the design process.
             </h3>      
 
     </div>
