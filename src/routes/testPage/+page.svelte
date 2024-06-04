@@ -1,6 +1,7 @@
 <!-- use this page to test out components with URL "/testPage" -->
 
 <script>
+	import RadioGroup from '$lib/RadioGroup.svelte';
 	import Checkbox from '$lib/input_types/Checkbox.svelte';
 	import Button from '../../lib/Button.svelte';
 	import Modal from '$lib/Modal.svelte';
@@ -64,13 +65,13 @@
 
 	let navElem = [
 		{
-			herf: 'https://github.com/oslabs-beta/SvARIA/tree/dev',
+			href: 'https://github.com/oslabs-beta/SvARIA/tree/dev',
 			name: "SvARIA's git repo",
 			linkStyle: 'color: yellow',
 			linkClass: 'Class 1'
 		},
 		{
-			herf: 'https://github.com/oslabs-beta/SvARIA/tree/dev',
+			href: 'https://github.com/oslabs-beta/SvARIA/tree/dev',
 			name: "SvARIA's second test",
 			linkClass: 'text-2xl text-orange-500'
 		}
@@ -105,8 +106,9 @@
 </Nav>
 
 <div class="testDiv">
+	<RadioGroup options={options} id="radio" ariaLabel="Radio Selector"/>
 	<!-- your component goes here -->
-	<Button id="button" ariaLabel="test aria label" on:click={handleClick} content="Test button" />
+	<!-- <Button id="button" ariaLabel="test aria label" on:click={handleClick} content="Test button" />
 	<br />
 	<Checkbox
 		inputId="checkboxInput"
