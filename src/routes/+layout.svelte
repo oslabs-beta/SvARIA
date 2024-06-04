@@ -5,6 +5,10 @@
     import logo from "../splashPageLib/assets/SvAriaLogo.png";
 
     import {openModal} from "../store";
+    
+console.log('before')
+    console.log(openModal)
+    console.log('after')
 
     let y;
     $: outerHeight = 0;
