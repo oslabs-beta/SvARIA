@@ -1,4 +1,8 @@
 <!-- This is where the footer lives -->
+<script>
+  import logo from './assets/SvAriaLogo.png'
+</script>
+
 <style>
     footer {
       background-color: #333;
@@ -29,29 +33,30 @@
     .footer-container ul ul {
       display: block;
     }
-  </style>
+</style>
   
 
 <footer>
     <div class='footer-container'>
         <ul class='footer'>
-            <div class='svariaLogo'>Our Logo</div>
+            <ul class='footerBlock' id='logo'>
+                <img class="min-w-[188px] h-[131px] w-[188px] -mt-8" alt="SvARIA Logo" src={logo} />
+            </ul>
             <ul class='footerBlock' id='docs'>
-                <li><h5>documentation</h5></li>
-                <li><h6>How-To's and ReadMe</h6></li>
-                <li><h6>Components</h6></li>
-                <li><h6>Examples</h6></li>
+                <li><h5>Documentation</h5></li>
+                <a href="https://github.com/oslabs-beta/SvARIA/blob/main/README.md" alt="Documentation"><li><h6>How-To's and ReadMe</h6></li></a>
+                <a href="#CompTab" alt="Components"><li><h6>Components</h6></li></a>
+            </ul>
+            <ul class='footerBlock' id='community'>
+                <li><h5>Community</h5></li>
+                <a href="https://github.com/oslabs-beta/SvARIA/" alt="Find us on GitHub"><li><h6>Find us on GitHub</h6></li></a>
+                <a href="https://github.com/oslabs-beta/SvARIA/issues" alt="Report an issue"><li><h6>Report an issue</h6></li></a>
+                <a href="mailto:svarialibrary@gmail.com"><li><h6>Contact Us</h6></li></a>
             </ul>
             <ul class='footerBlock' id='updates'>
                 <li><h5>Updates</h5></li>
                 <li><h6>Changelog</h6></li>
                 <li><h6>News</h6></li>
-            </ul>
-            <ul class='footerBlock' id='community'>
-                <li><h5>Community</h5></li>
-                <li><h6>find us on GitHub</h6></li>
-                <li><h6>Report an issue</h6></li>
-                <li><h6>Contact Us</h6></li>
             </ul>
         </ul>
     </div>

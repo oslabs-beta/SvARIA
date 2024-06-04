@@ -1,5 +1,6 @@
 <script>
     import "../app.css";
+    import Nav from '$lib/navigation/Navigation.svelte'
     import Navbar from "../splashPageLib/Navbar.svelte";
     import Footer from "../splashPageLib/Footer.svelte";
     import logo from "../splashPageLib/assets/SvAriaLogo.png";
@@ -13,9 +14,11 @@
        $openModal = false;
        window.location.href = href; 
     }
+
+    let links= [{ link: '/', name: 'Home' }, { link: 'https://github.com/oslabs-beta/SvARIA', name: 'GitHub' }, { link: '/components', name: 'Components' }, { link: '/about', name: 'About'} ]
 </script>
 
-<Navbar />
+<!-- <Nav heading='SvARIA' link={links} /> -->
 {#if $openModal}
     <div class="fixed top-0 left-0 w-screen h-screen border-b bg-white z-50 flex flex-col gap-8 p-5 px-8 md:hidden">
         <div class="flex items-center justify-between gap-4 border-b pb-2">
@@ -43,11 +46,11 @@
         </div>
     </div>
 {/if}
-{#if y > outerHeight}
+<!-- {#if y > outerHeight} -->
  <div class="bg-white fixed top-0 left-0 w-full flex flex-col z-20 px-4 fadeIn">
     <Navbar/>
  </div>
-{/if}
+<!-- {/if} -->
 <slot />
 <Footer/>
 <svelte:window bind:scrollY={y} bind:outerHeight/>

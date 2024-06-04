@@ -28,23 +28,23 @@
 			</p>
 			<br /><br />
 			<div>
-				<h3>Components</h3>
-				<div class="lib-display">
-					<h3>Button Component</h3>
-					<div class="component"></div>
-					<ButtonTab />
-				</div>
+				<!-- <h3>Components</h3> -->
+					<div class="lib-display">
+						<h3>Button Component</h3>
+						<div class="component"></div>
+						<ButtonTab />
+					</div>
 
-				<div class="lib-display">
-					<h3>Modal Component</h3>
-					<div class="component"></div>
-					<ModalTab />
-				</div>
-                <div class="lib-display">
-					<h3>Modal Component</h3>
-					<div class="component"></div>
-					<CheckboxTab />
-				</div>
+					<div class="lib-display">
+						<h3>Modal Component</h3>
+						<div class="component"></div>
+						<ModalTab />
+					</div>
+					<div class="lib-display">
+						<h3>Modal Component</h3>
+						<div class="component"></div>
+						<CheckboxTab />
+					</div>
 			</div>
 		</h7>
 	</div></SectionWrapper
