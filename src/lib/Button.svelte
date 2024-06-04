@@ -19,24 +19,19 @@
 	{type}>{content}</button
 >
 
-<button
-	use:ariaLabelcheck={2}
-	use:colorContrastCheck
-	{id}
-	aria-label={ariaLabel}
-	class={className}
-	on:click
-	{style}
-	{type}>{content}</button
->
-
 <style>
 	:global(.button) {
-		color: #570000;
+		color: #373636;
+		font-size: 20%;
 		background-color: #e6e6e6;
-		height: 40px;
 		width: 100px;
-		border-radius: 7%;
-		font-size: large;
+		border-radius: 5px;
+		border-width: 2px;
+		border-color: #b6b4b4;
+		font-size: small;
+		padding: 0.5em 0.5em 0.5em 0.5em;
+	}
+	:global(.button:hover) {
+		background-color: #b6b4b4;
 	}
 </style>

@@ -57,7 +57,9 @@
 
 <title>Our testing page</title>
 
-<Nav heading="welcome to the test page!" routes={navElem} id="newID"></Nav>
+<Nav routes={navElem} id="newID">
+	<p>hello!</p>
+</Nav>
 
 <div class="testDiv">
 	<!-- your component goes here -->

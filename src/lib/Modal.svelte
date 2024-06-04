@@ -3,12 +3,13 @@
 	import Button from './Button.svelte';
 
 	export let showModal; // boolean
-	export let id;
+	export let id = '';
 	export let closeModalMessage = 'Close Modal';
-	export let modalHeaderId;
-	export let modalDescribeId;
+	export let modalHeaderId = '';
+	export let modalDescribeId = '';
 	export let closeButtonId = 'closeModalButtonId';
 	export let closeButtonClassName = 'closeModalButton';
+	export let dialogClass = 'dialog';
 	export let style = '';
 
 	let dialog; // HTMLDialogElement
@@ -32,7 +33,6 @@
 <dialog
 	{id}
 	{style}
-	class="dialog"
 	bind:this={dialog}
 	on:close={() => {
 		showModal = false;
@@ -41,6 +41,7 @@
 	on:click|self={() => dialog.close()}
 	use:colorContrastCheck
 	on:keydown={handleKeyDown}
+	class={dialogClass}
 >
 	<div
 		role="dialog"
@@ -51,6 +52,7 @@
 		on:keypress|stopPropagation
 	>
 		<slot name="header" />
+		<hr class="boarder" />
 		<slot></slot>
 		<Button
 			on:click={() => {
@@ -66,8 +68,12 @@
 </dialog>
 
 <style>
+	:global(.boarder) {
+		border-top: 1px solid rgb(55, 65, 81);
+	}
 	:global(.dialog) {
-		background-color: aqua;
+		background-color: rgb(31, 41, 55);
+		color: rgb(156 163 175);
 		height: 300px;
 		width: 500px;
 		border-radius: 5px;
@@ -75,8 +81,9 @@
 		border-width: 2px;
 	}
 	:global(.closeModalButton) {
-		position: relative;
-		margin-right: 100;
+		position: absolute;
+		bottom: 1em;
+		right: 1em;
 		font-size: small;
 	}
 </style>
