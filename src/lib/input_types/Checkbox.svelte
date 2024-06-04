@@ -8,6 +8,8 @@
 	export let inputId;
 	export let labelStyle = '';
 	export let inputStyle = '';
+	export let inputClass = 'w-4 h-4';
+	export let labelClass = 'ms-2 text-lg font-medium text-gray-900 dark:text-orange-300';
 
 	// function for checking if its checked
 	function toggleCheck(e) {
@@ -16,30 +18,27 @@
 	}
 </script>
 
-<input
-	class="sv-checkbox"
-	type="checkbox"
-	aria-label={`checkbox for, ${content}`}
-	on:click={toggleCheck}
-	on:click
-	id={inputId}
-	use:ariaLabelcheck
-	style={inputStyle}
-/>
+<div>
+	<input
+		class={inputClass}
+		type="checkbox"
+		aria-label={`checkbox for, ${content}`}
+		on:click={toggleCheck}
+		on:click
+		id={inputId}
+		use:ariaLabelcheck
+		style={inputStyle}
+	/>
 
-<label
-	class = "sv-checkboxLabel"
-	id={labelId}
-	for="sv-checkbox"
-	aria-label={ariaLabel}
-	use:ariaLabelcheck={2}
-	use:colorContrastCheck
-	style={labelStyle}>{content}</label
->
-
-<style>
-	.sv-checkboxLabel{
-		color:red;
-		background-color: white;
-	}
-</style>
+	<label
+		class={labelClass}
+		id={labelId}
+		for="sv-checkbox"
+		aria-label={ariaLabel}
+		use:ariaLabelcheck={2}
+		use:colorContrastCheck
+		style={labelStyle}
+	>
+		{content}
+	</label>
+</div>
