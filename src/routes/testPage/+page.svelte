@@ -40,7 +40,7 @@
 			onClick: function click() {
 				window.location.href = 'https://en.wikipedia.org/wiki/Purple';
 			},
-			linkStyle: 'color: black; background-color: orange',
+			linkStyle: 'color: black; background-color: orange'
 		},
 		{
 			label: 'blue',
@@ -105,10 +105,11 @@
 	/>
 </Nav>
 
-<div class="testDiv">
-	<RadioGroup options={options} id="radio" ariaLabel="Radio Selector"/>
+<!-- <div class="testDiv">
+	<RadioGroup {options} id="radio" ariaLabel="Radio Selector" /> -->
+<div>
 	<!-- your component goes here -->
-	<!-- <Button id="button" ariaLabel="test aria label" on:click={handleClick} content="Test button" />
+	<Button id="button" ariaLabel="test aria label" on:click={handleClick} content="Test button" />
 	<br />
 	<Checkbox
 		inputId="checkboxInput"
@@ -150,7 +151,7 @@
 		buttonId="menuButton"
 		buttonAriaLabel={'menu button'}
 		buttonStyle="background-color:orange; color:black"
-		listClass='text-gray-500'
+		listClass="text-gray-500"
 	></Menu>
 </div>
 
