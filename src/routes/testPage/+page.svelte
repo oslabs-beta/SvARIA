@@ -38,15 +38,13 @@
 			label: 'purple',
 			onClick: function click() {
 				window.location.href = 'https://en.wikipedia.org/wiki/Purple';
-			},
-			linkStyle: 'color: black; background-color: orange'
+			}
 		},
 		{
 			label: 'blue',
 			onClick: function click() {
 				alert(items[1].label);
-			},
-			linkClass: 'text-2xl text-orange-500'
+			}
 		},
 		{
 			label: 'yellow',
@@ -101,6 +99,7 @@
 	<img
 		src="https://www.wfla.com/wp-content/uploads/sites/71/2023/05/GettyImages-1389862392.jpg?w=2560&h=1440&crop=1"
 		alt="a cat"
+		class="h-16 w-16 object-cover rounded-full"
 	/>
 </Nav>
 
@@ -147,13 +146,11 @@
 		buttonContent={'Menu button'}
 		buttonId="menuButton"
 		buttonAriaLabel={'menu button'}
-		buttonStyle="background-color:orange; color:black"
-		listClass="text-gray-500"
 	></Menu>
 </div>
 
 <style>
-	:global(#button) {
+	/* :global(#button) {
 		color: white;
 		background-color: black;
 	}
@@ -163,7 +160,7 @@
 	}
 	:global(#checkboxInput) {
 		accent-color: purple;
-	}
+	} */
 	/* :global(#openModal) {
 		font-size: smaller;
 		background-color: #003d3d;
@@ -173,7 +170,7 @@
 		background-color: #003d3d;
 		color: #b3b351;
 	} */
-	:global(#close) {
+	/* :global(#close) {
 		background-color: black;
 		color: white;
 	}
@@ -195,5 +192,5 @@
 	:global(#labeluserName) {
 		font-size: large;
 		background-color: blue;
-	}
+	} */
 </style>

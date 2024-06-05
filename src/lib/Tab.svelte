@@ -3,7 +3,7 @@
 	export let activeTabValue = 0;
 	export let itemComponents = [];
 	export let tabLabelClass =
-		'inline-block bg-gray-50 p-2 rounded-t hover:text-gray-600 hover:bg-gray-50 dark:hover:bg-gray-800 dark:hover:text-gray-300 focus:ring ';
+		'inline-block bg-gray-100 p-2 rounded-t hover:text-gray-600 hover:bg-gray-50 dark:hover:bg-gray-800 dark:hover:text-gray-300 focus:ring ';
 	export let tabContentClass =
 		'p-6 bg-gray-50 text-medium text-gray-500 dark:text-gray-400 dark:bg-gray-800 rounded w-full';
 	export let tabLabelStyle = '';

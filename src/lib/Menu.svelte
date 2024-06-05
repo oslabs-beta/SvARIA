@@ -7,9 +7,11 @@
 	export let buttonId = '';
 	export let buttonStyle = '';
 	export let buttonClass =
-		'bg-blue-500 hover:bg-blue-400 text-white font-bold py-2 px-4 border-b-4 border-blue-700 hover:border-blue-500 rounded';
+		'bg-teal-600 hover:bg-teal-500 text-teal-100 font-bold py-2 px-4 border-b-4 border-teal-700 hover:border-teal-500 rounded-sm';
 	export let listId = 'menu';
-	export let listClass = '';
+	// style the list
+	export let listClass =
+		'container flex-col max-w-sm bg-white border border-gray-300 shadow-md rounded-lg';
 	export let listStyle;
 
 	let showItems = false;
@@ -46,9 +48,9 @@
 		{buttonContent}
 	</button>
 	{#if showItems}
-		<ul id={listId} class={listClass} style={listStyle}>
+		<nav id={listId} class={listClass} style={listStyle}>
 			{#each items as item}
-				<li>
+				<div>
 					<button
 						role="menuitem"
 						id={item.linkID}
@@ -60,8 +62,16 @@
 						use:colorContrastCheck
 						>{item.label}
 					</button>
-				</li>
+				</div>
 			{/each}
-		</ul>
+		</nav>
 	{/if}
 </div>
+
+<style>
+	.linkClass,
+	button {
+		width: 100%;
+		max-width: 24rem;
+	}
+</style>
