@@ -1,18 +1,18 @@
-<script lang="js">
+<script lang="ts">
 	import { ariaLabelcheck, colorContrastCheck } from '../ARIAchecks.js';
 
-	export let content =
+	export let content: string =
 		'Edit style and content properties to edit check box. Run test() to check for compliance';
-	export let ariaLabel = `${content}, is unchecked`;
-	export let labelId;
-	export let inputId;
-	export let labelStyle = '';
-	export let inputStyle = '';
-	export let inputClass = 'w-4 h-4';
-	export let labelClass = 'ms-2 text-lg font-medium text-gray-900 dark:text-orange-300';
+	export let ariaLabel: string = `${content}, is unchecked`;
+	export let labelId: string;
+	export let inputId: string;
+	export let labelStyle: string = '';
+	export let inputStyle: string = '';
+	export let inputClass: string = 'w-4 h-4';
+	export let labelClass:string  = 'ms-2 text-lg font-medium text-gray-900 dark:text-orange-300';
 
 	// function for checking if its checked
-	function toggleCheck(e) {
+	function toggleCheck(e: Event & { target: EventTarget & HTMLInputElement}) {
 		const checked = e.target.checked;
 		checked ? (ariaLabel = `${content}, is checked`) : (ariaLabel = `${content}, is unchecked`);
 	}

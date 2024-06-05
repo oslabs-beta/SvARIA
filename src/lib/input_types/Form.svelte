@@ -1,22 +1,23 @@
-<script>
+<script lang="ts">
 	import { ariaLabelcheck, colorContrastCheck } from '../ARIAchecks.js';
-
 	import Button from '../Button.svelte';
+	import type { FormElementsObj } from '../../types.js';
 
-	export let method = 'POST';
-	export let formId = '';
-	export let submitForm = 'Submit';
-	export let submitButtonId = 'submit';
-	export let formElements = [
+	export let method: string = 'POST';
+	export let formId: string = '';
+	export let submitForm: string = 'Submit';
+	export let submitButtonId: string = 'submit';
+	export let formElements: FormElementsObj[] = [
 		{ name: 'address', type: 'input', labelValue: 'Address' },
 		{ name: 'firstName', type: 'input', labelValue: 'First Name' },
 		{ name: 'password', type: 'password', labelValue: 'Password' }
 	];
-	export let ariaLabel = 'Form';
-	export let labelStyle = '';
-	export let inputStyle = '';
-	export let labelClass = '';
-	export let inputClass = '';
+	export let ariaLabel: string = 'Form';
+	export let labelStyle: string = '';
+	export let inputStyle: string = '';
+	export let labelClass: string = '';
+	export let inputClass: string = '';
+
 	$: formElements = formElements.map((row) => {
 		if (!row['inputId']) {
 			row['inputId'] = row['name'];
@@ -40,7 +41,7 @@
 			class={labelClass}
 			use:ariaLabelcheck
 			use:colorContrastCheck
-c			aria-label={element.ariaLabel}>{element.labelValue}</label
+			aria-label={element.ariaLabel}>{element.labelValue}</label
 		>
 		<input
 			type={element.type}

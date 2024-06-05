@@ -94,6 +94,8 @@
 			tabLabelId: 'label-1'
 		}
 	];
+
+	let options = ['1', '2', '3']
 </script>
 
 <title>Our testing page</title>
@@ -107,8 +109,8 @@
 
 <div class="testDiv">
 	<RadioGroup options={options} id="radio" ariaLabel="Radio Selector"/>
-	<!-- your component goes here -->
-	<!-- <Button id="button" ariaLabel="test aria label" on:click={handleClick} content="Test button" />
+	your component goes here
+	<Button id="button" ariaLabel="test aria label" on:click={handleClick} content="Test button" />
 	<br />
 	<Checkbox
 		inputId="checkboxInput"

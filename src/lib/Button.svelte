@@ -1,11 +1,11 @@
-<script>
+<script lang="ts">
     import { ariaLabelcheck, colorContrastCheck } from './ARIAchecks.js'
-    export let content = 'This is a button'
-    export let ariaLabel= content;
-    export let id = ''
-    export let style = ''
-    export let className = 'button'
-    export let type =''
+    export let content: string = 'This is a button'
+    export let ariaLabel: string = content;
+    export let id: string = ''
+    export let style: string = ''
+    export let className: string = 'button'
+    export let type: string = ''
 </script>
 
     <style>
