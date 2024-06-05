@@ -33,7 +33,7 @@
 		<ul class={navListClass} id={id + '-ul'} style>
 			{#each routes as linkElem, i}
 				<a
-					href={linkElem.herf}
+					href={linkElem.href}
 					class={linkElem.linkClass}
 					id={id + '-link-' + i}
 					aria-label={`link to ${linkElem.name}`}
