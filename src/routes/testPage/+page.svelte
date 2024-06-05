@@ -152,6 +152,7 @@
 		buttonAriaLabel={'menu button'}
 		buttonStyle="background-color:orange; color:black"
 		listClass="text-gray-500"
+		buttonClass="bg-300-oragne text-color-black "
 	></Menu>
 </div>
 
