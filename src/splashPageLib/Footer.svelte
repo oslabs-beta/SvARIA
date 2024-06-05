@@ -40,7 +40,7 @@
     <div class='footer-container'>
         <ul class='footer'>
             <ul class='footerBlock' id='logo'>
-                <img class="min-w-[188px] h-[131px] w-[188px] -mt-8" alt="SvARIA Logo" src={logo} />
+                <img class="min-w-[250px] h-[125px] w-[250px]" alt="SvARIA Logo" src={logo} />
             </ul>
             <ul class='footerBlock' id='docs'>
                 <li><h5>Documentation</h5></li>
