@@ -47,7 +47,7 @@
 				{#if open}
 					<svg
 						id="icon"
-						class="w-3 h-3 rotate-180 shrink-0"
+						class="w-3 h-3 rotate-0 shrink-0"
 						aria-hidden="true"
 						fill="none"
 						viewBox="0 0 10 6"
@@ -63,7 +63,7 @@
 				{:else}
 					<svg
 						id="icon"
-						class="w-3 h-3 rotate-0 shrink-0"
+						class="w-3 h-3 rotate-180 shrink-0"
 						aria-hidden="true"
 						fill="none"
 						viewBox="0 0 10 6"

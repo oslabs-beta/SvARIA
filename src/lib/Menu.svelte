@@ -7,15 +7,13 @@
 	export let buttonId = '';
 	export let buttonStyle = '';
 	export let buttonClass =
-		'bg-teal-600 hover:bg-teal-500 text-teal-100 font-bold border-b-4 border-teal-700 hover:border-teal-500 rounded-sm w-full';
+		'bg-teal-600 hover:bg-teal-500 text-teal-100 font-bold border-b-4 border-teal-700 hover:border-teal-500 w-full rounded-none';
 	export let listId = 'menu';
 	// style the list
 	export let listClass =
-		'absolute min-w-[180px] p-3 bg-white border border-gray-300 shadow-md rounded-lg w-full';
+		'absolute min-w-[180px] p-3 bg-white border border-gray-300 shadow-md rounded-none w-full';
 	export let listStyle;
-	export let menuContainer = 'container w-sm';
-	items.linkClass =
-		'block w-full cursor-pointer select-none rounded-md px-3 pt-[9px] pb-2 text-start leading-tight';
+	export let menuContainer = 'container w-3/12';
 
 	let showItems = false;
 
@@ -70,6 +68,3 @@
 		</ul>
 	{/if}
 </div>
-
-<style>
-</style>

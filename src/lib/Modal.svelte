@@ -11,7 +11,7 @@
 	export let contentClass = 'mb-10';
 	export let contentId = 'modalContentId';
 	export let closeButtonId = 'closeModalButtonId';
-	export let closeButtonClass = 'closeModalButton';
+	export let closeButtonClass = 'bg-black text-white';
 	export let style = '';
 
 	let dialog; // HTMLDialogElement
@@ -32,6 +32,7 @@
 <!-- svelte-ignore a11y-click-events-have-key-events a11y-no-noninteractive-element-interactions -->
 
 <dialog
+	id={modalId}
 	{style}
 	bind:this={dialog}
 	on:close={() => {
