@@ -3,13 +3,16 @@
 	import Button from './Button.svelte';
 
 	export let showModal; // boolean
-	export let id;
+	export let modalId = '';
+	export let modalClass = 'bg-white rounded-lg shadow dark:bg-white-700 p-4 md:p-5 mb-3 space-y-4 ';
 	export let closeModalMessage = 'Close Modal';
-	export let modalHeaderId;
-	export let modalDescribeId;
+	export let modalHeaderId = 'modalHeader';
+	export let modalDescribeId = 'modalContent';
+	export let contentClass = 'mb-10';
+	export let contentId = 'modalContentId';
 	export let closeButtonId = 'closeModalButtonId';
-	export let closeButtonClassName = 'closeModalButton';
-	export let style='';
+	export let closeButtonClass = 'closeModalButton';
+	export let style = '';
 
 	let dialog; // HTMLDialogElement
 	$: if (dialog && showModal) dialog.showModal();
@@ -21,16 +24,17 @@
 	}
 
 	$: if (showModal) {
-		document.body.style.overflow = 'hidden';
-		//const modal = document.getElementById(modalId);
-		dialog.focus();
+		// document.body.style.overflowY = 'hidden';
+		// document.body.style.overflow = 'hidden';
+		const modal = document.getElementById(modalId);
+		modal.style.overflow = 'hidden';
+		// dialog.focus();
 	}
 </script>
 
 <!-- svelte-ignore a11y-click-events-have-key-events a11y-no-noninteractive-element-interactions -->
 
 <dialog
-	{id}
 	{style}
 	bind:this={dialog}
 	on:close={() => {
@@ -40,9 +44,12 @@
 	on:click|self={() => dialog.close()}
 	use:colorContrastCheck
 	on:keydown={handleKeyDown}
+	class={modalClass}
 >
 	<div
 		role="dialog"
+		class={contentClass}
+		id={contentId}
 		aria-modal="true"
 		aria-labelledby={modalHeaderId}
 		aria-describedby={modalDescribeId}
@@ -51,23 +58,28 @@
 	>
 		<slot name="header" />
 		<slot></slot>
-		<Button
-			on:click={() => {
-				showModal = false;
-				dialog.close();
-			}}
-			ariaLabel="Close Modal"
-			content={closeModalMessage}
-			id={closeButtonId}
-			className={closeButtonClassName}
-		></Button>
 	</div>
+
+	<Button
+		on:click={() => {
+			showModal = false;
+			dialog.close();
+		}}
+		ariaLabel="Close Modal"
+		content={closeModalMessage}
+		id={closeButtonId}
+		className={closeButtonClass}
+	></Button>
 </dialog>
 
 <style>
 	:global(.closeModalButton) {
-		color: blue;
-		height: 30px;
+		position: absolute;
+		max-height: 3em;
+		max-width: 3em;
+		bottom: 1em;
+		right: 1em;
+		left: 1em;
 		font-size: small;
 	}
 </style>

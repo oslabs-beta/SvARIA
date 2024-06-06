@@ -13,10 +13,10 @@
 		{ name: 'password', type: 'password', labelValue: 'Password' }
 	];
 	export let ariaLabel = 'Form';
-	export let labelStyle;
-	export let inputStyle;
-	export let labelClass;
-	export let inputClass;
+	export let labelStyle = '';
+	export let inputStyle = '';
+	export let labelClass = '';
+	export let inputClass = 'bg-gray-100';
 	$: formElements = formElements.map((row) => {
 		if (!row['inputId']) {
 			row['inputId'] = row['name'];
@@ -39,7 +39,9 @@
 			style={labelStyle}
 			class={labelClass}
 			use:ariaLabelcheck
-c			aria-label={element.ariaLabel}>{element.labelValue}</label
+			use:colorContrastCheck
+			c
+			aria-label={element.ariaLabel}>{element.labelValue}</label
 		>
 		<input
 			type={element.type}

@@ -1,13 +1,17 @@
 <!-- use this page to test out components with URL "/testPage" -->
 
 <script>
+	import RadioGroup from '$lib/RadioGroup.svelte';
 	import Checkbox from '$lib/input_types/Checkbox.svelte';
 	import Button from '../../lib/Button.svelte';
 	import Modal from '$lib/Modal.svelte';
+	import Form from '$lib/input_types/Form.svelte';
+	import Nav from '$lib/navigation/Navigation.svelte';
 	import Tab from '$lib/Tab.svelte';
 	import Tab1 from './tabsForTestPage/Tab1.svelte';
 	import Tab2 from './tabsForTestPage/Tab2.svelte';
-	import Form from '$lib/input_types/Form.svelte';
+	import Menu from '$lib/Menu.svelte';
+
 	function handleClick() {
 		console.log('button clicked');
 	}
@@ -30,20 +34,60 @@
 		}
 	];
 
+	let menuItems = [
+		{
+			label: 'purple',
+			onClick: function click() {
+				window.location.href = 'https://en.wikipedia.org/wiki/Purple';
+			},
+			linkStyle: 'color: black; background-color: orange'
+		},
+		{
+			label: 'blue',
+			onClick: function click() {
+				alert(items[1].label);
+			}
+		},
+		{
+			label: 'yellow',
+			onClick: function click() {
+				alert(items[2].label);
+			}
+		},
+		{
+			label: 'green',
+			onClick: function click() {
+				window.location.href = 'https://en.wikipedia.org/wiki/Greene';
+			}
+		}
+	];
+
+	let navElem = [
+		{
+			href: 'https://github.com/oslabs-beta/SvARIA/tree/dev',
+			name: "SvARIA's git repo",
+			linkStyle: 'color: yellow',
+			linkClass: 'Class 1'
+		},
+		{
+			href: 'https://github.com/oslabs-beta/SvARIA/tree/dev',
+			name: "SvARIA's second test",
+			linkClass: 'text-2xl text-orange-500'
+		}
+	];
+
 	function onSubmit(e) {
 		console.log(e.target.firstName.value);
 	}
 	let tabItems = [
 		{
 			label: 'Content',
-			value: 0,
 			component: Tab1,
 			tabContentId: 'test-0'
 			//  tabLabelId,
 		},
 		{
 			label: 'Interactions',
-			value: 1,
 			component: Tab2,
 			tabContentId: 'test-1',
 			tabLabelId: 'label-1'
@@ -53,7 +97,17 @@
 
 <title>Our testing page</title>
 
-<div class="testDiv">
+<Nav heading="welcome to the test page!" routes={navElem} id="newID">
+	<img
+		src="https://www.wfla.com/wp-content/uploads/sites/71/2023/05/GettyImages-1389862392.jpg?w=2560&h=1440&crop=1"
+		alt="a cat"
+		class="h-16 w-16 object-cover rounded-full"
+	/>
+</Nav>
+
+<!-- <div class="testDiv">
+	<RadioGroup {options} id="radio" ariaLabel="Radio Selector" /> -->
+<div>
 	<!-- your component goes here -->
 	<Button id="button" ariaLabel="test aria label" on:click={handleClick} content="Test button" />
 	<br />
@@ -72,7 +126,7 @@
 	></Button>
 	<Modal
 		bind:showModal
-		id="modal"
+		modalId="modal"
 		modalHeaderId="modalHeader"
 		modalDescribeId="dialoginfo"
 		closeModalMessage="X"
@@ -89,11 +143,21 @@
 		formId="form"
 		ariaLabel="User Information Form"
 	/>
-	<Tab items={tabItems} tabLabelClass='tabLabel' tabContentClass='tabContent'></Tab>
+
+	<Tab items={tabItems}></Tab>
+	<Menu
+		items={menuItems}
+		buttonContent={'Menu button'}
+		buttonId="menuButton"
+		buttonAriaLabel={'menu button'}
+		buttonStyle="background-color:orange; color:black"
+		listClass="text-gray-500"
+		buttonClass="bg-300-oragne text-color-black "
+	></Menu>
 </div>
 
 <style>
-	:global(#button) {
+	/* :global(#button) {
 		color: white;
 		background-color: black;
 	}
@@ -103,17 +167,17 @@
 	}
 	:global(#checkboxInput) {
 		accent-color: purple;
-	}
-	:global(#openModal) {
+	} */
+	/* :global(#openModal) {
 		font-size: smaller;
 		background-color: #003d3d;
 		color: aquamarine;
-	}
-	:global(#modal) {
+	} */
+	/* :global(#modal) {
 		background-color: #003d3d;
 		color: #b3b351;
-	}
-	:global(#close) {
+	} */
+	/* :global(#close) {
 		background-color: black;
 		color: white;
 	}
@@ -135,18 +199,5 @@
 	:global(#labeluserName) {
 		font-size: large;
 		background-color: blue;
-	}
-	:global(.tabLabel) {
-		color: black;
-		background-color: bisque;
-	}
-	:global(.tabContent) {
-		color: white;
-		background-color: black;
-		margin-bottom: 10px;
-		padding: 40px;
-		border: 1px solid #dee2e6;
-		border-radius: 0 0 0.5rem 0.5rem;
-		border-top: 0;
-	}
+	} */
 </style>

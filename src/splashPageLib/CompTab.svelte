@@ -1,0 +1,51 @@
+<!-- This is where the tab with the components/code/sandbox live -->
+<script>
+	import SectionWrapper from './SectionWrapper.svelte';
+	import ButtonTab from './ComponentDemos/ButtonTabs/ButtonTab.svelte';
+	import ModalTab from './ComponentDemos/ModalTabs/ModalTab.svelte';
+	import CheckboxTab from './ComponentDemos/CheckboxTabs/CheckboxTab.svelte';
+</script>
+
+<SectionWrapper id="CompTab">
+	<div
+		class="flex flex-col gap-5 sm:gap-10 md:gap-15 flex-1 items-center justify-center pb-10 md:pb-14"
+	>
+		<div class="flex flex-col gap-2">
+			<h6
+				class="text-4xl sm:text-5xl md:text-6xl max-w-[1000px] mx-auto w-full font-semibold text-center"
+			>
+				Components
+			</h6>
+		</div>
+		<h7 class="text-2xl sm:text-3xl md:text-4xl max-w-[1000px] mx-auto w-full text-center">
+			Welcome to the SvARIA Playground
+			<p
+				class="text-xl sm:text-2xl md:text-3xl max-w-[1000px] mx-auto w-full italic font-light text-center"
+			>
+				<br />
+				Select your component and toggle the tabs to experience <br />a demo, obtain code, read the
+				docs, or play around in the sandbox.
+			</p>
+			<br /><br />
+			<div>
+				<!-- <h3>Components</h3> -->
+					<div class="lib-display">
+						<h3>Button Component</h3>
+						<div class="component"></div>
+						<ButtonTab />
+					</div>
+
+					<div class="lib-display">
+						<h3>Modal Component</h3>
+						<div class="component"></div>
+						<ModalTab />
+					</div>
+					<div class="lib-display">
+						<h3>Modal Component</h3>
+						<div class="component"></div>
+						<CheckboxTab />
+					</div>
+			</div>
+		</h7>
+	</div></SectionWrapper
+>
