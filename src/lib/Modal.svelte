@@ -24,10 +24,7 @@
 	}
 
 	$: if (showModal) {
-		// document.body.style.overflowY = 'hidden';
 		document.body.style.overflow = 'hidden';
-		// const modal = document.getElementById(modalId);
-		// modal.style.overflow = 'hidden';
 		dialog.focus();
 	}
 </script>
