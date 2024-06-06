@@ -110,14 +110,6 @@ Pass the properties **heading** and **routes** your data:
 <NavBar heading='this is my page heading' routes={[{herf:route1, name:linktopage1} {herf:route2, name:linktopage2}]}>
 ```
 
-## Set type of Navigation: (otional)
-
-To utalize a drop down panel in place of links in the NavBar pass the props dropDown a truthy value.
-
-```JS
- <NavBar dropDown={true}>
-```
-
 ## Default Settings:
 
 Each element in our components comes with a set of properties to make sure they are come ARIA complient. The default values are as listed below and can be edited by the developer to best suit their needs.
@@ -187,6 +179,8 @@ import Checkbox from 'SvARIA'
 ```JS
 <Checkbox content='The label for this check box'>
 ```
+
+<!-- add a picture -->
 
 ### aria-label
 
