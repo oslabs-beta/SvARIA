@@ -7,12 +7,15 @@
 	export let buttonId = '';
 	export let buttonStyle = '';
 	export let buttonClass =
-		'bg-teal-600 hover:bg-teal-500 text-teal-100 font-bold py-2 px-4 border-b-4 border-teal-700 hover:border-teal-500 rounded-sm';
+		'bg-teal-600 hover:bg-teal-500 text-teal-100 font-bold border-b-4 border-teal-700 hover:border-teal-500 rounded-sm w-full';
 	export let listId = 'menu';
 	// style the list
 	export let listClass =
-		'container flex-col max-w-sm bg-white border border-gray-300 shadow-md rounded-lg';
+		'absolute min-w-[180px] p-3 bg-white border border-gray-300 shadow-md rounded-lg w-full';
 	export let listStyle;
+	export let menuContainer = 'container w-sm';
+	items.linkClass =
+		'block w-full cursor-pointer select-none rounded-md px-3 pt-[9px] pb-2 text-start leading-tight';
 
 	let showItems = false;
 
@@ -31,7 +34,7 @@
 	}
 </script>
 
-<div>
+<div class={menuContainer}>
 	<button
 		type="button"
 		aria-haspopup="menu"
@@ -48,7 +51,7 @@
 		{buttonContent}
 	</button>
 	{#if showItems}
-		<nav id={listId} class={listClass} style={listStyle}>
+		<ul id={listId} class={listClass} style={listStyle}>
 			{#each items as item}
 				<div>
 					<button
@@ -56,7 +59,7 @@
 						id={item.linkID}
 						on:click={item.onClick}
 						aria-label={item.label}
-						class={item.linkClass}
+						class="block w-full cursor-pointer select-none rounded-md px-3 pt-[9px] pb-2 text-start leading-tight"
 						style={item.linkStyle}
 						use:ariaLabelcheck
 						use:colorContrastCheck
@@ -64,14 +67,9 @@
 					</button>
 				</div>
 			{/each}
-		</nav>
+		</ul>
 	{/if}
 </div>
 
 <style>
-	.linkClass,
-	button {
-		width: 100%;
-		max-width: 24rem;
-	}
 </style>
