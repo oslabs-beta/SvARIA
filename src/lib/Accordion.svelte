@@ -16,7 +16,7 @@
 	export let buttonClass = 'bg-gray-700 text-white hover:bg-gray-500 rounded-none w-full';
 	export let buttonId = `accordion-${heading}-id`;
 	export let contentContainerClass = 'bg-gray-200';
-	export let contentContainerId = ' ';
+	export let contentContainerId = `${heading}-content`;
 	export let role = 'h3';
 </script>
 
