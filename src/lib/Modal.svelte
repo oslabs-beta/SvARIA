@@ -55,7 +55,7 @@
 		on:keypress|stopPropagation
 	>
 		<slot name="header" />
-		<slot></slot>
+		<slot name="content"></slot>
 	</div>
 
 	<Button

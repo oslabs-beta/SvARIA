@@ -4,10 +4,10 @@
 	export let buttonContent = 'Menu';
 	export let items = [];
 	export let buttonAriaLabel = buttonContent;
-	export let buttonId = '';
+	export let buttonId = buttonContent;
 	export let buttonStyle = '';
 	export let buttonClass =
-		'bg-teal-600 hover:bg-teal-500 text-teal-100 font-bold border-b-4 border-teal-700 hover:border-teal-500 w-full rounded-none';
+		'bg-teal-800 hover:bg-teal-500 text-white font-bold border-b-4 border-teal-700 hover:border-teal-500 w-full rounded-none';
 	export let listId = 'menu';
 	// style the list
 	export let listClass =
