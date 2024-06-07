@@ -1,3 +1,8 @@
+<!--
+	NEXT LEVEL:
+	[] have functionality for if the panal cant be collapsed and aria-disabled set to tru
+-->
+
 <script>
 	import { colorContrastCheck } from './ARIAchecks.js';
 	export let heading = 'svARIA accordion component';
@@ -12,9 +17,10 @@
 	export let buttonId = `accordion-${heading}-id`;
 	export let contentContainerClass = 'bg-gray-200';
 	export let contentContainerId = ' ';
+	export let role = 'h3';
 </script>
 
-<h3>
+<div {role}>
 	<button
 		aria-controls={contentContainerId}
 		aria-expanded={open}
@@ -67,7 +73,7 @@
 			{/if}
 		</span>
 	</button>
-</h3>
+</div>
 
 {#if open}
 	<div
