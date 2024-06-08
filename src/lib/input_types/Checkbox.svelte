@@ -9,7 +9,8 @@
 	export let labelStyle = '';
 	export let inputStyle = '';
 	export let inputClass = 'w-4 h-4';
-	export let labelClass  = 'ms-2 text-lg font-medium text-gray-900 dark:text-orange-300';
+	// i took out the dark more text style because we arent styling on a dark background... so its hard to test
+	export let labelClass = 'ms-2 text-lg font-medium text-gray-900';
 
 	// function for checking if its checked
 	function toggleCheck(e) {

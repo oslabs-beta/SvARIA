@@ -15,8 +15,7 @@
 	export let labelStyle = '';
 	export let inputStyle = '';
 	export let labelClass = '';
-	export let inputClass = '';
-
+	export let inputClass = 'bg-gray-100';
 	$: formElements = formElements.map((row) => {
 		if (!row['inputId']) {
 			row['inputId'] = row['name'];

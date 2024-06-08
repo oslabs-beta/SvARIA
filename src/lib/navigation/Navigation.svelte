@@ -26,7 +26,7 @@
 				{heading}
 			</h2>
 		{/if}
-		<slot></slot>
+		<slot name="headingPlus"></slot>
 	</div>
 	{#if routes}
 		<ul class={navListClass} id={id + '-ul'} style={navListStyle}>
