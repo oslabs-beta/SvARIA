@@ -29,3 +29,10 @@ export type MenuItems = {
     linkClass: string,
     onClick: () => void,
 }
+
+export type TabItems = {
+    label: string,
+    component: ,
+    tabContentId: string,
+    tabLabelId: string
+}

@@ -200,7 +200,7 @@
 		<!-- should this be a slot? -->
 		<p id="dialoginfo">{catIpsum}</p>
 	</Modal>
-	<!-- <Form
+	<Form
 		{formElements}
 		on:submit={onSubmit}
 		submitForm="svaria rules"
@@ -209,8 +209,8 @@
 		ariaLabel="User Information Form"
 	/>
 
-	<Tab items={tabItems}></Tab> -->
-	<!-- <Menu
+	<Tab items={tabItems}></Tab>
+	<Menu
 		items={menuItems}
 		buttonContent={'Menu button'}
 		buttonId="menuButton"
@@ -226,21 +226,21 @@
 		<Accordion heading="Another One"
 			><p slot="content">
 				{catIpsum}
-			</p></Accordion
-		>
-		<Accordion heading="cat"
-			><img
+			</p>
+		</Accordion>
+		<Accordion heading="cat">
+			<img
 				slot="content"
 				src="https://www.wfla.com/wp-content/uploads/sites/71/2023/05/GettyImages-1389862392.jpg?w=2560&h=1440&crop=1"
 				alt="a cat"
-				class="h-16 w-16 object-cover rounded-full"
-			/></Accordion
+				class="h-16 w-16 object-cover rounded-full"/>
+		</Accordion
 		>
 	</div>
 </div>
 
 <style>
-	/* :global(#button) {
+	:global(#button) {
 		color: white;
 		background-color: black;
 	}
@@ -250,17 +250,17 @@
 	}
 	:global(#checkboxInput) {
 		accent-color: purple;
-	} */
-	/* :global(#openModal) {
+	}
+	:global(#openModal) {
 		font-size: smaller;
 		background-color: #003d3d;
 		color: aquamarine;
-	} */
-	/* :global(#modal) {
+	}
+	:global(#modal) {
 		background-color: #003d3d;
 		color: #b3b351;
-	} */
-	/* :global(#close) {
+	}
+	:global(#close) {
 		background-color: black;
 		color: white;
 	}
@@ -282,5 +282,5 @@
 	:global(#labeluserName) {
 		font-size: large;
 		background-color: blue;
-	} */
+	}
 </style>
