@@ -1,6 +1,6 @@
 <script>
     import { ariaLabelcheck, colorContrastCheck } from './ARIAchecks.js'
-    import { writable } from 'svelte/store';
+
     export let options;
     export let ariaLabel;
     export let id = '';
@@ -12,7 +12,7 @@
 <div use:ariaLabelcheck={2} use:colorContrastCheck {id} aria-label={ariaLabel} class={className} {style} {options}>
     {#each options as option, index}
     <label class='radioItem'>
-        <input type="radio" bind:group={selectedOption} value={option} id={`radio-`+index} role="radio" aria-checked={selectedOption === option} tabindex={index + 1}>
+        <input type="radio" bind:group={selectedOption} value={option} id={`radio-`+index} aria-checked={selectedOption === option} tabindex={index + 1}>
         {option}
     </label>
     {/each}

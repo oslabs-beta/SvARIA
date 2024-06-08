@@ -12,3 +12,20 @@ export type FormElementsObj = {
 export interface CustomDivAttributes extends HTMLAttributes<HTMLDivElement> {
   heading?: string;
 }
+
+export type Routes = {
+    href: string,
+    name: string,
+    linkStyle: string,
+    linkClass: string
+}
+
+export type ButtonType = 'button' | "reset" | 'submit';
+
+export type MenuItems = {
+    label: string,
+    linkStyle: string,
+    linkID: string,
+    linkClass: string,
+    onClick: () => void,
+}

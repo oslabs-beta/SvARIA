@@ -1,17 +1,17 @@
-<script lang='js'>
+<script lang='ts'>
 	import { ariaLabelcheck, colorContrastCheck } from './ARIAchecks.js';
 	import Button from './Button.svelte';
 
-	export let showModal; // boolean
-	export let modalId = '';
-	export let modalClass = 'bg-white rounded-lg shadow dark:bg-white-700 p-4 md:p-5 space-y-4'
+	export let showModal: boolean; // boolean
+	export let modalId: string = '';
+	export let modalClass: string = 'bg-white rounded-lg shadow dark:bg-white-700 p-4 md:p-5 space-y-4'
 	//export let modalClass = ''
-	export let closeModalMessage = 'Close Modal';
-	export let modalHeaderId = 'modalHeader';
-	export let modalDescribeId = 'modalContent';
-	export let closeButtonId = 'closeModalButtonId';
-	export let closeButtonClass = 'closeModalButton';
-	export let style = '';
+	export let closeModalMessage: string = 'Close Modal';
+	export let modalHeaderId: string = 'modalHeader';
+	export let modalDescribeId: string = 'modalContent';
+	export let closeButtonId: string = 'closeModalButtonId';
+	export let closeButtonClass: string = 'closeModalButton';
+	export let style: string = '';
 
 	let dialog; // HTMLDialogElement
 	$: if (dialog && showModal) dialog.showModal();

@@ -99,6 +99,13 @@
 </script>
 
 <title>Our testing page</title>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
 
 <Nav heading="welcome to the test page!" routes={navElem} id="newID">
 	<img
@@ -109,15 +116,14 @@
 
 <div class="testDiv">
 	<RadioGroup options={options} id="radio" ariaLabel="Radio Selector"/>
-	your component goes here
-	<Button id="button" ariaLabel="test aria label" on:click={handleClick} content="Test button" />
+	<Button id="button" ariaLabel="test aria label" on:click={handleClick} content="Test button" type="reset" />
 	<br />
-	<Checkbox
+	<!-- <Checkbox
 		inputId="checkboxInput"
 		labelId="checkboxLabel"
 		content="This is my checkbox"
 		on:click={handleCheck}
-	/>
+	/> -->
 	<br />
 	<Button
 		id="openModal"
@@ -136,7 +142,7 @@
 		<h3 id="modalHeader">Modal</h3>
 		<p id="dialoginfo">This is my modal content</p>
 	</Modal>
-	<Form
+	<!-- <Form
 		{formElements}
 		on:submit={onSubmit}
 		submitForm="svaria rules"
@@ -145,15 +151,15 @@
 		ariaLabel="User Information Form"
 	/>
 
-	<Tab items={tabItems}></Tab>
-	<Menu
+	<Tab items={tabItems}></Tab> -->
+	<!-- <Menu
 		items={menuItems}
 		buttonContent={'Menu button'}
 		buttonId="menuButton"
 		buttonAriaLabel={'menu button'}
 		buttonStyle="background-color:orange; color:black"
 		listClass='text-gray-500'
-	></Menu>
+	></Menu> -->
 </div>
 
 <style>
