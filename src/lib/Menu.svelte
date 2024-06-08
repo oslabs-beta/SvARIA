@@ -4,13 +4,16 @@
 	export let buttonContent = 'Menu';
 	export let items = [];
 	export let buttonAriaLabel = buttonContent;
-	export let buttonId = '';
+	export let buttonId = buttonContent;
 	export let buttonStyle = '';
 	export let buttonClass =
-		'bg-blue-500 hover:bg-blue-400 text-white font-bold py-2 px-4 border-b-4 border-blue-700 hover:border-blue-500 rounded';
+		'bg-teal-800 hover:bg-teal-500 text-white font-bold border-b-4 border-teal-700 hover:border-teal-500 w-full rounded-none';
 	export let listId = 'menu';
-	export let listClass = '';
+	// style the list
+	export let listClass =
+		'absolute min-w-[180px] p-3 bg-white border border-gray-300 shadow-md rounded-none w-full';
 	export let listStyle;
+	export let menuContainer = 'container w-3/12';
 
 	let showItems = false;
 
@@ -29,7 +32,7 @@
 	}
 </script>
 
-<div>
+<div class={menuContainer}>
 	<button
 		type="button"
 		aria-haspopup="menu"
@@ -48,19 +51,19 @@
 	{#if showItems}
 		<ul id={listId} class={listClass} style={listStyle}>
 			{#each items as item}
-				<li>
+				<div>
 					<button
 						role="menuitem"
 						id={item.linkID}
 						on:click={item.onClick}
 						aria-label={item.label}
-						class={item.linkClass}
+						class="block w-full cursor-pointer select-none rounded-md px-3 pt-[9px] pb-2 text-start leading-tight"
 						style={item.linkStyle}
 						use:ariaLabelcheck
 						use:colorContrastCheck
 						>{item.label}
 					</button>
-				</li>
+				</div>
 			{/each}
 		</ul>
 	{/if}
