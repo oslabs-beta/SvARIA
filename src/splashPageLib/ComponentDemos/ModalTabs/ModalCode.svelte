@@ -4,7 +4,7 @@
         <p>&nbsp &nbsp import 'Modal' from SvARIA;</p>
         <p>&nbsp &nbsp import 'Button' from SvARIA;</p>
         <br>
-        <p>&nbsp &nbsp let showModal = false; </p>
+        <p>&nbsp &nbsp let showModal; </p>
         {'</script>'}
     </div>
     <br />
@@ -41,7 +41,12 @@
     </p>
     <br>
     <p>
-        {'<!--'} Modal also has a 'style' property so can set in-line CSS styling if preferred e.g. style='color:
+        {'<!--'} The modal dialog also has a 'style' property so can set in-line CSS styling if preferred e.g. style='color:
+        white; background-color:black' {'-->'}
+    </p>
+    <br>
+    <p>
+        {'<!--'} The exit button on the modal also has a 'closeButtonStyle' property so can set in-line CSS styling if preferred e.g. style='color:
         white; background-color:black' {'-->'}
     </p>
     <br>

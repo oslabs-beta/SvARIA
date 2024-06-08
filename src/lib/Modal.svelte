@@ -2,7 +2,7 @@
 	import { ariaLabelcheck, colorContrastCheck } from './ARIAchecks.js';
 	import Button from './Button.svelte';
 
-	export let showModal; // boolean
+	export let showModal = false; // boolean
 	export let modalId='';
 	export let modalClass = 'bg-white rounded-lg shadow dark:bg-white-700 p-4 md:p-5 space-y-4'
 	//export let modalClass = ''
@@ -11,6 +11,8 @@
 	export let modalDescribeId = 'modalContent';
 	export let closeButtonId = 'closeModalButtonId';
 	export let closeButtonClass = 'closeModalButton';
+	export let closeButtonStyle = 'closeModalStyle';
+
 	export let style = '';
 
 	let dialog; // HTMLDialogElement
@@ -66,6 +68,7 @@
 			content={closeModalMessage}
 			id={closeButtonId}
 			className={closeButtonClass}
+			style={closeButtonStyle}
 		></Button>
 	</div>
 </dialog>

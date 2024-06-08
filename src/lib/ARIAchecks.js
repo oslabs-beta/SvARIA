@@ -17,13 +17,10 @@ export function ariaLabelcheck(curNode, parameters) {
 	}
 }
 
-export function colorContrastCheck(curNode, parameters) {
-	if (import.meta.env.VITE_SVARIA_MODE != 'debug') {
-		return;
-	}
+function getColors(curNode) {
 	const compStyles = window.getComputedStyle(curNode);
-	console.log('color: ', curNode.nodeName, curNode.id, compStyles.getPropertyValue("color"))
-	console.log('bg-color: ', curNode.nodeName, curNode.id,compStyles.getPropertyValue("background-color"))
+	// console.log('color: ', curNode.nodeName, curNode.id, compStyles.getPropertyValue("color"))
+	// console.log('bg-color: ', curNode.nodeName, curNode.id,compStyles.getPropertyValue("background-color"))
 
 	let backgroundColor = compStyles.getPropertyValue('background-color');
 
@@ -31,8 +28,8 @@ export function colorContrastCheck(curNode, parameters) {
 	//check parent for background color for up to 3 iterations
 	let parentNode = curNode.parentNode
 	while(backgroundColor == 'rgba(0, 0, 0, 0)' && iterations < 3){
-		console.log('parent node: ',parentNode.nodeName, 'parent node id:', parentNode.id)
-		console.log('parent color', window.getComputedStyle(parentNode).getPropertyValue("background-color"))
+		//console.log('parent node: ',parentNode.nodeName, 'parent node id:', parentNode.id)
+		//console.log('parent color', window.getComputedStyle(parentNode).getPropertyValue("background-color"))
 		const compStylesParent = window.getComputedStyle(parentNode)
 		backgroundColor = compStylesParent.getPropertyValue("background-color")
 		iterations++
@@ -48,32 +45,45 @@ export function colorContrastCheck(curNode, parameters) {
 	}
 
 	let forergroundColor = compStyles.getPropertyValue('color');
-	if (forergroundColor === backgroundColor) {
-		console.error(
-			`${curNode.nodeName}, with id of ${curNode.id}: Background and text colors do not meet contrast requirement, please adjust colors`
-		);
+	let parentBackgroundColor;
+	return ({backgroundColor, forergroundColor, parentBackgroundColor})
+
+}
+
+export function colorContrastCheck(curNode, parameters) {
+	if (import.meta.env.VITE_SVARIA_MODE != 'debug') {
 		return;
 	}
+	console.log(getColors(curNode))
+
+	// const { parentBackgroundColor, foregroundColor, backgroundColor } = getColors(curNode)
+
+	// if (foregroundColor === backgroundColor) {
+	// 	console.error(
+	// 		`${curNode.nodeName}, with id of ${curNode.id}: Background and text colors do not meet contrast requirement, please adjust colors`
+	// 	);
+	// 	return;
+	// }
 
 
-	fetch('https://www.aremycolorsaccessible.com/api/are-they', {
-		mode: 'cors',
-		method: 'POST',
-		body: JSON.stringify({ colors: [backgroundColor, forergroundColor] })
-	})
-		.then((response) => response.json())
-		.then((json) => {
-			//console.log(json)
-			if (json.overall == 'Yup') {
-				console.log(`${curNode.nodeName}, with id of ${curNode.id}: color contrast check passed`);
-			} else {
-				console.error(
-					`${curNode.nodeName}, with id of ${curNode.id}: Background and text colors do not meet contrast requirement, please adjust colors`
-				);
-				console.error(
-					`${curNode.nodeName}, with id of ${curNode.id}: BG: ${backgroundColor} FG: ${forergroundColor}`
-				);
-			}
-		});
+	// fetch('https://www.aremycolorsaccessible.com/api/are-they', {
+	// 	mode: 'cors',
+	// 	method: 'POST',
+	// 	body: JSON.stringify({ colors: [backgroundColor, forergroundColor] })
+	// })
+	// 	.then((response) => response.json())
+	// 	.then((json) => {
+	// 		//console.log(json)
+	// 		if (json.overall == 'Yup') {
+	// 			console.log(`${curNode.nodeName}, with id of ${curNode.id}: color contrast check passed`);
+	// 		} else {
+	// 			console.error(
+	// 				`${curNode.nodeName}, with id of ${curNode.id}: Background and text colors do not meet contrast requirement, please adjust colors`
+	// 			);
+	// 			console.error(
+	// 				`${curNode.nodeName}, with id of ${curNode.id}: BG: ${backgroundColor} FG: ${forergroundColor}`
+	// 			);
+	// 		}
+	// 	});
 	//console.log('class', curNode.attributes["class"])
 }

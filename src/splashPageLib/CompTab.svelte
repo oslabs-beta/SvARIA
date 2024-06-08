@@ -4,6 +4,8 @@
 	import ButtonTab from './ComponentDemos/ButtonTabs/ButtonTab.svelte';
 	import ModalTab from './ComponentDemos/ModalTabs/ModalTab.svelte';
 	import CheckboxTab from './ComponentDemos/CheckboxTabs/CheckboxTab.svelte';
+	import FormTab from './ComponentDemos/FormTabs/FormTab.svelte';
+
 </script>
 
 <SectionWrapper id="CompTab">
@@ -41,9 +43,14 @@
 						<ModalTab />
 					</div>
 					<div class="lib-display">
-						<h3>Modal Component</h3>
+						<h3>Checkbox Component</h3>
 						<div class="component"></div>
 						<CheckboxTab />
+					</div>
+					<div class="lib-display">
+						<h3>Form Component</h3>
+						<div class="component"></div>
+						<FormTab />
 					</div>
 			</div>
 		</h7>

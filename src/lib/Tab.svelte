@@ -6,7 +6,7 @@
 	export let tabContentClass = 'p-6 bg-gray-50 text-medium text-gray-500 dark:text-gray-400 dark:bg-gray-800 rounded-lg w-full';
 	export let tabLabelStyle = '';
 	export let tabContentStyle = '';
-	export let tabListClass = "flex flex-wrap"
+	export let tabListClass = "flex flex-wrap";
     import { ariaLabelcheck, colorContrastCheck } from './ARIAchecks.js';
 
 
@@ -67,6 +67,7 @@
 				class={tabLabelClass}
 				style={tabLabelStyle}
                 use:colorContrastCheck
+				on:click
 				>{item.label}
 			</button>
 		</li>

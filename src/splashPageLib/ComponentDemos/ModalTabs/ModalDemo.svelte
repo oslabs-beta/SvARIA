@@ -2,7 +2,7 @@
 	import Modal from '$lib/Modal.svelte';
 	import Button from '$lib/Button.svelte';
 
-	let showModal = false;
+	let showModal;
 </script>
 
 <Button

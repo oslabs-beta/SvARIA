@@ -2,7 +2,7 @@
 	import Checkbox from '$lib/input_types/Checkbox.svelte';
 
     function handleCheck() {
-        alert('checkbox selected')
+        alert('checkbox clicked')
     }
 </script>
 

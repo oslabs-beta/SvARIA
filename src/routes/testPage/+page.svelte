@@ -19,7 +19,9 @@
 	function handleCheck() {
 		console.log('checkbox checked');
 	}
-	let showModal = false;
+	let showModal;
+
+	let options =['red', 'yellow', 'green']
 
 	let formElements = [
 		{ name: 'address', type: 'input', labelValue: 'New Address' },
@@ -108,7 +110,7 @@
 <div class="testDiv">
 	<RadioGroup options={options} id="radio" ariaLabel="Radio Selector"/>
 	<!-- your component goes here -->
-	<!-- <Button id="button" ariaLabel="test aria label" on:click={handleClick} content="Test button" />
+	<!-- <Button id="button" ariaLabel="test aria label" on:click={handleClick} content="Test button" /> -->
 	<br />
 	<Checkbox
 		inputId="checkboxInput"
@@ -137,10 +139,12 @@
 	<Form
 		{formElements}
 		on:submit={onSubmit}
-		submitForm="svaria rules"
+		submitFormContent="svaria rules"
 		submitButtonId="submitButton11"
 		formId="form"
 		ariaLabel="User Information Form"
+		formClass = 'block text-gray-700 text-sm font-bold mb-2'
+		submitButtonClass = 'bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded inline-flex items-center'
 	/>
 
 	<Tab items={tabItems}></Tab>
@@ -179,11 +183,6 @@
 		background-color: black;
 		color: white;
 	}
-	:global(#submitButton11) {
-		color: white;
-		background-color: black;
-		font-size: small;
-	}
 
 	:global(#form) {
 		background-color: white;
@@ -198,4 +197,4 @@
 		font-size: large;
 		background-color: blue;
 	}
-</style>
+</style> 
