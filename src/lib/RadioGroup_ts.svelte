@@ -1,15 +1,15 @@
-<script>
+<script lang='ts'>
     import { ariaLabelcheck, colorContrastCheck } from './ARIAchecks.js'
 
-    export let options;
-    export let ariaLabel;
-    export let id = '';
-    export let style = '';
-    export let className = 'radio-group'
-    export let selectedOption;
+    export let options: string[];
+    export let ariaLabel: string;
+    export let id: string = '';
+    export let style: string = '';
+    export let className: string = 'radio-group'
+    export let selectedOption: string;
 </script>
 
-<div use:ariaLabelcheck={2} use:colorContrastCheck {id} aria-label={ariaLabel} class={className} {style} {options}>
+<div use:ariaLabelcheck={2} use:colorContrastCheck {id} aria-label={ariaLabel} class={className} {style}>
     {#each options as option, index}
     <label class='radioItem'>
         <input type="radio" bind:group={selectedOption} value={option} id={`radio-`+index} aria-checked={selectedOption === option} tabindex={index + 1}>

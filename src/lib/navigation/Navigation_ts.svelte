@@ -1,14 +1,15 @@
-<script lang="js">
+<script lang="ts">
 	import { colorContrastCheck, ariaLabelcheck } from '../ARIAchecks.js';
-	export let heading = null;
-	export let routes = null;
-	export let id = 'navBar';
-	export let style = '';
-	export let containerStyle = '';
-	export let navListStyle = '';
-	export let navBarClass = 'sv-navagation';
-	export let navHeadingClass = '';
-	export let navListClass = '';
+	import type { Routes } from '../../types.ts'
+	export let heading: string = null;
+	export let routes: Routes[] = null;
+	export let id: string = 'navBar';
+	export let style: string = '';
+	export let containerStyle: string = '';
+	export let navListStyle: string = '';
+	export let navBarClass: string = 'sv-navagation';
+	export let navHeadingClass: string = '';
+	export let navListClass: string = '';
 </script>
 
 <div
@@ -26,7 +27,7 @@
 				{heading}
 			</h2>
 		{/if}
-		<slot name="headingPlus"></slot>
+		<slot></slot>
 	</div>
 	{#if routes}
 		<ul class={navListClass} id={id + '-ul'} style={navListStyle}>
