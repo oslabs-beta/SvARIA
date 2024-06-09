@@ -1,21 +1,21 @@
-<script>
-	export let items = [];
-	export let activeTabValue = 0;
-	export let itemComponents = [];
-	export let tabLabelClass =
+<script lang='ts'>
+	export let items: [] = [];
+	export let activeTabValue: number = 0;
+	export let itemComponents: [] = [];
+	export let tabLabelClass: string =
 		'inline-block bg-gray-100 p-2 rounded-t hover:text-gray-600 hover:bg-gray-50 dark:hover:bg-gray-800 dark:hover:text-gray-300 focus:ring ';
-	export let tabContentClass =
+	export let tabContentClass: string =
 		'p-6 bg-gray-50 text-medium text-gray-500 dark:text-gray-400 dark:bg-gray-800 rounded w-full';
-	export let tabLabelStyle = '';
-	export let tabContentStyle = '';
-	export let tabListClass = "flex flex-wrap";
-    import { ariaLabelcheck, colorContrastCheck } from './ARIAchecks.js';
+	export let tabLabelStyle: string = '';
+	export let tabContentStyle: string = '';
+	export let tabListClass: string = 'flex flex-wrap';
+	import { ariaLabelcheck, colorContrastCheck } from './ARIAchecks.js';
 
-	const handleClick = (tabValue) => () => {
+	const handleClick = (tabValue: number) => ():void => {
 		activeTabValue = tabValue;
 	};
 
-	function handleKeyPress(e, tabValue) {
+	function handleKeyPress(e, tabValue: number) {
 		// Move right
 		if (e.key === 'ArrowRight' || e.key === 'ArrowLeft') {
 			if (e.key === 'ArrowRight') {
@@ -65,8 +65,7 @@
 				on:keydown={(e) => handleKeyPress(e, item.value)}
 				class={tabLabelClass}
 				style={tabLabelStyle}
-                use:colorContrastCheck
-				on:click
+				use:colorContrastCheck
 				>{item.label}
 			</button>
 		</li>
@@ -86,24 +85,3 @@
 		<svelte:component this={item.component} />
 	</div>
 {/each}
-
-<!-- <style>
-	.box {
-		margin-bottom: 10px;
-		padding: 40px;
-		border: 1px solid #dee2e6;
-		border-radius: 0 0 0.5rem 0.5rem;
-		border-top: 0;
-	}
-	ul {
-		display: flex;
-		flex-wrap: wrap;
-		padding-left: 0;
-		margin-bottom: 0;
-		list-style: none;
-		border-bottom: 1px solid #dee2e6;
-	}
-	li {
-		margin-bottom: -1px;
-	}
-</style> -->

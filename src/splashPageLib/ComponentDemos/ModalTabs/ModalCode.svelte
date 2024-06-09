@@ -27,17 +27,19 @@
     <p>&nbsp &nbsp closeButtonId="close"</p>
     <p>&nbsp &nbsp closeButtonClass="bg-white hover:bg-gray-100 text-gray-800 font-semibold py-1 px-2 border border-gray-400 rounded shadow"</p>
     <p>{'>'}</p>
-    <p>&nbsp &nbsp {'<h3 id="modalHeader" class="text-xl font-semibold text-gray-900 dark:text-white">Modal Opened</h3>'}</p>
-    <p>&nbsp &nbsp {'<p id="dialoginfo" class="text-base text-lg leading-relaxed text-gray-500 dark:text-white">'}</p>
-        <p>&nbsp &nbsp &nbsp &nbsp You have successfully opened the modal</p>
-    <p>&nbsp &nbsp {'</p>'}</p>
-    <p>&nbsp &nbsp {'<p id="dialoginfo" class="text-base text-lg leading-relaxed text-red-500 dark:text-red-400">'}</p>
-        <p>&nbsp &nbsp &nbsp &nbsp Now you can close the modal below</p>
-    <p>&nbsp &nbsp {'</p>'}</p>
+    <p>&nbsp &nbsp {'<h3 slot="header" id="modalHeader" class="text-xl font-semibold text-gray-900 dark:text-white">Modal Opened</h3>'}</p>
+    <p>&nbsp &nbsp {'<div> slot="content"'}</p>
+    <p>&nbsp &nbsp &nbsp &nbsp {'<p id="dialoginfo" class="text-base text-lg leading-relaxed text-gray-500 dark:text-white">'}</p>
+        <p>&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp You have successfully opened the modal</p>
+    <p>&nbsp &nbsp &nbsp &nbsp{'</p>'}</p>
+    <p>&nbsp &nbsp &nbsp &nbsp {'<p id="dialoginfo" class="text-base text-lg leading-relaxed text-red-500 dark:text-red-400">'}</p>
+        <p>&nbsp &nbsp &nbsp &nbsp&nbsp &nbsp Now you can close the modal below</p>
+    <p>&nbsp &nbsp &nbsp &nbsp {'</p>'}</p>
+    <p>&nbsp &nbsp {'</div>'}</p>
     <p>{'</Modal>'}</p>
     <br>
     <p>
-        {'<!--'} Please note that if separate styling is added to individual components in the modal our ARIA check functions will not run on those {'-->'}
+        {'<!--'} Please note that for elements used within the modal dialog slots, our ARIA check functions will not run on those but these functions can be imported and added as a 'use:colorContrastCheck' or 'use:ariaLabel' {'(if an aria-label is needed for that component)'} {'-->'}
     </p>
     <br>
     <p>

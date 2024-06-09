@@ -1,35 +1,33 @@
-<script lang="js">
+<script lang="ts">
 	import { colorContrastCheck, ariaLabelcheck } from '../ARIAchecks.js';
-	export let ariaLabel = null;
-	export let routes = null;
-	export let id = 'navBar';
-	export let style = '';
-	export let headerContainerStyle = '';
-	export let navBarClass = 'sv-navagation';
-	export let navHeadingClass = '';
-	export let navListClass = '';
-	export let navListStyle = '';
+	import type { Routes } from '../../types.ts'
+	export let heading: string = null;
+	export let routes: Routes[] = null;
+	export let id: string = 'navBar';
+	export let style: string = '';
+	export let containerStyle: string = '';
+	export let navListStyle: string = '';
+	export let navBarClass: string = 'sv-navagation';
+	export let navHeadingClass: string = '';
+	export let navListClass: string = '';
 </script>
-
-<!-- It was previouslt aria-lable = heading but I thought ariaLabel made more sense for an aria-label variable -->
 
 <div
 	role="navigation"
 	class={navBarClass}
-	aria-label={ariaLabel} 
+	aria-label={heading}
 	{id}
 	{style}
 	use:colorContrastCheck
 	use:ariaLabelcheck
 >
-	<div aria-label="header container" class={navHeadingClass} id={id + '-headercontainer'} style={headerContainerStyle}>
-		<!-- Do we need this h2 below since we now have the slot? -->
-		<!-- {#if ariaLabel}
+	<div aria-label="container" class={navHeadingClass} id={id + '-container'} style={containerStyle}>
+		{#if heading}
 			<h2 use:colorContrastCheck>
-				{ariaLabel}
+				{heading}
 			</h2>
-		{/if} -->
-		<slot name="headingPlus"></slot>
+		{/if}
+		<slot></slot>
 	</div>
 	{#if routes}
 		<ul class={navListClass} id={id + '-ul'} style={navListStyle}>

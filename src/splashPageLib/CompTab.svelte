@@ -1,11 +1,23 @@
 <!-- This is where the tab with the components/code/sandbox live -->
-<script>
+<script lang="js">
 	import SectionWrapper from './SectionWrapper.svelte';
 	import ButtonTab from './ComponentDemos/ButtonTabs/ButtonTab.svelte';
 	import ModalTab from './ComponentDemos/ModalTabs/ModalTab.svelte';
 	import CheckboxTab from './ComponentDemos/CheckboxTabs/CheckboxTab.svelte';
 	import FormTab from './ComponentDemos/FormTabs/FormTab.svelte';
+	import NavBarTab from './ComponentDemos/NavBarTabs/NavBarTab.svelte';
 
+	import Accordion from '$lib/Accordion.svelte';
+	import Button from '$lib/Button.svelte';
+	import AccordionGroup from '$lib/AccordionGroup.svelte';
+
+	const accordions = [
+		{ name: 'Button', heading: 'Button Component', slot: ButtonTab },
+		{ name: 'Modal', heading: 'Modal Component', slot: ModalTab },
+		{ name: 'Accordion', heading: 'Checkbox Component', slot: CheckboxTab },
+		{ name: 'Accordion', heading: 'Form Component', slot: FormTab },
+		{ name: 'Accordion', heading: 'NavBar Component', slot: NavBarTab }
+	];
 </script>
 
 <SectionWrapper id="CompTab">
@@ -29,30 +41,7 @@
 				docs, or play around in the sandbox.
 			</p>
 			<br /><br />
-			<div>
-				<!-- <h3>Components</h3> -->
-					<div class="lib-display">
-						<h3>Button Component</h3>
-						<div class="component"></div>
-						<ButtonTab />
-					</div>
-
-					<div class="lib-display">
-						<h3>Modal Component</h3>
-						<div class="component"></div>
-						<ModalTab />
-					</div>
-					<div class="lib-display">
-						<h3>Checkbox Component</h3>
-						<div class="component"></div>
-						<CheckboxTab />
-					</div>
-					<div class="lib-display">
-						<h3>Form Component</h3>
-						<div class="component"></div>
-						<FormTab />
-					</div>
-			</div>
+			<AccordionGroup group={accordions} ariaLabel="Component Accordion"></AccordionGroup>
 		</h7>
-	</div></SectionWrapper
->
+	</div>
+</SectionWrapper>

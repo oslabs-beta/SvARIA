@@ -1,6 +1,5 @@
-<script>
+<script lang='js'>
 	import { ariaLabelcheck, colorContrastCheck } from '../ARIAchecks.js';
-
 	import Button from '../Button.svelte';
 
 	export let method = 'POST';
@@ -38,7 +37,7 @@
 			class={element.labelClass}
 			use:ariaLabelcheck
 			use:colorContrastCheck
-c			aria-label={element.ariaLabel}>{element.labelValue}</label
+			aria-label={element.ariaLabel}>{element.labelValue}</label
 		>
 		<input
 			type={element.type}

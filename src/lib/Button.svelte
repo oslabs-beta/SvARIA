@@ -1,22 +1,21 @@
-<script>
-    import { ariaLabelcheck, colorContrastCheck } from './ARIAchecks.js'
-    export let content = 'This is a button'
-    export let ariaLabel= content;
-    export let id = ''
-    export let style = ''
-    export let className = 'button'
-    export let type =''
+<script lng='js'>
+	import { ariaLabelcheck, colorContrastCheck, parentColorContrastCheck } from './ARIAchecks.js';
+	export let content = 'Hi';
+	export let ariaLabel = content
+	export let id;
+	export let style = '';
+	export let className = 'bg-black text-white text-bold hover:bg-gray-700';
+	export let type = '';
 </script>
 
-    <style>
-        :global(.button) {
-            color:#570000;
-            background-color: #E6E6E6;
-            height: 40px;
-            width: 100px;
-            border-radius: 7%;
-            font-size: large;
-        }
-    </style>
-
-    <button use:ariaLabelcheck={2} use:colorContrastCheck {id} aria-label={ariaLabel} class={className} on:click {style} {type}>{content}</button>
+<button
+	use:ariaLabelcheck={2}
+	use:colorContrastCheck
+	use:parentColorContrastCheck
+	{id}
+	aria-label={ariaLabel}
+	class={className}
+	on:click
+	{style}
+	{type}>{content}</button
+>

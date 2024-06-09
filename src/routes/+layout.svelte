@@ -40,8 +40,11 @@
             <button on:click={() => reroute('#CompTab')} class="border-none outline-none p-2 group duration-200 cursor-pointer text-left">
                 <p class="duration-200 group-hover:pl-2 poppins text-3xl font-semibold ">Components <i class="fa-solid fa-chevron-right text-xl pl-4"/></p>
             </button>
+            <button on:click={() => reroute('https://github.com/oslabs-beta/SvARIA')} class="border-none outline-none p-2 group duration-200 cursor-pointer text-left">
+                <p class="duration-200 group-hover:pl-2 poppins text-3xl font-semibold ">GitHub <i class="fa-solid fa-chevron-right text-xl pl-4"/></p>
+            </button>
             <button on:click={() => reroute('#GitHubFAQ')} class="border-none outline-none p-2 group duration-200 cursor-pointer text-left">
-                <p class="duration-200 group-hover:pl-2 poppins text-3xl font-semibold ">GitHub/FAQ <i class="fa-solid fa-chevron-right text-xl pl-4"/></p>
+                <p class="duration-200 group-hover:pl-2 poppins text-3xl font-semibold ">FAQ <i class="fa-solid fa-chevron-right text-xl pl-4"/></p>
             </button>
         </div>
     </div>
