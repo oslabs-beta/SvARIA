@@ -1,12 +1,13 @@
 <script>
     import { ariaLabelcheck, colorContrastCheck } from './ARIAchecks.js'
 
-    export let options;
-    export let ariaLabel;
+    export let options=[];
+    export let ariaLabel='radiogroup';
     export let id = '';
     export let style = '';
     export let className = 'radio-group'
-    export let selectedOption;
+    export let selectedOption = '';
+
 </script>
 
 <div use:ariaLabelcheck={2} use:colorContrastCheck {id} aria-label={ariaLabel} class={className} {style} {options}>

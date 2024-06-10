@@ -1,4 +1,4 @@
-<script lang='js'>
+<!-- <script lang='js'>
 	import { ariaLabelcheck, colorContrastCheck } from '../ARIAchecks.js';
 
 	export let content =
@@ -8,15 +8,18 @@
 	export let inputId;
 	export let labelStyle = '';
 	export let inputStyle = '';
+	export let checked;
 	export let inputClass = 'w-4 h-4';
 	// i took out the dark more text style because we arent styling on a dark background... so its hard to test
 	export let labelClass = 'ms-2 text-lg font-medium text-gray-900';
 
 	// function for checking if its checked
 	function toggleCheck(e) {
-		const checked = e.target.checked;
+		checked = e.target.checked;
 		checked ? (ariaLabel = `${content}, is checked`) : (ariaLabel = `${content}, is unchecked`);
 	}
+	$: checked ? (ariaLabel = `${content}, is checked`) : (ariaLabel = `${content}, is unchecked`);
+
 </script>
 
 <div>
@@ -24,11 +27,11 @@
 		class={inputClass}
 		type="checkbox"
 		aria-label={`checkbox for, ${content}`}
-		on:click={toggleCheck}
-		on:click
 		id={inputId}
+		on:click={toggleCheck}
 		use:ariaLabelcheck
 		style={inputStyle}
+		bind={checked}
 	/>
 
 	<label
@@ -42,4 +45,35 @@
 	>
 		{content}
 	</label>
+</div> -->
+
+<script>
+	import { ariaLabelcheck, colorContrastCheck } from '../ARIAchecks.js';
+
+    export let options=[];
+    export let ariaLabel='radiogroup';
+    export let id = '';
+    export let style = '';
+    export let className = 'radio-group'
+    export let selectedOption = '';
+
+</script>
+
+<div use:ariaLabelcheck={2} use:colorContrastCheck {id} aria-label={ariaLabel} class={className} {style} {options}>
+    {#each options as option, index}
+    <label class='radioItem'>
+        <input type="checkbox" bind:group={selectedOption} value={option} id={`radio-`+index} aria-checked={selectedOption === option} tabindex={index + 1}>
+        {option}
+    </label>
+    {/each}
 </div>
+
+<style>
+    .radio-group {
+        display: flex;
+        flex-direction: column;
+    }
+    input[type="radio"] {
+        margin-right: 5px;
+    }
+</style>

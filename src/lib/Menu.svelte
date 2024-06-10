@@ -6,14 +6,17 @@
 	export let buttonAriaLabel = buttonContent;
 	export let buttonId = buttonContent;
 	export let buttonStyle = '';
-	export let buttonClass =
+	export let buttonClass = ''
 		'bg-teal-800 hover:bg-teal-500 text-white font-bold border-b-4 border-teal-700 hover:border-teal-500 w-full rounded-none';
 	export let listId = 'menu';
 	// style the list
 	export let listClass =
 		'absolute min-w-[180px] p-3 bg-white border border-gray-300 shadow-md rounded-none w-full';
-	export let listStyle;
-	export let menuContainer = 'container w-3/12';
+	export let listStyle = '';
+	export let menuContainerClass = 'container w-3/12';
+	export let menuContainerStyle = ''
+	export let menuContainerId = ''
+
 
 	let showItems = false;
 
@@ -32,7 +35,7 @@
 	}
 </script>
 
-<div class={menuContainer}>
+<div class={menuContainerClass} style={menuContainerStyle} id={menuContainerId}> 
 	<button
 		type="button"
 		aria-haspopup="menu"
@@ -56,8 +59,8 @@
 						role="menuitem"
 						id={item.linkID}
 						on:click={item.onClick}
+						class={item.linkClass}
 						aria-label={item.label}
-						class="block w-full cursor-pointer select-none rounded-md px-3 pt-[9px] pb-2 text-start leading-tight"
 						style={item.linkStyle}
 						use:ariaLabelcheck
 						use:colorContrastCheck

@@ -101,9 +101,13 @@ function checkColors(curNode, foregroundColor, backgroundColor, isParent) {
 			//console.log(json)
 			if (json.overall == 'Yup') {
 				console.log(`${curNode.nodeName}${parentString}, with id of ${curNode.id}: color contrast check passed`);
-			} else {
+			} 
+			else if (json.overall == 'Kinda') {
+				console.warn(`${curNode.nodeName}${parentString}, with id of ${curNode.id}: Background and foreground colors contrast colors can be improved`);
+			} 
+			else {
 				console.error(
-					`${curNode.nodeName}${parentString}, with id of ${curNode.id}: Background and text colors do not meet contrast requirement, please adjust colors`
+					`${curNode.nodeName}${parentString}, with id of ${curNode.id}: Background and foreground colors do not meet contrast requirement, please adjust colors`
 				);
 				// console.error(
 				// 	`${curNode.nodeName}${parentString}, with id of ${curNode.id}: BG: ${backgroundColor} FG: ${foregroundColor}`

@@ -6,6 +6,9 @@
 	import CheckboxTab from './ComponentDemos/CheckboxTabs/CheckboxTab.svelte';
 	import FormTab from './ComponentDemos/FormTabs/FormTab.svelte';
 	import NavBarTab from './ComponentDemos/NavBarTabs/NavBarTab.svelte';
+	import MenuTab from './ComponentDemos/MenuTabs/MenuTab.svelte';
+	import RadioGroupTab from './ComponentDemos/RadioGroupTabs/RadioGroupTab.svelte';
+
 
 	import Accordion from '$lib/Accordion.svelte';
 	import Button from '$lib/Button.svelte';
@@ -16,7 +19,9 @@
 		{ name: 'Modal', heading: 'Modal Component', slot: ModalTab },
 		{ name: 'Accordion', heading: 'Checkbox Component', slot: CheckboxTab },
 		{ name: 'Accordion', heading: 'Form Component', slot: FormTab },
-		{ name: 'Accordion', heading: 'NavBar Component', slot: NavBarTab }
+		{ name: 'Accordion', heading: 'NavBar Component', slot: NavBarTab },
+		{ name: 'Accordion', heading: 'Menu Component', slot: MenuTab },
+		{ name: 'Accordion', heading: 'RadioGroup Component', slot: RadioGroupTab }
 	];
 </script>
 
