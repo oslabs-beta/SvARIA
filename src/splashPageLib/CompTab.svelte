@@ -32,7 +32,7 @@
 				docs, or play around in the sandbox.
 			</p>
 			<br /><br />
-			<AccordionGroup group={accordions} ariaLabel="Component Accordion" ></AccordionGroup>
+			<AccordionGroup group={accordions} ariaLabel="Component Accordion"></AccordionGroup>
 		</h7>
 	</div>
 </SectionWrapper>
