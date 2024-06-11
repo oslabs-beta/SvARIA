@@ -150,9 +150,18 @@
 			tabLabelId: 'label-1'
 		}
 	];
+
+	let options = ['1', '2', '3']
 </script>
 
 <title>Our testing page</title>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
 
 <Nav heading="welcome to the test page!" routes={navElem} id="newID">
 	<img
@@ -162,18 +171,16 @@
 	/>
 </Nav>
 
-<!-- <div class="testDiv">
-	<RadioGroup {options} id="radio" ariaLabel="Radio Selector" /> -->
-<div>
-	<!-- your component goes here -->
-	<Button id="button" ariaLabel="test aria label" on:click={handleClick} content="Test button" />
+<div class="testDiv">
+	<RadioGroup options={options} id="radio" ariaLabel="Radio Selector"/>
+	<Button id="button" ariaLabel="test aria label" on:click={handleClick} content="Test button" type="reset" />
 	<br />
-	<Checkbox
+	<!-- <Checkbox
 		inputId="checkboxInput"
 		labelId="checkboxLabel"
 		content="This is my checkbox"
 		on:click={handleCheck}
-	/>
+	/> -->
 	<br />
 	<Button
 		id="openModal"
@@ -219,21 +226,21 @@
 		<Accordion heading="Another One"
 			><p slot="content">
 				{catIpsum}
-			</p></Accordion
-		>
-		<Accordion heading="cat"
-			><img
+			</p>
+		</Accordion>
+		<Accordion heading="cat">
+			<img
 				slot="content"
 				src="https://www.wfla.com/wp-content/uploads/sites/71/2023/05/GettyImages-1389862392.jpg?w=2560&h=1440&crop=1"
 				alt="a cat"
-				class="h-16 w-16 object-cover rounded-full"
-			/></Accordion
+				class="h-16 w-16 object-cover rounded-full"/>
+		</Accordion
 		>
 	</div>
 </div>
 
 <style>
-	/* :global(#button) {
+	:global(#button) {
 		color: white;
 		background-color: black;
 	}
@@ -243,17 +250,17 @@
 	}
 	:global(#checkboxInput) {
 		accent-color: purple;
-	} */
-	/* :global(#openModal) {
+	}
+	:global(#openModal) {
 		font-size: smaller;
 		background-color: #003d3d;
 		color: aquamarine;
-	} */
-	/* :global(#modal) {
+	}
+	:global(#modal) {
 		background-color: #003d3d;
 		color: #b3b351;
-	} */
-	/* :global(#close) {
+	}
+	:global(#close) {
 		background-color: black;
 		color: white;
 	}
@@ -275,5 +282,5 @@
 	:global(#labeluserName) {
 		font-size: large;
 		background-color: blue;
-	} */
+	}
 </style>

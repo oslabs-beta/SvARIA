@@ -1,7 +1,7 @@
-<script>
+<script lng='js'>
 	import { ariaLabelcheck, colorContrastCheck } from './ARIAchecks.js';
 	export let content = 'Hi';
-	export let ariaLabel;
+	export let ariaLabel = content
 	export let id;
 	export let style = '';
 	export let className = 'bg-black text-white text-bold hover:bg-gray-700';

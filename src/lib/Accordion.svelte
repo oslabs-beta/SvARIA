@@ -1,6 +1,6 @@
 <!--
 	NEXT LEVEL:
-	[] have functionality for if the panal cant be collapsed and aria-disabled set to tru
+	[] have functionality for if the panel cant be collapsed and aria-disabled set to tru
 -->
 
 <script>
@@ -29,6 +29,7 @@
 		class={buttonClass}
 		id={buttonId}
 	>
+
 		<span class={headingContainerClass}>
 			<span class={headingClass}>{heading}</span>
 			{#if open}
