@@ -152,7 +152,16 @@
 		}
 	];
 
-	let options = ['1', '2', '3']
+	let options = 		[{
+			label: 'Button',
+		},
+		{
+			label: 'NavBar',
+		},
+		{
+			label: 'Modal',
+		}]
+		let selectedOption = []
 </script>
 
 <title>Our testing page</title>
@@ -173,7 +182,8 @@
 </Nav>
 
 <div class="testDiv">
-	<RadioGroup options={options} id="radio" ariaLabel="Radio Selector"/>
+<RadioGroup options={options} id="radio" ariaLabel="Radio Selector" bind:selectedOption
+	/>
 	<!-- your component goes here -->
 	<!-- <Button id="button" ariaLabel="test aria label" on:click={handleClick} content="Test button" /> -->
 	<br />

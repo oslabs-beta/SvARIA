@@ -18,11 +18,20 @@
 <!-- labelStyle='color:orange' -->
 
 <script>
-	import  Checkbox  from '$lib/input_types/Checkbox.svelte';
+	import Checkbox from '$lib/input_types/Checkbox.svelte';
 
-	let radioGroupOptions = ['Option 1', 'Option 2', 'Option 3'];
-    let selectedOption;
-    $: console.log("selected option", selectedOption)
+	let checkboxOptions = [
+		{ label: 'Subscribe for updates', inputClass: 'w-5 h-5 accent-emerald-500/25' },
+		{ label: 'Subscribe to listserv', inputClass: 'w-5 h-5 accent-emerald-500/25' },
+		{ label: 'Subscribe to newsletter', inputClass: 'w-5 h-5 accent-emerald-500/25' }
+	];
+	let selectedOption;
+	$: console.log(`selected option: ${selectedOption}`);
 </script>
 
-<Checkbox options={radioGroupOptions} bind:selectedOption id="radio" ariaLabel="Radio Selector" />
+<Checkbox
+	options={checkboxOptions}
+	bind:selectedOption
+	id="checkbox"
+	ariaLabel="checkbox options"
+/>
