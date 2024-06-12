@@ -3,7 +3,7 @@
 		{'<\script>'}
 		<p>&nbsp &nbsp import 'RadioGroup' from SvARIA;</p>
 		<br />
-		<p>&nbsp &nbsp let adioGroupOptions = {'['}</p>
+		<p>&nbsp &nbsp let radioGroupOptions = {'['}</p>
 		<p>&nbsp &nbsp &nbsp{'{'}</p>
 		<p>&nbsp &nbsp &nbsp &nbsp &nbsp label: 'Button',</p>
 		<p>
@@ -50,6 +50,10 @@
 		</p>
 		<p>&nbsp &nbsp &nbsp {'},'}</p>
 		<p>&nbsp &nbsp {'];'}</p>
+		<br />
+		<p>&nbsp &nbsp  let selectedOption;</p>
+		<p>&nbsp &nbsp  $: console.log('selected option', selectedOption);</p>
+		<br />
 		{'</script>'}
 	</div>
 	<br />
@@ -61,4 +65,28 @@
 <p>&nbsp &nbsp ariaLabel="Radio Selector"</p>
 <p>&nbsp &nbsp className="flex flex-col items-start mb-4 mx-96"</p>
 <p>{'/>'}</p>
+<br>
+<p>
+	{'<!--'} The RadioGroup component also has a 'style' property so can set in-line CSS styling if preferred e.g. style='color:
+	white; background-color:black' {'-->'}
+</p>
+<br>
+<p>
+	{'<!--'} If {'<style></style>'} tags are being used instead, the id or class must be declared globally as below: {'-->'}
+</p>
+<p>
+	{'<!--'} labelId, labelStyle, inputId, inputStyle can also be passed into the individual objects in the formElements array {'-->'}
+</p>
+<br>
+<p>
+	id for each individal radio input will be 'radio +' index of individual input in array for example in this case the id of the Button input will be radio-0
+</p>
+<br>
+<div>
+<p>{'<style>'}</p>
+	<p>&nbsp &nbsp {':global(#radio) {'}</p>
+	<p>&nbsp &nbsp {'color: white;'}</p>
+	<p>&nbsp &nbsp {'background-color: black;'}</p>
+<p>{'<\/style>'}</p>
+</div>
 </div>

@@ -15,13 +15,13 @@
 	import AccordionGroup from '$lib/AccordionGroup.svelte';
 
 	const accordions = [
-		{ name: 'Button', heading: 'Button Component', slot: ButtonTab },
-		{ name: 'Modal', heading: 'Modal Component', slot: ModalTab },
-		{ name: 'Accordion', heading: 'Checkbox Component', slot: CheckboxTab },
-		{ name: 'Accordion', heading: 'Form Component', slot: FormTab },
-		{ name: 'Accordion', heading: 'NavBar Component', slot: NavBarTab },
-		{ name: 'Accordion', heading: 'Menu Component', slot: MenuTab },
-		{ name: 'Accordion', heading: 'RadioGroup Component', slot: RadioGroupTab }
+		{ name: 'Button', heading: 'Button Component', slot: ButtonTab, headingClass:'p-9' },
+		{ name: 'Modal', heading: 'Modal Component', slot: ModalTab, headingClass:'p-9' },
+		{ name: 'Accordion', heading: 'Checkbox Component', slot: CheckboxTab, headingClass:'p-9' },
+		{ name: 'Accordion', heading: 'Form Component', slot: FormTab, headingClass:'p-9' },
+		{ name: 'Accordion', heading: 'NavBar Component', slot: NavBarTab, headingClass:'p-9' },
+		{ name: 'Accordion', heading: 'Menu Component', slot: MenuTab, headingClass:'p-9' },
+		{ name: 'Accordion', heading: 'RadioGroup Component', slot: RadioGroupTab, headingClass:'p-9' }
 	];
 </script>
 

@@ -7,9 +7,9 @@ export function ariaLabelcheck(curNode, parameters) {
 	//console.log(curNode.attributes)
 	//console.log('current node', curNode.nodeName)
 
-	if (curNode.attributes['aria-label']) {
-		console.log(`${curNode.nodeName}, with id of ${curNode.id}: check passed: aria-label present`);
-	}
+	// if (curNode.attributes['aria-label']) {
+	// 	console.log(`${curNode.nodeName}, with id of ${curNode.id}: check passed: aria-label present`);
+	// }
 	if (!curNode.attributes['aria-label']) {
 		console.warn(
 			`${curNode.nodeName}, with id of ${curNode.id}: This type of element requires a property called an aria-label. Please add one`
@@ -37,7 +37,7 @@ function getColors(curNode) {
 	}
 
 	if (backgroundColor == 'rgba(0, 0, 0, 0)') {
-		console.log('No background color found defaulting to white');
+		//console.log('No background color found defaulting to white');
 		backgroundColor = 'rgb(255, 255, 255)';
 	}
 
@@ -55,7 +55,7 @@ function getColors(curNode) {
 	}
 
 	if (parentBackgroundColor == 'rgba(0, 0, 0, 0)') {
-		console.log('No parent background color found setting to null');
+		//console.log('No parent background color found setting to null');
 		parentBackgroundColor = null
 	}
 
@@ -100,12 +100,12 @@ function checkColors(curNode, foregroundColor, backgroundColor, isParent) {
 		.then((json) => {
 			//console.log(json)
 			if (json.overall == 'Yup') {
-				console.log(`${curNode.nodeName}${parentString}, with id of ${curNode.id}: color contrast check passed`);
+				// console.log(`${curNode.nodeName}${parentString}, with id of ${curNode.id}: color contrast check passed`);
 			} 
 			else if (json.overall == 'Kinda') {
 				console.warn(`${curNode.nodeName}${parentString}, with id of ${curNode.id}: Background and foreground colors contrast colors can be improved`);
 			} 
-			else {
+			else  {
 				console.error(
 					`${curNode.nodeName}${parentString}, with id of ${curNode.id}: Background and foreground colors do not meet contrast requirement, please adjust colors`
 				);

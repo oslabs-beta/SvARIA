@@ -1,16 +1,16 @@
 <script lang="ts">
 	import { ariaLabelcheck, colorContrastCheck } from './ARIAchecks.js';
 	import type { MenuItems } from '../types.ts'
-	export let buttonContent: string = 'Menu';
+	export let buttonContent: string|undefined = 'Menu';
 	export let items: MenuItems[] = [];
-	export let buttonAriaLabel: string = buttonContent;
-	export let buttonId: string = '';
-	export let buttonStyle: string = '';
-	export let buttonClass: string =
+	export let buttonAriaLabel: string|undefined = buttonContent;
+	export let buttonId: string|undefined = '';
+	export let buttonStyle: string|undefined = '';
+	export let buttonClass: string|undefined =
 		'bg-blue-500 hover:bg-blue-400 text-white font-bold py-2 px-4 border-b-4 border-blue-700 hover:border-blue-500 rounded';
-	export let listId: string = 'menu';
-	export let listClass: string = '';
-	export let listStyle: string;
+	export let listId: string|undefined = 'menu';
+	export let listClass: string|undefined = '';
+	export let listStyle: string|undefined = '';
 
 	let showItems = false;
 
