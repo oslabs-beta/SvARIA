@@ -32,16 +32,14 @@
 	<p>&nbsp &nbsp on:click={'{'}handleClick{'}'}</p>
 	<p>{'/>'}</p>
 	<br />
-	<br />
 	<p>{'<!--'} Button also has a 'type' property so can set type='submit' for example {'-->'}</p>
 	<br />
 	<p>
 		{'<!--'} Button also has a 'style' property so can set in-line CSS styling if preferred e.g. style='color:
 		white; background-color:black' {'-->'}
 	</p>
+	<br>
 	<p>
-		<br>
-
 		{'<!--'} If {'<style></style>'} tags are being used instead, the id or class must be declared globally as below: {'-->'}
 	</p>
 	<div>

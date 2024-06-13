@@ -8,8 +8,8 @@
 		'p-6 bg-gray-50 text-medium text-gray-500 dark:text-gray-400 dark:bg-gray-800 rounded w-full';
 	export let tabLabelStyle = '';
 	export let tabContentStyle = '';
-	export let tabListClass = 'flex flex-wrap';
-	import { ariaLabelcheck, colorContrastCheck } from './ARIAchecks.js';
+	export let tabListClass = "flex flex-wrap";
+    import { ariaLabelcheck, colorContrastCheck } from './ARIAchecks.js';
 
 	const handleClick = (tabValue) => () => {
 		activeTabValue = tabValue;
@@ -65,7 +65,8 @@
 				on:keydown={(e) => handleKeyPress(e, item.value)}
 				class={tabLabelClass}
 				style={tabLabelStyle}
-				use:colorContrastCheck
+                use:colorContrastCheck
+				on:click
 				>{item.label}
 			</button>
 		</li>

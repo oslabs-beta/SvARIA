@@ -1,28 +1,29 @@
 <script>
 	import Tab from '$lib/Tab.svelte';
-	import CheckboxDemoTab from './CheckboxDemo.svelte';
-	import CheckboxCodeTab from './CheckboxCode.svelte';
-	import CheckboxSandBoxTab from './CheckboxSandbox.svelte';
-	import CheckboxDocsTab from './CheckboxDocs.svelte';
+	import MenuDemoTab from './MenuDemo.svelte';
+	import MenuCodeTab from './MenuCode.svelte';
+	import MenuSandBoxTab from './MenuSandbox.svelte';
+	import MenuDocsTab from './MenuDocs.svelte';
 
 	let tabItems = [
 		{
 			label: 'Demo',
-			component: CheckboxDemoTab
+			component: MenuDemoTab
 		},
 		{
 			label: 'Code',
-			component: CheckboxCodeTab
+			component: MenuCodeTab
 		},
 		{
 			label: 'Sandbox',
-			component: CheckboxSandBoxTab
+			component: MenuSandBoxTab
 		},
 		{
 			label: 'Docs',
-			component: CheckboxDocsTab
+			component: MenuDocsTab
 		}
 	];
+
 </script>
 
 <Tab

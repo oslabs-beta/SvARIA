@@ -31,6 +31,7 @@
 		class={buttonClass}
 		id={buttonId}
 	>
+
 		<span class={headingContainerClass}>
 			<span class={headingClass}>{heading}</span>
 			{#if open}

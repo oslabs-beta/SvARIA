@@ -1,28 +1,29 @@
 <script>
 	import Tab from '$lib/Tab.svelte';
-	import CheckboxDemoTab from './CheckboxDemo.svelte';
-	import CheckboxCodeTab from './CheckboxCode.svelte';
-	import CheckboxSandBoxTab from './CheckboxSandbox.svelte';
-	import CheckboxDocsTab from './CheckboxDocs.svelte';
+	import RadioGroupDemoTab from './RadioGroupDemo.svelte';
+	import RadioGroupCodeTab from './RadioGroupCode.svelte';
+	import RadioGroupSandBoxTab from './RadioGroupSandbox.svelte';
+	import RadioGroupDocsTab from './RadioGroupDocs.svelte';
 
 	let tabItems = [
 		{
 			label: 'Demo',
-			component: CheckboxDemoTab
+			component: RadioGroupDemoTab
 		},
 		{
 			label: 'Code',
-			component: CheckboxCodeTab
+			component: RadioGroupCodeTab
 		},
 		{
 			label: 'Sandbox',
-			component: CheckboxSandBoxTab
+			component: RadioGroupSandBoxTab
 		},
 		{
 			label: 'Docs',
-			component: CheckboxDocsTab
+			component: RadioGroupDocsTab
 		}
 	];
+
 </script>
 
 <Tab

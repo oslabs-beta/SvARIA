@@ -1,31 +1,34 @@
 <script lang="js">
 	import { colorContrastCheck, ariaLabelcheck } from '../ARIAchecks.js';
-	export let heading = null;
+	export let ariaLabel = null;
 	export let routes = null;
 	export let id = 'navBar';
 	export let style = '';
-	export let containerStyle = '';
-	export let navListStyle = '';
+	export let headerContainerStyle = '';
 	export let navBarClass = 'sv-navagation';
 	export let navHeadingClass = '';
 	export let navListClass = '';
+	export let navListStyle = '';
 </script>
+
+<!-- It was previouslt aria-lable = heading but I thought ariaLabel made more sense for an aria-label variable -->
 
 <div
 	role="navigation"
 	class={navBarClass}
-	aria-label={heading}
+	aria-label={ariaLabel} 
 	{id}
 	{style}
 	use:colorContrastCheck
 	use:ariaLabelcheck
 >
-	<div aria-label="container" class={navHeadingClass} id={id + '-container'} style={containerStyle}>
-		{#if heading}
+	<div aria-label="header container" class={navHeadingClass} id={id + '-headercontainer'} style={headerContainerStyle}>
+		<!-- Do we need this h2 below since we now have the slot? -->
+		<!-- {#if ariaLabel}
 			<h2 use:colorContrastCheck>
-				{heading}
+				{ariaLabel}
 			</h2>
-		{/if}
+		{/if} -->
 		<slot name="headingPlus"></slot>
 	</div>
 	{#if routes}

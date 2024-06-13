@@ -1,5 +1,5 @@
-<script lang='js'>
-	import { ariaLabelcheck, colorContrastCheck } from './ARIAchecks.js';
+<script lng='js'>
+	import { ariaLabelcheck, colorContrastCheck, parentColorContrastCheck } from './ARIAchecks.js';
 	export let content = 'Hi';
 	export let ariaLabel = content
 	export let id;
@@ -11,6 +11,7 @@
 <button
 	use:ariaLabelcheck={2}
 	use:colorContrastCheck
+	use:parentColorContrastCheck
 	{id}
 	aria-label={ariaLabel}
 	class={className}

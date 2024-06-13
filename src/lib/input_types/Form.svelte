@@ -4,18 +4,16 @@
 
 	export let method = 'POST';
 	export let formId = '';
-	export let submitForm = 'Submit';
-	export let submitButtonId = 'submit';
-	export let formElements = [
-		{ name: 'address', type: 'input', labelValue: 'Address' },
-		{ name: 'firstName', type: 'input', labelValue: 'First Name' },
-		{ name: 'password', type: 'password', labelValue: 'Password' }
-	];
+	export let submitFormContent = 'Submit';
+	export let formElements = [];
 	export let ariaLabel = 'Form';
-	export let labelStyle = '';
-	export let inputStyle = '';
-	export let labelClass = '';
-	export let inputClass = 'bg-gray-100';
+	export let formClass = ''
+	export let formStyle = ''
+	export let submitButtonId = 'submit';
+	export let submitButtonClass = ''
+	export let submitButtonStyle = ''
+
+
 	$: formElements = formElements.map((row) => {
 		if (!row['inputId']) {
 			row['inputId'] = row['name'];
@@ -30,13 +28,13 @@
 	});
 </script>
 
-<form {method} on:submit|preventDefault id={formId} aria-label={ariaLabel} use:ariaLabelcheck>
+<form {method} on:submit|preventDefault id={formId} aria-label={ariaLabel} class={formClass} style={formStyle} use:ariaLabelcheck>
 	{#each formElements as element}
 		<label
 			id={element.labelId}
 			for={element.inputId}
-			style={labelStyle}
-			class={labelClass}
+			style={element.labelStyle}
+			class={element.labelClass}
 			use:ariaLabelcheck
 			use:colorContrastCheck
 			aria-label={element.ariaLabel}>{element.labelValue}</label
@@ -46,11 +44,11 @@
 			name={element.name}
 			aria-label={`input box for, ${element.labelValue}`}
 			id={element.inputId}
-			style={inputStyle}
-			class={inputClass}
+			style={element.inputStyle}
+			class={element.inputClass}
 			use:ariaLabelcheck
 			use:colorContrastCheck
 		/>
 	{/each}
-	<Button type="submit" ariaLabel="Submit Button" id={submitButtonId} content={submitForm} />
+	<Button type="submit" ariaLabel="Submit Button" id={submitButtonId} content={submitFormContent} className={submitButtonClass} style={submitButtonStyle} />
 </form>

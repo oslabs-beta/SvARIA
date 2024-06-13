@@ -23,11 +23,11 @@ export type Routes = {
 export type ButtonType = 'button' | "reset" | 'submit';
 
 export type MenuItems = {
-    label: string,
-    linkStyle: string,
-    linkID: string,
-    linkClass: string,
-    onClick: () => void,
+    label?: string,
+    linkStyle?: string,
+    linkID?: string,
+    linkClass?: string,
+    onClick?: () => void,
 }
 
 export type TabItems = {
