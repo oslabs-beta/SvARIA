@@ -1,14 +1,28 @@
 <!-- This is where the tab with the components/code/sandbox live -->
-<script lang='js'>
+<script lang="js">
 	import SectionWrapper from './SectionWrapper.svelte';
 	import ButtonTab from './ComponentDemos/ButtonTabs/ButtonTab.svelte';
 	import ModalTab from './ComponentDemos/ModalTabs/ModalTab.svelte';
 	import CheckboxTab from './ComponentDemos/CheckboxTabs/CheckboxTab.svelte';
+	import FormTab from './ComponentDemos/FormTabs/FormTab.svelte';
+	import NavBarTab from './ComponentDemos/NavBarTabs/NavBarTab.svelte';
+	import MenuTab from './ComponentDemos/MenuTabs/MenuTab.svelte';
+	import RadioGroupTab from './ComponentDemos/RadioGroupTabs/RadioGroupTab.svelte';
+
+
 	import Accordion from '$lib/Accordion.svelte';
 	import Button from '$lib/Button.svelte';
 	import AccordionGroup from '$lib/AccordionGroup.svelte';
 
-	const accordions = [{name: 'Button', heading: 'Button Component', slot: ButtonTab}, {name: 'Modal', heading: 'Modal Component', slot: ModalTab}, {name: 'Accordion', heading: 'Checkbox Component', slot: CheckboxTab}]
+	const accordions = [
+		{ name: 'Button', heading: 'Button Component', slot: ButtonTab, headingClass:'p-9' },
+		{ name: 'Modal', heading: 'Modal Component', slot: ModalTab, headingClass:'p-9' },
+		{ name: 'Accordion', heading: 'Checkbox Component', slot: CheckboxTab, headingClass:'p-9' },
+		{ name: 'Accordion', heading: 'Form Component', slot: FormTab, headingClass:'p-9' },
+		{ name: 'Accordion', heading: 'NavBar Component', slot: NavBarTab, headingClass:'p-9' },
+		{ name: 'Accordion', heading: 'Menu Component', slot: MenuTab, headingClass:'p-9' },
+		{ name: 'Accordion', heading: 'RadioGroup Component', slot: RadioGroupTab, headingClass:'p-9' }
+	];
 </script>
 
 <SectionWrapper id="CompTab">

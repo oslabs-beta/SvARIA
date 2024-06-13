@@ -1,8 +1,9 @@
 <script>
 	import Modal from '$lib/Modal.svelte';
 	import Button from '$lib/Button.svelte';
+	import { colorContrastCheck } from '$lib/ARIAchecks.js';
 
-	let showModal = false;
+	let showModal;
 </script>
 
 <Button
@@ -23,12 +24,20 @@
 	closeButtonId="close"
 	closeButtonClass="bg-white hover:bg-gray-100 text-gray-800 font-semibold py-1 px-2 border border-gray-400 rounded shadow"
 >
-	<h3 id="modalHeader" class="text-xl font-semibold text-gray-900 dark:text-white">Modal Opened</h3>
-	<p id="dialoginfo" class="text-base text-lg leading-relaxed text-gray-500 dark:text-white">
-		You have successfully opened the modal
-	</p>
-	<p id="dialoginfo" class="text-base text-lg leading-relaxed text-red-500 dark:text-red-400">
-		Now you can close the modal below
-	</p>
+	<h3
+		id="modalHeader"
+		class="text-xl font-semibold text-gray-900 dark:text-white"
+		slot="header"
+		use:colorContrastCheck
+	>
+		Modal Opened
+	</h3>
+	<div slot="content">
+		<p id="dialoginfo" class="text-base text-lg leading-relaxed text-gray-500 dark:text-white" use:colorContrastCheck>
+			You have successfully opened the modal
+		</p>
+		<p id="dialoginfo" class="text-base text-lg leading-relaxed text-red-500 dark:text-red-400" use:colorContrastCheck>
+			Now you can close the modal below
+		</p>
+	</div>
 </Modal>
-

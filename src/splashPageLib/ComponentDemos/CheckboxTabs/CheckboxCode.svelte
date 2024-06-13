@@ -3,7 +3,7 @@
 	<p>&nbsp &nbsp import 'Checkbox' from SvARIA;</p>
 	<br />
 	<p>&nbsp &nbsp function handleCheck() {'{'}</p>
-	<p>&nbsp &nbsp &nbsp &nbsp alert('checkbox checked');</p>
+	<p>&nbsp &nbsp &nbsp &nbsp alert('checkbox clicked');</p>
 	<p>&nbsp &nbsp {'}'}</p>
 	{'</script>'}
 	<br />

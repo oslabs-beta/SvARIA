@@ -76,7 +76,7 @@
 	function handleCheck() {
 		console.log('checkbox checked');
 	}
-	let showModal = false;
+	let showModal;
 
 	let formElements = [
 		{ name: 'address', type: 'input', labelValue: 'New Address' },
@@ -102,13 +102,14 @@
 		{
 			label: 'blue',
 			onClick: function click() {
-				alert(items[1].label);
-			}
+				alert(menuItems[1].label);
+			},
+			linkClass: 'text-2xl text-orange-500'
 		},
 		{
 			label: 'yellow',
 			onClick: function click() {
-				alert(items[2].label);
+				alert(menuItems[2].label);
 			}
 		},
 		{
@@ -151,7 +152,16 @@
 		}
 	];
 
-	let options = ['1', '2', '3']
+	let options = 		[{
+			label: 'Button',
+		},
+		{
+			label: 'NavBar',
+		},
+		{
+			label: 'Modal',
+		}]
+		let selectedOption = []
 </script>
 
 <title>Our testing page</title>
@@ -172,8 +182,10 @@
 </Nav>
 
 <div class="testDiv">
-	<RadioGroup options={options} id="radio" ariaLabel="Radio Selector"/>
-	<Button id="button" ariaLabel="test aria label" on:click={handleClick} content="Test button" type="reset" />
+<RadioGroup options={options} id="radio" ariaLabel="Radio Selector" bind:selectedOption
+	/>
+	<!-- your component goes here -->
+	<!-- <Button id="button" ariaLabel="test aria label" on:click={handleClick} content="Test button" /> -->
 	<br />
 	<!-- <Checkbox
 		inputId="checkboxInput"
@@ -196,17 +208,19 @@
 		closeModalMessage="X"
 		closeButtonId="close"
 	>
-		<h3 id="modalHeader">Modal</h3>
+		<h3 id="modalHeader" slot='header'>Modal</h3>
 		<!-- should this be a slot? -->
-		<p id="dialoginfo">{catIpsum}</p>
+		<p id="dialoginfo" slot='content'>{catIpsum}</p>
 	</Modal>
 	<Form
 		{formElements}
 		on:submit={onSubmit}
-		submitForm="svaria rules"
+		submitFormContent="svaria rules"
 		submitButtonId="submitButton11"
 		formId="form"
 		ariaLabel="User Information Form"
+		formClass = 'block text-gray-700 text-sm font-bold mb-2'
+		submitButtonClass = 'bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded inline-flex items-center'
 	/>
 
 	<Tab items={tabItems}></Tab>
@@ -264,11 +278,6 @@
 		background-color: black;
 		color: white;
 	}
-	:global(#submitButton11) {
-		color: white;
-		background-color: black;
-		font-size: small;
-	}
 
 	:global(#form) {
 		background-color: white;
@@ -283,4 +292,4 @@
 		font-size: large;
 		background-color: blue;
 	}
-</style>
+</style> 

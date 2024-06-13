@@ -37,11 +37,14 @@ components used that we might need to make:
 	];
 </script>
 
-<header class= "flex flex-col relative z-20 py-4">
-    <Nav        
-        routes = {links}
+<header class="flex flex-col relative z-20">
+	<Nav
+		routes={links}
 		navListClass ="hidden pr-8 text-2xl md:flex items-center gap-4 lg:gap-6"
-        navBarClass = "max-w-[1400] mx-auto w-full flex items-center justify-between px-4">
+        navBarClass = "max-w-[1400] mx-auto w-full flex items-center justify-between px-4"
+        ariaLabel='Website navigation bar'
+        id='SvARIAnavBar'
+	>
 		<div slot="headingPlus">
 
 			<a href="/">
@@ -66,7 +69,7 @@ components used that we might need to make:
                 <li><a href="#CompTab" class="duration-200 hover:text-indigo-400 cursor-pointer"
                 >Components</a></li>
                 <li><a href="#GitHubFAQ"  class="duration-200 hover:text-indigo-400 cursor-pointer">GitHub/FAQ</a></li>
-            </ul>
+            </ul>         
         </nav>
         <button on:click={() => $openModal = true} class="md:hidden grid place-items-center">
             <i class="fa-solid fa-bars"></i>
@@ -75,5 +78,5 @@ components used that we might need to make:
 </header > -->
 
 <style>
-	/* css goes here */
+    /* css goes here */
 </style>
