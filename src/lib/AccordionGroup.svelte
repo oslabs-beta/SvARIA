@@ -10,7 +10,7 @@
 
 <div class={className} aria-label={ariaLabel} {group} >
     {#each group as curr}
-        <Accordion heading={curr.heading} >
+        <Accordion heading={curr.heading}>
             <div slot='content' class={curr.componentClass}>
                 <h3 class={curr.headingClass}>{curr.heading}</h3>
                 <div class="component"></div>
