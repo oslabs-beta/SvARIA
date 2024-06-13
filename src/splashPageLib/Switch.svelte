@@ -4,13 +4,9 @@
     // On Designing and Building Toggle Switches by Sara Soueidan https://www.sarasoueidan.com/blog/toggle-switch-design/
     // and this example by Scott O'hara https://codepen.io/scottohara/pen/zLZwNv 
 
-
     export let label;
-    export let design = 'inner label'
-    export let options = [];
-	export let fontSize = 16;
 	export let value = 'JS';
-    export let className;
+    export let className = "s s--inner"
     export let ariaLabel = 'Switch between Javascript and Typescript';
 
     let checked = true;
@@ -34,8 +30,7 @@
 
 </script>
 
-{#if design == 'inner'}
-<div class="s s--inner">
+<div class={className}>
     <span id={`switch-${uniqueID}`}>{label}</span>
     <button
         role="switch"
@@ -47,36 +42,6 @@
             <span>TS</span>
     </button>
 </div>
-{:else if design == 'slider'}
-<div class="s s--slider" style="font-size:{fontSize}px">
-    <span id={`switch-${uniqueID}`}>{label}</span>
-    <button
-        role="switch"
-        aria-checked={checked}
-        aria-labelledby={`switch-${uniqueID}`}
-        ariaLabel = {ariaLabel}
-        on:click={handleClick}>
-    </button>
-</div>
-{:else}
-<div class="s s--multi">
-    <div role='radiogroup'
-				 class="group-container"
-				 aria-labelledby={`label-${uniqueID}`}
-				 style="font-size:{fontSize}px" 
-				 id={`group-${uniqueID}`}
-                 ariaLabel = {ariaLabel}>
-    <div class='legend' id={`label-${uniqueID}`}>{label}</div>
-        {#each options as option}
-            <input type="radio" id={`${option}-${uniqueID}`} value={option} bind:group={value}>
-            <label for={`${option}-${uniqueID}`}>
-                {option}
-            </label> 
-        {/each}
-    </div>
-</div>
-
-{/if}
 
 <style>
 			:root {
@@ -156,12 +121,6 @@
         white-space: nowrap;
     }
 
-    /* .s--multi legend {
-    font-size: 2px;
-    opacity: 0;
-    position: absolute;
-    } */
-
     .s--multi label {
         display: inline-block;
         line-height: 1.6;
@@ -181,11 +140,6 @@
     .s--multi label:last-child {
         margin-left: -5em;
         padding-left: 5em;
-    }
-
-    .s--multi:focus-within label:first-of-type:after {
-        box-shadow: 0 0px 8px var(--accent-color);
-        border-radius: 1.5em;
     }
 
 

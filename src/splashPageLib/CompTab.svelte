@@ -8,7 +8,7 @@
 	import Button from '$lib/Button.svelte';
 	import AccordionGroup from '$lib/AccordionGroup.svelte';
 
-	const accordions = [{name: 'Button', heading: 'Button Component', slot: ButtonTab}, {name: 'Modal', heading: 'Modal Component', slot: ModalTab}, {name: 'Accordion', heading: 'Checkbox Component', slot: CheckboxTab}]
+	const accordions = [{name: 'Button', heading: 'Button Component', slot: ButtonTab, contentClass: 'bg-black'}, {name: 'Modal', heading: 'Modal Component', slot: ModalTab}, {name: 'Accordion', heading: 'Checkbox Component', slot: CheckboxTab}]
 </script>
 
 <SectionWrapper id="CompTab">

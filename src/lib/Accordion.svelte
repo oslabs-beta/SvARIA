@@ -5,12 +5,10 @@
 
 <script>
 	import { colorContrastCheck } from './ARIAchecks.js';
+	import { fly } from 'svelte/transition'
+	
 	export let heading = 'svARIA accordion component';
 	export let open = false;
-	const handleClick = () => {
-		open = !open;
-	};
-
 	export let headingContainerClass = 'flex items-center justify-between w-full';
 	export let headingClass = 'flex items-center justify-between w-full';
 	export let buttonClass = 'bg-gray-700 text-white hover:bg-gray-500 rounded-none w-full';
@@ -18,6 +16,10 @@
 	export let contentContainerClass = 'bg-gray-200';
 	export let contentContainerId = `${heading}-content`;
 	export let role = 'h3';
+
+	const handleClick = () => {
+		open = !open;
+	};
 </script>
 
 <div {role}>
@@ -76,7 +78,7 @@
 </div>
 
 {#if open}
-	<div
+	<div transition:fly={{ y: -200, duration: 200 }}
 		role="region"
 		class={contentContainerClass}
 		id={contentContainerId}

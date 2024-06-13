@@ -23,7 +23,6 @@
 			component: ButtonDocsTab,
 		}
 	];
-
 </script>
 
 <Tab items={tabItems} tabLabelClass = 'inline-block p-4 rounded-t-lg hover:text-gray-600 hover:bg-gray-50 dark:hover:bg-gray-800 dark:hover:text-gray-300 focus:ring ';

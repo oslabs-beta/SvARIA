@@ -1,4 +1,4 @@
-<script lng='js'>
+<script lang='js'>
 	import { ariaLabelcheck, colorContrastCheck } from './ARIAchecks.js';
 	export let content = 'Hi';
 	export let ariaLabel = content

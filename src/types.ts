@@ -32,7 +32,9 @@ export type MenuItems = {
 
 export type TabItems = {
     label: string,
-    component: ,
+    value: number,
+    component: any,
+    id: string,
     tabContentId: string,
     tabLabelId: string
 }
