@@ -4,11 +4,37 @@ components used that we might need to make:
 
 -->
 <script>
-    import logo from "./assets/SvARIALogo.png";
-    import {openModal} from "../store";
-    import Nav from '../lib/navigation/Navigation.svelte'
+	import logo from './assets/SvARIALogo.png';
+	import { openModal } from '../store';
+	import Nav from '../lib/navigation/Navigation.svelte';
 
-    const links = [{href: "#WhySvARIA", name: "Why SvARIA", linkClass: "duration-200 hover:text-indigo-400 cursor-pointer"}, {href: "#GettingStarted", name: "Getting Started", linkClass: "duration-200 hover:text-indigo-400 cursor-pointer"}, {href: "#CompTab", name: "Components", linkClass: "duration-200 hover:text-indigo-400 cursor-pointer"},{href: "https://github.com/oslabs-beta/SvARIA", name: "GitHub", linkClass: "duration-200 hover:text-indigo-400 cursor-pointer"}, {href: "#GitHubFAQ", name: "FAQ", linkClass: "duration-200 hover:text-indigo-400 cursor-pointer"}]
+	const links = [
+		{
+			href: '#WhySvARIA',
+			name: 'Why SvARIA',
+			linkClass: 'duration-200 hover:text-indigo-400 cursor-pointer'
+		},
+		{
+			href: '#GettingStarted',
+			name: 'Getting Started',
+			linkClass: 'duration-200 hover:text-indigo-400 cursor-pointer'
+		},
+		{
+			href: '#CompTab',
+			name: 'Components',
+			linkClass: 'duration-200 hover:text-indigo-400 cursor-pointer'
+		},
+		{
+			href: 'https://github.com/oslabs-beta/SvARIA',
+			name: 'GitHub',
+			linkClass: 'duration-200 hover:text-indigo-400 cursor-pointer'
+		},
+		{
+			href: '#GitHubFAQ',
+			name: 'FAQ/News',
+			linkClass: 'duration-200 hover:text-indigo-400 cursor-pointer'
+		}
+	];
 </script>
 
 <header class="flex flex-col relative z-20">
