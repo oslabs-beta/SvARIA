@@ -43,7 +43,7 @@
             <p class="duration-200 group-hover:pl-2 poppins text-3xl font-semibold ">GitHub <i class="fa-solid fa-chevron-right text-xl pl-4"/></p>
         </button>
         <button on:click={() => reroute('#GitHubFAQ')} class="border-none outline-none p-2 group duration-200 cursor-pointer text-left">
-            <p class="duration-200 group-hover:pl-2 poppins text-3xl font-semibold ">FAQ <i class="fa-solid fa-chevron-right text-xl pl-4"/></p>
+            <p class="duration-200 group-hover:pl-2 poppins text-3xl font-semibold ">FAQ/News <i class="fa-solid fa-chevron-right text-xl pl-4"/></p>
         </button>
     </div>
 </div>
@@ -58,8 +58,12 @@
 </div>
 {/if}
 <slot />
+{#if y > outerHeight}
+<div class="fixed bottom-0 left-0 w-full flex flex-col z-20 fadeIn">
+    <Footer/>
+</div>
+{/if}
 
-<Footer/>
 <svelte:window bind:scrollY={y} bind:outerHeight/>
 <!-- 
     *General Page Structure*

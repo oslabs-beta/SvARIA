@@ -31,7 +31,7 @@ components used that we might need to make:
 		},
 		{
 			href: '#GitHubFAQ',
-			name: 'FAQ',
+			name: 'FAQ/News',
 			linkClass: 'duration-200 hover:text-indigo-400 cursor-pointer'
 		}
 	];
