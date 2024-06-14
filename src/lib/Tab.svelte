@@ -8,8 +8,13 @@
 		'p-6 bg-gray-50 text-medium text-gray-500 dark:text-gray-400 dark:bg-gray-800 rounded w-full';
 	export let tabLabelStyle = '';
 	export let tabContentStyle = '';
-	export let tabListClass = "flex flex-wrap";
-    import { ariaLabelcheck, colorContrastCheck } from './ARIAchecks.js';
+	export let tabListClass = 'flex flex-wrap';
+	export let tabListId = '';
+	export let tabListStyle = '';
+	export let id = '';
+	export let style = '';
+	export let className = '';
+	import { ariaLabelcheck, colorContrastCheck } from './ARIAchecks.js';
 
 	const handleClick = (tabValue) => () => {
 		activeTabValue = tabValue;
@@ -51,41 +56,43 @@
 	});
 </script>
 
-<ul class={tabListClass}>
+<div {id} {style} class={className}>
+	<ul class={tabListClass} id={tabListId} style={tabListStyle}>
+		{#each items as item}
+			<li class={activeTabValue === item.value ? 'active' : ''}>
+				<button
+					role="tab"
+					aria-selected={item.value == activeTabValue}
+					aria-controls={item.tabContentId}
+					id={item.tabLabelId}
+					tabindex={item.value == activeTabValue ? '0' : '-1'}
+					on:click={handleClick(item.value)}
+					bind:this={itemComponents[item.value]}
+					on:keydown={(e) => handleKeyPress(e, item.value)}
+					class={tabLabelClass}
+					style={tabLabelStyle}
+					use:colorContrastCheck
+					on:click
+					>{item.label}
+				</button>
+			</li>
+		{/each}
+	</ul>
 	{#each items as item}
-		<li class={activeTabValue === item.value ? 'active' : ''}>
-			<button
-				role="tab"
-				aria-selected={item.value == activeTabValue}
-				aria-controls={item.tabContentId}
-				id={item.tabLabelId}
-				tabindex={item.value == activeTabValue ? '0' : '-1'}
-				on:click={handleClick(item.value)}
-				bind:this={itemComponents[item.value]}
-				on:keydown={(e) => handleKeyPress(e, item.value)}
-				class={tabLabelClass}
-				style={tabLabelStyle}
-                use:colorContrastCheck
-				on:click
-				>{item.label}
-			</button>
-		</li>
+		<div
+			class={tabContentClass}
+			style={tabContentStyle}
+			id={item.tabContentId}
+			role="tabpanel"
+			aria-labelledby={item.id}
+			use:colorContrastCheck
+			tabindex="0"
+			hidden={item.value != activeTabValue}
+		>
+			<svelte:component this={item.component} />
+		</div>
 	{/each}
-</ul>
-{#each items as item}
-	<div
-		class={tabContentClass}
-		style={tabContentStyle}
-		id={item.tabContentId}
-		role="tabpanel"
-		aria-labelledby={item.id}
-		use:colorContrastCheck
-		tabindex="0"
-		hidden={item.value != activeTabValue}
-	>
-		<svelte:component this={item.component} />
-	</div>
-{/each}
+</div>
 
 <!-- <style>
 	.box {
