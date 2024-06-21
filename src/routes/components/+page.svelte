@@ -1,6 +1,6 @@
 <script>
-    import ButtonTab from "../../splashPageLib/ComponentDemos /ButtonTabs/ButtonTab.svelte";
-    import ModalTab from "../../splashPageLib/ComponentDemos /ModalTabs/ModalTab.svelte"
+    import ButtonTab from "../../splashPageLib/ComponentDemos/ButtonTabs/ButtonTab.svelte";
+    import ModalTab from "../../splashPageLib/ComponentDemos/ModalTabs/ModalTab.svelte"
 </script>
 
 <style>

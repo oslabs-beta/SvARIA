@@ -3,21 +3,21 @@
 	[] have functionality for if the panel cant be collapsed and aria-disabled set to tru
 -->
 
-<script>
+<script lang='ts'>
 	import { colorContrastCheck } from './ARIAChecks.js';
 	import { fly } from 'svelte/transition'
 	
-	export let heading = 'svARIA accordion component';
-	export let open = false;
-	export let headingContainerClass = 'flex items-center justify-between w-full';
-	export let headingClass = 'flex items-center justify-between w-full';
-	export let buttonClass = 'bg-gray-700 text-white hover:bg-gray-500 rounded-none w-full';
-	export let buttonId = `accordion-${heading}-id`;
-	export let contentContainerClass = 'bg-gray-200';
-	export let contentContainerId = `${heading}-content`;
-	export let role = 'h3';
+	export let heading: string = 'svARIA accordion component';
+	export let open: boolean = false;
+	export let headingContainerClass: string = 'flex items-center justify-between w-full';
+	export let headingClass: string = 'flex items-center justify-between w-full';
+	export let buttonClass: string = 'bg-gray-700 text-white hover:bg-gray-500 rounded-none w-full';
+	export let buttonId: string = `accordion-${heading}-id`;
+	export let contentContainerClass: string = 'bg-gray-200';
+	export let contentContainerId: string = `${heading}-content`;
+	export let role: string = 'h3';
 
-	const handleClick = () => {
+	const handleClick = ():void => {
 		open = !open;
 	};
 </script>

@@ -1,20 +1,21 @@
 import sveltePreprocess from 'svelte-preprocess';
-import adapter from '@sveltejs/adapter-auto';
+import nodeAdapter from '@sveltejs/adapter-node';
 import { vitePreprocess } from '@sveltejs/vite-plugin-svelte';
+
+const isProduction = process.env.VITE_SVARIA_MODE === 'production';
+
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
   kit: {
-    adapter: adapter()
+    adapter: nodeAdapter(),
   },
-  preprocess: vitePreprocess()
+  preprocess: [
+    sveltePreprocess({
+      typescript: true,
+      sourceMap: !isProduction,
+    }),
+    vitePreprocess()
+  ]
 };
 
-const preprocess = sveltePreprocess({
-  typescript: true,
-  sourceMap: true,
-});
-
-export default {
-  config,
-  preprocess
-}
+export default config;

@@ -9,7 +9,7 @@
 	export let tabLabelStyle = '';
 	export let tabContentStyle = '';
 	export let tabListClass = "flex flex-wrap";
-    import { ariaLabelcheck, colorContrastCheck } from './ARIAchecks.js';
+    import { colorContrastCheck } from './ARIAChecks.js';
 
 	const handleClick = (tabValue) => () => {
 		activeTabValue = tabValue;

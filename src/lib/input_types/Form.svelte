@@ -1,15 +1,16 @@
 <script lang='js'>
-	import { ariaLabelcheck, colorContrastCheck } from '../ARIAchecks.js';
+	import { ariaLabelcheck, colorContrastCheck } from '../ARIAChecks.js';
 	import Button from '../Button.svelte';
+
 
 	export let method = 'POST';
 	export let formId = '';
 	export let submitFormContent = 'Submit';
+	export let submitButtonId = 'submit';
 	export let formElements = [];
 	export let ariaLabel = 'Form';
 	export let formClass = ''
 	export let formStyle = ''
-	export let submitButtonId = 'submit';
 	export let submitButtonClass = ''
 	export let submitButtonStyle = ''
 

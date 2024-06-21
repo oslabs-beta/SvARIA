@@ -1,22 +1,18 @@
 <script lang="ts">
-	import { ariaLabelcheck, colorContrastCheck } from '../ARIAchecks.js';
+	import { ariaLabelcheck, colorContrastCheck } from '../ARIAChecks.js';
 	import Button from '../Button.svelte';
 	import type { FormElementsObj } from '../../types.js';
 
 	export let method: string = 'POST';
 	export let formId: string = '';
-	export let submitForm: string = 'Submit';
+	export let submitFormContent: string = 'Submit';
 	export let submitButtonId: string = 'submit';
-	export let formElements: FormElementsObj[] = [
-		{ name: 'address', type: 'input', labelValue: 'Address' },
-		{ name: 'firstName', type: 'input', labelValue: 'First Name' },
-		{ name: 'password', type: 'password', labelValue: 'Password' }
-	];
+	export let formElements: FormElementsObj[] = [];
 	export let ariaLabel: string = 'Form';
-	export let labelStyle: string = '';
-	export let inputStyle: string = '';
-	export let labelClass: string = '';
-	export let inputClass: string = '';
+	export let formClass: string = ''
+	export let formStyle: string = ''
+	export let submitButtonClass: string = ''
+	export let submitButtonStyle: string = ''
 
 	$: formElements = formElements.map((row) => {
 		if (!row['inputId']) {
@@ -32,13 +28,13 @@
 	});
 </script>
 
-<form {method} on:submit|preventDefault id={formId} aria-label={ariaLabel} use:ariaLabelcheck>
+<form {method} on:submit|preventDefault id={formId} aria-label={ariaLabel} class={formClass} style={formStyle} use:ariaLabelcheck>
 	{#each formElements as element}
 		<label
 			id={element.labelId}
 			for={element.inputId}
-			style={labelStyle}
-			class={labelClass}
+			style={element.labelStyle}
+			class={element.labelClass}
 			use:ariaLabelcheck
 			use:colorContrastCheck
 			aria-label={element.ariaLabel}>{element.labelValue}</label
@@ -48,11 +44,11 @@
 			name={element.name}
 			aria-label={`input box for, ${element.labelValue}`}
 			id={element.inputId}
-			style={inputStyle}
-			class={inputClass}
+			style={element.inputStyle}
+			class={element.inputClass}
 			use:ariaLabelcheck
 			use:colorContrastCheck
 		/>
 	{/each}
-	<Button type="submit" ariaLabel="Submit Button" id={submitButtonId} content={submitForm} />
+	<Button type="submit" ariaLabel="Submit Button" id={submitButtonId} content={submitFormContent} className={submitButtonClass} style={submitButtonStyle} />
 </form>
