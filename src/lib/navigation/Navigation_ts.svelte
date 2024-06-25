@@ -1,9 +1,8 @@
 <script lang="ts">
 	import { colorContrastCheck, ariaLabelcheck } from '../ARIAChecks.js';
 	import type { Routes } from '../../types.ts'
-	import type { MouseEventHandler } from 'svelte/elements';
-	export let heading: string = null;
-	export let routes: Routes[] = null;
+	export let heading: string|undefined = undefined;
+	export let routes: Routes[]|undefined = undefined;
 	export let id: string = 'navBar';
 	export let style: string = '';
 	export let headerContainerStyle: string = '';

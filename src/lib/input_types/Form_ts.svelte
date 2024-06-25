@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { ariaLabelcheck, colorContrastCheck } from '../ARIAChecks.js';
-	import Button from '../Button.svelte';
+	import Button from '../Button_ts.svelte';
 	import type { FormElementsObj } from '../../types.js';
 
 	export let method: string = 'POST';

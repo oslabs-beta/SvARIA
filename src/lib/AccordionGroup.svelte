@@ -1,5 +1,5 @@
 <script>
-    import Accordion from "./Accordion.svelte";
+    import Accordion from "./Accordion_ts.svelte";
     
     export let className = '';
     export let group = [];

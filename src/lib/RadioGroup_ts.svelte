@@ -6,7 +6,7 @@
     export let id: string|undefined = '';
     export let style: string|undefined = '';
     export let className: string|undefined = 'radio-group'
-    export let selectedOption: string[] = [];
+    export let selectedOption: string = '';
 
     $: options.map((option, index) => {
 		if (!option['labelId']) {

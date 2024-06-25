@@ -1,5 +1,5 @@
 <script lang='ts'>
-    import Accordion from "./Accordion.svelte";
+    import Accordion from "./Accordion_ts.svelte";
     import type { AccordionObj } from '../types.ts'
     
     export let className: string = '';

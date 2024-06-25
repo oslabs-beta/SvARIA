@@ -2,7 +2,6 @@
 	import { ariaLabelcheck, colorContrastCheck } from '../ARIAChecks.js';
 	import type { CheckboxObj } from '../../types.ts'
 
-
 	export let options: CheckboxObj[] = [];
 	export let ariaLabel: string = 'checkbox';
 	export let id: string = '';
