@@ -33,10 +33,18 @@
 		Modal Opened
 	</h3>
 	<div slot="content">
-		<p id="dialoginfo" class="text-base text-lg leading-relaxed text-gray-500 dark:text-white" use:colorContrastCheck>
+		<p
+			id="dialoginfo"
+			class="text-base text-lg leading-relaxed text-gray-500 dark:text-white"
+			use:colorContrastCheck
+		>
 			You have successfully opened the modal
 		</p>
-		<p id="dialoginfo" class="text-base text-lg leading-relaxed text-red-500 dark:text-red-400" use:colorContrastCheck>
+		<p
+			id="dialoginfo"
+			class="text-base text-lg leading-relaxed text-red-500 dark:text-red-400"
+			use:colorContrastCheck
+		>
 			Now you can close the modal below
 		</p>
 	</div>
