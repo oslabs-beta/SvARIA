@@ -1,21 +1,23 @@
 <script>
-    import Accordion from "./Accordion.svelte";
-    
-    export let className = '';
-    export let ariaLabel = '';
-    export let group = [];
+	import Accordion from './Accordion.svelte';
+
+	export let className = '';
+	export let ariaLabel = '';
+	export let group = [];
 
 	// const group = [{name: 'This Accordion', heading: 'A Group', tab: Button}]
 </script>
 
-<div class={className} aria-label={ariaLabel} {group} >
-    {#each group as curr}
-        <Accordion heading={curr.heading}>
-            <div slot='content' class={curr.componentClass}>
-                <h3 class={curr.headingClass}>{curr.heading}</h3>
-                <div class="component"></div>
-                <svelte:component this={curr.slot} />
-            </div>
-        </Accordion>
-    {/each}
+<div class={className} aria-label={ariaLabel} {group}>
+	{#each group as curr}
+		<Accordion heading={curr.heading}>
+			<div slot="content" class={curr.componentClass} style={curr.style} id={curr.id}>
+				<h3 class={curr.headingClass} style={curr.headingStyle} id={curr.headingId}>
+					{curr.heading}
+				</h3>
+				<!-- <div class="component"></div> -->
+				<svelte:component this={curr.slot} />
+			</div>
+		</Accordion>
+	{/each}
 </div>

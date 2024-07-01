@@ -2,12 +2,6 @@
 	export let items = [];
 	export let activeTabValue = 0;
 	export let itemComponents = [];
-	export let tabLabelClass =
-		'inline-block bg-gray-100 p-2 rounded-t hover:text-gray-600 hover:bg-gray-50 dark:hover:bg-gray-800 dark:hover:text-gray-300 focus:ring ';
-	export let tabContentClass =
-		'p-6 bg-gray-50 text-medium text-gray-500 dark:text-gray-400 dark:bg-gray-800 rounded w-full';
-	export let tabLabelStyle = '';
-	export let tabContentStyle = '';
 	export let tabListClass = 'flex flex-wrap';
 	export let tabListId = '';
 	export let tabListStyle = '';
@@ -64,13 +58,13 @@
 					role="tab"
 					aria-selected={item.value == activeTabValue}
 					aria-controls={item.tabContentId}
-					id={item.tabLabelId}
 					tabindex={item.value == activeTabValue ? '0' : '-1'}
 					on:click={handleClick(item.value)}
 					bind:this={itemComponents[item.value]}
 					on:keydown={(e) => handleKeyPress(e, item.value)}
-					class={tabLabelClass}
-					style={tabLabelStyle}
+					class={item.tabLabelClass}
+					style={item.tabLabelStyle}
+					id={item.tabLabelId}
 					use:colorContrastCheck
 					on:click
 					>{item.label}
@@ -80,8 +74,8 @@
 	</ul>
 	{#each items as item}
 		<div
-			class={tabContentClass}
-			style={tabContentStyle}
+			class={item.tabContentClass}
+			style={item.tabContentStyle}
 			id={item.tabContentId}
 			role="tabpanel"
 			aria-labelledby={item.id}
