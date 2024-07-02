@@ -8,6 +8,7 @@
 	import NavBarTab from './ComponentDemos/NavBarTabs/NavBarTab.svelte';
 	import MenuTab from './ComponentDemos/MenuTabs/MenuTab.svelte';
 	import RadioGroupTab from './ComponentDemos/RadioGroupTabs/RadioGroupTab.svelte';
+	import TabTab from './ComponentDemos/TabTabs/TabTab.svelte'
 
 	import Accordion from '$lib/Accordion.svelte';
 	import Button from '$lib/Button.svelte';
@@ -60,6 +61,13 @@
 			name: 'Accordion',
 			heading: 'RadioGroup Component',
 			slot: RadioGroupTab,
+			headingClass: 'p-9',
+			componentClass: 'min-h-96'
+		},
+		{
+			name: 'Accordion',
+			heading: 'Tab Component',
+			slot: TabTab,
 			headingClass: 'p-9',
 			componentClass: 'min-h-96'
 		}

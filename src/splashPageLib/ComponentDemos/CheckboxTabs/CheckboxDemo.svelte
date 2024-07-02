@@ -34,4 +34,6 @@
 	bind:selectedOption
 	id="checkbox"
 	ariaLabel="checkbox options"
+	className="flex flex-col"
 />
+
