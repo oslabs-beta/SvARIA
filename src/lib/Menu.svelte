@@ -1,17 +1,15 @@
 <script lang="js">
-	import { ariaLabelcheck, colorContrastCheck } from './ARIAchecks.js';
+	import { ariaLabelcheck, colorContrastCheck } from './ARIAChecks.js';
 
 	export let buttonContent = 'Menu';
 	export let items = [];
 	export let buttonAriaLabel = buttonContent;
 	export let buttonId = buttonContent;
 	export let buttonStyle = '';
-	export let buttonClass = ''
-		'bg-teal-800 hover:bg-teal-500 text-white font-bold border-b-4 border-teal-700 hover:border-teal-500 w-full rounded-none';
+	export let buttonClass = 'bg-teal-800 hover:bg-teal-500 text-white font-bold border-b-4 border-teal-700 hover:border-teal-500 w-full rounded-none';
 	export let listId = 'menu';
 	// style the list
-	export let listClass =
-		'absolute min-w-[180px] p-3 bg-white border border-gray-300 shadow-md rounded-none w-full';
+	export let listClass = 'absolute min-w-[180px] p-3 bg-white border border-gray-300 shadow-md rounded-none w-full';
 	export let listStyle = '';
 	export let menuContainerClass = 'container w-3/12';
 	export let menuContainerStyle = ''

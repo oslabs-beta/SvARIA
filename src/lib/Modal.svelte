@@ -1,5 +1,5 @@
 <script lang='js'>
-	import { ariaLabelcheck, colorContrastCheck } from './ARIAchecks.js';
+	import { colorContrastCheck } from './ARIAChecks.js';
 	import Button from './Button.svelte';
 
 	export let showModal = false; // boolean
@@ -14,7 +14,6 @@
 	export let closeButtonId = 'closeModalButtonId';
 	export let closeButtonClass = 'bg-black text-white';
 	export let closeButtonStyle = 'closeModalStyle';
-
 	export let style = '';
 
 	let dialog; // HTMLDialogElement
@@ -58,7 +57,7 @@
 		on:keypress|stopPropagation
 	>
 		<slot name="header" />
-		<slot name="content"></slot>
+		<slot name="content" />
 		<Button
 			on:click={() => {
 				showModal = false;

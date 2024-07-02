@@ -1,17 +1,20 @@
 <script lang='ts'>
-	import { ariaLabelcheck, colorContrastCheck } from './ARIAchecks.js';
+	import { colorContrastCheck } from './ARIAChecks.js';
 	import Button from './Button.svelte';
 
 	export let showModal: boolean; // boolean
-	export let modalId: string = '';
-	export let modalClass: string = 'bg-white rounded-lg shadow dark:bg-white-700 p-4 md:p-5 space-y-4'
+	export let modalId: string|undefined = '';
+	export let modalClass: string|undefined = 'bg-white rounded-lg shadow dark:bg-white-700 p-4 md:p-5 space-y-4'
 	//export let modalClass = ''
-	export let closeModalMessage: string = 'Close Modal';
-	export let modalHeaderId: string = 'modalHeader';
-	export let modalDescribeId: string = 'modalContent';
-	export let closeButtonId: string = 'closeModalButtonId';
-	export let closeButtonClass: string = 'closeModalButton';
-	export let style: string = '';
+	export let closeModalMessage: string|undefined = 'Close Modal';
+	export let modalHeaderId: string|undefined = 'modalHeader';
+	export let modalDescribeId: string|undefined = 'modalContent';
+	export let contentClass: string|undefined = 'mb-10';
+	export let contentId: string|undefined = 'modalContentId';
+	export let closeButtonId: string|undefined = 'closeModalButtonId';
+	export let closeButtonClass: string|undefined = 'bg-black text-white';
+	export let closeButtonStyle: string|undefined = 'closeModalStyle';
+	export let style: string|undefined = '';
 
 	let dialog; // HTMLDialogElement
 	$: if (dialog && showModal) dialog.showModal();
@@ -23,13 +26,9 @@
 	}
 
 	$: if (showModal) {
-		//document.body.style.overflowY = 'hidden';
 		document.body.style.overflow = 'hidden';
-		// const modal = document.getElementById(modalId);
-		// modal.style.overflow = 'hidden';
 		dialog.focus();
 	}
-
 </script>
 
 <!-- svelte-ignore a11y-click-events-have-key-events a11y-no-noninteractive-element-interactions -->
@@ -49,6 +48,8 @@
 >
 	<div
 		role="dialog"
+		class={contentClass}
+		id={contentId}
 		aria-modal="true"
 		aria-labelledby={modalHeaderId}
 		aria-describedby={modalDescribeId}
@@ -56,7 +57,7 @@
 		on:keypress|stopPropagation
 	>
 		<slot name="header" />
-		<slot></slot>
+		<slot name="content" />
 		<Button
 			on:click={() => {
 				showModal = false;
@@ -66,14 +67,19 @@
 			content={closeModalMessage}
 			id={closeButtonId}
 			className={closeButtonClass}
+			style={closeButtonStyle}
 		></Button>
 	</div>
 </dialog>
 
 <style>
 	:global(.closeModalButton) {
-		color: blue;
-		height: 30px;
+		position: absolute;
+		max-height: 3em;
+		max-width: 3em;
+		bottom: 1em;
+		right: 1em;
+		left: 1em;
 		font-size: small;
 	}
 </style>

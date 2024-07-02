@@ -1,4 +1,6 @@
-export function ariaLabelcheck(curNode) {
+import type { ARIAColorsObj } from "../types.js";
+
+export function ariaLabelcheck(curNode: HTMLElement): void {
 	if (import.meta.env.VITE_SVARIA_MODE != 'debug') {
 		return;
 	}
@@ -17,7 +19,7 @@ export function ariaLabelcheck(curNode) {
 	}
 }
 
-function getColors(curNode) {
+function getColors(curNode: HTMLElement): ARIAColorsObj {
 	const compStyles = window.getComputedStyle(curNode);
 	// console.log('color: ', curNode.nodeName, curNode.id, compStyles.getPropertyValue("color"))
 	// console.log('bg-color: ', curNode.nodeName, curNode.id,compStyles.getPropertyValue("background-color"))
@@ -30,7 +32,7 @@ function getColors(curNode) {
 	while (backgroundColor == 'rgba(0, 0, 0, 0)' && iterations < 3) {
 		//console.log('parent node: ',parentNode.nodeName, 'parent node id:', parentNode.id)
 		//console.log('parent color', window.getComputedStyle(parentNode).getPropertyValue("background-color"))
-		const compStylesParent = window.getComputedStyle(parentNode)
+        const compStylesParent = window.getComputedStyle(parentNode as Element);
 		backgroundColor = compStylesParent.getPropertyValue("background-color")
 		iterations++
 		parentNode = parentNode.parentNode
@@ -43,12 +45,12 @@ function getColors(curNode) {
 
 	let foregroundColor = compStyles.getPropertyValue('color');
 
-	const compStylesParent = window.getComputedStyle(parentNode)
+	const compStylesParent = window.getComputedStyle(parentNode as Element)
 	let parentBackgroundColor = compStylesParent.getPropertyValue("background-color");
 	while (parentBackgroundColor == 'rgba(0, 0, 0, 0)' && iterations < 3) {
 		//console.log('parent node: ',parentNode.nodeName, 'parent node id:', parentNode.id)
 		//console.log('parent color', window.getComputedStyle(parentNode).getPropertyValue("background-color"))
-		const compStylesParent = window.getComputedStyle(parentNode)
+		const compStylesParent = window.getComputedStyle(parentNode as Element)
 		parentBackgroundColor = compStylesParent.getPropertyValue("background-color")
 		iterations++
 		parentNode = parentNode.parentNode
@@ -64,7 +66,7 @@ function getColors(curNode) {
 
 }
 
-export function colorContrastCheck(curNode, parameters) {
+export function colorContrastCheck(curNode: HTMLElement): void {
 	if (import.meta.env.VITE_SVARIA_MODE != 'debug') {
 		return;
 	}
@@ -72,14 +74,14 @@ export function colorContrastCheck(curNode, parameters) {
 	checkColors(curNode, foregroundColor, backgroundColor, false)
 }
 
-export function parentColorContrastCheck(curNode) {
+export function parentColorContrastCheck(curNode: HTMLElement): void {
 	const { parentBackgroundColor, foregroundColor, backgroundColor } = getColors(curNode)
 
 	if (parentBackgroundColor == null) console.log("Cannot check parent background color")
 	else checkColors(curNode, backgroundColor, parentBackgroundColor, true)
 }
 
-function checkColors(curNode, foregroundColor, backgroundColor, isParent) {
+function checkColors(curNode: HTMLElement, foregroundColor: string, backgroundColor: string, isParent: boolean): void {
 
 	const parentString = isParent ? "'s parent" : ''
 

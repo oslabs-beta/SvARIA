@@ -1,17 +1,17 @@
 <!-- use this page to test out components with URL "/testPage" -->
 
 <script>
-	import RadioGroup from '$lib/RadioGroup.svelte';
-	import Checkbox from '$lib/input_types/Checkbox.svelte';
-	import Button from '../../lib/Button.svelte';
-	import Modal from '$lib/Modal.svelte';
-	import Form from '$lib/input_types/Form.svelte';
-	import Nav from '$lib/navigation/Navigation.svelte';
-	import Tab from '$lib/Tab.svelte';
+	import RadioGroup from '$lib/RadioGroup_ts.svelte';
+	import Checkbox from '$lib/input_types/Checkbox_ts.svelte';
+	import Button from '../../lib/Button_ts.svelte';
+	import Modal from '$lib/Modal_ts.svelte';
+	import Form from '$lib/input_types/Form_ts.svelte';
+	import Nav from '$lib/navigation/Navigation_ts.svelte';
+	import Tab from '$lib/Tab_ts.svelte';
 	import Tab1 from './tabsForTestPage/Tab1.svelte';
 	import Tab2 from './tabsForTestPage/Tab2.svelte';
-	import Menu from '$lib/Menu.svelte';
-	import Accordion from '$lib/Accordion.svelte';
+	import Menu from '$lib/Menu_ts.svelte';
+	import Accordion from '$lib/Accordion_ts.svelte';
 
 	const catIpsum = `Cat ipsum dolor sit amet, always hungry jump on fridge, while happily ignoring when being
 			called shove bum in owner's face like camera lens. Meowsiers meow the best thing in the
@@ -185,14 +185,14 @@
 <RadioGroup options={options} id="radio" ariaLabel="Radio Selector" bind:selectedOption
 	/>
 	<!-- your component goes here -->
-	<!-- <Button id="button" ariaLabel="test aria label" on:click={handleClick} content="Test button" /> -->
+	<Button id="button" ariaLabel="test aria label" on:click={handleClick} content="Test button" />
 	<br />
-	<!-- <Checkbox
+	<Checkbox
 		inputId="checkboxInput"
 		labelId="checkboxLabel"
 		content="This is my checkbox"
 		on:click={handleCheck}
-	/> -->
+	/>
 	<br />
 	<Button
 		id="openModal"

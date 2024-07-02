@@ -1,44 +1,49 @@
-<script lang="ts">
-	import { ariaLabelcheck, colorContrastCheck } from '../ARIAchecks.js';
+<script lang='ts'>
+	import { ariaLabelcheck, colorContrastCheck } from '../ARIAChecks.js';
+	import type { CheckboxObj } from '../../types.ts'
 
-	export let content: string =
-		'Edit style and content properties to edit check box. Run test() to check for compliance';
-	export let ariaLabel: string = `${content}, is unchecked`;
-	export let labelId: string;
-	export let inputId: string;
-	export let labelStyle: string = '';
-	export let inputStyle: string = '';
-	export let inputClass: string = 'w-4 h-4';
-	export let labelClass:string  = 'ms-2 text-lg font-medium text-gray-900 dark:text-orange-300';
+	export let options: CheckboxObj[] = [];
+	export let ariaLabel: string = 'checkbox';
+	export let id: string = '';
+	export let style: string = '';
+	export let className: string = 'checkbox-group';
+	export let selectedOption: string[] = [];
 
-	// function for checking if its checked
-	function toggleCheck(e: Event & { target: EventTarget & HTMLInputElement}) {
-		const checked = e.target.checked;
-		checked ? (ariaLabel = `${content}, is checked`) : (ariaLabel = `${content}, is unchecked`);
-	}
+	$: options.map((option, index) => {
+		if (!option['labelId']) {
+			option['labelId'] = option.label;
+		}
+	});
 </script>
 
-<div>
-	<input
-		class={inputClass}
-		type="checkbox"
-		aria-label={`checkbox for, ${content}`}
-		on:click={toggleCheck}
-		on:click
-		id={inputId}
-		use:ariaLabelcheck
-		style={inputStyle}
-	/>
-
-	<label
-		class={labelClass}
-		id={labelId}
-		for="sv-checkbox"
-		aria-label={ariaLabel}
-		use:ariaLabelcheck={2}
-		use:colorContrastCheck
-		style={labelStyle}
-	>
-		{content}
-	</label>
+<div
+	use:ariaLabelcheck
+	use:colorContrastCheck
+	{id}
+	aria-label={ariaLabel}
+	class={className}
+	{style}
+>
+	{#each options as option, index}
+		<label class={option.labelClass} id={option.labelId} style={option.labelStyle}>
+			<input
+				type="checkbox"
+				bind:group={selectedOption}
+				value={option.label}
+				id={`checkbox-` + index}
+				aria-checked={selectedOption.includes(option.label)}
+				class={option.inputClass}
+				style={option.inputStyle}
+				aria-labelledby={option.labelId}
+			/>
+			{option.label}
+		</label>
+	{/each}
 </div>
+
+<style>
+	.checkbox-group {
+		display: flex;
+		flex-direction: column;
+	}
+</style>

@@ -1,16 +1,17 @@
 <script lang="ts">
-	import { colorContrastCheck, ariaLabelcheck } from '../ARIAchecks.js';
+	import { colorContrastCheck, ariaLabelcheck } from '../ARIAChecks.js';
 	import type { Routes } from '../../types.ts'
-	export let heading: string = null;
-	export let routes: Routes[] = null;
+	export let heading: string|undefined = undefined;
+	export let routes: Routes[]|undefined = undefined;
 	export let id: string = 'navBar';
 	export let style: string = '';
-	export let containerStyle: string = '';
+	export let headerContainerStyle: string = '';
 	export let navListStyle: string = '';
 	export let navBarClass: string = 'sv-navagation';
 	export let navHeadingClass: string = '';
 	export let navListClass: string = '';
 </script>
+
 
 <div
 	role="navigation"
@@ -21,13 +22,8 @@
 	use:colorContrastCheck
 	use:ariaLabelcheck
 >
-	<div aria-label="container" class={navHeadingClass} id={id + '-container'} style={containerStyle}>
-		{#if heading}
-			<h2 use:colorContrastCheck>
-				{heading}
-			</h2>
-		{/if}
-		<slot></slot>
+<div aria-label="header container" class={navHeadingClass} id={id + '-headercontainer'} style={headerContainerStyle}>
+		<slot name="headingPlus"></slot>
 	</div>
 	{#if routes}
 		<ul class={navListClass} id={id + '-ul'} style={navListStyle}>
@@ -38,6 +34,7 @@
 					id={id + '-link-' + i}
 					aria-label={`link to ${linkElem.name}`}
 					style={linkElem.linkStyle}
+					on:click={linkElem.onClick}
 					use:colorContrastCheck
 				>
 					{linkElem.name}

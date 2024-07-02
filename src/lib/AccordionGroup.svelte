@@ -1,9 +1,9 @@
 <script>
-	import Accordion from './Accordion.svelte';
-
-	export let className = '';
-	export let ariaLabel = '';
-	export let group = [];
+    import Accordion from "./Accordion_ts.svelte";
+    
+    export let className = '';
+    export let group = [];
+    export let ariaLabel = '';
 
 	// const group = [{name: 'This Accordion', heading: 'A Group', tab: Button}]
 </script>

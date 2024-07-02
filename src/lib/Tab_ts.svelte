@@ -1,7 +1,7 @@
 <script lang='ts'>
-	export let items: [] = [];
+	export let items: TabItems[] = [];
 	export let activeTabValue: number = 0;
-	export let itemComponents: [] = [];
+	export let itemComponents: HTMLButtonElement[] = [];
 	export let tabLabelClass: string =
 		'inline-block bg-gray-100 p-2 rounded-t hover:text-gray-600 hover:bg-gray-50 dark:hover:bg-gray-800 dark:hover:text-gray-300 focus:ring ';
 	export let tabContentClass: string =
@@ -9,7 +9,9 @@
 	export let tabLabelStyle: string = '';
 	export let tabContentStyle: string = '';
 	export let tabListClass: string = 'flex flex-wrap';
-	import { ariaLabelcheck, colorContrastCheck } from './ARIAchecks.js';
+
+	import { ariaLabelcheck, colorContrastCheck } from './ARIAChecks.js';
+    import type { TabItems } from '../types.js'
 
 	const handleClick = (tabValue: number) => ():void => {
 		activeTabValue = tabValue;
@@ -59,7 +61,7 @@
 				aria-selected={item.value == activeTabValue}
 				aria-controls={item.tabContentId}
 				id={item.tabLabelId}
-				tabindex={item.value == activeTabValue ? '0' : '-1'}
+				tabindex={item.value == activeTabValue ? Number('0') : Number('-1')}
 				on:click={handleClick(item.value)}
 				bind:this={itemComponents[item.value]}
 				on:keydown={(e) => handleKeyPress(e, item.value)}

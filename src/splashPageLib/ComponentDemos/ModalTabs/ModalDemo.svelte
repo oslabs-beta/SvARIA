@@ -1,7 +1,7 @@
 <script>
 	import Modal from '$lib/Modal.svelte';
 	import Button from '$lib/Button.svelte';
-	import { colorContrastCheck } from '$lib/ARIAchecks.js';
+	import { colorContrastCheck } from '$lib/ARIAChecks.js';
 
 	let showModal;
 </script>
