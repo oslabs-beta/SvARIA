@@ -1,16 +1,19 @@
 <script lang="ts">
-	import { ariaLabelcheck, colorContrastCheck } from './ARIAchecks.js';
+	import { ariaLabelcheck, colorContrastCheck } from './ARIAChecks.js';
 	import type { MenuItems } from '../types.ts'
 	export let buttonContent: string|undefined = 'Menu';
 	export let items: MenuItems[] = [];
 	export let buttonAriaLabel: string|undefined = buttonContent;
 	export let buttonId: string|undefined = '';
 	export let buttonStyle: string|undefined = '';
-	export let buttonClass: string|undefined =
-		'bg-blue-500 hover:bg-blue-400 text-white font-bold py-2 px-4 border-b-4 border-blue-700 hover:border-blue-500 rounded';
+	export let buttonClass: string|undefined = 'bg-teal-800 hover:bg-teal-500 text-white font-bold border-b-4 border-teal-700 hover:border-teal-500 w-full rounded-none';
 	export let listId: string|undefined = 'menu';
-	export let listClass: string|undefined = '';
+	// style the list
+	export let listClass: string|undefined = 'absolute min-w-[180px] p-3 bg-white border border-gray-300 shadow-md rounded-none w-full';
 	export let listStyle: string|undefined = '';
+	export let menuContainerClass: string|undefined = 'container w-3/12';
+	export let menuContainerStyle: string|undefined = ''
+	export let menuContainerId: string|undefined = ''
 
 	let showItems = false;
 
@@ -29,7 +32,7 @@
 	}
 </script>
 
-<div>
+<div class={menuContainerClass} style={menuContainerStyle} id={menuContainerId}> 
 	<button
 		type="button"
 		aria-haspopup="menu"
@@ -48,19 +51,19 @@
 	{#if showItems}
 		<ul id={listId} class={listClass} style={listStyle}>
 			{#each items as item}
-				<li>
+				<div>
 					<button
 						role="menuitem"
 						id={item.linkID}
 						on:click={item.onClick}
-						aria-label={item.label}
 						class={item.linkClass}
+						aria-label={item.label}
 						style={item.linkStyle}
 						use:ariaLabelcheck
 						use:colorContrastCheck
 						>{item.label}
 					</button>
-				</li>
+				</div>
 			{/each}
 		</ul>
 	{/if}

@@ -2,7 +2,7 @@
 	"name": "svaria",
 	"version": "0.0.1",
 	"scripts": {
-		"dev": "vite dev",
+		"dev": "vite & nodemon ./server/server.js",
 		"build": "vite build && npm run package",
 		"preview": "vite preview",
 		"package": "svelte-kit sync && svelte-package && publint",
@@ -35,11 +35,12 @@
 		"@sveltejs/adapter-auto": "^3.2.1",
 		"@sveltejs/kit": "^2.0.0",
 		"@sveltejs/package": "^2.0.0",
-		"@sveltejs/vite-plugin-svelte": "^3.0.0",
+		"@sveltejs/vite-plugin-svelte": "^3.1.1",
 		"@tsconfig/svelte": "^5.0.4",
 		"@types/eslint": "^8.56.0",
 		"@typescript-eslint/parser": "^7.12.0",
 		"autoprefixer": "^10.4.19",
+		"cross-env": "^7.0.3",
 		"eslint": "^8.56.0",
 		"eslint-config-prettier": "^9.1.0",
 		"eslint-plugin-svelte": "^2.35.1",
@@ -58,5 +59,13 @@
 	},
 	"svelte": "./dist/index.js",
 	"types": "./dist/index.d.ts",
-	"type": "module"
+	"type": "module",
+	"dependencies": {
+		"svelte": "^4.2.18",
+		"@sveltejs/adapter-node": "^5.2.0",
+		"@sveltejs/adapter-static": "^3.0.2",
+		"express": "^4.19.2",
+		"svelte-meta-tags": "^3.1.2",
+		"@sveltejs/vite-plugin-svelte": "^2.0.0"
+	}
 }

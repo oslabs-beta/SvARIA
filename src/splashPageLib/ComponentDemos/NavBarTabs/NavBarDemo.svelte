@@ -1,6 +1,6 @@
 <script>
 	import Nav from '$lib/navigation/Navigation.svelte';
-    import { colorContrastCheck } from '$lib/ARIAchecks.js';
+    import { colorContrastCheck } from '$lib/ARIAChecks.js';
 
 
 	let navElem = [
