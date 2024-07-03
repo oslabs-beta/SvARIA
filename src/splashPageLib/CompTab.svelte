@@ -8,7 +8,6 @@
 	import NavBarTab from './ComponentDemos/NavBarTabs/NavBarTab.svelte';
 	import MenuTab from './ComponentDemos/MenuTabs/MenuTab.svelte';
 	import RadioGroupTab from './ComponentDemos/RadioGroupTabs/RadioGroupTab.svelte';
-
 	import Accordion from '$lib/Accordion.svelte';
 	import Button from '$lib/Button.svelte';
 	import AccordionGroup from '$lib/AccordionGroup.svelte';

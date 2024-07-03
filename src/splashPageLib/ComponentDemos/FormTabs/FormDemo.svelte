@@ -1,7 +1,8 @@
-<script>
+<script lang="ts">
+	import type { FormElementsObj } from '../../../types.js';
 	import Form from '$lib/input_types/Form.svelte';
 
-	let elements = [
+	let elements: FormElementsObj[] = [
 		{
 			name: 'username',
 			type: 'input',
@@ -20,8 +21,11 @@
 		}
 	];
 
-	function onSubmit(e) {
-		alert(`Form successfully submitted for ${e.target.username.value}`);
+	function onSubmit(event: SubmitEvent) {
+		event.preventDefault();
+		const form = event.currentTarget as HTMLFormElement
+		const username = form.username.value
+		alert(`Form successfully submitted for ${username}`);
 	}
 </script>
 

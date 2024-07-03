@@ -1,15 +1,4 @@
-<script>
-	import Switch from '../../Switch.svelte'
-	import className from '../../Switch.svelte'
-
-	let switchValue = 'JS';
-</script>
-
-
 <div class='text-left text-lg'>
-	<div class='switch'>
-		<Switch bind:value={switchValue} design="inner" class={className}/>
-	</div>
 	<div>
         {'<\script>'}
         <p>&nbsp &nbsp import 'Button' from SvARIA;</p>

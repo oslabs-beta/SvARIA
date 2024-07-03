@@ -1,5 +1,6 @@
 import express from 'express';
 import { handler } from '../build/handler.js';
+import type { ErrObj } from './types.ts'
 
 
 const app = express();
@@ -26,7 +27,11 @@ app.use('*', (req, res) => res.status(404).send({message:'404ed'}));
 //global error handling
 app.use((err) => {
     class defaultErr {
-      constructor(error, controller) {
+      log: string;
+      status: number;
+      message: ErrObj;
+
+      constructor(error: string, controller: string) {
         (this.log = `Express error handler caught unknown middleware error in ${controller}`),
           (this.status = 500),
           (this.message = {

@@ -48,11 +48,11 @@ export type MenuItems = {
 
 export type TabItems = {
     label: string,
-    value: number,
+    value?: number,
     component: any,
-    id: string,
-    tabContentId: string,
-    tabLabelId: string
+    id?: string,
+    tabContentId?: string,
+    tabLabelId?: string
 }
 
 export type AccordionObj = {
@@ -72,5 +72,10 @@ export type RadioObj = {
     labelClass?: string,
     labelId?: string,
     labelStyle?: string,
+    inputClass?: string,
+    inputStyle?: string
+}
 
+export type EventObj = {
+    getAttribute: string;
 }

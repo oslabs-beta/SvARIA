@@ -32,10 +32,9 @@
 				id={`radio-` + index}
 				aria-checked={selectedOption === option.label}
                 class={option.inputClass}
-				style={options.inputStyle}
+				style={option.inputStyle}
                 aria-labelledby={option.labelId}
 			/>
-			<!-- {option.label} -->
             {option.label}
 		</label>
 	{/each}

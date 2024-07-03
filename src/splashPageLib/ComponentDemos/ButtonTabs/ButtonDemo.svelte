@@ -1,6 +1,6 @@
-<script>
+<script lang='ts'>
 	import Button from '$lib/Button_ts.svelte';
-	function handleClick() {
+	function handleClick(): void {
 		alert('button clicked');
 	}
 </script>

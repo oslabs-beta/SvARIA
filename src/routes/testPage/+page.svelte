@@ -12,6 +12,7 @@
 	import Tab2 from './tabsForTestPage/Tab2.svelte';
 	import Menu from '$lib/Menu_ts.svelte';
 	import Accordion from '$lib/Accordion_ts.svelte';
+	import Switch from '$lib/Switch.svelte'
 
 	const catIpsum = `Cat ipsum dolor sit amet, always hungry jump on fridge, while happily ignoring when being
 			called shove bum in owner's face like camera lens. Meowsiers meow the best thing in the
@@ -173,7 +174,9 @@
 <br>
 <br>
 
-<Nav heading="welcome to the test page!" routes={navElem} id="newID">
+<Switch defValue='On' altValue='off' ariaDefValue="Turned On" ariaAltValue="Turned Off"/>
+
+<!-- <Nav heading="welcome to the test page!" routes={navElem} id="newID">
 	<img
 		src="https://www.wfla.com/wp-content/uploads/sites/71/2023/05/GettyImages-1389862392.jpg?w=2560&h=1440&crop=1"
 		alt="a cat"
@@ -184,7 +187,7 @@
 <div class="testDiv">
 <RadioGroup options={options} id="radio" ariaLabel="Radio Selector" bind:selectedOption
 	/>
-	<!-- your component goes here -->
+	your component goes here
 	<Button id="button" ariaLabel="test aria label" on:click={handleClick} content="Test button" />
 	<br />
 	<Checkbox
@@ -209,7 +212,7 @@
 		closeButtonId="close"
 	>
 		<h3 id="modalHeader" slot='header'>Modal</h3>
-		<!-- should this be a slot? -->
+		should this be a slot?
 		<p id="dialoginfo" slot='content'>{catIpsum}</p>
 	</Modal>
 	<Form
@@ -249,9 +252,9 @@
 				alt="a cat"
 				class="h-16 w-16 object-cover rounded-full"/>
 		</Accordion
-		>
-	</div>
-</div>
+		> -->
+	<!-- </div> -->
+<!-- </div> -->
 
 <style>
 	:global(#button) {
