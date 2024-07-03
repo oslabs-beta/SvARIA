@@ -60,6 +60,8 @@ export type TabItems = {
     id?: string,
     tabContentId?: string,
     tabLabelId?: string
+    tabLabelClass?: string
+    tabContentClass?: string
 }
 
 export type AccordionObj = {
