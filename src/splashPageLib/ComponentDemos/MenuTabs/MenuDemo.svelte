@@ -1,44 +1,45 @@
 <script lang='ts'>
+	import type { MenuItems } from '../../../types.ts';
 	import Menu from '$lib/Menu_ts.svelte';
 
-	function handleClick() {
+	function handleClick(): void {
 		alert('Menu button clicked');
 	}
 
-	let menuItems = [
+	let menuItems: MenuItems[] = [
 		{
 			label: 'purple',
-			onClick: function click() {
+			onClick: function click(): void {
 				window.location.href = 'https://en.wikipedia.org/wiki/Purple';
 			},
-            linkId: 'purple',
+            linkID: 'purple',
 			linkClass:
 				'mx-96 w-32  bg-slate-300 px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-black'
 		},
 		{
 			label: 'blue',
-			onClick: function click() {
+			onClick: function click(): void {
 				alert(menuItems[1].label);
 			},
-            linkId: 'blue',
+            linkID: 'blue',
 			linkClass:
 				'mx-96 w-32  bg-slate-300 px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-black'
 		},
 		{
 			label: 'yellow',
-			onClick: function click() {
+			onClick: function click(): void {
 				alert(menuItems[2].label);
 			},
-            linkId: 'yellow',
+            linkID: 'yellow',
 			linkClass:
 				'mx-96 w-32 bg-slate-300 px-4 py-2  hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white'
 		},
 		{
 			label: 'green',
-			onClick: function click() {
+			onClick: function click(): void {
 				window.location.href = 'https://en.wikipedia.org/wiki/Greene';
 			},
-            linkId: 'green',
+            linkID: 'green',
 			linkClass:
 			'mx-96 w-32 bg-slate-300 px-4 py-2  hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white'
 		}

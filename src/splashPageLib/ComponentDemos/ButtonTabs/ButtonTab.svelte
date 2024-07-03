@@ -1,6 +1,6 @@
 <script lang='ts'>
 	import type { TabItems } from '../../../types.ts'
-	import Tab from '$lib/Tab.svelte';
+	import Tab from '$lib/Tab_ts.svelte';
 	import ButtonDemoTab from './ButtonDemo.svelte';
 	import ButtonCodeTab from './ButtonCode.svelte';
 	import ButtonSandBoxTab from './ButtonSandbox.svelte';

@@ -1,6 +1,6 @@
 <script lang='ts'>
 	import type { CheckboxObj } from '../../../types.ts'
-	import Checkbox from '$lib/input_types/Checkbox.svelte';
+	import Checkbox from '$lib/input_types/Checkbox_ts.svelte';
 
 	let checkboxOptions: CheckboxObj[] = [
 		{ label: 'Subscribe for updates', inputClass: 'w-5 h-5 accent-emerald-500/25' },

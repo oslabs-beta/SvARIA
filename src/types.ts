@@ -46,6 +46,13 @@ export type MenuItems = {
     onClick?: () => void,
 }
 
+export type NavItems = {
+    href: string,
+    name: string,
+    linkStyle?: string,
+    linkClass?: string
+}
+
 export type TabItems = {
     label: string,
     value?: number,

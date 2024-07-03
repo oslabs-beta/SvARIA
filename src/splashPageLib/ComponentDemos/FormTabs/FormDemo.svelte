@@ -1,6 +1,6 @@
 <script lang="ts">
 	import type { FormElementsObj } from '../../../types.js';
-	import Form from '$lib/input_types/Form.svelte';
+	import Form from '$lib/input_types/Form_ts.svelte';
 
 	let elements: FormElementsObj[] = [
 		{

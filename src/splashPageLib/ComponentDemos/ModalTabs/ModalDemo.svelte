@@ -1,9 +1,9 @@
-<script>
-	import Modal from '$lib/Modal.svelte';
-	import Button from '$lib/Button.svelte';
+<script lang='ts'>
+	import Modal from '$lib/Modal_ts.svelte';
+	import Button from '$lib/Button_ts.svelte';
 	import { colorContrastCheck } from '$lib/ARIAChecks.js';
 
-	let showModal;
+	let showModal: boolean|undefined;
 </script>
 
 <Button
