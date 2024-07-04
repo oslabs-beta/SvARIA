@@ -8,7 +8,7 @@
 	export let id = '';
 	export let style = '';
 	export let className = '';
-	import { ariaLabelcheck, colorContrastCheck } from './ARIAchecks.js';
+	import { ariaLabelcheck, colorContrastCheck } from './ARIAChecks.js';
 
 	const handleClick = (tabValue) => () => {
 		activeTabValue = tabValue;
