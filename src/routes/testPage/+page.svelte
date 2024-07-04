@@ -12,6 +12,7 @@
 	import Tab2 from './tabsForTestPage/Tab2.svelte';
 	import Menu from '$lib/Menu_ts.svelte';
 	import Accordion from '$lib/Accordion_ts.svelte';
+	import ProgressBar from '$lib/ProgressBar.svelte';
 
 	const catIpsum = `Cat ipsum dolor sit amet, always hungry jump on fridge, while happily ignoring when being
 			called shove bum in owner's face like camera lens. Meowsiers meow the best thing in the
@@ -162,6 +163,18 @@
 			label: 'Modal',
 		}]
 		let selectedOption = []
+
+		let currentProgress = 50; // Example: set the current progress
+
+		function updateProgress() {
+		// Example: update progress over time
+		setInterval(() => {
+			currentProgress += 10; // Increase progress by 10%
+			if (currentProgress > 100) currentProgress = 0; // Reset if exceeds 100%
+		}, 1000); // Update every second
+		}
+
+		//updateProgress(); // Start updating progress
 </script>
 
 <title>Our testing page</title>
@@ -173,6 +186,8 @@
 <br>
 <br>
 
+
+
 <Nav heading="welcome to the test page!" routes={navElem} id="newID">
 	<img
 		src="https://www.wfla.com/wp-content/uploads/sites/71/2023/05/GettyImages-1389862392.jpg?w=2560&h=1440&crop=1"
@@ -180,6 +195,9 @@
 		class="h-16 w-16 object-cover rounded-full"
 	/>
 </Nav>
+
+<ProgressBar progress={currentProgress} />
+
 
 <div class="testDiv">
 <RadioGroup options={options} id="radio" ariaLabel="Radio Selector" bind:selectedOption
