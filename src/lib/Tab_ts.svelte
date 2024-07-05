@@ -2,16 +2,14 @@
 	export let items: TabItems[] = [];
 	export let activeTabValue: number = 0;
 	export let itemComponents: HTMLButtonElement[] = [];
-	export let tabLabelClass: string =
-		'inline-block bg-gray-100 p-2 rounded-t hover:text-gray-600 hover:bg-gray-50 dark:hover:bg-gray-800 dark:hover:text-gray-300 focus:ring ';
-	export let tabContentClass: string =
-		'p-6 bg-gray-50 text-medium text-gray-500 dark:text-gray-400 dark:bg-gray-800 rounded w-full';
-	export let tabLabelStyle: string = '';
-	export let tabContentStyle: string = '';
 	export let tabListClass: string = 'flex flex-wrap';
-
+	export let tabListId: string = '';
+	export let tabListStyle: string = '';
+	export let id = '';
+	export let style = '';
+	export let className = '';
 	import { ariaLabelcheck, colorContrastCheck } from './ARIAChecks.js';
-    import type { TabItems } from '../types.js'
+	import type { TabItems } from '../types.js'
 
 	const handleClick = (tabValue: number) => ():void => {
 		activeTabValue = tabValue;
@@ -53,37 +51,40 @@
 	});
 </script>
 
-<ul class={tabListClass}>
+<div {id} {style} class={className}>
+	<ul class={tabListClass} id={tabListId} style={tabListStyle}>
+		{#each items as item}
+			<li class={activeTabValue === item.value ? 'active' : ''}>
+				<button
+					role="tab"
+					aria-selected={item.value == activeTabValue}
+					aria-controls={item.tabContentId}
+					tabindex={item.value == activeTabValue ? '0' : '-1'}
+					on:click={handleClick(item.value)}
+					bind:this={itemComponents[item.value]}
+					on:keydown={(e) => handleKeyPress(e, item.value)}
+					class={item.tabLabelClass}
+					style={item.tabLabelStyle}
+					id={item.tabLabelId}
+					use:colorContrastCheck
+					on:click
+					>{item.label}
+				</button>
+			</li>
+		{/each}
+	</ul>
 	{#each items as item}
-		<li class={activeTabValue === item.value ? 'active' : ''}>
-			<button
-				role="tab"
-				aria-selected={item.value == activeTabValue}
-				aria-controls={item.tabContentId}
-				id={item.tabLabelId}
-				tabindex={item.value == activeTabValue ? Number('0') : Number('-1')}
-				on:click={handleClick(item.value)}
-				bind:this={itemComponents[item.value]}
-				on:keydown={(e) => handleKeyPress(e, item.value)}
-				class={tabLabelClass}
-				style={tabLabelStyle}
-				use:colorContrastCheck
-				>{item.label}
-			</button>
-		</li>
+		<div
+			class={item.tabContentClass}
+			style={item.tabContentStyle}
+			id={item.tabContentId}
+			role="tabpanel"
+			aria-labelledby={item.id}
+			use:colorContrastCheck
+			tabindex="0"
+			hidden={item.value != activeTabValue}
+		>
+			<svelte:component this={item.component} />
+		</div>
 	{/each}
-</ul>
-{#each items as item}
-	<div
-		class={tabContentClass}
-		style={tabContentStyle}
-		id={item.tabContentId}
-		role="tabpanel"
-		aria-labelledby={item.id}
-		use:colorContrastCheck
-		tabindex="0"
-		hidden={item.value != activeTabValue}
-	>
-		<svelte:component this={item.component} />
-	</div>
-{/each}
+</div>

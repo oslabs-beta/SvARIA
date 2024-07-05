@@ -1,8 +1,7 @@
 <script lang='ts'>
-	import type { CheckboxObj } from '../../../types.ts'
 	import Checkbox from '$lib/input_types/Checkbox_ts.svelte';
 
-	let checkboxOptions: CheckboxObj[] = [
+	let options = [
 		{ label: 'Subscribe for updates', inputClass: 'w-5 h-5 accent-emerald-500/25' },
 		{ label: 'Subscribe to listserv', inputClass: 'w-5 h-5 accent-emerald-500/25' },
 		{ label: 'Subscribe to newsletter', inputClass: 'w-5 h-5 accent-emerald-500/25' }
@@ -12,7 +11,7 @@
 </script>
 
 <Checkbox
-	options={checkboxOptions}
+	{options}
 	bind:selectedOption
 	id="checkbox"
 	ariaLabel="checkbox options"

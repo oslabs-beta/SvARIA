@@ -59,9 +59,11 @@ export type TabItems = {
     component: any,
     id?: string,
     tabContentId?: string,
-    tabLabelId?: string
-    tabLabelClass?: string
-    tabContentClass?: string
+    tabContentClass?: string,
+    tabContentStyle?: string,
+    tabLabelId?: string,
+    tabLabelClass?: string,
+    tabLabelStyle?: string
 }
 
 export type AccordionObj = {
@@ -87,4 +89,8 @@ export type RadioObj = {
 
 export type EventObj = {
     getAttribute: string;
+}
+
+export interface ButtonTab extends button {
+
 }
