@@ -7,6 +7,6 @@
 <iframe
 	title={title}
 	src={source}
-	width="100%"
+	width="900px"
 	height="600px"
 ></iframe> 
