@@ -1,12 +1,11 @@
 <script lang='ts'>
-	import type { TabItems } from '../../../types.ts';
 	import Tab from '$lib/Tab_ts.svelte';
 	import RadioGroupDemoTab from './RadioGroupDemo.svelte';
 	import RadioGroupCodeTab from './RadioGroupCode.svelte';
 	import RadioGroupSandBoxTab from './RadioGroupSandbox.svelte';
 	import RadioGroupDocsTab from './RadioGroupDocs.svelte';
 
-	let tabItems: TabItems[] = [
+	let items = [
 		{
 			label: 'Demo',
 			component: RadioGroupDemoTab,
@@ -36,6 +35,6 @@
 
 <div class="flex justify-center w-full">
 	<Tab
-		items={tabItems}
+		{items}
 	/>
 </div>

@@ -1,24 +1,51 @@
 <!-- This is where the tab with the components/code/sandbox live -->
 <script lang="js">
 	import SectionWrapper from './SectionWrapper.svelte';
+	import AccordionGroupTab from './ComponentDemos/AccordionGroupTabs/AccordionGroupTab.svelte';
 	import ButtonTab from './ComponentDemos/ButtonTabs/ButtonTab.svelte';
-	import ModalTab from './ComponentDemos/ModalTabs/ModalTab.svelte';
 	import CheckboxTab from './ComponentDemos/CheckboxTabs/CheckboxTab.svelte';
 	import FormTab from './ComponentDemos/FormTabs/FormTab.svelte';
-	import NavBarTab from './ComponentDemos/NavBarTabs/NavBarTab.svelte';
 	import MenuTab from './ComponentDemos/MenuTabs/MenuTab.svelte';
+	import ModalTab from './ComponentDemos/ModalTabs/ModalTab.svelte';
+	import NavBarTab from './ComponentDemos/NavBarTabs/NavBarTab.svelte';
 	import RadioGroupTab from './ComponentDemos/RadioGroupTabs/RadioGroupTab.svelte';
 	import TabTab from './ComponentDemos/TabTabs/TabTab.svelte'
-
-	import Accordion from '$lib/Accordion.svelte';
-	import Button from '$lib/Button.svelte';
 	import AccordionGroup from '$lib/AccordionGroup.svelte';
+	import SwitchTabs from './ComponentDemos/SwitchTabs/SwitchTabs.svelte';
 
 	const accordions = [
+		{
+			name: 'Accordion Group',
+			heading: "Accordion Group Component",
+			slot: AccordionGroupTab,
+			headingClass: 'p-9',
+			componentClass: 'min-h-96'
+		},
 		{
 			name: 'Button',
 			heading: 'Button Component',
 			slot: ButtonTab,
+			headingClass: 'p-9',
+			componentClass: 'min-h-96'
+		},
+		{
+			name: 'Checkbox',
+			heading: 'Checkbox Component',
+			slot: CheckboxTab,
+			headingClass: 'p-9',
+			componentClass: 'min-h-96'
+		},
+		{
+			name: 'Form',
+			heading: 'Form Component',
+			slot: FormTab,
+			headingClass: 'p-9',
+			componentClass: 'min-h-96'
+		},
+		{
+			name: 'Menu',
+			heading: 'Menu Component',
+			slot: MenuTab,
 			headingClass: 'p-9',
 			componentClass: 'min-h-96'
 		},
@@ -30,47 +57,33 @@
 			componentClass: 'min-h-96'
 		},
 		{
-			name: 'Accordion',
-			heading: 'Checkbox Component',
-			slot: CheckboxTab,
-			headingClass: 'p-9',
-			componentClass: 'min-h-96'
-		},
-		{
-			name: 'Accordion',
-			heading: 'Form Component',
-			slot: FormTab,
-			headingClass: 'p-9',
-			componentClass: 'min-h-96'
-		},
-		{
-			name: 'Accordion',
+			name: 'NavBar',
 			heading: 'NavBar Component',
 			slot: NavBarTab,
 			headingClass: 'p-9',
 			componentClass: 'min-h-96'
 		},
 		{
-			name: 'Accordion',
-			heading: 'Menu Component',
-			slot: MenuTab,
-			headingClass: 'p-9',
-			componentClass: 'min-h-96'
-		},
-		{
-			name: 'Accordion',
+			name: 'RadioGroup',
 			heading: 'RadioGroup Component',
 			slot: RadioGroupTab,
 			headingClass: 'p-9',
 			componentClass: 'min-h-96'
 		},
 		{
-			name: 'Accordion',
+			name: "Switch",
+			heading: "Switch Component",
+			slot: SwitchTabs,
+			headingClass: 'p-9',
+			componentClass: 'min-h-96'
+		},
+		{
+			name: 'Tab',
 			heading: 'Tab Component',
 			slot: TabTab,
 			headingClass: 'p-9',
 			componentClass: 'min-h-96'
-		}
+		},
 	];
 </script>
 
