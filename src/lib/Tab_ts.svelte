@@ -8,7 +8,7 @@
 	export let id = '';
 	export let style = '';
 	export let className = '';
-	import { ariaLabelcheck, colorContrastCheck } from './ARIAChecks.js';
+	import { colorContrastCheck } from './ARIAchecks.ts';
 	import type { TabItems } from '../types.js'
 
 	const handleClick = (tabValue: number) => ():void => {

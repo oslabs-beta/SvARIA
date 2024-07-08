@@ -10,7 +10,7 @@
 	import NavBarTab from './ComponentDemos/NavBarTabs/NavBarTab.svelte';
 	import RadioGroupTab from './ComponentDemos/RadioGroupTabs/RadioGroupTab.svelte';
 	import TabTab from './ComponentDemos/TabTabs/TabTab.svelte'
-	import AccordionGroup from '$lib/AccordionGroup.svelte';
+	import AccordionGroup from '$lib/AccordionGroup_ts.svelte';
 	import SwitchTabs from './ComponentDemos/SwitchTabs/SwitchTabs.svelte';
 
 	const accordions = [

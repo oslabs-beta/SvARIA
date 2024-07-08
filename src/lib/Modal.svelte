@@ -1,5 +1,5 @@
 <script lang='js'>
-	import { colorContrastCheck } from './ARIAChecks.js';
+	import { colorContrastCheck } from './ARIAchecks.ts';
 	import Button from './Button.svelte';
 
 	export let showModal = false; // boolean

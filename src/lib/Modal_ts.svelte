@@ -1,6 +1,7 @@
 <script lang='ts'>
-	import { colorContrastCheck } from './ARIAChecks.js';
+	import { colorContrastCheck } from './ARIAchecks.ts';
 	import Button from './Button.svelte';
+	import type { DialogObj } from "../types.ts"
 
 	export let showModal: boolean; // boolean
 	export let modalId: string|undefined = '';
@@ -16,16 +17,16 @@
 	export let closeButtonStyle: string|undefined = 'closeModalStyle';
 	export let style: string|undefined = '';
 
-	let dialog; // HTMLDialogElement
-	$: if (dialog && showModal) dialog.showModal();
+	let dialog: DialogObj; // HTMLDialogElement
+	$: if(dialog && showModal) dialog.showModal();
 
-	function handleKeyDown(event) {
-		if (event.key === 'Escape') {
+	function handleKeyDown(event: KeyboardEvent) {
+		if(event.key === 'Escape') {
 			showModal = false;
 		}
 	}
 
-	$: if (showModal) {
+	$: if(showModal) {
 		document.body.style.overflow = 'hidden';
 		dialog.focus();
 	}

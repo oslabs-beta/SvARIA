@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { ariaLabelcheck, colorContrastCheck } from './ARIAChecks.js';
+	import { ariaLabelcheck, colorContrastCheck } from './ARIAchecks.ts';
 	import type { MenuItems } from '../types.ts'
 	export let buttonContent: string|undefined = 'Menu';
 	export let items: MenuItems[] = [];

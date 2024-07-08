@@ -1,4 +1,4 @@
-import type { ARIAColorsObj } from "../types.js";
+import type { ARIAColorsObj } from "../types.ts";
 
 export function ariaLabelcheck(curNode: HTMLElement): void {
 	if (import.meta.env.VITE_SVARIA_MODE != 'debug') {

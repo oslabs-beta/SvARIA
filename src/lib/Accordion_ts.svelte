@@ -1,14 +1,10 @@
 <!--
-
-	Updates 6/21 - Removed unnecessary prop. The "region" div was ariaLabelledBy the button, which had no aria-label prop previously.
-	- The "role" prop was not functioning as is appeared to be intended as "h3" is not a traditional ARIA role. Was this intended to change the type of the element on the fly, for instance from a div to an h3 element? Removed this prop for now.
-
 	NEXT LEVEL:
 	[] have functionality for if the panel cant be collapsed and aria-disabled set to tru
 -->
 
 <script lang='ts'>
-	import { colorContrastCheck } from './ARIAChecks.js';
+	import { colorContrastCheck } from './ARIAchecks.ts';
 	
 	export let heading: string = 'svARIA accordion component';
 	export let open: boolean = false;
@@ -18,7 +14,7 @@
 	export let buttonId: string = `accordion-${heading}-id`;
 	export let contentContainerClass: string = 'bg-gray-200';
 	export let contentContainerId: string = `${heading}-content`;
-	// export let role: string = 'h3';
+	export let role: string = 'heading';
 
 	const handleClick = ():void => {
 		open = !open;
@@ -35,7 +31,7 @@
 		id={buttonId}
 	>
 
-		<span class={headingContainerClass}>
+		<span class={headingContainerClass} {role}>
 			<span class={headingClass}>{heading}</span>
 			{#if open}
 				<svg

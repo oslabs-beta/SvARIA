@@ -28,6 +28,12 @@ export interface CustomDivAttributes extends HTMLAttributes<HTMLDivElement> {
   heading?: string;
 }
 
+export type DialogObj = {
+    showModal: () => void,
+    focus: () => void,
+    close: () => void
+}
+
 export type Routes = {
     href: string,
     name: string,
@@ -89,8 +95,4 @@ export type RadioObj = {
 
 export type EventObj = {
     getAttribute: string;
-}
-
-export interface ButtonTab extends button {
-
 }
