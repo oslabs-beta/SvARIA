@@ -1,5 +1,5 @@
 <script>
-	import { ariaLabelcheck, colorContrastCheck } from '../ARIAchecks.ts';
+	import { ariaLabelcheck, colorContrastCheck } from '../ARIAchecks.js';
 
 	export let options = [];
 	export let ariaLabel = 'checkbox';

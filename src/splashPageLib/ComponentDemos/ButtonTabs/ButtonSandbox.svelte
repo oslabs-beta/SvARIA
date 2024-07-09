@@ -1,4 +1,4 @@
-<script>
+<!-- <script>
 	import Editor from '../../Editor.svelte';
 	import Preview from '../../Preview.svelte';
 	import Button from '$lib/Button.svelte';
@@ -79,4 +79,12 @@
 		height: 100%;
 		overflow-y: auto;
 	}
-</style>
+</style> -->
+
+<script>
+	import Sandbox from "../../Sandbox.svelte"
+
+	let source = "https://svelte.dev/repl/963bf9cd29244ab0a52f5b788293f95f?version=4.2.18";
+</script>
+
+<Sandbox {source}/>

@@ -1,7 +1,7 @@
 <script lang='ts'>
 	import type { NavItems } from '../../../types.ts';
 	import Nav from '$lib/navigation/Navigation_ts.svelte';
-    import { colorContrastCheck } from '$lib/ARIAchecks.ts';
+    import { colorContrastCheck } from '$lib/ARIAchecks.js';
 
 
 	let navElem: NavItems[] = [

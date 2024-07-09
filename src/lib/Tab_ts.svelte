@@ -8,10 +8,10 @@
 	export let id = '';
 	export let style = '';
 	export let className = '';
-	import { colorContrastCheck } from './ARIAchecks.ts';
+	import { colorContrastCheck } from './ARIAchecks.js';
 	import type { TabItems } from '../types.js'
 
-	const handleClick = (tabValue: number) => ():void => {
+	const handleClick = (tabValue: number):void => {
 		activeTabValue = tabValue;
 	};
 

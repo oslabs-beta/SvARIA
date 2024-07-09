@@ -1,5 +1,5 @@
 <script lang='ts'>
-    import { ariaLabelcheck, colorContrastCheck } from './ARIAchecks.ts'
+    import { ariaLabelcheck, colorContrastCheck } from './ARIAchecks.js'
     import type { RadioObj } from '../types.ts'
     export let options: RadioObj[];
     export let ariaLabel: string|undefined;

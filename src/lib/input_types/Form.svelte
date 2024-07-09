@@ -1,5 +1,5 @@
 <script lang='js'>
-	import { ariaLabelcheck, colorContrastCheck } from '../ARIAchecks.ts';
+	import { ariaLabelcheck, colorContrastCheck } from '../ARIAchecks.js';
 	import Button from '../Button.svelte';
 
 
