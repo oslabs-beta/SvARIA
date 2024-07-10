@@ -5,7 +5,7 @@ components used that we might need to make:
 -->
 <script>
 	import { openModal } from '../store';
-	import logo from './assets/SvARIALogo.png';
+	import logo from './assets/SvAriaLogo.png';
 	import Nav from '../lib/navigation/Navigation_ts.svelte';
 
 	const links = [

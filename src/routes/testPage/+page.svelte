@@ -175,7 +175,7 @@
 		}, 1000); // Update every second
 		}
 
-		//updateProgress(); // Start updating progress
+		updateProgress(); // Start updating progress
 </script>
 
 <title>Our testing page</title>

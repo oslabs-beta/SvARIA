@@ -1,4 +1,4 @@
-<!-- ProgressBar.svelte -->
+ProgressBar.svelte
 <script>
     // Props
     export let progress = 0; // Initial progress value
@@ -17,13 +17,19 @@
     }
   
     .progress {
-      width: barWidth;
       height: 100%;
       background-color: #4caf50;
       transition: width 0.3s ease;
     }
+
+    .progressText{
+        padding-left: 50%;
+    }
   </style>
   
   <div class="progress-bar">
-    <div class="progress"></div>
+    <div class="progress" style="width: {barWidth};">
+        <span class="progressText">{barWidth}/100</span>
+    </div>
   </div>
+

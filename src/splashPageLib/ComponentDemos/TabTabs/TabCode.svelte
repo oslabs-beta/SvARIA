@@ -1,7 +1,7 @@
 <script>
 let buttonImplementation = `
 &lt;script&gt;
-import Tab from 'svaria-toolkit'
+import Tab Tab Tab from 'svaria-toolkit'
 
   function handleClick() {
     alert('button clicked');

@@ -25,16 +25,16 @@
 	let code;
 
 	function updatePreview(code) {
-		htmlCodeStore.set(code);
-		// const { js, css, ast, warnings, vars, stats } = compile(code, {
-		// 	generate: 'dom'
-		// });
-		// console.log('js is: ', js);
-		// console.log('css is: ', css);
-		// console.log('trying to evaluate: ', js['code']);
-		// //eval(js["code"])
-		// runCode();
-		// //eval(code);
+		//htmlCodeStore.set(code);
+		const { js, css, ast, warnings, vars, stats } = compile(code, {
+			generate: 'dom'
+		});
+		console.log('js is: ', js);
+		console.log('css is: ', css);
+		console.log('trying to evaluate: ', js['code']);
+		//eval(js["code"])
+		runCode();
+		//eval(code);
 	}
 
 	function runCode() {
