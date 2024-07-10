@@ -1,5 +1,5 @@
 <script lang='ts'>
-    import { ariaLabelcheck, colorContrastCheck } from './ARIAChecks.js'
+    import { ariaLabelcheck, colorContrastCheck } from './ARIAchecks.js'
     import type { RadioObj } from '../types.ts'
     export let options: RadioObj[];
     export let ariaLabel: string|undefined;
@@ -32,10 +32,9 @@
 				id={`radio-` + index}
 				aria-checked={selectedOption === option.label}
                 class={option.inputClass}
-				style={options.inputStyle}
+				style={option.inputStyle}
                 aria-labelledby={option.labelId}
 			/>
-			<!-- {option.label} -->
             {option.label}
 		</label>
 	{/each}

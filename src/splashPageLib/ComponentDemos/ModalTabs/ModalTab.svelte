@@ -1,11 +1,12 @@
-<script>
-	import Tab from '$lib/Tab.svelte';
+<script lang='ts'>
+	import type { TabItems } from '../../../types.ts';
+	import Tab from '$lib/Tab_ts.svelte';
 	import ModalDemoTab from './ModalDemo.svelte';
 	import ModalCodeTab from './ModalCode.svelte';
 	import ModalSandBoxTab from './ModalSandbox.svelte';
 	import ModalDocsTab from './ModalDocs.svelte';
 
-	let tabItems = [
+	let tabItems: TabItems[] = [
 		{
 			label: 'Demo',
 			component: ModalDemoTab,

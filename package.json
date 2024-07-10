@@ -2,9 +2,11 @@
 	"name": "svaria",
 	"version": "0.0.1",
 	"scripts": {
+		"dev-test": "vite --host & node ./server/server.js",
+		"docker-dev:hot": "docker-compose -f docker-compose-dev-hot.yml up",
 		"dev": "vite & nodemon ./server/server.js",
 		"build": "vite build && npm run package",
-		"preview": "vite preview",
+		"preview": "vite preview --host",
 		"package": "svelte-kit sync && svelte-package && publint",
 		"prepublishOnly": "npm run package",
 		"check": "svelte-kit sync && svelte-check --tsconfig ./jsconfig.json",
@@ -61,11 +63,12 @@
 	"types": "./dist/index.d.ts",
 	"type": "module",
 	"dependencies": {
-		"svelte": "^4.2.18",
 		"@sveltejs/adapter-node": "^5.2.0",
 		"@sveltejs/adapter-static": "^3.0.2",
+		"@sveltejs/vite-plugin-svelte": "^2.0.0",
 		"express": "^4.19.2",
-		"svelte-meta-tags": "^3.1.2",
-		"@sveltejs/vite-plugin-svelte": "^2.0.0"
+		"nodemon": "^3.1.4",
+		"svelte": "^4.0.0",
+		"svelte-meta-tags": "^3.1.2"
 	}
 }

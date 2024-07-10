@@ -1,0 +1,13 @@
+version: "3"
+services:
+  dev:
+    image: svaria-test-dev
+    container_name: svaria_dev_container
+    ports:
+      - "5173:5173"
+    volumes:
+      - ./:/usr/src/app
+      - node_modules:/usr/src/app/node_modules
+    command: npm run dev-test
+volumes:
+  node_modules:

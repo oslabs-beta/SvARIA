@@ -1,5 +1,5 @@
 <script lng='js'>
-	import { ariaLabelcheck, colorContrastCheck, parentColorContrastCheck } from './ARIAChecks.js';
+	import { ariaLabelcheck, colorContrastCheck, parentColorContrastCheck } from './ARIAchecks.js';
 	export let content = 'This is a button';
 	export let ariaLabel = content
 	export let id = '';

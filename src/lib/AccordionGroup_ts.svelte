@@ -6,7 +6,7 @@
     export let group: AccordionObj[] = [];
     export let ariaLabel = '';
 
-	// const group = [{name: 'This Accordion', heading: 'A Group', slot: Button}]
+	// const exampleGroup = [{name: 'This Accordion', heading: 'A Group', slot: }]
 </script>
 
 <div class={className} aria-label={ariaLabel} >
@@ -14,7 +14,6 @@
         <Accordion heading={curr.heading} >
             <div slot='content' class="lib-display">
                 <h3>{curr.heading}</h3>
-                <!-- <div class="component"></div> -->
                 <svelte:component this={curr.slot} />
             </div>
         </Accordion>

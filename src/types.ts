@@ -28,6 +28,12 @@ export interface CustomDivAttributes extends HTMLAttributes<HTMLDivElement> {
   heading?: string;
 }
 
+export type DialogObj = {
+    showModal: () => void,
+    focus: () => void,
+    close: () => void
+}
+
 export type Routes = {
     href: string,
     name: string,
@@ -46,13 +52,24 @@ export type MenuItems = {
     onClick?: () => void,
 }
 
+export type NavItems = {
+    href: string,
+    name: string,
+    linkStyle?: string,
+    linkClass?: string
+}
+
 export type TabItems = {
     label: string,
-    value: number,
+    value?: number,
     component: any,
-    id: string,
-    tabContentId: string,
-    tabLabelId: string
+    id?: string,
+    tabContentId?: string,
+    tabContentClass?: string,
+    tabContentStyle?: string,
+    tabLabelId?: string,
+    tabLabelClass?: string,
+    tabLabelStyle?: string
 }
 
 export type AccordionObj = {
@@ -72,5 +89,10 @@ export type RadioObj = {
     labelClass?: string,
     labelId?: string,
     labelStyle?: string,
+    inputClass?: string,
+    inputStyle?: string
+}
 
+export type EventObj = {
+    getAttribute: string;
 }

@@ -3,9 +3,12 @@
 	[] have functionality for if the panel cant be collapsed and aria-disabled set to tru
 -->
 
+
+
+
+
 <script>
-	import { colorContrastCheck } from './ARIAChecks.js';
-	import { fly } from 'svelte/transition'
+	import { colorContrastCheck } from './ARIAchecks.js';
 	
 	export let heading = 'svARIA accordion component';
 	export let open = false;

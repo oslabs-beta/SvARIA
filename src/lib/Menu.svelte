@@ -1,5 +1,5 @@
 <script lang="js">
-	import { ariaLabelcheck, colorContrastCheck } from './ARIAChecks.js';
+	import { ariaLabelcheck, colorContrastCheck } from './ARIAchecks.js';
 
 	export let buttonContent = 'Menu';
 	export let items = [];

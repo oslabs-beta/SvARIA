@@ -1,11 +1,12 @@
-<script>
-	import Tab from '$lib/Tab.svelte';
+<script lang="ts">
+	import type { TabItems } from '../../../types.ts';
+	import Tab from '$lib/Tab_ts.svelte';
 	import NavBarDemoTab from './NavBarDemo.svelte';
 	import NavBarCodeTab from './NavBarCode.svelte';
 	import NavBarSandBoxTab from './NavBarSandbox.svelte';
 	import NavBarDocsTab from './NavBarDocs.svelte';
 
-	let tabItems = [
+	let tabItems: TabItems[] = [
 		{
 			label: 'Demo',
 			component: NavBarDemoTab,

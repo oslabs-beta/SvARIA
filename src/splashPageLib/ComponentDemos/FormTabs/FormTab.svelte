@@ -1,11 +1,12 @@
-<script>
-	import Tab from '$lib/Tab.svelte';
+<script lang="ts">
+	import type { TabItems } from '../../../types.ts';
+	import Tab from '$lib/Tab_ts.svelte';
 	import FormDemoTab from './FormDemo.svelte';
 	import FormCodeTab from './FormCode.svelte';
 	import FormSandBoxTab from './FormSandbox.svelte';
 	import FormDocsTab from './FormDocs.svelte';
 
-	let tabItems = [
+	let tabItems: TabItems[] = [
 		{
 			label: 'Demo',
 			component: FormDemoTab,

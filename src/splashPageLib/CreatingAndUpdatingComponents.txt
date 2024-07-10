@@ -1,0 +1,27 @@
+CREATING COMPONENTS FOR SVARIA LIBRARY
+
+1. Solidify core functionality and support for styling, in TypeScript
+2. ARIA-fy and test for contrast/screen reader compatibility
+3. Under ComponentDemos, create {ComponentName}Tabs folder with {ComponentName}Sandbox and {ComponentName}Docs files
+4. Write docs to support usage
+5. Navigate to https://svelte.dev/repl/, paste in your code for your component in one tab, and create an example of said
+component in another tab. Click save. Copy URL. Please note, for this step you will need to remove TS types, ARIA functions,
+and unnecessary imports from the version of your code on the sandbox. To enable tailwind, use the codeblock below in the
+script section of your example code.
+6. In {ComponentName}Sandbox file, use Sandbox component from SplashPageLib with URL from step 5 as "source" prop.
+
+UPDATING COMPONENTS FOR SVARIA LIBRARY
+
+1. Test new functionality using /testPage. Check devTools for errors and ARIA failures. Test for screen reader compatibility
+2. If the component's core features were changed (especially props), ensure that any use of the updated component in the
+SvARIA splash page is updated for full functionality.
+3. Update the code in the REPL Sandbox, using the instructions in step 5 of CREATING COMPONENTS
+4. Update the Docs to reflect any changes that the developer will need to be aware of
+
+TAILWIND SCRIPT:
+	if (typeof document !== 'undefined') {
+		const link = document.createElement('link');
+		link.rel = 'stylesheet';
+		link.href = 'https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css';
+		document.head.appendChild(link);
+	}

@@ -1,51 +1,57 @@
-<script>
+<script lang='ts'>
     // based on suggestions from:
     // Inclusive Components by Heydon Pickering https://inclusive-components.design/toggle-button/
     // On Designing and Building Toggle Switches by Sara Soueidan https://www.sarasoueidan.com/blog/toggle-switch-design/
-    // and this example by Scott O'hara https://codepen.io/scottohara/pen/zLZwNv 
+    // and this example by Scott O'hara https://codepen.io/scottohara/pen/zLZwNv
 
-    export let label;
-	export let value = 'JS';
-    export let className = "s s--inner"
-    export let ariaLabel = 'Switch between Javascript and Typescript';
+    import { ariaLabelcheck, colorContrastCheck } from './ARIAchecks.js'
 
-    let checked = true;
+    export let defValue: string = 'JS';
+    export let altValue: string = 'TS';
+    export let className: string = "s s--inner"
+    export let ariaDefValue: string = 'JavaScript'
+    export let ariaAltValue: string = 'TypeScript'
+    export let showLabel: boolean = true;
+    
+    let ariaLabel: string = `Switch between ${ariaDefValue} and ${ariaAltValue}`;
+    let value: string = defValue;
+    let label: string | undefined;
 
-    $: label = value === 'JS' ? 'Switch to TypeScript' : 'Switch to JavaScript';
+    $: checked = value === defValue;
+    $: label = value === defValue ? `Switch to ${ariaAltValue}` : `Switch to ${ariaDefValue}`;
 
 	const uniqueID = Math.floor(Math.random() * 100)
 
-    function handleClick(event){
-        const target = event.target
-
-        const state = target.getAttribute('aria-checked')
-
-        checked = state === 'true' ? false : true
-
-        value = checked === true ? 'JS' : 'TS'
+    function handleClick(event: MouseEvent): void {
+        const target = event.currentTarget as HTMLButtonElement;
+        const state = target.getAttribute('aria-checked');
+        checked = state !== 'true';
+        value = checked ? defValue : altValue;
     }
-	
-	const slugify = (str = "") =>
-    str.toLowerCase().replace(/ /g, "-").replace(/\./g, "");
 
 </script>
 
-<div class={className}>
+<div
+    use:ariaLabelcheck
+    use:colorContrastCheck
+    class={className}
+    aria-label={ariaLabel}>
+    {#if showLabel}
     <span id={`switch-${uniqueID}`}>{label}</span>
+    {/if}
     <button
         role="switch"
         aria-checked={checked}
         aria-labelledby={`switch-${uniqueID}`}
-        ariaLabel = {ariaLabel}
         on:click={handleClick}>
-            <span>JS</span>
-            <span>TS</span>
+            <span>{defValue}</span>
+            <span>{altValue}</span>
     </button>
 </div>
 
 <style>
-			:root {
-		--accent-color: CornflowerBlue;
+	:root {
+	    --accent-color: CornflowerBlue;
 		--gray: #ccc;
 	}
     /* Inner Design Option */
@@ -145,6 +151,4 @@
         box-shadow: 0 0px 8px var(--accent-color);
         border-radius: 1.5em;
     }
-   
-
 </style>

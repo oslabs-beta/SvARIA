@@ -1,5 +1,6 @@
 import express from 'express';
 import { handler } from '../build/handler.js';
+// import type { ErrObj } from './types.ts'
 
 
 const app = express();

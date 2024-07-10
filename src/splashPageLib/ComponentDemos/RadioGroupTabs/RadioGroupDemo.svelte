@@ -1,7 +1,8 @@
-<script>
-	import RadioGroup from '$lib/RadioGroup.svelte';
+<script lang="ts">
+	import type { RadioObj } from '../../../types.ts';
+	import RadioGroup from '$lib/RadioGroup_ts.svelte';
 
-	let radioGroupOptions = [
+	let radioGroupOptions: RadioObj[] = [
 		{
 			label: 'Button',
 			labelClass: 'ms-2 text-2xl font-medium text-gray-900 dark:text-gray-200',
@@ -21,7 +22,7 @@
 				'w-4 h-4 text-green-600 bg-gray-100 border-gray-300 focus:ring-green-500 dark:focus:ring-green-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600 accent-emerald-500/25'
 		}
 	];
-	let selectedOption;
+	let selectedOption: string|undefined;
 	$: console.log('selected option', selectedOption);
 </script>
 

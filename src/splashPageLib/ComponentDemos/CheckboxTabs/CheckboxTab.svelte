@@ -1,11 +1,12 @@
-<script>
-	import Tab from '$lib/Tab.svelte';
+<script lang='ts'>
+	import type { TabItems } from '../../../types.ts';
+	import Tab from '$lib/Tab_ts.svelte';
 	import CheckboxDemoTab from './CheckboxDemo.svelte';
 	import CheckboxCodeTab from './CheckboxCode.svelte';
 	import CheckboxSandBoxTab from './CheckboxSandbox.svelte';
 	import CheckboxDocsTab from './CheckboxDocs.svelte';
 
-	let tabItems = [
+	let tabItems: TabItems[] = [
 		{
 			label: 'Demo',
 			component: CheckboxDemoTab,
