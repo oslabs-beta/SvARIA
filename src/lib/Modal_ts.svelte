@@ -1,6 +1,6 @@
 <script lang='ts'>
 	import { colorContrastCheck } from './ARIAchecks.js';
-	import Button from './Button.svelte';
+	import Button from './Button_ts.svelte';
 	import type { DialogObj } from "../types.ts"
 
 	export let showModal: boolean; // boolean

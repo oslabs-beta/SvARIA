@@ -1,6 +1,6 @@
 <script lang='js'>
 	import { colorContrastCheck } from './ARIAchecks.js';
-	import Button from './Button.svelte';
+	import Button from './Button_ts.svelte';
 
 	export let showModal = false; // boolean
 	export let modalId='';
