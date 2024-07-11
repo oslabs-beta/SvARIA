@@ -28,12 +28,6 @@ export interface CustomDivAttributes extends HTMLAttributes<HTMLDivElement> {
   heading?: string;
 }
 
-export type DialogObj = {
-    showModal: () => void,
-    focus: () => void,
-    close: () => void
-}
-
 export type Routes = {
     href: string,
     name: string,

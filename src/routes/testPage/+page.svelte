@@ -14,6 +14,7 @@
 	import Accordion from '$lib/Accordion_ts.svelte';
 	import ProgressBar from '$lib/ProgressBar.svelte';
 	import Switch from '$lib/Switch.svelte'
+	import Popover from '$lib/Popover.svelte';
 
 	const catIpsum = `Cat ipsum dolor sit amet, always hungry jump on fridge, while happily ignoring when being
 			called shove bum in owner's face like camera lens. Meowsiers meow the best thing in the
@@ -79,6 +80,7 @@
 		console.log('checkbox checked');
 	}
 	let showModal;
+	let showPopover;
 
 	let formElements = [
 		{ name: 'address', type: 'input', labelValue: 'New Address' },
@@ -190,7 +192,26 @@
 
 
 
-
+<Popover
+	bind:showPopover
+	popoverId="dialog"
+	popoverHeaderId="PopoverHeader"
+	popoverDescribeId="dialoginfo"
+	closeButtonId="close"
+>
+	<h3
+	id="popoverHeader"
+	slot="header"
+	>
+	Popover Opened
+	</h3>
+	<div slot="content">
+		<p id="dialoginfo">
+			<br>You have successfully opened the Popover,
+			<br/>Now you can close the Popover with "X".
+		</p>
+	</div>
+</Popover>
 <Switch defValue='On' altValue='off' ariaDefValue="Turned On" ariaAltValue="Turned Off"/>
 
 <!-- <Nav heading="welcome to the test page!" routes={navElem} id="newID">
