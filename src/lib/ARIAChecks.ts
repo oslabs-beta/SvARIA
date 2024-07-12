@@ -1,10 +1,13 @@
-import type { ARIAColorsObj } from "../types.js";
+import type { ARIAColorsObj } from '../types.js';
+import ColorContrastChecker from 'color-contrast-checker';
+
+const ccc = new ColorContrastChecker();
 
 export function ariaLabelcheck(curNode: HTMLElement): void {
 	if (import.meta.env.VITE_SVARIA_MODE != 'debug') {
 		return;
 	}
-
+	console.log('hi');
 	//console.log(parameters)
 	//console.log(curNode.attributes)
 	//console.log('current node', curNode.nodeName)
@@ -26,16 +29,16 @@ function getColors(curNode: HTMLElement): ARIAColorsObj {
 
 	let backgroundColor = compStyles.getPropertyValue('background-color');
 
-	let iterations = 0
+	let iterations = 0;
 	//check parent for background color for up to 3 iterations
-	let parentNode = curNode.parentNode
+	let parentNode = curNode.parentNode;
 	while (backgroundColor == 'rgba(0, 0, 0, 0)' && iterations < 3) {
 		//console.log('parent node: ',parentNode.nodeName, 'parent node id:', parentNode.id)
 		//console.log('parent color', window.getComputedStyle(parentNode).getPropertyValue("background-color"))
-        const compStylesParent = window.getComputedStyle(parentNode as Element);
-		backgroundColor = compStylesParent.getPropertyValue("background-color")
-		iterations++
-		parentNode = parentNode.parentNode
+		const compStylesParent = window.getComputedStyle(parentNode as Element);
+		backgroundColor = compStylesParent.getPropertyValue('background-color');
+		iterations++;
+		parentNode = parentNode.parentNode;
 	}
 
 	if (backgroundColor == 'rgba(0, 0, 0, 0)') {
@@ -45,45 +48,47 @@ function getColors(curNode: HTMLElement): ARIAColorsObj {
 
 	let foregroundColor = compStyles.getPropertyValue('color');
 
-	const compStylesParent = window.getComputedStyle(parentNode as Element)
-	let parentBackgroundColor = compStylesParent.getPropertyValue("background-color");
+	const compStylesParent = window.getComputedStyle(parentNode as Element);
+	let parentBackgroundColor = compStylesParent.getPropertyValue('background-color');
 	while (parentBackgroundColor == 'rgba(0, 0, 0, 0)' && iterations < 3) {
 		//console.log('parent node: ',parentNode.nodeName, 'parent node id:', parentNode.id)
 		//console.log('parent color', window.getComputedStyle(parentNode).getPropertyValue("background-color"))
-		const compStylesParent = window.getComputedStyle(parentNode as Element)
-		parentBackgroundColor = compStylesParent.getPropertyValue("background-color")
-		iterations++
-		parentNode = parentNode.parentNode
+		const compStylesParent = window.getComputedStyle(parentNode as Element);
+		parentBackgroundColor = compStylesParent.getPropertyValue('background-color');
+		iterations++;
+		parentNode = parentNode.parentNode;
 	}
 
 	if (parentBackgroundColor == 'rgba(0, 0, 0, 0)') {
 		//console.log('No parent background color found setting to null');
-		parentBackgroundColor = null
+		parentBackgroundColor = null;
 	}
 
-
-	return ({ backgroundColor, foregroundColor, parentBackgroundColor })
-
+	return { backgroundColor, foregroundColor, parentBackgroundColor };
 }
 
 export function colorContrastCheck(curNode: HTMLElement): void {
 	if (import.meta.env.VITE_SVARIA_MODE != 'debug') {
 		return;
 	}
-	const { parentBackgroundColor, foregroundColor, backgroundColor } = getColors(curNode)
-	checkColors(curNode, foregroundColor, backgroundColor, false)
+	const { parentBackgroundColor, foregroundColor, backgroundColor } = getColors(curNode);
+	checkColors(curNode, foregroundColor, backgroundColor, false);
 }
 
 export function parentColorContrastCheck(curNode: HTMLElement): void {
-	const { parentBackgroundColor, foregroundColor, backgroundColor } = getColors(curNode)
+	const { parentBackgroundColor, foregroundColor, backgroundColor } = getColors(curNode);
 
-	if (parentBackgroundColor == null) console.log("Cannot check parent background color")
-	else checkColors(curNode, backgroundColor, parentBackgroundColor, true)
+	if (parentBackgroundColor == null) console.log('Cannot check parent background color');
+	else checkColors(curNode, backgroundColor, parentBackgroundColor, true);
 }
 
-function checkColors(curNode: HTMLElement, foregroundColor: string, backgroundColor: string, isParent: boolean): void {
-
-	const parentString = isParent ? "'s parent" : ''
+function checkColors(
+	curNode: HTMLElement,
+	foregroundColor: string,
+	backgroundColor: string,
+	isParent: boolean
+): void {
+	const parentString = isParent ? "'s parent" : '';
 
 	if (foregroundColor === backgroundColor) {
 		console.error(
@@ -91,8 +96,6 @@ function checkColors(curNode: HTMLElement, foregroundColor: string, backgroundCo
 		);
 		return;
 	}
-
-
 	fetch('https://www.aremycolorsaccessible.com/api/are-they', {
 		mode: 'cors',
 		method: 'POST',
@@ -103,11 +106,11 @@ function checkColors(curNode: HTMLElement, foregroundColor: string, backgroundCo
 			//console.log(json)
 			if (json.overall == 'Yup') {
 				// console.log(`${curNode.nodeName}${parentString}, with id of ${curNode.id}: color contrast check passed`);
-			} 
-			else if (json.overall == 'Kinda') {
-				console.warn(`${curNode.nodeName}${parentString}, with id of ${curNode.id}: Background and foreground colors contrast colors can be improved`);
-			} 
-			else  {
+			} else if (json.overall == 'Kinda') {
+				console.warn(
+					`${curNode.nodeName}${parentString}, with id of ${curNode.id}: Background and foreground colors contrast colors can be improved`
+				);
+			} else {
 				console.error(
 					`${curNode.nodeName}${parentString}, with id of ${curNode.id}: Background and foreground colors do not meet contrast requirement, please adjust colors`
 				);
