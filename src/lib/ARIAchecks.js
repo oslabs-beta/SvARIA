@@ -1,19 +1,35 @@
-import ColorContrastChecker from 'color-contrast-checker';
+import { rgb, score } from 'wcag-contrast';
 
-const ccc = new ColorContrastChecker();
+/*====================================
+* 			    TESTS
+==================================== */
+const toRGBArray = (rgbStr) => rgbStr.match(/\d+/g).map(Number);
+
+const curNode = toRGBArray('rgb(255, 255, 255)');
+const curParent = toRGBArray('rgb(0, 0, 0)');
+
+const result = rgb(curNode, curParent);
+const scoreResult = score(result);
+
+console.log('result: ', result);
+console.log('score: ', scoreResult);
+
+/*====================================
+* 			  END TESTS
+==================================== */
 
 export function ariaLabelcheck(curNode) {
 	if (import.meta.env.VITE_SVARIA_MODE != 'debug') {
 		return;
 	}
 
-	//console.log(parameters)
-	//console.log(curNode.attributes)
-	//console.log('current node', curNode.nodeName)
+	// console.log(parameters)
+	console.log(curNode.attributes);
+	console.log('current node', curNode.nodeName);
 
-	// if (curNode.attributes['aria-label']) {
-	// 	console.log(`${curNode.nodeName}, with id of ${curNode.id}: check passed: aria-label present`);
-	// }
+	if (curNode.attributes['aria-label']) {
+		console.log(`${curNode.nodeName}, with id of ${curNode.id}: check passed: aria-label present`);
+	}
 	if (!curNode.attributes['aria-label']) {
 		console.warn(
 			`${curNode.nodeName}, with id of ${curNode.id}: This type of element requires a property called an aria-label. Please add one`
@@ -23,8 +39,13 @@ export function ariaLabelcheck(curNode) {
 
 function getColors(curNode) {
 	const compStyles = window.getComputedStyle(curNode);
-	// console.log('color: ', curNode.nodeName, curNode.id, compStyles.getPropertyValue("color"))
-	// console.log('bg-color: ', curNode.nodeName, curNode.id,compStyles.getPropertyValue("background-color"))
+	console.log('color: ', curNode.nodeName, curNode.id, compStyles.getPropertyValue('color'));
+	console.log(
+		'bg-color: ',
+		curNode.nodeName,
+		curNode.id,
+		compStyles.getPropertyValue('background-color')
+	);
 
 	let backgroundColor = compStyles.getPropertyValue('background-color');
 

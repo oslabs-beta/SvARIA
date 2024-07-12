@@ -1,20 +1,18 @@
 import type { ARIAColorsObj } from '../types.js';
-import ColorContrastChecker from 'color-contrast-checker';
+// import ColorContrastChecker from 'color-contrast-checker';
 
-const ccc = new ColorContrastChecker();
+// const ccc = new ColorContrastChecker();
 
 export function ariaLabelcheck(curNode: HTMLElement): void {
 	if (import.meta.env.VITE_SVARIA_MODE != 'debug') {
 		return;
 	}
-	console.log('hi');
-	//console.log(parameters)
-	//console.log(curNode.attributes)
-	//console.log('current node', curNode.nodeName)
+	// console.log(curNode.attributes);
+	// console.log('current node', curNode.nodeName);
 
-	// if (curNode.attributes['aria-label']) {
-	// 	console.log(`${curNode.nodeName}, with id of ${curNode.id}: check passed: aria-label present`);
-	// }
+	if (curNode.attributes['aria-label']) {
+		console.log(`${curNode.nodeName}, with id of ${curNode.id}: check passed: aria-label present`);
+	}
 	if (!curNode.attributes['aria-label']) {
 		console.warn(
 			`${curNode.nodeName}, with id of ${curNode.id}: This type of element requires a property called an aria-label. Please add one`
@@ -22,10 +20,15 @@ export function ariaLabelcheck(curNode: HTMLElement): void {
 	}
 }
 
-function getColors(curNode: HTMLElement): ARIAColorsObj {
+export function getColors(curNode: HTMLElement): ARIAColorsObj {
 	const compStyles = window.getComputedStyle(curNode);
-	// console.log('color: ', curNode.nodeName, curNode.id, compStyles.getPropertyValue("color"))
-	// console.log('bg-color: ', curNode.nodeName, curNode.id,compStyles.getPropertyValue("background-color"))
+	console.log('color: ', curNode.nodeName, curNode.id, compStyles.getPropertyValue('color'));
+	console.log(
+		'bg-color: ',
+		curNode.nodeName,
+		curNode.id,
+		compStyles.getPropertyValue('background-color')
+	);
 
 	let backgroundColor = compStyles.getPropertyValue('background-color');
 

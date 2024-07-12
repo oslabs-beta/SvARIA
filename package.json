@@ -66,10 +66,10 @@
 		"@sveltejs/adapter-node": "^5.2.0",
 		"@sveltejs/adapter-static": "^3.0.2",
 		"@sveltejs/vite-plugin-svelte": "^2.0.0",
-		"color-contrast-checker": "^2.1.0",
 		"express": "^4.19.2",
 		"nodemon": "^3.1.4",
 		"svelte": "^4.0.0",
-		"svelte-meta-tags": "^3.1.2"
+		"svelte-meta-tags": "^3.1.2",
+		"wcag-contrast": "^3.0.0"
 	}
 }

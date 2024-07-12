@@ -1,6 +1,6 @@
 <!-- use this page to test out components with URL "/testPage" -->
 
-<script>
+<script land="ts">
 	import RadioGroup from '$lib/RadioGroup_ts.svelte';
 	import Checkbox from '$lib/input_types/Checkbox_ts.svelte';
 	import Button from '../../lib/Button_ts.svelte';
@@ -13,7 +13,13 @@
 	import Menu from '$lib/Menu_ts.svelte';
 	import Accordion from '$lib/Accordion_ts.svelte';
 	import ProgressBar from '$lib/ProgressBar.svelte';
-	import Switch from '$lib/Switch.svelte'
+	import Switch from '$lib/Switch.svelte';
+	import {
+		ariaLabelcheck,
+		getColors,
+		colorContrastCheck,
+		parentColorContrastCheck
+	} from '$lib/ARIAChecks.ts';
 
 	const catIpsum = `Cat ipsum dolor sit amet, always hungry jump on fridge, while happily ignoring when being
 			called shove bum in owner's face like camera lens. Meowsiers meow the best thing in the
@@ -154,44 +160,45 @@
 		}
 	];
 
-	let options = 		[{
-			label: 'Button',
+	let options = [
+		{
+			label: 'Button'
 		},
 		{
-			label: 'NavBar',
+			label: 'NavBar'
 		},
 		{
-			label: 'Modal',
-		}]
-		let selectedOption = []
+			label: 'Modal'
+		}
+	];
+	let selectedOption = [];
 
-		let currentProgress = 50; // Example: set the current progress
+	let currentProgress = 50; // Example: set the current progress
 
-		function updateProgress() {
+	function updateProgress() {
 		// Example: update progress over time
 		setInterval(() => {
 			currentProgress += 10; // Increase progress by 10%
 			if (currentProgress > 100) currentProgress = 0; // Reset if exceeds 100%
 		}, 1000); // Update every second
-		}
+	}
 
-		updateProgress(); // Start updating progress
+	updateProgress(); // Start updating progress
 </script>
 
 <title>Our testing page</title>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
 
-
-
-
-
-<Switch defValue='On' altValue='off' ariaDefValue="Turned On" ariaAltValue="Turned Off"/>
+<Switch defValue="On" altValue="off" ariaDefValue="Turned On" ariaAltValue="Turned Off" />
+<div class="test">
+	<Button />
+</div>
 
 <!-- <Nav heading="welcome to the test page!" routes={navElem} id="newID">
 	<img
@@ -273,46 +280,11 @@
 				class="h-16 w-16 object-cover rounded-full"/>
 		</Accordion
 		> -->
-	<!-- </div> -->
+<!-- </div> -->
 <!-- </div> -->
 
 <style>
-	:global(#button) {
-		color: white;
-		background-color: black;
+	.test {
+		background-color: #a52a2a;
 	}
-	:global(#checkboxLabel) {
-		color: #ffd88f;
-		background-color: #0000a8;
-	}
-	:global(#checkboxInput) {
-		accent-color: purple;
-	}
-	:global(#openModal) {
-		font-size: smaller;
-		background-color: #003d3d;
-		color: aquamarine;
-	}
-	:global(#modal) {
-		background-color: #003d3d;
-		color: #b3b351;
-	}
-	:global(#close) {
-		background-color: black;
-		color: white;
-	}
-
-	:global(#form) {
-		background-color: white;
-	}
-
-	:global(#labeladdress) {
-		font-size: large;
-		color: blue;
-		background-color: white;
-	}
-	:global(#labeluserName) {
-		font-size: large;
-		background-color: blue;
-	}
-</style> 
+</style>
