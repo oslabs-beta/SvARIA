@@ -1,5 +1,5 @@
 <script>
-	import { ariaLabelcheck, colorContrastCheck } from './ARIAchecks.js';
+	import { ariaLabelcheck, colorContrastCheck } from './ARIAChecks.js';
 
 	export let options = [];
 	export let ariaLabel = 'radiogroup';

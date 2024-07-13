@@ -13,7 +13,7 @@
 	import Menu from '$lib/Menu_ts.svelte';
 	import Accordion from '$lib/Accordion_ts.svelte';
 	import ProgressBar from '$lib/ProgressBar.svelte';
-	import Switch from '$lib/Switch.svelte'
+	import Switch from '$lib/Switch.svelte';
 
 	const catIpsum = `Cat ipsum dolor sit amet, always hungry jump on fridge, while happily ignoring when being
 			called shove bum in owner's face like camera lens. Meowsiers meow the best thing in the
@@ -154,44 +154,63 @@
 		}
 	];
 
-	let options = 		[{
-			label: 'Button',
+	let options = [
+		{
+			label: 'Button'
 		},
 		{
-			label: 'NavBar',
+			label: 'NavBar'
 		},
 		{
-			label: 'Modal',
-		}]
-		let selectedOption = []
+			label: 'Modal'
+		}
+	];
+	let selectedOption = [];
 
-		let currentProgress = 50; // Example: set the current progress
+	let currentProgress = 50; // Example: set the current progress
 
-		function updateProgress() {
+	function updateProgress() {
 		// Example: update progress over time
 		setInterval(() => {
 			currentProgress += 10; // Increase progress by 10%
 			if (currentProgress > 100) currentProgress = 0; // Reset if exceeds 100%
 		}, 1000); // Update every second
-		}
+	}
 
-		updateProgress(); // Start updating progress
+	updateProgress(); // Start updating progress
 </script>
 
 <title>Our testing page</title>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
 
+<ProgressBar progress={currentProgress} />
 
+<Button
+	id="openModal"
+	on:click={() => (showModal = true)}
+	content="show Modal"
+	ariaLabel="Open Modal"
+></Button>
+<Modal
+	bind:showModal
+	modalId="modal"
+	modalHeaderId="modalHeader"
+	modalDescribeId="dialoginfo"
+	closeModalMessage="X"
+	closeButtonId="close"
+>
+	<h3 id="modalHeader" slot="header">Modal</h3>
+	should this be a slot?
+	<p id="dialoginfo" slot="content">{catIpsum}</p>
+</Modal>
 
-
-
-<Switch defValue='On' altValue='off' ariaDefValue="Turned On" ariaAltValue="Turned Off"/>
+<!-- <Switch defValue='On' altValue='off' ariaDefValue="Turned On" ariaAltValue="Turned Off"/> -->
 
 <!-- <Nav heading="welcome to the test page!" routes={navElem} id="newID">
 	<img
@@ -273,7 +292,7 @@
 				class="h-16 w-16 object-cover rounded-full"/>
 		</Accordion
 		> -->
-	<!-- </div> -->
+<!-- </div> -->
 <!-- </div> -->
 
 <style>
@@ -315,4 +334,4 @@
 		font-size: large;
 		background-color: blue;
 	}
-</style> 
+</style>
