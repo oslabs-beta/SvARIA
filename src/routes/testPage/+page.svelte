@@ -80,7 +80,6 @@
 		console.log('checkbox checked');
 	}
 	let showModal;
-	let showPopover;
 
 	let formElements = [
 		{ name: 'address', type: 'input', labelValue: 'New Address' },
@@ -193,7 +192,6 @@
 
 
 <Popover
-	bind:showPopover
 	popoverId="dialog"
 	popoverHeaderId="PopoverHeader"
 	popoverDescribeId="dialoginfo"

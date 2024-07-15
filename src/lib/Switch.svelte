@@ -6,11 +6,11 @@
 
     import { ariaLabelcheck, colorContrastCheck } from './ARIAchecks.js'
 
-    export let defValue: string = 'JS';
-    export let altValue: string = 'TS';
+    export let defValue: string = 'ON';
+    export let altValue: string = 'OFF';
     export let className: string = "s s--inner"
-    export let ariaDefValue: string = 'JavaScript'
-    export let ariaAltValue: string = 'TypeScript'
+    export let ariaDefValue: string = 'ON Position'
+    export let ariaAltValue: string = 'OFF Position'
     export let showLabel: boolean = true;
     
     let ariaLabel: string = `Switch between ${ariaDefValue} and ${ariaAltValue}`;

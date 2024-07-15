@@ -11,7 +11,8 @@
 	import RadioGroupTab from './ComponentDemos/RadioGroupTabs/RadioGroupTab.svelte';
 	import TabTab from './ComponentDemos/TabTabs/TabTab.svelte'
 	import AccordionGroup from '$lib/AccordionGroup_ts.svelte';
-	import SwitchTabs from './ComponentDemos/SwitchTabs/SwitchTabs.svelte';
+	import SwitchTabs from './ComponentDemos/SwitchTabs/SwitchTab.svelte';
+	import PopoverTab from './ComponentDemos/PopoverTabs/PopoverTab.svelte';
 
 	const accordions = [
 		{
@@ -60,6 +61,13 @@
 			name: 'NavBar',
 			heading: 'NavBar Component',
 			slot: NavBarTab,
+			headingClass: 'p-9',
+			componentClass: 'min-h-96'
+		},
+		{
+			name: 'Popover',
+			heading: 'Popover Component',
+			slot: PopoverTab,
 			headingClass: 'p-9',
 			componentClass: 'min-h-96'
 		},
