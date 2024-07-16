@@ -1,5 +1,5 @@
 import express from 'express';
-import { handler } from '../build/handler.js';
+// import { handler } from '../build/handler.js';
 // import type { ErrObj } from './types.ts'
 
 
@@ -7,7 +7,7 @@ const app = express();
 const PORT = 3000;
 
 app.use(express.json());
-app.use(handler);
+// app.use(handler);
 
 // app.get('/', (req, res, next) => {
 //     // res.set('Content-Type', 'text/html');
