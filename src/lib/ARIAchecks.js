@@ -1,23 +1,3 @@
-import { rgb, score } from 'wcag-contrast';
-
-/*====================================
-* 			    TESTS
-==================================== */
-const toRGBArray = (rgbStr) => rgbStr.match(/\d+/g).map(Number);
-
-const curNode = toRGBArray('rgb(255, 255, 255)');
-const curParent = toRGBArray('rgb(0, 0, 0)');
-
-const result = rgb(curNode, curParent);
-const scoreResult = score(result);
-
-console.log('result: ', result);
-console.log('score: ', scoreResult);
-
-/*====================================
-* 			  END TESTS
-==================================== */
-
 export function ariaLabelcheck(curNode) {
 	if (import.meta.env.VITE_SVARIA_MODE != 'debug') {
 		return;

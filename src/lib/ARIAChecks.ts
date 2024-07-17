@@ -1,7 +1,8 @@
 import type { ARIAColorsObj } from '../types.js';
-// import ColorContrastChecker from 'color-contrast-checker';
+import { rgb, score } from 'wcag-contrast';
 
-// const ccc = new ColorContrastChecker();
+
+const toRGBArray = (rgbStr) => rgbStr.match(/\d+/g).map(Number);
 
 export function ariaLabelcheck(curNode: HTMLElement): void {
 	if (import.meta.env.VITE_SVARIA_MODE != 'debug') {
@@ -22,13 +23,13 @@ export function ariaLabelcheck(curNode: HTMLElement): void {
 
 export function getColors(curNode: HTMLElement): ARIAColorsObj {
 	const compStyles = window.getComputedStyle(curNode);
-	console.log('color: ', curNode.nodeName, curNode.id, compStyles.getPropertyValue('color'));
-	console.log(
-		'bg-color: ',
-		curNode.nodeName,
-		curNode.id,
-		compStyles.getPropertyValue('background-color')
-	);
+	// console.log('color: ', curNode.nodeName, curNode.id, compStyles.getPropertyValue('color'));
+	// console.log(
+	// 	'bg-color: ',
+	// 	curNode.nodeName,
+	// 	curNode.id,
+	// 	compStyles.getPropertyValue('background-color')
+	// );
 
 	let backgroundColor = compStyles.getPropertyValue('background-color');
 
@@ -92,13 +93,35 @@ function checkColors(
 	isParent: boolean
 ): void {
 	const parentString = isParent ? "'s parent" : '';
-
+	
 	if (foregroundColor === backgroundColor) {
 		console.error(
 			`${curNode.nodeName}${parentString}, with id of ${curNode.id}: Background and text colors do not meet contrast requirement, please adjust colors`
 		);
 		return;
 	}
+
+	// =================> API check logic <==================
+	// convert rgb values to an array of numbers 
+	// const fgArray = toRGBArray(foregroundColor)
+	// const bgArray = toRGBArray(backgroundColor)
+	
+	// // run color contrast checker install 
+	// const result = rgb(fgArray, bgArray);
+	// const _score = score(result)
+	// console.log('id: ', curNode.id, 'result: ', result, 'score: ', _score)
+	// if(_score == "AA") {console.warn(
+	// 	`${curNode.nodeName}${parentString}, with id of ${curNode.id}: Background and foreground colors contrast colors can be improved`
+	// );}
+	// if(_score == "Fail"){
+	// 	console.error(
+	// 		`${curNode.nodeName}${parentString}, with id of ${curNode.id}: Background and foreground colors do not meet contrast requirement, please adjust colors`
+	// 	);}
+
+// =============================================================
+
+
+// =================> API check logic <==================
 	fetch('https://www.aremycolorsaccessible.com/api/are-they', {
 		mode: 'cors',
 		method: 'POST',
@@ -123,4 +146,5 @@ function checkColors(
 			}
 		});
 	//console.log('class', curNode.attributes["class"])
+// =============================================================
 }
