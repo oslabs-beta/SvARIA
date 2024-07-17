@@ -14,6 +14,7 @@
 	import Accordion from '$lib/Accordion_ts.svelte';
 	import ProgressBar from '$lib/ProgressBar.svelte';
 	import Switch from '$lib/Switch.svelte';
+	import Tree from '$lib/Tree.svelte'
 
 	const catIpsum = `Cat ipsum dolor sit amet, always hungry jump on fridge, while happily ignoring when being
 			called shove bum in owner's face like camera lens. Meowsiers meow the best thing in the
@@ -178,7 +179,32 @@
 	}
 
 	updateProgress(); // Start updating progress
+
+
+	const tree = {
+		label: "USA", children: [
+			{label: "Florida", children: [
+				{label: "Jacksonville"},
+				{label: "Orlando", children: [
+					{label: "Disney World"},
+					{label: "Universal Studio"},
+					{label: "Sea World"},
+				]},
+				{label: "Miami"},
+			]},
+			{label: "California", children: [
+				{label: "San Francisco"},
+				{label: "Los Angeles"},
+				{label: "Sacramento"},
+			]},
+		],
+	}
+  
+
 </script>
+
+<Tree {tree} />
+
 
 <title>Our testing page</title>
 <br />
@@ -189,9 +215,10 @@
 <br />
 <br />
 
-<ProgressBar progress={currentProgress} />
 
-<Button
+<!-- <ProgressBar progress={currentProgress} /> -->
+
+<!-- <Button
 	id="openModal"
 	on:click={() => (showModal = true)}
 	content="show Modal"
@@ -208,7 +235,7 @@
 	<h3 id="modalHeader" slot="header">Modal</h3>
 	should this be a slot?
 	<p id="dialoginfo" slot="content">{catIpsum}</p>
-</Modal>
+</Modal> -->
 
 <!-- <Switch defValue='On' altValue='off' ariaDefValue="Turned On" ariaAltValue="Turned Off"/> -->
 
