@@ -4,7 +4,7 @@
     // On Designing and Building Toggle Switches by Sara Soueidan https://www.sarasoueidan.com/blog/toggle-switch-design/
     // and this example by Scott O'hara https://codepen.io/scottohara/pen/zLZwNv
 
-    import { ariaLabelcheck, colorContrastCheck } from './ARIAchecks.js'
+    import { ariaLabelcheck, colorContrastCheck } from './ARIAChecks.js'
 
     export let defValue: string = 'JS';
     export let altValue: string = 'TS';

@@ -4,7 +4,7 @@ export function ariaLabelcheck(curNode: HTMLElement): void {
 	if (import.meta.env.VITE_SVARIA_MODE != 'debug') {
 		return;
 	}
-
+	console.log('current node', curNode.id)
 	//console.log(parameters)
 	//console.log(curNode.attributes)
 	//console.log('current node', curNode.nodeName)
