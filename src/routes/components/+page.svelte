@@ -1,27 +1,20 @@
 <script>
-    import ButtonTab from "../../splashPageLib/ComponentDemos/ButtonTabs/ButtonTab.svelte";
-    import ModalTab from "../../splashPageLib/ComponentDemos/ModalTabs/ModalTab.svelte"
+    // import in the sanbox and docs for each component 
+    // create varibables that will render in sanbox and docs
+    // write a handle clicke that will take the imput and populate variables
+    const handleClick = (e) => {
+        console.log('event', e)
+    }
 </script>
 
-<style>
-    .lib-display {
-        align-items: center;
-        width: 50%;
-        height: 50%;
-    }
-</style>
+<!-- 
+create a list element to hold all of our componenets that will be rendered to the left side of the page
+render when the list elements are clicked then they should render to the page the different elements
+render the sandbox based off of the current element
+render the 
+-->
 
-<h3>Components</h3>
-<div class='lib-display'>
-    <h3>Button Component</h3>
-    <div class='component'>
-    </div>
-        <ButtonTab/>
-</div>
 
-<div class='lib-display'>
-    <h3>Modal Component</h3>
-    <div class='component'>
-    </div>
-        <ModalTab/>
-</div>
+<ul>
+    <li on:click={() => handleClick('button')}>SvARIA Button</li>
+</ul>
