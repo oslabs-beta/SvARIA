@@ -2,5 +2,5 @@ FROM node:20.15.0
 WORKDIR /usr/src/app/
 COPY package*.json ./
 RUN npm install
-EXPOSE 5173
+EXPOSE 5173 
 EXPOSE 3000

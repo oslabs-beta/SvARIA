@@ -1,5 +1,5 @@
 <script lang='ts'>
-	import { colorContrastCheck } from './ARIAchecks.js';
+	import { colorContrastCheck } from './ARIAChecks.js';
 	import Button from './Button_ts.svelte';
 	import type { DialogObj } from "../types.ts"
 
