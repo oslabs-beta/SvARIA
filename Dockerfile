@@ -4,3 +4,4 @@ COPY . /usr/src/app
 RUN npm install
 CMD npm run build && npm run preview
 EXPOSE 4173
+EXPOSE 3000
