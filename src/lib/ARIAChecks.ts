@@ -102,14 +102,14 @@ function checkColors(
 	}
 
 	// =================> API check logic <==================
-	// convert rgb values to an array of numbers 
+	// // convert rgb values to an array of numbers 
 	// const fgArray = toRGBArray(foregroundColor)
 	// const bgArray = toRGBArray(backgroundColor)
 	
 	// // run color contrast checker install 
 	// const result = rgb(fgArray, bgArray);
 	// const _score = score(result)
-	// console.log('id: ', curNode.id, 'result: ', result, 'score: ', _score)
+	// // console.log('id: ', curNode.id, 'result: ', result, 'score: ', _score)
 	// if(_score == "AA") {console.warn(
 	// 	`${curNode.nodeName}${parentString}, with id of ${curNode.id}: Background and foreground colors contrast colors can be improved`
 	// );}
