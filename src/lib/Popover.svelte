@@ -21,9 +21,6 @@
 	export let closeButtonClass: string|undefined = 'bg-black text-white';
 	export let closeButtonStyle: string|undefined = 'closePopoverStyle';
 
-    // let dialog: HTMLDialogElement; // HTMLDialogElement
-	// $: if(dialog && showPopover) dialog.show();
-
     let showPopover: boolean = false;
     let buttonElement: HTMLElement;
     let popoverElement: HTMLElement;

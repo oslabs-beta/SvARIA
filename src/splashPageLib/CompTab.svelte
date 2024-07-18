@@ -1,5 +1,5 @@
 <!-- This is where the tab with the components/code/sandbox live -->
-<script lang="js">
+<script lang="ts">
 	import SectionWrapper from './SectionWrapper.svelte';
 	import AccordionGroupTab from './ComponentDemos/AccordionGroupTabs/AccordionGroupTab.svelte';
 	import ButtonTab from './ComponentDemos/ButtonTabs/ButtonTab.svelte';
