@@ -1,5 +1,5 @@
 import express from 'express';
-import { handler } from '../build/handler.js';
+//import { handler } from '../build/handler.js';
 // import type { ErrObj } from './types.ts'
 
 
@@ -8,7 +8,9 @@ const PORT = 4173;
 
 
 app.use(express.json());
-app.use(handler);
+//app.use(handler);
+
+app.use ('/', (req, res) => {res.status(200).json({test: "testing"})})
 
 // app.get('/', (req, res, next) => {
 //     // res.set('Content-Type', 'text/html');

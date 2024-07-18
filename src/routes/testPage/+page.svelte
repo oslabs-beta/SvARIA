@@ -13,7 +13,8 @@
 	import Menu from '$lib/Menu_ts.svelte';
 	import Accordion from '$lib/Accordion_ts.svelte';
 	import ProgressBar from '$lib/ProgressBar.svelte';
-	import Switch from '$lib/Switch.svelte'
+	import Switch from '$lib/Switch.svelte';
+	import Tree from '$lib/Tree.svelte'
 	import Popover from '$lib/Popover.svelte';
 
 	const catIpsum = `Cat ipsum dolor sit amet, always hungry jump on fridge, while happily ignoring when being
@@ -155,29 +156,56 @@
 		}
 	];
 
-	let options = 		[{
-			label: 'Button',
+	let options = [
+		{
+			label: 'Button'
 		},
 		{
-			label: 'NavBar',
+			label: 'NavBar'
 		},
 		{
-			label: 'Modal',
-		}]
-		let selectedOption = []
+			label: 'Modal'
+		}
+	];
+	let selectedOption = [];
 
-		let currentProgress = 50; // Example: set the current progress
+	let currentProgress = 50; // Example: set the current progress
 
-		function updateProgress() {
+	function updateProgress() {
 		// Example: update progress over time
 		setInterval(() => {
 			currentProgress += 10; // Increase progress by 10%
 			if (currentProgress > 100) currentProgress = 0; // Reset if exceeds 100%
 		}, 1000); // Update every second
-		}
+	}
 
-		updateProgress(); // Start updating progress
+	updateProgress(); // Start updating progress
+
+
+	const tree = {
+		label: "USA", children: [
+			{label: "Florida", children: [
+				{label: "Jacksonville"},
+				{label: "Orlando", children: [
+					{label: "Disney World"},
+					{label: "Universal Studio"},
+					{label: "Sea World"},
+				]},
+				{label: "Miami"},
+			]},
+			{label: "California", children: [
+				{label: "San Francisco"},
+				{label: "Los Angeles"},
+				{label: "Sacramento"},
+			]},
+		],
+	}
+  
+
 </script>
+
+<Tree {tree} />
+
 
 <title>Our testing page</title>
 <br>
@@ -292,7 +320,7 @@
 				class="h-16 w-16 object-cover rounded-full"/>
 		</Accordion
 		> -->
-	<!-- </div> -->
+<!-- </div> -->
 <!-- </div> -->
 
 <style>
@@ -334,4 +362,4 @@
 		font-size: large;
 		background-color: blue;
 	}
-</style> 
+</style>
