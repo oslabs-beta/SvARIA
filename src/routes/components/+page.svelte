@@ -1,20 +1,26 @@
 <script>
-    // import in the sanbox and docs for each component 
-    // create varibables that will render in sanbox and docs
-    // write a handle clicke that will take the imput and populate variables
+    // get the store
+    import { currentComponent } from "../../store/index.js";
+    // get the comoponent to be renderd from the furniture factory
+    import FurnitureFacroty from "./FurnitureFacroty.svelte";
+    // write a handle click that updates the store
     const handleClick = (e) => {
-        console.log('event', e)
+        currentComponent.set(e)
     }
+    // ===> I dont know if I can automate this array, I think we will have to manually hard code in each string
+    // itterate over the possible options to create the list elements
+    const componentsArray = ['Button', 'Accordion']
 </script>
 
-<!-- 
-create a list element to hold all of our componenets that will be rendered to the left side of the page
-render when the list elements are clicked then they should render to the page the different elements
-render the sandbox based off of the current element
-render the 
--->
-
-
+<!-- itterate over the components array to populate the list, each with a handle click that updates the store -->
 <ul>
-    <li on:click={() => handleClick('button')}>SvARIA Button</li>
+    {#each componentsArray as comp}
+        <li on:click={() => handleClick(comp)}>SvARIA {comp}</li>
+    {/each}
 </ul>
+
+
+<!-- conditionally render the selected component from Furniture Factory-->
+{#if currentComponent}
+    <FurnitureFacroty/> 
+{/if}
