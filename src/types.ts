@@ -80,8 +80,8 @@ export type ARIAColorsObj = {
 
 export type RadioObj = {
     label: string,
+    labelId: string,
     labelClass?: string,
-    labelId?: string,
     labelStyle?: string,
     inputClass?: string,
     inputStyle?: string

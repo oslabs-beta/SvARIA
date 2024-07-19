@@ -16,6 +16,8 @@
 	import Switch from '$lib/Switch.svelte';
 	import Tree from '$lib/Tree.svelte'
 	import Popover from '$lib/Popover.svelte';
+	import AccordionDemo from '../../splashPageLib/ComponentDemos/AccordionGroupTabs/AccordionGroupDemo.svelte';
+	import RadioGroupDemo from '../../splashPageLib/ComponentDemos/RadioGroupTabs/RadioGroupDemo.svelte'
 
 	const catIpsum = `Cat ipsum dolor sit amet, always hungry jump on fridge, while happily ignoring when being
 			called shove bum in owner's face like camera lens. Meowsiers meow the best thing in the
@@ -70,17 +72,6 @@
 			pouty face oh, thank you rub against mommy's leg oh it looks so nice out, please let me
 			outside again the neighbor cat was mean to me please let me back inside you have cat to be
 			kitten me right meow cattt catt cattty cat being a cat.`;
-
-	import CatIcon from '../components/CatIcon.svelte';
-
-	function handleClick() {
-		console.log('button clicked');
-	}
-
-	function handleCheck() {
-		console.log('checkbox checked');
-	}
-	let showModal;
 
 	let formElements = [
 		{ name: 'address', type: 'input', labelValue: 'New Address' },
@@ -138,23 +129,6 @@
 		}
 	];
 
-	function onSubmit(e) {
-		console.log(e.target.firstName.value);
-	}
-	let tabItems = [
-		{
-			label: 'Content',
-			component: Tab1,
-			tabContentId: 'test-0'
-			//  tabLabelId,
-		},
-		{
-			label: 'Interactions',
-			component: Tab2,
-			tabContentId: 'test-1',
-			tabLabelId: 'label-1'
-		}
-	];
 
 	let options = [
 		{
@@ -169,43 +143,12 @@
 	];
 	let selectedOption = [];
 
-	let currentProgress = 50; // Example: set the current progress
-
-	function updateProgress() {
-		// Example: update progress over time
-		setInterval(() => {
-			currentProgress += 10; // Increase progress by 10%
-			if (currentProgress > 100) currentProgress = 0; // Reset if exceeds 100%
-		}, 1000); // Update every second
-	}
-
-	updateProgress(); // Start updating progress
-
-
-	const tree = {
-		label: "USA", children: [
-			{label: "Florida", children: [
-				{label: "Jacksonville"},
-				{label: "Orlando", children: [
-					{label: "Disney World"},
-					{label: "Universal Studio"},
-					{label: "Sea World"},
-				]},
-				{label: "Miami"},
-			]},
-			{label: "California", children: [
-				{label: "San Francisco"},
-				{label: "Los Angeles"},
-				{label: "Sacramento"},
-			]},
-		],
-	}
-  
 
 </script>
 
-<Tree {tree} />
+<RadioGroupDemo {options}/>
 
+<!-- <Tree {tree} /> -->
 
 <title>Our testing page</title>
 <br>
@@ -215,9 +158,6 @@
 <br>
 <br>
 <br>
-
-
-
 
 <Popover
 	popoverId="dialog"
@@ -239,89 +179,7 @@
 	</div>
 </Popover>
 <Switch defValue='On' altValue='off' ariaDefValue="Turned On" ariaAltValue="Turned Off"/>
-
-<!-- <Nav heading="welcome to the test page!" routes={navElem} id="newID">
-	<img
-		src="https://www.wfla.com/wp-content/uploads/sites/71/2023/05/GettyImages-1389862392.jpg?w=2560&h=1440&crop=1"
-		alt="a cat"
-		class="h-16 w-16 object-cover rounded-full"
-	/>
-</Nav>
-
-<ProgressBar progress={currentProgress} />
-
-
-<div class="testDiv">
-<RadioGroup options={options} id="radio" ariaLabel="Radio Selector" bind:selectedOption
-	/>
-	your component goes here
-	<Button id="button" ariaLabel="test aria label" on:click={handleClick} content="Test button" />
-	<br />
-	<Checkbox
-		inputId="checkboxInput"
-		labelId="checkboxLabel"
-		content="This is my checkbox"
-		on:click={handleCheck}
-	/>
-	<br />
-	<Button
-		id="openModal"
-		on:click={() => (showModal = true)}
-		content="show Modal"
-		ariaLabel="Open Modal"
-	></Button>
-	<Modal
-		bind:showModal
-		modalId="modal"
-		modalHeaderId="modalHeader"
-		modalDescribeId="dialoginfo"
-		closeModalMessage="X"
-		closeButtonId="close"
-	>
-		<h3 id="modalHeader" slot='header'>Modal</h3>
-		should this be a slot?
-		<p id="dialoginfo" slot='content'>{catIpsum}</p>
-	</Modal>
-	<Form
-		{formElements}
-		on:submit={onSubmit}
-		submitFormContent="svaria rules"
-		submitButtonId="submitButton11"
-		formId="form"
-		ariaLabel="User Information Form"
-		formClass = 'block text-gray-700 text-sm font-bold mb-2'
-		submitButtonClass = 'bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded inline-flex items-center'
-	/>
-
-	<Tab items={tabItems}></Tab>
-	<Menu
-		items={menuItems}
-		buttonContent={'Menu button'}
-		buttonId="menuButton"
-		buttonAriaLabel={'menu button'}
-		listClass="text-gray-500"
-	></Menu>
-	<div class="container w-3/12">
-		<Accordion>
-			<p slot="content">
-				{catIpsum}
-			</p>
-		</Accordion>
-		<Accordion heading="Another One"
-			><p slot="content">
-				{catIpsum}
-			</p>
-		</Accordion>
-		<Accordion heading="cat">
-			<img
-				slot="content"
-				src="https://www.wfla.com/wp-content/uploads/sites/71/2023/05/GettyImages-1389862392.jpg?w=2560&h=1440&crop=1"
-				alt="a cat"
-				class="h-16 w-16 object-cover rounded-full"/>
-		</Accordion
-		> -->
-<!-- </div> -->
-<!-- </div> -->
+<AccordionDemo/>
 
 <style>
 	:global(#button) {
