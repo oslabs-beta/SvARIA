@@ -1,8 +1,8 @@
 // import in the whole folder
 
-import * as Button from './buttonDemo'
-import * as Accordion from './accordionDemo'
+import accordionDocs from './accordionDocs.svelte'
+import buttonDocs from './buttonDocs.svelte'
 
 
 // export out the folders 
-export {Button, Accordion}
+export {buttonDocs, accordionDocs}
