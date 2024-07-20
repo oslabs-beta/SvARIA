@@ -39,11 +39,6 @@
             <h10 class="text-4xl sm:text-5xl md:text-6xl max-w-[1000px] mx-auto w-full font-semibold text-center">
                 FAQ/News
                 <br>
-                <Form
-                {formElements}
-                formClass="flex gap-3 justify-between items-center font-medium text-gray-900"
-                submitButtonClass="flex text-sm font-medium text-gray-900"
-                />
                 <p class="text-xl sm:text-2xl md:text-3xl max-w-[1000px] mx-auto w-full italic font-light text-center">
                     <br>
                     Medium Article
