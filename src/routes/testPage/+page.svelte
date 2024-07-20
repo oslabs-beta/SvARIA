@@ -14,7 +14,7 @@
 	import Accordion from '$lib/Accordion_ts.svelte';
 	import ProgressBar from '$lib/ProgressBar.svelte';
 	import Switch from '$lib/Switch.svelte';
-	import Tree from '$lib/Tree.svelte'
+	import Tree from '$lib/Tree.svelte';
 
 	const catIpsum = `Cat ipsum dolor sit amet, always hungry jump on fridge, while happily ignoring when being
 			called shove bum in owner's face like camera lens. Meowsiers meow the best thing in the
@@ -180,34 +180,38 @@
 
 	updateProgress(); // Start updating progress
 
-
 	const tree = {
-		label: "Wine", children: [
-			{label: "Red", children: [
-				{label: "California"},
-				{label: "Bordeaux", children: [
-					{label: "Cab Franc"},
-					{label: "Merlot"},
-					{label: "Malbec"},
-				]},
-				{label: "Rioja"},
-			]},
-			{label: "White", children: [
-				{label: "Burgundy"},
-				{label: "Champagne"},
-				{label: "Piedmont"},
-			]},
-		],
-	}
-  
-	function click() {
-		console.log('clicked')
-	}
+		label: 'Wine',
+		children: [
+			{
+				label: 'Red',
+				children: [
+					{ label: 'California', link: "https://en.wikipedia.org/wiki/California_wine"},
+					{
+						label: 'Bordeaux', link: 'https://en.wikipedia.org/wiki/Bordeaux',
+						children: [{ label: 'Cab Franc' }, { label: 'Merlot', link:"https://en.wikipedia.org/wiki/Merlot" }, { label: 'Malbec' }]
+					},
+					{ label: 'Rioja' }
+				]
+			},
+			{
+				label: 'White',
+				children: [{ label: 'Burgundy' }, { label: 'Champagne', link:"https://en.wikipedia.org/wiki/Champagne" }, { label: 'Piedmont', link: "https://en.wikipedia.org/wiki/Piedmont" }]
+			}
+		]
+	};
 
 </script>
 
-<Tree {tree} on:click={click} on:keydown={click} liClassName="text-md px-5" liId='listItems' arrowClass='text-red-900' arrowId='arrow' labelClass='text-gray-800' labelId='label'/>
-
+<Tree
+	{tree}
+	liClassName="text-md px-5"
+	liId="listItems"
+	arrowClass="text-red-900"
+	arrowId="arrow"
+	labelClass="text-gray-800"
+	labelId="label"
+/>
 
 <title>Our testing page</title>
 <br />
@@ -217,7 +221,6 @@
 <br />
 <br />
 <br />
-
 
 <!-- <ProgressBar progress={currentProgress} /> -->
 

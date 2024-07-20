@@ -1,28 +1,30 @@
-<script context="module">
+<script context="module" lang="ts">
 	// retain module scoped expansion state for each tree node
-	const _expansionState = {
+	const _expansionState: {label?: string; state?: boolean} = {
 		// /* treeNodeId: expanded <boolean> */
 	};
 </script>
 
-<script>
-	export let tree;
-	export let arrows = ['▼', '►'];
-	export let liClassName = "px-5";
-	export let liId = '';
-	export let liStyle = '';
-	export let arrowClass = 'arrow';
-	export let arrowId = '';
-	export let arrowStyle = '';
-	export let labelClass = '';
-	export let labelId = '';
-	export let labelStyle = '';
+<script lang="ts">
+	import type {Tree} from '../types.ts'
 
-	const { label, children } = tree;
+	export let tree:Tree;
+	export let arrows:string[] = ['▼', '►'];
+	export let liClassName:string|undefined = "px-5";
+	export let liId:string|undefined = '';
+	export let liStyle:string|undefined = '';
+	export let arrowClass:string|undefined = 'arrow';
+	export let arrowId:string|undefined = '';
+	export let arrowStyle:string|undefined = '';
+	export let labelClass:string|undefined = '';
+	export let labelId:string|undefined = '';
+	export let labelStyle:string|undefined = '';
 
-	let expanded = _expansionState[label] || false;
-	let selected = false;
-	let treeitem;
+	const { label, children, link } = tree;
+
+	let expanded:boolean = _expansionState[label] || false;
+	let selected:boolean = false;
+	let treeitem:HTMLElement;
 
 	const toggleExpansion = () => {
 		expanded = _expansionState[label] = !expanded;
@@ -34,10 +36,8 @@
 
 	// $: arrowDown = expanded;
 
-	const handleKeyDown = (event) => {
-		if (event.key === 'Enter' || event.key === ' ') {
-			toggleExpansion();
-		} else if (event.key === 'ArrowRight' && !expanded && children) {
+	const handleKeyDown = (event:KeyboardEvent) => {
+		if (event.key === 'ArrowRight' && !expanded && children) {
 			toggleExpansion();
 		} else if (event.key === 'ArrowLeft' && expanded) {
 			toggleExpansion();
@@ -64,21 +64,17 @@
 				on:focus={toggleSelection}
 				on:keydown={handleKeyDown}
 				tabindex="0"
-				on:click
-				on:keydown
 			>
 				<span class={arrowClass} id={arrowId} style={arrowStyle}
 					>{expanded ? `${arrows[0]}` : `${arrows[1]}`}</span
 				>
-				<span class={labelClass} id={labelId} style={labelStyle}>{label}</span>
+				<a class={labelClass} id={labelId} style={labelStyle} href={link}>{label}</a>
 			</span>
 			{#if expanded}
 				<ul>
-					{#each children as child, i}
+					{#each children as child}
 						<svelte:self
 							tree={child}
-							on:click
-							on:keydown
 							{arrows}
 							{liClassName}
 							{liId}
@@ -94,15 +90,13 @@
 				</ul>
 			{/if}
 		{:else}
-			<span
-				role="button"
+			<a
+				href={link}
 				aria-label={label}
 				tabindex="0"
-				on:click
-				on:keydown
 				class={labelClass}
 				id={labelId}
-				style={labelStyle}>{label}</span
+				style={labelStyle}>{label}</a
 			>
 		{/if}
 	</li>

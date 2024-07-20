@@ -96,3 +96,9 @@ export type RadioObj = {
 export type EventObj = {
     getAttribute: string;
 }
+
+export type Tree = {
+    label: string
+    children?: Tree[],
+    link?: string
+}
