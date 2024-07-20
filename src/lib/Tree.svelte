@@ -1,30 +1,28 @@
 <script context="module" lang="ts">
 	// retain module scoped expansion state for each tree node
-	const _expansionState: {label?: string; state?: boolean} = {
+	const _expansionState: { label?: string; state?: boolean } = {
 		// /* treeNodeId: expanded <boolean> */
 	};
 </script>
 
 <script lang="ts">
-	import type {Tree} from '../types.ts'
+	import type { Tree } from '../types.ts';
+	import { colorContrastCheck } from './ARIAChecks.js';
 
-	export let tree:Tree;
-	export let arrows:string[] = ['▼', '►'];
-	export let liClassName:string|undefined = "px-5";
-	export let liId:string|undefined = '';
-	export let liStyle:string|undefined = '';
-	export let arrowClass:string|undefined = 'arrow';
-	export let arrowId:string|undefined = '';
-	export let arrowStyle:string|undefined = '';
-	export let labelClass:string|undefined = '';
-	export let labelId:string|undefined = '';
-	export let labelStyle:string|undefined = '';
+	export let tree: Tree;
+	export let arrows: string[] = ['▼', '►'];
+	export let liClassName: string | undefined = 'px-5';
+	export let liStyle: string | undefined = '';
+	export let arrowClass: string | undefined = 'arrow';
+	export let arrowStyle: string | undefined = '';
+	export let labelClass: string | undefined = '';
+	export let labelStyle: string | undefined = '';
 
-	const { label, children, link, onClick } = tree;
+	const { label, children, link, onClick, labelId, arrowId } = tree;
 
-	let expanded:boolean = _expansionState[label] || false;
-	let selected:boolean = false;
-	let treeitem:HTMLElement;
+	let expanded: boolean = _expansionState[label] || false;
+	let selected: boolean = false;
+	let treeitem: HTMLElement;
 
 	const toggleExpansion = () => {
 		expanded = _expansionState[label] = !expanded;
@@ -36,7 +34,7 @@
 
 	// $: arrowDown = expanded;
 
-	const handleKeyDown = (event:KeyboardEvent) => {
+	const handleKeyDown = (event: KeyboardEvent) => {
 		if (event.key === 'ArrowRight' && !expanded && children) {
 			toggleExpansion();
 		} else if (event.key === 'ArrowLeft' && expanded) {
@@ -44,11 +42,11 @@
 		}
 	};
 
-	const handleOnClick = (event:KeyboardEvent) => {
+	const handleOnClick = (event: KeyboardEvent) => {
 		if (event.key === 'Enter') {
-			onClick()
-		} 
-	}
+			onClick();
+		}
+	};
 </script>
 
 <ul role="tree">
@@ -59,7 +57,6 @@
 		aria-selected={selected}
 		bind:this={treeitem}
 		class={liClassName}
-		id={liId}
 		style={liStyle}
 	>
 		{#if children}
@@ -71,10 +68,18 @@
 				on:keydown={handleKeyDown}
 				tabindex="0"
 			>
-				<span class={arrowClass} id={arrowId} style={arrowStyle}
+				<span class={arrowClass} style={arrowStyle} id={arrowId}
 					>{expanded ? `${arrows[0]}` : `${arrows[1]}`}</span
 				>
-				<a class={labelClass} id={labelId} style={labelStyle} href={link} on:click={onClick} on:keypress={handleOnClick}>{label}</a>
+				<a
+					id={labelId}
+					class={labelClass}
+					style={labelStyle}
+					href={link}
+					on:click={onClick}
+					on:keypress={handleOnClick}
+					use:colorContrastCheck>{label}</a
+				>
 			</span>
 			{#if expanded}
 				<ul>
@@ -83,13 +88,10 @@
 							tree={child}
 							{arrows}
 							{liClassName}
-							{liId}
 							{liStyle}
 							{arrowClass}
-							{arrowId}
 							{arrowStyle}
 							{labelClass}
-							{labelId}
 							{labelStyle}
 						/>
 					{/each}
@@ -102,10 +104,11 @@
 				aria-label={label}
 				tabindex="0"
 				class={labelClass}
-				id={labelId}
 				style={labelStyle}
 				on:click={onClick}
-				on:keypress={handleOnClick}>{label}</a
+				on:keypress={handleOnClick}
+				use:colorContrastCheck
+				id={labelId}>{label}</a
 			>
 		{/if}
 	</li>

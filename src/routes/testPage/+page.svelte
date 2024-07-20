@@ -186,17 +186,20 @@
 			{
 				label: 'Red',
 				children: [
-					{ label: 'California', link: "https://en.wikipedia.org/wiki/California_wine"},
+					{ label: 'California', link: "https://en.wikipedia.org/wiki/California_wine", labelId:"california", arrowId:"californiaArrow"},
 					{
 						label: 'Bordeaux', link: 'https://en.wikipedia.org/wiki/Bordeaux',
-						children: [{ label: 'Cab Franc', onClick:cabfranc }, { label: 'Merlot', link:"https://en.wikipedia.org/wiki/Merlot" }, { label: 'Malbec' }]
+						children: [{ label: 'Cab Franc', onClick:cabfranc }, { label: 'Merlot', link:"https://en.wikipedia.org/wiki/Merlot" }, { label: 'Malbec', labelId:"malbec" }],
+						arrowId: 'bordeauxArrow'
 					},
 					{ label: 'Rioja', onClick:rioja }
 				]
 			},
 			{
 				label: 'White',
-				children: [{ label: 'Burgundy', onClick: burgundy }, { label: 'Champagne', link:"https://en.wikipedia.org/wiki/Champagne" }, { label: 'Piedmont', link: "https://en.wikipedia.org/wiki/Piedmont" }]
+				children: [{ label: 'Burgundy', onClick: burgundy }, { label: 'Champagne', link:"https://en.wikipedia.org/wiki/Champagne" }, { label: 'Piedmont', link: "https://en.wikipedia.org/wiki/Piedmont" }],
+				labelId: "white",
+				arrowId: 'whiteArrow'
 			}
 		]
 	};
@@ -215,14 +218,13 @@
 
 </script>
 
+
 <Tree
 	{tree}
-	liClassName="text-md px-5"
-	liId="listItems"
+	liClassName="text-sm px-5"
 	arrowClass="text-red-900"
-	arrowId="arrow"
 	labelClass="text-gray-800"
-	labelId="label"
+	arrows={['▼', '►']}
 />
 
 <title>Our testing page</title>

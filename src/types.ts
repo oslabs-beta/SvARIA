@@ -98,8 +98,10 @@ export type EventObj = {
 }
 
 export type Tree = {
-    label: string
+    label: string,
     children?: Tree[],
-    link?: string
-    onClick?: () => void
+    link?: string,
+    onClick?: () => void,
+    labelId?: string,
+    arrowId?: string
 }

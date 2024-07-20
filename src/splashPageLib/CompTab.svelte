@@ -13,6 +13,7 @@
 	import AccordionGroup from '$lib/AccordionGroup_ts.svelte';
 	import SwitchTabs from './ComponentDemos/SwitchTabs/SwitchTabs.svelte';
 	import ProgressBarTab from './ComponentDemos/ProgressBarTabs/ProgressBarTab.svelte';
+	import TreeTab from './ComponentDemos/TreeTabs/TreeTab.svelte';
 
 	const accordions = [
 		{
@@ -89,6 +90,13 @@
 			name: 'Progress Bar',
 			heading: 'Progress Bar Component',
 			slot: ProgressBarTab,
+			headingClass: 'p-9',
+			componentClass: 'min-h-96'
+		},
+		{
+			name: 'Tree',
+			heading: 'Tree Component',
+			slot: TreeTab,
 			headingClass: 'p-9',
 			componentClass: 'min-h-96'
 		},
