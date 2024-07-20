@@ -1,6 +1,6 @@
 <!-- use this page to test out components with URL "/testPage" -->
 
-<script>
+<script land="ts">
 	import RadioGroup from '$lib/RadioGroup_ts.svelte';
 	import Checkbox from '$lib/input_types/Checkbox_ts.svelte';
 	import Button from '../../lib/Button_ts.svelte';
@@ -323,42 +323,7 @@
 <!-- </div> -->
 
 <style>
-	:global(#button) {
-		color: white;
-		background-color: black;
-	}
-	:global(#checkboxLabel) {
-		color: #ffd88f;
-		background-color: #0000a8;
-	}
-	:global(#checkboxInput) {
-		accent-color: purple;
-	}
-	:global(#openModal) {
-		font-size: smaller;
-		background-color: #003d3d;
-		color: aquamarine;
-	}
-	:global(#modal) {
-		background-color: #003d3d;
-		color: #b3b351;
-	}
-	:global(#close) {
-		background-color: black;
-		color: white;
-	}
-
-	:global(#form) {
-		background-color: white;
-	}
-
-	:global(#labeladdress) {
-		font-size: large;
-		color: blue;
-		background-color: white;
-	}
-	:global(#labeluserName) {
-		font-size: large;
-		background-color: blue;
+	.test {
+		background-color: #a52a2a;
 	}
 </style>
