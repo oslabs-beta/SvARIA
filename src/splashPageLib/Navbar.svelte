@@ -20,7 +20,7 @@ components used that we might need to make:
 			linkClass: 'duration-200 hover:text-indigo-400 cursor-pointer',
 		},
 		{
-			href: '#CompTab',
+			href: '/components',
 			name: 'Components',
 			linkClass: 'duration-200 hover:text-indigo-400 cursor-pointer'
 		},
