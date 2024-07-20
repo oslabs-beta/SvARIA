@@ -1,7 +1,6 @@
 <script lang='ts'>
 	import { colorContrastCheck } from './ARIAChecks.js';
 	import Button from './Button_ts.svelte';
-	import type { DialogObj } from "../types.ts"
 
 	export let showModal: boolean; // boolean
 	export let modalId: string|undefined = '';
@@ -17,7 +16,7 @@
 	export let closeButtonStyle: string|undefined = 'closeModalStyle';
 	export let style: string|undefined = '';
 
-	let dialog: DialogObj; // HTMLDialogElement
+	let dialog: HTMLDialogElement; // HTMLDialogElement
 	$: if(dialog && showModal) dialog.showModal();
 
 	function handleKeyDown(event: KeyboardEvent) {
