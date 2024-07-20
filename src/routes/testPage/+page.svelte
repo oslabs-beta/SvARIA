@@ -14,10 +14,10 @@
 	import Accordion from '$lib/Accordion_ts.svelte';
 	import ProgressBar from '$lib/ProgressBar.svelte';
 	import Switch from '$lib/Switch.svelte';
-	import Tree from '$lib/Tree.svelte'
 	import Popover from '$lib/Popover.svelte';
 	import AccordionDemo from '../../splashPageLib/ComponentDemos/AccordionGroupTabs/AccordionGroupDemo.svelte';
 	import RadioGroupDemo from '../../splashPageLib/ComponentDemos/RadioGroupTabs/RadioGroupDemo.svelte'
+	import Docs from '../../splashPageLib/Docs.svelte';
 
 	const catIpsum = `Cat ipsum dolor sit amet, always hungry jump on fridge, while happily ignoring when being
 			called shove bum in owner's face like camera lens. Meowsiers meow the best thing in the
@@ -143,10 +143,19 @@
 	];
 	let selectedOption = [];
 
+	let docsProps=[
+		"popoverId: Uniquely identifies the popover as a whole. Everything else is nested inside this element.",
+		"popoverClass: Class for the popover as a whole, use this for styling the entire element.",
+		"popoverHeaderId: uniquely identifies the header element",
+		"popoverDescribeId"
+	]
 
 </script>
-
-<RadioGroupDemo {options}/>
+<Docs componentName="Popover" propsDetails={docsProps}>
+	<!-- <h3 slot='details'>
+	</h3> -->
+</Docs>
+<!-- <RadioGroupDemo {options}/> -->
 
 <!-- <Tree {tree} /> -->
 
@@ -159,7 +168,7 @@
 <br>
 <br>
 
-<Popover
+<!-- <Popover
 	popoverId="dialog"
 	popoverHeaderId="PopoverHeader"
 	popoverDescribeId="dialoginfo"
@@ -177,9 +186,9 @@
 			<br/>Now you can close the Popover with "X".
 		</p>
 	</div>
-</Popover>
-<Switch defValue='On' altValue='off' ariaDefValue="Turned On" ariaAltValue="Turned Off"/>
-<AccordionDemo/>
+</Popover> -->
+<!-- <Switch defValue='On' altValue='off' ariaDefValue="Turned On" ariaAltValue="Turned Off"/>
+<AccordionDemo/> -->
 
 <style>
 	:global(#button) {
