@@ -2,53 +2,108 @@
 	// retain module scoped expansion state for each tree node
 	const _expansionState = {
 		// /* treeNodeId: expanded <boolean> */
-	}
+	};
 </script>
+
 <script>
-import { slide } from 'svelte/transition'
-	export let tree
-	const {label, children} = tree
+	export let tree;
+	export let arrows = ['▼', '►'];
+	export let liClassName = "px-5";
+	export let liId = '';
+	export let liStyle = '';
+	export let arrowClass = 'arrow';
+	export let arrowId = '';
+	export let arrowStyle = '';
+	export let labelClass = '';
+	export let labelId = '';
+	export let labelStyle = '';
 
-	let expanded = _expansionState[label] || false
+	const { label, children } = tree;
+
+	let expanded = _expansionState[label] || false;
+	let selected = false;
+	let treeitem;
+
 	const toggleExpansion = () => {
-		expanded = _expansionState[label] = !expanded
-	}
-	$: arrowDown = expanded
+		expanded = _expansionState[label] = !expanded;
+	};
+
+	const toggleSelection = () => {
+		selected = !selected;
+	};
+
+	// $: arrowDown = expanded;
+
+	const handleKeyDown = (event) => {
+		if (event.key === 'Enter' || event.key === ' ') {
+			toggleExpansion();
+		} else if (event.key === 'ArrowRight' && !expanded && children) {
+			toggleExpansion();
+		} else if (event.key === 'ArrowLeft' && expanded) {
+			toggleExpansion();
+		}
+	};
 </script>
 
-<ul><!-- transition:slide -->
-	<li role="treeitem">
+<ul role="tree">
+	<!-- transition:slide -->
+	<li
+		role="treeitem"
+		aria-expanded={expanded ? 'true' : 'false'}
+		aria-selected={selected}
+		bind:this={treeitem}
+		class={liClassName}
+		id={liId}
+		style={liStyle}
+	>
 		{#if children}
-			<span on:click={toggleExpansion}>
-				<span class="arrow" class:arrowDown>&#x25b6</span>
-				{label}
+			<span
+				role="button"
+				aria-label={label}
+				on:click={toggleExpansion}
+				on:focus={toggleSelection}
+				on:keydown={handleKeyDown}
+				tabindex="0"
+				on:click
+				on:keydown
+			>
+				<span class={arrowClass} id={arrowId} style={arrowStyle}
+					>{expanded ? `${arrows[0]}` : `${arrows[1]}`}</span
+				>
+				<span class={labelClass} id={labelId} style={labelStyle}>{label}</span>
 			</span>
 			{#if expanded}
-				{#each children as child}
-					<svelte:self tree={child} />
-				{/each}
+				<ul>
+					{#each children as child, i}
+						<svelte:self
+							tree={child}
+							on:click
+							on:keydown
+							{arrows}
+							{liClassName}
+							{liId}
+							{liStyle}
+							{arrowClass}
+							{arrowId}
+							{arrowStyle}
+							{labelClass}
+							{labelId}
+							{labelStyle}
+						/>
+					{/each}
+				</ul>
 			{/if}
 		{:else}
-			<span>
-				<span class="no-arrow"/>
-				{label}
-			</span>
+			<span
+				role="button"
+				aria-label={label}
+				tabindex="0"
+				on:click
+				on:keydown
+				class={labelClass}
+				id={labelId}
+				style={labelStyle}>{label}</span
+			>
 		{/if}
 	</li>
 </ul>
-
-<style>
-	ul {
-		margin: 0;
-		list-style: none;
-		padding-left: 1.2rem; 
-		user-select: none;
-	}
-	.no-arrow { padding-left: 1.0rem; }
-	.arrow {
-		cursor: pointer;
-		display: inline-block;
-		/* transition: transform 200ms; */
-	}
-	.arrowDown { transform: rotate(90deg); }
-</style>

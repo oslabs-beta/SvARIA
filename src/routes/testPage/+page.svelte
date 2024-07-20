@@ -182,28 +182,31 @@
 
 
 	const tree = {
-		label: "USA", children: [
-			{label: "Florida", children: [
-				{label: "Jacksonville"},
-				{label: "Orlando", children: [
-					{label: "Disney World"},
-					{label: "Universal Studio"},
-					{label: "Sea World"},
+		label: "Wine", children: [
+			{label: "Red", children: [
+				{label: "California"},
+				{label: "Bordeaux", children: [
+					{label: "Cab Franc"},
+					{label: "Merlot"},
+					{label: "Malbec"},
 				]},
-				{label: "Miami"},
+				{label: "Rioja"},
 			]},
-			{label: "California", children: [
-				{label: "San Francisco"},
-				{label: "Los Angeles"},
-				{label: "Sacramento"},
+			{label: "White", children: [
+				{label: "Burgundy"},
+				{label: "Champagne"},
+				{label: "Piedmont"},
 			]},
 		],
 	}
   
+	function click() {
+		console.log('clicked')
+	}
 
 </script>
 
-<Tree {tree} />
+<Tree {tree} on:click={click} on:keydown={click} liClassName="text-md px-5" liId='listItems' arrowClass='text-red-900' arrowId='arrow' labelClass='text-gray-800' labelId='label'/>
 
 
 <title>Our testing page</title>
