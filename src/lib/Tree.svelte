@@ -20,7 +20,7 @@
 	export let labelId:string|undefined = '';
 	export let labelStyle:string|undefined = '';
 
-	const { label, children, link } = tree;
+	const { label, children, link, onClick } = tree;
 
 	let expanded:boolean = _expansionState[label] || false;
 	let selected:boolean = false;
@@ -43,6 +43,12 @@
 			toggleExpansion();
 		}
 	};
+
+	const handleOnClick = (event:KeyboardEvent) => {
+		if (event.key === 'Enter') {
+			onClick()
+		} 
+	}
 </script>
 
 <ul role="tree">
@@ -68,7 +74,7 @@
 				<span class={arrowClass} id={arrowId} style={arrowStyle}
 					>{expanded ? `${arrows[0]}` : `${arrows[1]}`}</span
 				>
-				<a class={labelClass} id={labelId} style={labelStyle} href={link}>{label}</a>
+				<a class={labelClass} id={labelId} style={labelStyle} href={link} on:click={onClick} on:keypress={handleOnClick}>{label}</a>
 			</span>
 			{#if expanded}
 				<ul>
@@ -91,12 +97,15 @@
 			{/if}
 		{:else}
 			<a
+				role="button"
 				href={link}
 				aria-label={label}
 				tabindex="0"
 				class={labelClass}
 				id={labelId}
-				style={labelStyle}>{label}</a
+				style={labelStyle}
+				on:click={onClick}
+				on:keypress={handleOnClick}>{label}</a
 			>
 		{/if}
 	</li>

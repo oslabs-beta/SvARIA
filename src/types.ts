@@ -101,4 +101,5 @@ export type Tree = {
     label: string
     children?: Tree[],
     link?: string
+    onClick?: () => void
 }

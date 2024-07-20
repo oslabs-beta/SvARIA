@@ -189,17 +189,29 @@
 					{ label: 'California', link: "https://en.wikipedia.org/wiki/California_wine"},
 					{
 						label: 'Bordeaux', link: 'https://en.wikipedia.org/wiki/Bordeaux',
-						children: [{ label: 'Cab Franc' }, { label: 'Merlot', link:"https://en.wikipedia.org/wiki/Merlot" }, { label: 'Malbec' }]
+						children: [{ label: 'Cab Franc', onClick:cabfranc }, { label: 'Merlot', link:"https://en.wikipedia.org/wiki/Merlot" }, { label: 'Malbec' }]
 					},
-					{ label: 'Rioja' }
+					{ label: 'Rioja', onClick:rioja }
 				]
 			},
 			{
 				label: 'White',
-				children: [{ label: 'Burgundy' }, { label: 'Champagne', link:"https://en.wikipedia.org/wiki/Champagne" }, { label: 'Piedmont', link: "https://en.wikipedia.org/wiki/Piedmont" }]
+				children: [{ label: 'Burgundy', onClick: burgundy }, { label: 'Champagne', link:"https://en.wikipedia.org/wiki/Champagne" }, { label: 'Piedmont', link: "https://en.wikipedia.org/wiki/Piedmont" }]
 			}
 		]
 	};
+
+	function burgundy () {
+		console.log('Burgundy clicked')
+	}
+
+	function rioja () {
+		console.log('rioja clicked')
+	}
+
+	function cabfranc () {
+		console.log('cab franc clicked')
+	}
 
 </script>
 
