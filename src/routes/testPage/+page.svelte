@@ -1,6 +1,6 @@
 <!-- use this page to test out components with URL "/testPage" -->
 
-<script>
+<script land="ts">
 	import RadioGroup from '$lib/RadioGroup_ts.svelte';
 	import Checkbox from '$lib/input_types/Checkbox_ts.svelte';
 	import Button from '../../lib/Button_ts.svelte';
@@ -14,6 +14,10 @@
 	import Accordion from '$lib/Accordion_ts.svelte';
 	import ProgressBar from '$lib/ProgressBar.svelte';
 	import Switch from '$lib/Switch.svelte';
+	import Popover from '$lib/Popover.svelte';
+	import AccordionDemo from '../../splashPageLib/ComponentDemos/AccordionGroupTabs/AccordionGroupDemo.svelte';
+	import RadioGroupDemo from '../../splashPageLib/ComponentDemos/RadioGroupTabs/RadioGroupDemo.svelte'
+	import Docs from '../../splashPageLib/Docs.svelte';
 	import Tree from '$lib/Tree.svelte';
 
 	const catIpsum = `Cat ipsum dolor sit amet, always hungry jump on fridge, while happily ignoring when being
@@ -69,17 +73,6 @@
 			pouty face oh, thank you rub against mommy's leg oh it looks so nice out, please let me
 			outside again the neighbor cat was mean to me please let me back inside you have cat to be
 			kitten me right meow cattt catt cattty cat being a cat.`;
-
-	import CatIcon from '../components/CatIcon.svelte';
-
-	function handleClick() {
-		console.log('button clicked');
-	}
-
-	function handleCheck() {
-		console.log('checkbox checked');
-	}
-	let showModal;
 
 	let formElements = [
 		{ name: 'address', type: 'input', labelValue: 'New Address' },
@@ -137,23 +130,6 @@
 		}
 	];
 
-	function onSubmit(e) {
-		console.log(e.target.firstName.value);
-	}
-	let tabItems = [
-		{
-			label: 'Content',
-			component: Tab1,
-			tabContentId: 'test-0'
-			//  tabLabelId,
-		},
-		{
-			label: 'Interactions',
-			component: Tab2,
-			tabContentId: 'test-1',
-			tabLabelId: 'label-1'
-		}
-	];
 
 	let options = [
 		{
@@ -168,6 +144,12 @@
 	];
 	let selectedOption = [];
 
+	let docsProps=[
+		"popoverId: Uniquely identifies the popover as a whole. Everything else is nested inside this element.",
+		"popoverClass: Class for the popover as a whole, use this for styling the entire element.",
+		"popoverHeaderId: uniquely identifies the header element",
+		"popoverDescribeId"
+	]
 	let currentProgress = 50; // Example: set the current progress
 
 	function updateProgress() {
@@ -217,6 +199,11 @@
 	}
 
 </script>
+<Docs componentName="Popover" propsDetails={docsProps}>
+	<!-- <h3 slot='details'>
+	</h3> -->
+</Docs>
+<!-- <RadioGroupDemo {options}/> -->
 
 
 <Tree
@@ -236,149 +223,33 @@
 <br />
 <br />
 
+
 <!-- <ProgressBar progress={currentProgress} /> -->
 
-<!-- <Button
-	id="openModal"
-	on:click={() => (showModal = true)}
-	content="show Modal"
-	ariaLabel="Open Modal"
-></Button>
-<Modal
-	bind:showModal
-	modalId="modal"
-	modalHeaderId="modalHeader"
-	modalDescribeId="dialoginfo"
-	closeModalMessage="X"
+<!-- <Popover
+	popoverId="dialog"
+	popoverHeaderId="PopoverHeader"
+	popoverDescribeId="dialoginfo"
 	closeButtonId="close"
 >
-	<h3 id="modalHeader" slot="header">Modal</h3>
-	should this be a slot?
-	<p id="dialoginfo" slot="content">{catIpsum}</p>
-</Modal> -->
-
-<!-- <Switch defValue='On' altValue='off' ariaDefValue="Turned On" ariaAltValue="Turned Off"/> -->
-
-<!-- <Nav heading="welcome to the test page!" routes={navElem} id="newID">
-	<img
-		src="https://www.wfla.com/wp-content/uploads/sites/71/2023/05/GettyImages-1389862392.jpg?w=2560&h=1440&crop=1"
-		alt="a cat"
-		class="h-16 w-16 object-cover rounded-full"
-	/>
-</Nav>
-
-<ProgressBar progress={currentProgress} />
-
-
-<div class="testDiv">
-<RadioGroup options={options} id="radio" ariaLabel="Radio Selector" bind:selectedOption
-	/>
-	your component goes here
-	<Button id="button" ariaLabel="test aria label" on:click={handleClick} content="Test button" />
-	<br />
-	<Checkbox
-		inputId="checkboxInput"
-		labelId="checkboxLabel"
-		content="This is my checkbox"
-		on:click={handleCheck}
-	/>
-	<br />
-	<Button
-		id="openModal"
-		on:click={() => (showModal = true)}
-		content="show Modal"
-		ariaLabel="Open Modal"
-	></Button>
-	<Modal
-		bind:showModal
-		modalId="modal"
-		modalHeaderId="modalHeader"
-		modalDescribeId="dialoginfo"
-		closeModalMessage="X"
-		closeButtonId="close"
+	<h3
+	id="popoverHeader"
+	slot="header"
 	>
-		<h3 id="modalHeader" slot='header'>Modal</h3>
-		should this be a slot?
-		<p id="dialoginfo" slot='content'>{catIpsum}</p>
-	</Modal>
-	<Form
-		{formElements}
-		on:submit={onSubmit}
-		submitFormContent="svaria rules"
-		submitButtonId="submitButton11"
-		formId="form"
-		ariaLabel="User Information Form"
-		formClass = 'block text-gray-700 text-sm font-bold mb-2'
-		submitButtonClass = 'bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded inline-flex items-center'
-	/>
-
-	<Tab items={tabItems}></Tab>
-	<Menu
-		items={menuItems}
-		buttonContent={'Menu button'}
-		buttonId="menuButton"
-		buttonAriaLabel={'menu button'}
-		listClass="text-gray-500"
-	></Menu>
-	<div class="container w-3/12">
-		<Accordion>
-			<p slot="content">
-				{catIpsum}
-			</p>
-		</Accordion>
-		<Accordion heading="Another One"
-			><p slot="content">
-				{catIpsum}
-			</p>
-		</Accordion>
-		<Accordion heading="cat">
-			<img
-				slot="content"
-				src="https://www.wfla.com/wp-content/uploads/sites/71/2023/05/GettyImages-1389862392.jpg?w=2560&h=1440&crop=1"
-				alt="a cat"
-				class="h-16 w-16 object-cover rounded-full"/>
-		</Accordion
-		> -->
-<!-- </div> -->
-<!-- </div> -->
+	Popover Opened
+	</h3>
+	<div slot="content">
+		<p id="dialoginfo">
+			<br>You have successfully opened the Popover,
+			<br/>Now you can close the Popover with "X".
+		</p>
+	</div>
+</Popover> -->
+<!-- <Switch defValue='On' altValue='off' ariaDefValue="Turned On" ariaAltValue="Turned Off"/>
+<AccordionDemo/> -->
 
 <style>
-	:global(#button) {
-		color: white;
-		background-color: black;
-	}
-	:global(#checkboxLabel) {
-		color: #ffd88f;
-		background-color: #0000a8;
-	}
-	:global(#checkboxInput) {
-		accent-color: purple;
-	}
-	:global(#openModal) {
-		font-size: smaller;
-		background-color: #003d3d;
-		color: aquamarine;
-	}
-	:global(#modal) {
-		background-color: #003d3d;
-		color: #b3b351;
-	}
-	:global(#close) {
-		background-color: black;
-		color: white;
-	}
-
-	:global(#form) {
-		background-color: white;
-	}
-
-	:global(#labeladdress) {
-		font-size: large;
-		color: blue;
-		background-color: white;
-	}
-	:global(#labeluserName) {
-		font-size: large;
-		background-color: blue;
+	.test {
+		background-color: #a52a2a;
 	}
 </style>

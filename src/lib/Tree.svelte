@@ -11,6 +11,7 @@
 
 	export let tree: Tree;
 	export let arrows: string[] = ['▼', '►'];
+	export let liId:string | undefined = ''
 	export let liClassName: string | undefined = 'px-5';
 	export let liStyle: string | undefined = '';
 	export let arrowClass: string | undefined = 'arrow';
@@ -58,6 +59,7 @@
 		bind:this={treeitem}
 		class={liClassName}
 		style={liStyle}
+		id={liId}
 	>
 		{#if children}
 			<span
