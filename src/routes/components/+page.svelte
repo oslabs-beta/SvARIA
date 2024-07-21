@@ -9,6 +9,7 @@
 
 <script lang="ts">
 	import Sandbox from '../../splashPageLib/Sandbox.svelte';
+	import type { CompObj } from './../../types.js';
 	// ======================> Component Imports < ========================
 	import ButtonDocs from './lib/ButtonDocs.svelte';
 	import AccordionDocs from './lib/AccordionDocs.svelte';
@@ -24,7 +25,7 @@
 	import TabDocs from './lib/TabDocs.svelte';
 	// ====================================================================
 
-	const componentsArray = [
+	const componentsArray: CompObj[] = [
 		{
 			docs: ButtonDocs,
 			label: 'Button',
@@ -46,10 +47,9 @@
 		{ docs: SwitchDocs, label: 'Switch', source: 'https://svelte.dev/repl/' },
 		{ docs: TabDocs, label: 'Tabs', source: 'https://svelte.dev/repl/' }
 	];
-	let component = componentsArray[0];
-	const handleClick = (e) => {
-		console.log(e);
-		component = e;
+	let component: CompObj = componentsArray[0];
+	const handleClick = (comp: CompObj): void => {
+		component = comp;
 	};
 </script>
 
