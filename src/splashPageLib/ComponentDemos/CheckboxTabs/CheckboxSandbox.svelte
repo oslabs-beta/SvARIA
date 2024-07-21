@@ -3,4 +3,4 @@ Sandbox will go here
     import Sandbox from '../../Sandbox.svelte';
 </script>
 
-<Sandbox title="checkboxSandbox" source = "https://svelte.dev/repl/6f215987234e471fbe241df938789695?version=4.2.18"/>
+<Sandbox title="checkboxSandbox" source = "https://svelte.dev/repl/765eb013e57e437ebb2755eed21e36d1?version=4.2.18"/>
