@@ -18,11 +18,10 @@
 	bind:showModal
 	modalId="dialog"
 	modalClass="bg-white text-black rounded-lg shadow dark:bg-gray-700 dark:text-white p-4 md:p-5 space-y-4"
-	modalHeaderId="header"
-	modalDescribeId="content"
 	closeModalMessage="X"
 	closeButtonId="close"
 	closeButtonClass="bg-white hover:bg-gray-100 text-gray-800 font-semibold py-1 px-2 border border-gray-400 rounded shadow"
+	contentId="contentOfModal"
 >
 	<h3
 		id="modalHeader"

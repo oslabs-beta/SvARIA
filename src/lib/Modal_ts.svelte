@@ -3,12 +3,10 @@
 	import Button from './Button_ts.svelte';
 
 	export let showModal: boolean; // boolean
-	export let modalId: string|undefined = '';
+	export let modalId: string|undefined = 'modal';
 	export let modalClass: string|undefined = 'bg-white rounded-lg shadow dark:bg-white-700 p-4 md:p-5 space-y-4'
 	//export let modalClass = ''
 	export let closeModalMessage: string|undefined = 'Close Modal';
-	export let modalHeaderId: string|undefined = 'modalHeader';
-	export let modalDescribeId: string|undefined = 'modalContent';
 	export let contentClass: string|undefined = 'mb-10';
 	export let contentId: string|undefined = 'modalContentId';
 	export let closeButtonId: string|undefined = 'closeModalButtonId';
@@ -48,11 +46,8 @@
 >
 	<div
 		role="dialog"
-		class={contentClass}
-		id={contentId}
 		aria-modal="true"
-		aria-labelledby={modalHeaderId}
-		aria-describedby={modalDescribeId}
+		aria-labelledby={modalId}
 		on:click|stopPropagation
 		on:keypress|stopPropagation
 	>
