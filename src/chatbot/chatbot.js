@@ -1,18 +1,6 @@
-import { RecursiveCharacterTextSplitter } from "langchain/text_splitter";
-import { MemoryVectorStore } from "langchain/vectorstores/memory";
-import { OpenAIEmbeddings, ChatOpenAI } from "@langchain/openai";
-import { pull } from "langchain/hub";
+import { ChatOpenAI } from "@langchain/openai";
 import { ChatPromptTemplate } from "@langchain/core/prompts";
-import { StringOutputParser } from "@langchain/core/output_parsers";
-import { 
-    HumanMessage, 
-    BaseMessage,
-    AIMessage
-} from "@langchain/core/messages";
-import { createStuffDocumentsChain } from "langchain/chains/combine_documents";
-import { DirectoryLoader } from "langchain/document_loaders/fs/directory";
-import { TextLoader } from "langchain/document_loaders/fs/text";
-import { PromptTemplate, MessagesPlaceholder, SystemMessagePromptTemplate} from "@langchain/core/prompts";
+import { SystemMessagePromptTemplate} from "@langchain/core/prompts";
 
 import { config } from "dotenv";
 import { getRetriever } from "./retriever.js"
@@ -25,22 +13,22 @@ import {
 
 config();
 
-const testPrompts1 = [
-    "can you tell me how to build a checkbox in SvARIA?",
-    "Can you make it with only the following options Thai Food or Mexican Food?",
-    "Can you add a new option of Elea and have the accent color be green?",
-    "Can we start from scratch now. Can you build a button that says Hello in SvARIA?",
-    "Can you make a form with two options username and password?"
-  ]
+// const testPrompts1 = [
+//     "can you tell me how to build a checkbox in SvARIA?",
+//     "Can you make it with only the following options Thai Food or Mexican Food?",
+//     "Can you add a new option of Elea and have the accent color be green?",
+//     "Can we start from scratch now. Can you build a button that says Hello in SvARIA?",
+//     "Can you make a form with two options username and password?"
+//   ]
   
-const testPrompts2 = [
-  "Can you tell me how to build a button?",
-  "Can you give the button a label of 'Click me'",
-  "Can you change the label of the button to 'Click here'",
-  "Can you tell me how to build a progress bar",
-  "What colour is the sky?",
-  "Can you tell me how to build a spin bar component?",
-] 
+// const testPrompts2 = [
+//   "Can you tell me how to build a button?",
+//   "Can you give the button a label of 'Click me'",
+//   "Can you change the label of the button to 'Click here'",
+//   "Can you tell me how to build a progress bar",
+//   "What colour is the sky?",
+//   "Can you tell me how to build a spin bar component?",
+// ] 
 
 
 async function loadModel(){
@@ -79,15 +67,6 @@ If the user asks about building a different component from the component list th
     return ragChain
 }
 
-const ragChain = await loadModel()
-console.log(ragChain)
-const chat_history = [];
+export default loadModel
 
-for(let question of testPrompts1){
-    const aiMsg = await ragChain.invoke({ question, chat_history });
-    chat_history.push(new HumanMessage(question))
-    chat_history.push(aiMsg);
-    console.log(aiMsg.content)
-    console.log("----------------")
-  }
 
