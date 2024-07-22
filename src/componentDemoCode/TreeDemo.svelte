@@ -1,6 +1,6 @@
 <script>
  
-import Tree from '$lib/Tree.svelte'
+import Tree from 'svaria-toolkit'
 
 const tree = {
 		label: 'Wine',

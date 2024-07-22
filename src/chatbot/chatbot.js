@@ -33,9 +33,9 @@ config();
 
 async function loadModel(){
     const retriever = await getRetriever()
-    const llm = new ChatOpenAI({ model: "gpt-3.5-turbo", temperature: 0 });
+    const llm = new ChatOpenAI({ model: "gpt-4o-mini", temperature: 0 });
     const systemTemplate =
-`You are helping a user write javascript code based on their questions. These are the components that you can help with called the available component list: Button, Tab, Checkbox, Form, Menu, Modal, NavBar, Navigation Bar, Progress Bar, and Radio. If the user asks about building or creating a component that is not part of the available component list you can respond by saying that SvARIA does not support this type of component yet. If the user asks a question that is not related to the available components you can respond by saying that you cannot help with that question. Use the context as sample code to help formulate your response. 
+`You are helping a user write javascript code based on their questions. These are the components that you can help with called the available component list: [Button, Tab, Checkbox, Form, Menu, Modal, Dialog, NavBar, Navigation Bar, Progress Bar, Tree, Radio]. If the user asks about building or creating a component that is not part of the available component list you can respond by saying that SvARIA does not support this type of component yet. If the user asks a question that is not related to the available components you can respond by saying that you cannot help with that question. Use the context as sample code to help formulate your response. 
 
 If the user asks you about a component that is in the chat history you can use the chat history to help you answer the question.
 

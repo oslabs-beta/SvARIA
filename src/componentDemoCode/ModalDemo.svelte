@@ -1,6 +1,6 @@
 <script>
-	import Modal from '$lib/Modal_ts.svelte';
-	import Button from '$lib/Button_ts.svelte';
+	import Modal from 'svaria-toolkit';
+	import Button from 'svaria-toolkit';
 	import { colorContrastCheck } from '$lib/ARIAChecks.js';
 
 	let showModal;

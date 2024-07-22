@@ -1,5 +1,5 @@
 <script>
-	import Form from '$lib/input_types/Form_ts.svelte';
+	import Form from 'svaria-toolkit';
 
 	let elements = [
 		{

@@ -1,5 +1,5 @@
 <script>
-	import Tab from '$lib/Tab_ts.svelte';
+	import Tab from 'svaria-toolkit';
 	import DemoTab1 from './DemoTabs/DemoTab1.svelte'
     import DemoTab2 from './DemoTabs/DemoTab2.svelte'
     import DemoTab3 from './DemoTabs/DemoTab3.svelte'

@@ -1,5 +1,5 @@
 <script>
-	import Checkbox from '$lib/input_types/Checkbox_ts.svelte';
+	import Checkbox from 'svaria-toolkit';
 
 	let options = [
 		{ label: 'Subscribe for updates', inputClass: 'w-5 h-5 accent-emerald-500/25' },
