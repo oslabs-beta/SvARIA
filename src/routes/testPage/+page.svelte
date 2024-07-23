@@ -151,24 +151,8 @@
 	]
 
 </script>
-<Docs componentName="Popover" propsDetails={docsProps}>
-	<!-- <h3 slot='details'>
-	</h3> -->
-</Docs>
-<!-- <RadioGroupDemo {options}/> -->
 
-<!-- <Tree {tree} /> -->
-
-<title>Our testing page</title>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-
-<!-- <Popover
+<Popover
 	popoverId="dialog"
 	popoverHeaderId="PopoverHeader"
 	popoverDescribeId="dialoginfo"
@@ -186,7 +170,25 @@
 			<br/>Now you can close the Popover with "X".
 		</p>
 	</div>
-</Popover> -->
+</Popover>
+
+<Docs componentName="Popover" propsDetails={docsProps}>
+	<!-- <h3 slot='details'>
+	</h3> -->
+</Docs>
+<!-- <RadioGroupDemo {options}/> -->
+
+<!-- <Tree {tree} /> -->
+
+<title>Our testing page</title>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
 <!-- <Switch defValue='On' altValue='off' ariaDefValue="Turned On" ariaAltValue="Turned Off"/>
 <AccordionDemo/> -->
 
