@@ -1,1 +1,1 @@
-<h1> Button Documentation will go here </h1>
+<h1>Button Documentation will go here</h1>
