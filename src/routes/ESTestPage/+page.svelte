@@ -5,23 +5,22 @@
 	import Cat from '../components/CatIcon.svelte';
 	import Modal from '$lib/Modal_ts.svelte';
 	import Accordion from '$lib/Accordion.svelte';
-	let isOpen;
-	let showModal;
+	let isOpen = false;
+	// let showModal = false;
 	const handleClick = () => {
 		console.log('clicked');
 		isOpen = !isOpen;
 		console.log(isOpen);
 	};
-	const openModal = () => {
-		showModal = true;
-	};
+	// const openModal = () => {
+	// 	showModal = true;
+	// };
 </script>
 
 <Button
 	content="good button"
 	className="bg-black text-white text-bold hover:bg-gray-700"
 	id="good"
-	bind:this={isOpen}
 	on:click={handleClick}
 />
 <Button
@@ -34,5 +33,5 @@
 <Cat />
 <Toast />
 <Toast />
-<Alert />
-<Modal />
+<Alert {isOpen} />
+<!-- <Modal /> -->
