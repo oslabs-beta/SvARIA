@@ -9,7 +9,7 @@
 	import ModalTab from './ComponentDemos/ModalTabs/ModalTab.svelte';
 	import NavBarTab from './ComponentDemos/NavBarTabs/NavBarTab.svelte';
 	import RadioGroupTab from './ComponentDemos/RadioGroupTabs/RadioGroupTab.svelte';
-	import TabTab from './ComponentDemos/TabTabs/TabTab.svelte'
+	import TabTab from './ComponentDemos/TabTabs/TabTab.svelte';
 	import AccordionGroup from '$lib/AccordionGroup_ts.svelte';
 	import SwitchTabs from './ComponentDemos/SwitchTabs/SwitchTab.svelte';
 	import PopoverTab from './ComponentDemos/PopoverTabs/PopoverTab.svelte';
@@ -18,7 +18,7 @@
 	const accordions = [
 		{
 			name: 'Accordion Group',
-			heading: "Accordion Group Component",
+			heading: 'Accordion Group Component',
 			slot: AccordionGroupTab,
 			headingClass: 'p-9',
 			componentClass: 'min-h-96'
@@ -80,8 +80,8 @@
 			componentClass: 'min-h-96'
 		},
 		{
-			name: "Switch",
-			heading: "Switch Component",
+			name: 'Switch',
+			heading: 'Switch Component',
 			slot: SwitchTabs,
 			headingClass: 'p-9',
 			componentClass: 'min-h-96'
@@ -99,7 +99,7 @@
 			slot: ProgressBarTab,
 			headingClass: 'p-9',
 			componentClass: 'min-h-96'
-		},
+		}
 	];
 </script>
 
