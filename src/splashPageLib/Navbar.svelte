@@ -10,17 +10,17 @@ components used that we might need to make:
 
 	const links = [
 		{
-			href: '#WhySvARIA',
+			href: '/#WhySvARIA',
 			name: 'Why SvARIA',
 			linkClass: 'duration-200 hover:text-indigo-400 cursor-pointer'
 		},
 		{
-			href: '#GettingStarted',
+			href: '/#GettingStarted',
 			name: 'Getting Started',
 			linkClass: 'duration-200 hover:text-indigo-400 cursor-pointer'
 		},
 		{
-			href: '#CompTab',
+			href: '/components',
 			name: 'Components',
 			linkClass: 'duration-200 hover:text-indigo-400 cursor-pointer'
 		},
@@ -30,7 +30,7 @@ components used that we might need to make:
 			linkClass: 'duration-200 hover:text-indigo-400 cursor-pointer'
 		},
 		{
-			href: '#GitHubFAQ',
+			href: '/#GitHubFAQ',
 			name: 'FAQ/News',
 			linkClass: 'duration-200 hover:text-indigo-400 cursor-pointer'
 		}
