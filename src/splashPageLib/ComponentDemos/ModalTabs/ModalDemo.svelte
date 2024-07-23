@@ -21,7 +21,6 @@
 	closeModalMessage="X"
 	closeButtonId="close"
 	closeButtonClass="bg-white hover:bg-gray-100 text-gray-800 font-semibold py-1 px-2 border border-gray-400 rounded shadow"
-	contentId="contentOfModal"
 >
 	<h3
 		id="modalHeader"

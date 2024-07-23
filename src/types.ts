@@ -43,6 +43,7 @@ export type MenuItems = {
     linkStyle?: string,
     linkID?: string,
     linkClass?: string,
+    link?: string,
     onClick?: () => void,
 }
 

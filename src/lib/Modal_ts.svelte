@@ -7,8 +7,6 @@
 	export let modalClass: string|undefined = 'bg-white rounded-lg shadow dark:bg-white-700 p-4 md:p-5 space-y-4'
 	//export let modalClass = ''
 	export let closeModalMessage: string|undefined = 'Close Modal';
-	export let contentClass: string|undefined = 'mb-10';
-	export let contentId: string|undefined = 'modalContentId';
 	export let closeButtonId: string|undefined = 'closeModalButtonId';
 	export let closeButtonClass: string|undefined = 'bg-black text-white';
 	export let closeButtonStyle: string|undefined = 'closeModalStyle';
