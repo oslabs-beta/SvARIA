@@ -17,5 +17,4 @@
 	<span class={titleClass} id={titleId}>{title}</span>
 	<span class={messageClass} id={messageId}>{message}</span>
 	<slot name="alertOptions" />
-	bind:this{isOpen}
 </div>
