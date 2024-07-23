@@ -92,7 +92,7 @@ export type EventObj = {
 };
 
 export type CompObj = {
-	docs: typeof SvelteComponent;
+	docs: ConstructorOfATypedSvelteComponent;
 	label: string;
 	source: string;
 };

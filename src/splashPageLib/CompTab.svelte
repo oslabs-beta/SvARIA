@@ -9,7 +9,7 @@
 	import ModalTab from './ComponentDemos/ModalTabs/ModalTab.svelte';
 	import NavBarTab from './ComponentDemos/NavBarTabs/NavBarTab.svelte';
 	import RadioGroupTab from './ComponentDemos/RadioGroupTabs/RadioGroupTab.svelte';
-	import TabTab from './ComponentDemos/TabTabs/TabTab.svelte'
+	import TabTab from './ComponentDemos/TabTabs/TabTab.svelte';
 	import AccordionGroup from '$lib/AccordionGroup_ts.svelte';
 	import SwitchTabs from './ComponentDemos/SwitchTabs/SwitchTab.svelte';
 	import PopoverTab from './ComponentDemos/PopoverTabs/PopoverTab.svelte';
@@ -18,7 +18,7 @@
 	const accordions = [
 		{
 			name: 'Accordion Group',
-			heading: "Accordion Group Component",
+			heading: 'Accordion Group Component',
 			slot: AccordionGroupTab,
 			headingClass: 'p-9',
 			componentClass: 'min-h-96'
@@ -80,8 +80,8 @@
 			componentClass: 'min-h-96'
 		},
 		{
-			name: "Switch",
-			heading: "Switch Component",
+			name: 'Switch',
+			heading: 'Switch Component',
 			slot: SwitchTabs,
 			headingClass: 'p-9',
 			componentClass: 'min-h-96'
@@ -99,7 +99,7 @@
 			slot: ProgressBarTab,
 			headingClass: 'p-9',
 			componentClass: 'min-h-96'
-		},
+		}
 	];
 </script>
 
@@ -132,10 +132,9 @@
 			</div>
 		</h7>
 	</div>
-</SectionWrapper> -->
+</SectionWrapper>
 
-
-<script>
+<!-- <script>
 	import { goto } from '$app/navigation'
 	import SectionWrapper from './SectionWrapper.svelte';
 	import Button from '$lib/Button_ts.svelte'
@@ -143,7 +142,7 @@
 		console.log('route to components')
 		goto('/components')
 	}
-</script>
+</script> -->
 
 <SectionWrapper id="CompTab">
 	<div
@@ -157,7 +156,7 @@
 				Components
 			</h6>
 		</div>
-		<h7 class="text-2xl sm:text-3xl md:text-4xl max-w-[1000px] mx-auto w-full  text-center">
+		<h7 class="text-2xl sm:text-3xl md:text-4xl max-w-[1000px] mx-auto w-full text-center">
 			<img src="" alt="" />
 			Welcome to the SvARIA Playground
 			<img src="" alt="" />
@@ -165,14 +164,13 @@
 				class="text-xl sm:text-2xl md:text-3xl max-w-[1000px] mx-auto w-full italic font-light text-center"
 			>
 				<br />
-				Svaria Componets are fully customizable <br /> check out our live sandbox and docs to see how our components will look in your project.
+				Svaria Componets are fully customizable <br /> check out our live sandbox and docs to see how
+				our components will look in your project.
 			</p>
 			<br />
 			<div class=" max-h-95% overflow-scroll">
-				
-				<Button content="Components Sandbox" on:click={handleClick}/> 
+				<Button content="Components Sandbox" on:click={handleClick} />
 			</div>
 		</h7>
 	</div>
 </SectionWrapper>
-

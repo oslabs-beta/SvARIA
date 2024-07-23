@@ -53,7 +53,7 @@
 	};
 </script>
 
-<h3>Components</h3>
+<!-- <h3>Components</h3>
 <div class="lib-display">
 	<h3>Button Component</h3>
 	<div class="component"></div>
@@ -77,7 +77,7 @@
 	<h3>Modal Component</h3>
 	<div class="component"></div>
 	<ModalTab />
-</div>
+</div> -->
 
 <div class="flex">
 	<aside
@@ -106,8 +106,8 @@
 			Select your component <br />and play around in the sanbox.
 		</p>
 		<div class="grid grid-cols-1 gap-4 mb-4">
-			<svelte:component this={component.docs} />
 			<Sandbox source={component.source} />
+			<svelte:component this={component.docs} />
 		</div>
 	</div>
 </div>
