@@ -1,5 +1,5 @@
-<!-- This is where the tab with the components/code/sandbox live
-<script lang="js">
+<!-- This is where the tab with the components/code/sandbox live -->
+<script lang="ts">
 	import SectionWrapper from './SectionWrapper.svelte';
 	import AccordionGroupTab from './ComponentDemos/AccordionGroupTabs/AccordionGroupTab.svelte';
 	import ButtonTab from './ComponentDemos/ButtonTabs/ButtonTab.svelte';
@@ -11,7 +11,9 @@
 	import RadioGroupTab from './ComponentDemos/RadioGroupTabs/RadioGroupTab.svelte';
 	import TabTab from './ComponentDemos/TabTabs/TabTab.svelte'
 	import AccordionGroup from '$lib/AccordionGroup_ts.svelte';
-	import SwitchTabs from './ComponentDemos/SwitchTabs/SwitchTabs.svelte';
+	import SwitchTabs from './ComponentDemos/SwitchTabs/SwitchTab.svelte';
+	import PopoverTab from './ComponentDemos/PopoverTabs/PopoverTab.svelte';
+	import ProgressBarTab from './ComponentDemos/ProgressBarTabs/ProgressBarTab.svelte';
 
 	const accordions = [
 		{
@@ -64,6 +66,13 @@
 			componentClass: 'min-h-96'
 		},
 		{
+			name: 'Popover',
+			heading: 'Popover Component',
+			slot: PopoverTab,
+			headingClass: 'p-9',
+			componentClass: 'min-h-96'
+		},
+		{
 			name: 'RadioGroup',
 			heading: 'RadioGroup Component',
 			slot: RadioGroupTab,
@@ -81,6 +90,13 @@
 			name: 'Tab',
 			heading: 'Tab Component',
 			slot: TabTab,
+			headingClass: 'p-9',
+			componentClass: 'min-h-96'
+		},
+		{
+			name: 'Progress Bar',
+			heading: 'Progress Bar Component',
+			slot: ProgressBarTab,
 			headingClass: 'p-9',
 			componentClass: 'min-h-96'
 		},

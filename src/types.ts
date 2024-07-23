@@ -28,12 +28,6 @@ export interface CustomDivAttributes extends HTMLAttributes<HTMLDivElement> {
 	heading?: string;
 }
 
-export type DialogObj = {
-	showModal: () => void;
-	focus: () => void;
-	close: () => void;
-};
-
 export type Routes = {
 	href: string;
 	name: string;
@@ -86,8 +80,8 @@ export type ARIAColorsObj = {
 
 export type RadioObj = {
 	label: string;
+	labelId: string;
 	labelClass?: string;
-	labelId?: string;
 	labelStyle?: string;
 	inputClass?: string;
 	inputStyle?: string;

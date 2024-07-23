@@ -1,35 +1,36 @@
-ProgressBar.svelte
-<script>
-    // Props
-    export let progress = 0; // Initial progress value
-  
-    // Computed style for the progress bar width
-    $: barWidth = progress + '%';
-  </script>
-  
-  <style>
-    .progress-bar {
-      width: 100%;
-      background-color: #f1f1f1;
-      height: 20px;
-      border-radius: 4px;
-      overflow: hidden;
-    }
-  
-    .progress {
-      height: 100%;
-      background-color: #4caf50;
-      transition: width 0.3s ease;
-    }
+<script lang="ts">
+	export let progress: number = 0; // Initial progress value
+	export let progressBarId: string = 'progressBar';
+	export let progressBarStyle: string = '';
+	export let progressBarClass: string = 'w-full bg-gray-200 rounded-full h-2.5 dark:bg-black';
+	export let progressId: string = '';
+	export let progressClass: string = 'bg-blue-600 h-2.5 rounded-full';
+	export let labelId: string = `label for ${progressBarId}`;
+	export let labelClass: string = 'text-sm';
+	export let labelStyle: string = '';
 
-    .progressText{
-        padding-left: 50%;
-    }
-  </style>
-  
-  <div class="progress-bar">
-    <div class="progress" style="width: {barWidth};">
-        <span class="progressText">{barWidth}/100</span>
-    </div>
+	// Computed style for the progress bar width
+	let barWidth: string | number;
+	$: barWidth = progress + '%';
+</script>
+
+<!-- Cannot use inline style for progress -->
+<div
+	id={progressBarId}
+	class={progressBarClass}
+	role="progressbar"
+	aria-valuemin="0"
+	aria-valuemax="100"
+	aria-valuenow={progress}
+	style={progressBarStyle}
+>
+	<div id={progressId} class={progressClass} style="width: {barWidth}"></div>
+</div>
+<label id={labelId} class={labelClass} style={labelStyle} for={progressBarId}>{barWidth}</label>
+
+<!-- <label class='progress-label' for={progressBarId}>{barWidth}</label> -->
+
+<!-- <div role="progressbar" class='w-full bg-gray-200 rounded-full h-2.5 dark:bg-black' id={progressBarId} max="100" value={progress} style={progressBarStyle}>
+    <div id = {progressId} class='progress' style={progressStyle}>{barWidth}</div>
   </div>
-
+<label class='progress-label' for={progressBarId}>{barWidth}</label>  -->

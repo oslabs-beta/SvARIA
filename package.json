@@ -6,7 +6,7 @@
 		"docker-dev:hot": "docker-compose -f docker-compose-dev-hot.yml up",
 		"dev": "vite & nodemon ./server/server.js",
 		"build": "vite build && npm run package",
-		"preview": "vite preview --host",
+		"preview": "vite preview --host & node ./server/server.js",
 		"package": "svelte-kit sync && svelte-package && publint",
 		"prepublishOnly": "npm run package",
 		"check": "svelte-kit sync && svelte-check --tsconfig ./jsconfig.json",
@@ -69,6 +69,7 @@
 		"express": "^4.19.2",
 		"nodemon": "^3.1.4",
 		"svelte": "^4.0.0",
-		"svelte-meta-tags": "^3.1.2"
+		"svelte-meta-tags": "^3.1.2",
+		"wcag-contrast": "^3.0.0"
 	}
 }

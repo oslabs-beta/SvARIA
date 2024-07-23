@@ -53,6 +53,32 @@
 	};
 </script>
 
+<h3>Components</h3>
+<div class="lib-display">
+	<h3>Button Component</h3>
+	<div class="component"></div>
+	<ButtonTab />
+</div>
+
+<div class="lib-display">
+	<h3>Modal Component</h3>
+	<div class="component"></div>
+	<ModalTab />
+</div>
+
+<h3>Components</h3>
+<div class="lib-display">
+	<h3>Button Component</h3>
+	<div class="component"></div>
+	<ButtonTab />
+</div>
+
+<div class="lib-display">
+	<h3>Modal Component</h3>
+	<div class="component"></div>
+	<ModalTab />
+</div>
+
 <div class="flex">
 	<aside
 		id="default-sidebar"

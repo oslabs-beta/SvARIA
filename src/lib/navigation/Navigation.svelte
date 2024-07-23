@@ -1,5 +1,5 @@
 <script lang="js">
-	import { colorContrastCheck, ariaLabelcheck } from '../ARIAchecks.js';
+	import { colorContrastCheck, ariaLabelcheck } from '../ARIAChecks.js';
 	export let ariaLabel = null;
 	export let routes = null;
 	export let id = 'navBar';
