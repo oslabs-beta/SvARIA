@@ -1,3 +1,4 @@
+import type { SvelteComponent } from 'svelte';
 import type { HTMLAttributes } from 'svelte/elements';
 import type { MouseEventHandler } from 'svelte/elements';
 export type FormElementsObj = {
@@ -35,7 +36,7 @@ export type Routes = {
     linkClass?: string;
     onClick?: MouseEventHandler<HTMLAnchorElement> | undefined;
 };
-export type ButtonType = 'button' | "reset" | 'submit';
+export type ButtonType = 'button' | 'reset' | 'submit';
 export type MenuItems = {
     label?: string;
     linkStyle?: string;
@@ -81,4 +82,9 @@ export type RadioObj = {
 };
 export type EventObj = {
     getAttribute: string;
+};
+export type CompObj = {
+    docs: typeof SvelteComponent;
+    label: string;
+    source: string;
 };

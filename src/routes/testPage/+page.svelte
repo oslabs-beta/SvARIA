@@ -16,7 +16,7 @@
 	import Switch from '$lib/Switch.svelte';
 	import Popover from '$lib/Popover.svelte';
 	import AccordionDemo from '../../splashPageLib/ComponentDemos/AccordionGroupTabs/AccordionGroupDemo.svelte';
-	import RadioGroupDemo from '../../splashPageLib/ComponentDemos/RadioGroupTabs/RadioGroupDemo.svelte'
+	import RadioGroupDemo from '../../splashPageLib/ComponentDemos/RadioGroupTabs/RadioGroupDemo.svelte';
 	import Docs from '../../splashPageLib/Docs.svelte';
 
 	const catIpsum = `Cat ipsum dolor sit amet, always hungry jump on fridge, while happily ignoring when being
@@ -129,7 +129,6 @@
 		}
 	];
 
-
 	let options = [
 		{
 			label: 'Button'
@@ -143,13 +142,12 @@
 	];
 	let selectedOption = [];
 
-	let docsProps=[
-		"popoverId: Uniquely identifies the popover as a whole. Everything else is nested inside this element.",
-		"popoverClass: Class for the popover as a whole, use this for styling the entire element.",
-		"popoverHeaderId: uniquely identifies the header element",
-		"popoverDescribeId"
-	]
-
+	let docsProps = [
+		'popoverId: Uniquely identifies the popover as a whole. Everything else is nested inside this element.',
+		'popoverClass: Class for the popover as a whole, use this for styling the entire element.',
+		'popoverHeaderId: uniquely identifies the header element',
+		'popoverDescribeId'
+	];
 </script>
 
 <Popover
