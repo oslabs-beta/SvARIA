@@ -12,7 +12,7 @@
     <Hero />
     <WhySvARIA />
     <GettingStarted />
-    <CompTab />
+    <!-- <CompTab /> -->
     <GitHubFAQ />
 </main>
 
