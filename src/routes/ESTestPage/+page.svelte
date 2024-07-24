@@ -6,15 +6,10 @@
 	import Modal from '$lib/Modal_ts.svelte';
 	import Accordion from '$lib/Accordion.svelte';
 	let isOpen;
-	// let showModal = false;
 	const handleClick = () => {
-		console.log('clicked');
 		isOpen = true;
 		console.log(isOpen);
 	};
-	// const openModal = () => {
-	// 	showModal = true;
-	// };
 </script>
 
 <Button
@@ -28,11 +23,7 @@
 	className="bg-yellow-200 text-white text-bold hover:bg-gray-700"
 	id="bad"
 />
+<Toast autoShutDown="5000" />
 <Button content="okay button" className="bg-blue-700 text-white text-bold" id="ok" />
-<Cat />
-<Toast />
-<Toast />
-<Alert bind:isOpen>
-	<div slot="closeButton"></div>
-</Alert>
+<Alert bind:isOpen />
 <!-- <Modal /> -->

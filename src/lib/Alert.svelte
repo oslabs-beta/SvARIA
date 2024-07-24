@@ -14,7 +14,6 @@
 	};
 </script>
 
-<!-- 'HTMLDivElement' -->
 <div id={alertId} class={alertClass} role="alert" style="display: {isOpen ? 'block' : 'none'};">
 	<slot name="icon" />
 	<span class={titleClass} id={titleId}>{title}</span>
