@@ -3,7 +3,7 @@
     export let propsDetails: string[] = ["Example: this is an example"];
 </script>
 
-<div>
+<div style='margin-bottom: 15%'>
     <h1 style="font-weight: bold">SvARIA {componentName}</h1>
     <h3>All SvARIA components must be installed through the NPM package by running the command below in node.js:</h3><br>
     <i>npm install SvARIA-toolkit</i>

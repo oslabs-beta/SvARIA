@@ -7,16 +7,14 @@
     5. add it to components array
 -->
 
-<script lang="ts">
+<script lang=ts>
 	import SectionWrapper from '../../splashPageLib/SectionWrapper.svelte';
     import {openModal} from "../../store/index.js";
     import logo from "../../splashPageLib/assets/SvAriaLogo.png";
-    import ButtonTab from "../../splashPageLib/ComponentDemos/ButtonTabs/ButtonTab.svelte";
-    import ModalTab from "../../splashPageLib/ComponentDemos/ModalTabs/ModalTab.svelte"
     import Sandbox from '../../splashPageLib/Sandbox.svelte';
-    import Button from '$lib/Button.svelte';
 	import type { CompObj } from './../../types.js';
-	// ======================> Component Imports < ========================
+
+// ======================> Component Imports <========================
 	import ButtonDocs from './lib/ButtonDocs.svelte';
 	import AccordionDocs from './lib/AccordionDocs.svelte';
 	import AccordionGroupDocs from './lib/AccordionGroupDocs.svelte';
@@ -85,134 +83,91 @@
 		component = comp;
 	};
 
-	function reroute(href) {
-		$openModal = false;
-		window.location.href = href;
-	}
+    function reroute(href){
+       $openModal = false;
+       window.location.href = href; 
+    }
+
 </script>
 
 {#if $openModal}
-	<div
-		class="fixed top-0 left-0 w-screen h-screen border-b bg-white z-50 flex flex-col gap-8 p-5 px-8 md:hidden"
-	>
-		<div class="flex items-center justify-between gap-4 border-b pb-2">
-			<a href="/">
-				<img class="min-w-[250px] h-[125px] w-[250px]" alt="SvARIA Logo" src={logo} />
-			</a>
-			<button
-				on:click={() => {
-					$openModal = false;
-					console.log('clicked');
-				}}
-				class="outline-none border-none"
-			>
-				<i class="fa-solid fa-xmark text-2xl"> </i>
-			</button>
-		</div>
-		<div class="flex flex-col gap-4 flex-1">
-			<button
-				on:click={() => reroute('/#WhySvARIA')}
-				class="border-none outline-none p-2 group duration-200 cursor-pointer text-left"
-			>
-				<p class="duration-200 group-hover:pl-2 poppins text-3xl font-semibold">
-					Why SvARIA <i class="fa-solid fa-chevron-right text-xl pl-4" />
-				</p>
-			</button>
-			<button
-				on:click={() => reroute('/#GettingStarted')}
-				class="border-none outline-none p-2 group duration-200 cursor-pointer text-left"
-			>
-				<p class="duration-200 group-hover:pl-2 poppins text-3xl font-semibold">
-					Getting Started <i class="fa-solid fa-chevron-right text-xl pl-4" />
-				</p>
-			</button>
-			<button
-				on:click={() => reroute('/components')}
-				class="border-none outline-none p-2 group duration-200 cursor-pointer text-left"
-			>
-				<p class="duration-200 group-hover:pl-2 poppins text-3xl font-semibold">
-					Components <i class="fa-solid fa-chevron-right text-xl pl-4" />
-				</p>
-			</button>
-			<button
-				on:click={() => reroute('https://github.com/oslabs-beta/SvARIA')}
-				class="border-none outline-none p-2 group duration-200 cursor-pointer text-left"
-			>
-				<p class="duration-200 group-hover:pl-2 poppins text-3xl font-semibold">
-					GitHub <i class="fa-solid fa-chevron-right text-xl pl-4" />
-				</p>
-			</button>
-			<button
-				on:click={() => reroute('/#GitHubFAQ')}
-				class="border-none outline-none p-2 group duration-200 cursor-pointer text-left"
-			>
-				<p class="duration-200 group-hover:pl-2 poppins text-3xl font-semibold">
-					FAQ/News <i class="fa-solid fa-chevron-right text-xl pl-4" />
-				</p>
-			</button>
-		</div>
-	</div>
+<div class="fixed top-0 left-0 w-screen h-screen border-b bg-white z-50 flex flex-col gap-8 p-5 px-8 md:hidden">
+    <div class="flex items-center justify-between gap-4 border-b pb-2">
+        <a href="/">
+            <img class="min-w-[250px] h-[125px] w-[250px] " alt="SvARIA Logo" src={logo} />
+        </a>
+        <button on:click={() => {$openModal = false; console.log('clicked')}} class="outline-none border-none">
+            <i class="fa-solid fa-xmark text-2xl">
+            </i>
+        </button> 
+    </div>
+    <div class="flex flex-col gap-4 flex-1">
+        <button on:click={() => reroute('/#WhySvARIA')} class="border-none outline-none p-2 group duration-200 cursor-pointer text-left">
+            <p class="duration-200 group-hover:pl-2 poppins text-3xl font-semibold ">Why SvARIA <i class="fa-solid fa-chevron-right text-xl pl-4"/></p>
+        </button>
+        <button on:click={() => reroute('/#GettingStarted')} class="border-none outline-none p-2 group duration-200 cursor-pointer text-left">
+            <p class="duration-200 group-hover:pl-2 poppins text-3xl font-semibold ">Getting Started <i class="fa-solid fa-chevron-right text-xl pl-4"/></p>
+        </button>
+        <button on:click={() => reroute('/components')} class="border-none outline-none p-2 group duration-200 cursor-pointer text-left">
+            <p class="duration-200 group-hover:pl-2 poppins text-3xl font-semibold ">Components <i class="fa-solid fa-chevron-right text-xl pl-4"/></p>
+        </button>
+        <button on:click={() => reroute('https://github.com/oslabs-beta/SvARIA')} class="border-none outline-none p-2 group duration-200 cursor-pointer text-left">
+            <p class="duration-200 group-hover:pl-2 poppins text-3xl font-semibold ">GitHub <i class="fa-solid fa-chevron-right text-xl pl-4"/></p>
+        </button>
+        <button on:click={() => reroute('/#GitHubFAQ')} class="border-none outline-none p-2 group duration-200 cursor-pointer text-left">
+            <p class="duration-200 group-hover:pl-2 poppins text-3xl font-semibold ">FAQ/News <i class="fa-solid fa-chevron-right text-xl pl-4"/></p>
+        </button>
+    </div>
+</div>
 {/if}
 
 <SectionWrapper id="components">
 	<div
 		class="flex flex-col gap-5 sm:gap-10 md:gap-15 flex-1 items-center justify-center pb-10 md:pb-14"
-	></div>
+	>
+		
+    </div>
 
-	<div class="flex">
-		<aside id="default-sidebar" class="flex-shrink-0 w-64 h-screen overflow-y-auto">
-			<ul class="py-4 font-medium">
-				{#each componentsArray as comp}
-					<li>
-						<button
-							class="block w-full px-4 py-2 text-left text-2xl hover:bg-gray-300"
-							on:click={() => handleClick(comp)}
-						>
-							{comp.label}
-						</button>
-					</li>
-				{/each}
-			</ul>
-		</aside>
+    <div class="flex">
+        <aside id="default-sidebar" class="flex-shrink-0 w-64 h-screen   overflow-y-auto">
+            <ul class="py-4 font-medium">
+                {#each componentsArray as comp}
+                <li>
+                    <button class="block w-full px-4 py-2 text-left text-2xl hover:bg-gray-300" on:click={() => handleClick(comp)}>
+                        {comp.label}
+                    </button>
+                </li>
+                {/each}
+            </ul>
+        </aside>
 
-		<div class="ml-6 p-4 flex-1">
-			<div class="grid grid-cols-1 gap-4 mb-4">
-				<Sandbox source={component.source} />
-				<svelte:component this={component.docs} />
-			</div>
-		</div>
-	</div>
+        <div class="ml-6 p-4 flex-1">
+				<Sandbox source={component.source}/> 
+                <svelte:component this={component.docs}/> 
+        </div>
+    </div>
+
 </SectionWrapper>
 
-<!-- <div class="flex">
-	<aside
-		id="default-sidebar"
-		class="flex-shrink-0 w-64 h-screen bg-gray-50 dark:bg-gray-800 overflow-y-auto"
-	>
-		<ul class="py-4 space-y-2 font-medium">
-			{#each componentsArray as comp}
-				<li>
-					<button
-						class="block w-full px-4 py-2 text-left hover:bg-gray-300"
-						on:click={() => handleClick(comp)}
-					>
-						{comp.label}
-					</button>
-				</li>
-			{/each}
-		</ul>
-	</aside>
+<!-- <style>
+    .lib-display {
+        align-items: center;
+        width: 50%;
+        height: 50%;
+    }
+</style>
 
-	<div class="ml-64 p-4 flex-1">
-		<p
-			class="text-xl sm:text-2xl md:text-3xl max-w-[1000px] mx-auto w-full italic font-light text-center"
-		>
-			<br />
-			Select your component <br />and play around in the sanbox.
-		</p>
-		<div class="grid grid-cols-1 gap-4 mb-4">
-			<Sandbox source={component.source} />
-			<svelte:component this={component.docs} />
-		</div>
-	</div>
+<h3>Components</h3>
+<div class='lib-display'>
+    <h3>Button Component</h3>
+    <div class='component'>
+    </div>
+        <ButtonTab/>
+</div>
+
+<div class='lib-display'>
+    <h3>Modal Component</h3>
+    <div class='component'>
+    </div>
+        <ModalTab/>
 </div> -->
