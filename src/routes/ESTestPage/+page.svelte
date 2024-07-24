@@ -32,5 +32,7 @@
 <Cat />
 <Toast />
 <Toast />
-<Alert bind:isOpen />
+<Alert bind:isOpen>
+	<div slot="closeButton"></div>
+</Alert>
 <!-- <Modal /> -->
