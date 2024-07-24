@@ -1,5 +1,5 @@
 <script>
-	import Button from '$lib/Button_ts.svelte';
+	import Button from 'svaria-toolkit';
 	function handleClick() {
 		alert('button clicked');
 	}

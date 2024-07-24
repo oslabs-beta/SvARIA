@@ -1,6 +1,6 @@
 <script>
-	import Nav from '$lib/navigation/Navigation_ts.svelte';
-    import { colorContrastCheck } from '$lib/ARIAChecks.js'
+	import Nav from 'svaria-toolkit';
+    import { colorContrastCheck } from 'svaria-toolkit'
 
 
 	let navElem = [

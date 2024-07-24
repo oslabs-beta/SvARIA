@@ -1,5 +1,5 @@
-<script lang="ts">
-	import RadioGroup from '$lib/RadioGroup_ts.svelte';
+<script>
+	import RadioGroup from 'svaria-toolkit';
 
 	let radioGroupOptions = [
 		{

@@ -16,7 +16,7 @@
 	import Switch from '$lib/Switch.svelte';
 	import Popover from '$lib/Popover.svelte';
 	import AccordionDemo from '../../splashPageLib/ComponentDemos/AccordionGroupTabs/AccordionGroupDemo.svelte';
-	import RadioGroupDemo from '../../splashPageLib/ComponentDemos/RadioGroupTabs/RadioGroupDemo.svelte'
+	import RadioGroupDemo from '../../splashPageLib/ComponentDemos/RadioGroupTabs/RadioGroupDemo.svelte';
 	import Docs from '../../splashPageLib/Docs.svelte';
 	import Tree from '$lib/Tree.svelte';
 
@@ -100,7 +100,6 @@
 			linkClass: 'text-2xl text-orange-500'
 		}
 	];
-
 
 	let options = [
 		{
@@ -239,9 +238,6 @@
 <br />
 <br />
 <br />
-
-
-<!-- <ProgressBar progress={currentProgress} /> -->
 
 <!-- <Popover
 	popoverId="dialog"

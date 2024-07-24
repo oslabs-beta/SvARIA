@@ -1,5 +1,5 @@
 <script>
-	import Menu from '$lib/Menu_ts.svelte';
+	import Menu from 'svaria-toolkit';
 
 	function blue() {
 		console.log('blue')
