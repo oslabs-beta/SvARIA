@@ -1,6 +1,6 @@
 <script>
 
-    import Docs from '../../Docs.svelte';
+    import Docs from '../Docs.svelte';
     
     
     let docsProps=[

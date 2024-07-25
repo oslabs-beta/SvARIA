@@ -16,7 +16,7 @@
 	import Switch from '$lib/Switch.svelte';
 	import Popover from '$lib/Popover.svelte';
 	import AccordionDemo from '../../splashPageLib/ComponentDemos/AccordionGroupTabs/AccordionGroupDemo.svelte';
-	import RadioGroupDemo from '../../splashPageLib/ComponentDemos/RadioGroupTabs/RadioGroupDemo.svelte'
+	import RadioGroupDemo from '../../splashPageLib/ComponentDemos/RadioGroupTabs/RadioGroupDemo.svelte';
 	import Docs from '../../splashPageLib/Docs.svelte';
 	import Tree from '$lib/Tree.svelte';
 
@@ -74,48 +74,6 @@
 			outside again the neighbor cat was mean to me please let me back inside you have cat to be
 			kitten me right meow cattt catt cattty cat being a cat.`;
 
-	let formElements = [
-		{ name: 'address', type: 'input', labelValue: 'New Address' },
-		{ name: 'firstName', type: 'input', labelValue: 'New First Name' },
-		{ name: 'userName', type: 'input', labelValue: 'New User Name' },
-		{
-			name: 'password',
-			type: 'password',
-			labelValue: 'New Password',
-			inputId: 'newPw',
-			labelId: 'pwLabel'
-		}
-	];
-
-	let menuItems = [
-		{
-			label: 'purple',
-			onClick: function click() {
-				window.location.href = 'https://en.wikipedia.org/wiki/Purple';
-			},
-			linkStyle: 'color: black; background-color: orange'
-		},
-		{
-			label: 'blue',
-			onClick: function click() {
-				alert(menuItems[1].label);
-			},
-			linkClass: 'text-2xl text-orange-500'
-		},
-		{
-			label: 'yellow',
-			onClick: function click() {
-				alert(menuItems[2].label);
-			}
-		},
-		{
-			label: 'green',
-			onClick: function click() {
-				window.location.href = 'https://en.wikipedia.org/wiki/Greene';
-			}
-		}
-	];
-
 	let navElem = [
 		{
 			href: 'https://github.com/oslabs-beta/SvARIA/tree/dev',
@@ -129,7 +87,6 @@
 			linkClass: 'text-2xl text-orange-500'
 		}
 	];
-
 
 	let options = [
 		{
@@ -198,21 +155,91 @@
 		console.log('cab franc clicked')
 	}
 
+	function blue() {
+		console.log('blue')
+	}
+
+	function yellow() {
+		console.log('yellow')
+	}
+
+	let menuItems = [
+		{
+			label: 'purple',
+			link: "https://en.wikipedia.org/wiki/Purple",
+            linkID: 'purple',
+			linkClass: 'text-purple-800'
+		},
+		{
+			label: 'blue',
+            linkID: 'blue',
+			onClick: blue,
+			linkClass: 'text-blue-800'
+
+
+		},
+		{
+			label: 'yellow',
+            linkID: 'yellow',
+			onClick: yellow,
+			linkClass: 'text-yellow-800'
+		},
+		{
+			label: 'green',
+			link: "https://en.wikipedia.org/wiki/Green",
+            linkID: 'green',
+			linkClass: 'text-green-800'
+		}
+	];
+
+	let formElements = [
+		{ name: 'question', type: 'input', labelValue: 'Enter question here' },
+	];
+
+	function onSubmit(event) {
+		event.preventDefault();
+		const form = event.currentTarget
+		//console.log(form.question.value)
+		const body = {
+			question: form.question.value
+		}
+		fetch("http://localhost:3000/chatbot", {
+			method: "POST",
+			headers: {
+				"Content-Type": "application/json",
+			},
+			body: JSON.stringify(body),
+		})
+		.then((res) => res.json())
+		.then(response => console.log(response))
+	}
+
 </script>
-<Docs componentName="Popover" propsDetails={docsProps}>
-	<!-- <h3 slot='details'>
-	</h3> -->
-</Docs>
+<!-- <Docs componentName="Popover" propsDetails={docsProps}>
+
+</Docs> -->
 <!-- <RadioGroupDemo {options}/> -->
 
 
-<Tree
+<!-- <Tree
 	{tree}
 	liClassName="text-sm px-5"
 	arrowClass="text-red-900"
 	labelClass="text-gray-800"
 	arrows={['▼', '►']}
-/>
+/> -->
+
+<Form {formElements} on:submit={onSubmit}/>
+
+<!-- <Menu
+	items={menuItems}
+	buttonContent="Menu"
+	buttonId="menuButton"
+	buttonAriaLabel="menu button"
+	buttonClass="w-32 h-9 text-xl bg-slate-200 items-center justify-between  py-2 px-3 text-gray-900 hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-black md:dark:hover:text-blue-500 dark:focus:text-black dark:hover:bg-gray-700 md:dark:hover:bg-transparent"
+    listId='menuItems'
+	listClass="bg-blue-200 text-lg w-32 text-center	rounded-md"
+/> -->
 
 <title>Our testing page</title>
 <br />
@@ -222,9 +249,6 @@
 <br />
 <br />
 <br />
-
-
-<!-- <ProgressBar progress={currentProgress} /> -->
 
 <!-- <Popover
 	popoverId="dialog"

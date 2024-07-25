@@ -1,6 +1,6 @@
 <script>
 	import Nav from 'svaria-toolkit';
-    import { colorContrastCheck } from '$lib/ARIAChecks.js'
+    import { colorContrastCheck } from 'svaria-toolkit'
 
 
 	let navElem = [

@@ -1,7 +1,6 @@
+// @ts-nocheck 
 import express from 'express';
-//import { handler } from '../build/handler.js';
-// import type { ErrObj } from './types.ts'
-
+import router from './routes/api.js';
 import loadModel from "../src/chatbot/chatbot.js"
 import cookieParser from 'cookie-parser';
 import chatbotRoute from "../src/chatbot/chatbotRoute.js"
@@ -16,15 +15,17 @@ let ragChain
 //if user1 -> chat_history[user_1].push(aiMsg)
 
 app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 //app.use(handler);
 app.use(cookieParser())
 
 
 app.post("/chatbot", async (req, res) => {
+  console.log('in here', req.body)
   return chatbotRoute(ragChain, req, res)
 })
 
-app.use('/', (req, res) => { res.status(200).json({ test: "testing" }) })
+app.use('/', router) ;
 
 // app.get('/', (req, res, next) => {
 //     // res.set('Content-Type', 'text/html'); 
@@ -37,11 +38,14 @@ app.use('/', (req, res) => { res.status(200).json({ test: "testing" }) })
 //         }
 //     });
 // });
+app.use(express.urlencoded({ extended: true }));
+// app.use(handler);
+
+
+app.use('/', router) ;
 
 //404 error handling
-
-
-app.use('*', (req, res) => res.status(404).send({ message: '404ed' }));
+app.use('*', (req, res) => res.status(404).send({message:'WELP! You\'ve been 404ed!'}));
 
 //global error handling
 app.use((err) => {
@@ -67,4 +71,3 @@ app.listen(PORT, async () => {
 
 });
 
-export default app;

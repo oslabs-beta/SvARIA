@@ -23,15 +23,17 @@ const chatbotRoute = async (ragChain, req, res) => {
     else {
       userChatHistory = []
     }
-    console.log(chat_history)
+    //console.log(req)
+    console.log(req.body)
     const question = req.body.question
+    console.log("question is ", question)
     const aiMsg = await ragChain.invoke({ question, chat_history: userChatHistory });
     
     userChatHistory.push(new HumanMessage(question))
     userChatHistory.push(aiMsg);
     chat_history[currentUser] = userChatHistory
     console.log(aiMsg.content)
-  
+
     return res.status(200).send({ "response": aiMsg.content })
   }
 

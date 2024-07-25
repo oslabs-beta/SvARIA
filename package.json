@@ -2,7 +2,7 @@
 	"name": "svaria",
 	"version": "0.0.1",
 	"scripts": {
-		"dev-test": "vite --host & node ./server/server.js",
+		"dev-test": "vite --host & nodemon ./server/server.js",
 		"docker-dev:hot": "docker-compose -f docker-compose-dev-hot.yml up",
 		"dev": "vite & nodemon ./server/server.js",
 		"build": "vite build && npm run package",
@@ -73,6 +73,7 @@
 		"express": "^4.19.2",
 		"langchain": "^0.2.8",
 		"nodemon": "^3.1.4",
+		"pg": "^8.12.0",
 		"svelte": "^4.0.0",
 		"svelte-meta-tags": "^3.1.2",
 		"wcag-contrast": "^3.0.0"
