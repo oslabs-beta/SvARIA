@@ -1,6 +1,9 @@
 <!-- use this page to test out components with URL "/testPage" -->
 
-<script land="ts">
+<script >
+
+	import { json } from '@sveltejs/kit';
+
 	import RadioGroup from '$lib/RadioGroup_ts.svelte';
 	import Checkbox from '$lib/input_types/Checkbox_ts.svelte';
 	import Button from '../../lib/Button_ts.svelte';
@@ -193,25 +196,27 @@
 	];
 
 	let formElements = [
-		{ name: 'question', type: 'input', labelValue: 'Enter question here' },
+		{ name: 'question', type: 'text', labelValue: 'Enter question here', inputClass: 'w-full' },
 	];
 
-	function onSubmit(event) {
+	let answer = ""
+
+		async function onSubmit (event) {
 		event.preventDefault();
 		const form = event.currentTarget
-		//console.log(form.question.value)
 		const body = {
 			question: form.question.value
 		}
-		fetch("http://localhost:3000/chatbot", {
-			method: "POST",
-			headers: {
-				"Content-Type": "application/json",
-			},
-			body: JSON.stringify(body),
+
+		const res = await fetch('/chatbot', {
+			headers: {'Content-Type': 'application/json'},
+			method: 'POST',
+			body: JSON.stringify({question: form.question.value}),
 		})
-		.then((res) => res.json())
-		.then(response => console.log(response))
+
+		// const res = await fetch('http://localhost:3000/chatbot')
+		const json = await res.json()
+		answer = json.response
 	}
 
 </script>
@@ -230,6 +235,7 @@
 /> -->
 
 <Form {formElements} on:submit={onSubmit}/>
+<pre>{answer}</pre>
 
 <!-- <Menu
 	items={menuItems}

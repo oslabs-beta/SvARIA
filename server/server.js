@@ -14,15 +14,25 @@ let ragChain
 //chat_history[user2] = []
 //if user1 -> chat_history[user_1].push(aiMsg)
 
-app.use(express.json());
+app.use(express.json({
+  type: ['application/json', 'text/plain']
+}));
+
 app.use(express.urlencoded({ extended: true }));
 //app.use(handler);
 app.use(cookieParser())
 
+app.get('/chatbot', async (req, res) => {
+  res.append('Access-Control-Allow-Origin', '*');
+  res.append('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE');
+  res.append('Access-Control-Allow-Headers', 'Content-Type')
+  return res.json({result: 'success'})
+})
 
 app.post("/chatbot", async (req, res) => {
+  //console.log('req is', req)
   console.log('in here', req.body)
-  return chatbotRoute(ragChain, req, res)
+  chatbotRoute(ragChain, req, res)
 })
 
 app.use('/', router) ;

@@ -34,7 +34,13 @@ const chatbotRoute = async (ragChain, req, res) => {
     chat_history[currentUser] = userChatHistory
     console.log(aiMsg.content)
 
-    return res.status(200).send({ "response": aiMsg.content })
+    // res.set({
+    //   'Content-Type': 'application/json; charset=utf-8',
+    // })
+    res.append('Access-Control-Allow-Origin', '*');
+    res.append('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE');
+    res.append('Access-Control-Allow-Headers', 'Content-Type')
+    return res.json({ "response": aiMsg.content })
   }
 
   export default chatbotRoute
