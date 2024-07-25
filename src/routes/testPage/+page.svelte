@@ -18,6 +18,7 @@
 	import AccordionDemo from '../../splashPageLib/ComponentDemos/AccordionGroupTabs/AccordionGroupDemo.svelte';
 	import RadioGroupDemo from '../../splashPageLib/ComponentDemos/RadioGroupTabs/RadioGroupDemo.svelte';
 	import Docs from '../../splashPageLib/Docs.svelte';
+	import Tree from '$lib/Tree.svelte';
 
 	const catIpsum = `Cat ipsum dolor sit amet, always hungry jump on fridge, while happily ignoring when being
 			called shove bum in owner's face like camera lens. Meowsiers meow the best thing in the
@@ -86,35 +87,6 @@
 		}
 	];
 
-	let menuItems = [
-		{
-			label: 'purple',
-			onClick: function click() {
-				window.location.href = 'https://en.wikipedia.org/wiki/Purple';
-			},
-			linkStyle: 'color: black; background-color: orange'
-		},
-		{
-			label: 'blue',
-			onClick: function click() {
-				alert(menuItems[1].label);
-			},
-			linkClass: 'text-2xl text-orange-500'
-		},
-		{
-			label: 'yellow',
-			onClick: function click() {
-				alert(menuItems[2].label);
-			}
-		},
-		{
-			label: 'green',
-			onClick: function click() {
-				window.location.href = 'https://en.wikipedia.org/wiki/Greene';
-			}
-		}
-	];
-
 	let navElem = [
 		{
 			href: 'https://github.com/oslabs-beta/SvARIA/tree/dev',
@@ -142,21 +114,121 @@
 	];
 	let selectedOption = [];
 
-	let docsProps = [
-		'popoverId: Uniquely identifies the popover as a whole. Everything else is nested inside this element.',
-		'popoverClass: Class for the popover as a whole, use this for styling the entire element.',
-		'popoverHeaderId: uniquely identifies the header element',
-		'popoverDescribeId'
-	];
-</script>
+	let docsProps=[
+		"popoverId: Uniquely identifies the popover as a whole. Everything else is nested inside this element.",
+		"popoverClass: Class for the popover as a whole, use this for styling the entire element.",
+		"popoverHeaderId: uniquely identifies the header element",
+		"popoverDescribeId"
+	]
+	let currentProgress = 50; // Example: set the current progress
 
-<Docs componentName="Popover" propsDetails={docsProps}>
-	<!-- <h3 slot='details'>
-	</h3> -->
-</Docs>
+	function updateProgress() {
+		// Example: update progress over time
+		setInterval(() => {
+			currentProgress += 10; // Increase progress by 10%
+			if (currentProgress > 100) currentProgress = 0; // Reset if exceeds 100%
+		}, 1000); // Update every second
+	}
+
+	updateProgress(); // Start updating progress
+
+	const tree = {
+		label: 'Wine',
+		children: [
+			{
+				label: 'Red',
+				children: [
+					{ label: 'California', link: "https://en.wikipedia.org/wiki/California_wine", labelId:"california", arrowId:"californiaArrow"},
+					{
+						label: 'Bordeaux', link: 'https://en.wikipedia.org/wiki/Bordeaux',
+						children: [{ label: 'Cab Franc', onClick:cabfranc }, { label: 'Merlot', link:"https://en.wikipedia.org/wiki/Merlot" }, { label: 'Malbec', labelId:"malbec" }],
+						arrowId: 'bordeauxArrow'
+					},
+					{ label: 'Rioja', onClick:rioja }
+				]
+			},
+			{
+				label: 'White',
+				children: [{ label: 'Burgundy', onClick: burgundy }, { label: 'Champagne', link:"https://en.wikipedia.org/wiki/Champagne" }, { label: 'Piedmont', link: "https://en.wikipedia.org/wiki/Piedmont" }],
+				labelId: "white",
+				arrowId: 'whiteArrow'
+			}
+		]
+	};
+
+	function burgundy () {
+		console.log('Burgundy clicked')
+	}
+
+	function rioja () {
+		console.log('rioja clicked')
+	}
+
+	function cabfranc () {
+		console.log('cab franc clicked')
+	}
+
+	function blue() {
+		console.log('blue')
+	}
+
+	function yellow() {
+		console.log('yellow')
+	}
+
+	let menuItems = [
+		{
+			label: 'purple',
+			link: "https://en.wikipedia.org/wiki/Purple",
+            linkID: 'purple',
+			linkClass: 'text-purple-800'
+		},
+		{
+			label: 'blue',
+            linkID: 'blue',
+			onClick: blue,
+			linkClass: 'text-blue-800'
+
+
+		},
+		{
+			label: 'yellow',
+            linkID: 'yellow',
+			onClick: yellow,
+			linkClass: 'text-yellow-800'
+		},
+		{
+			label: 'green',
+			link: "https://en.wikipedia.org/wiki/Green",
+            linkID: 'green',
+			linkClass: 'text-green-800'
+		}
+	];
+
+</script>
+<!-- <Docs componentName="Popover" propsDetails={docsProps}>
+
+</Docs> -->
 <!-- <RadioGroupDemo {options}/> -->
 
-<!-- <Tree {tree} /> -->
+
+<!-- <Tree
+	{tree}
+	liClassName="text-sm px-5"
+	arrowClass="text-red-900"
+	labelClass="text-gray-800"
+	arrows={['▼', '►']}
+/> -->
+
+<Menu
+	items={menuItems}
+	buttonContent="Menu"
+	buttonId="menuButton"
+	buttonAriaLabel="menu button"
+	buttonClass="w-32 h-9 text-xl bg-slate-200 items-center justify-between  py-2 px-3 text-gray-900 hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-black md:dark:hover:text-blue-500 dark:focus:text-black dark:hover:bg-gray-700 md:dark:hover:bg-transparent"
+    listId='menuItems'
+	listClass="bg-blue-200 text-lg w-32 text-center	rounded-md"
+/>
 
 <title>Our testing page</title>
 <br />

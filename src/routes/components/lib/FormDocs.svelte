@@ -1,1 +1,33 @@
-<h1> Accordion Documentation will go here </h1>
+<script>
+
+    import Docs from '../Docs.svelte';
+    
+    
+    let docsProps=[
+            "formElements (required): an object that contains the form categories. 'name', 'type' and 'labelValue' are required.", 
+            "name (required): the name that the form element will be associated with. This gets passed into the formElements object as a key in the individual element object",
+            "type (required): the input type for the form element e.g. 'text' or 'password'. This gets passed into the formElements object as a key in the individual element object",
+            "labelValue (required): the value that will show up for the form label. This gets passed into the formElements object as a key in the individual element object",
+            "labelId (optional): Uniquely identifies an individual label. This gets passed into the formElements object as a key in the individual element object. Tailwind can be used to adjust styling here",
+            "labelClass (optional): provides a class for all the individual label. This gets passed into the formElements object as a key in the individual element object. Tailwind can be used to adjust styling here",
+            "labelStyle (optional): allows you to use inline styling for the individual label.This gets passed into the formElements object as a key in the individual element object e.g. labelStyle='color:red'",
+            "inputId (optional): Uniquely identifies an individual input. This gets passed into the formElements object as a key in the individual element object",
+            "inputClass (optional): provides a class for the individual input. This gets passed into the formElements object as a key in the individual element object. Tailwind can be used to adjust styling here",
+            "inputStyle (optional): allows you to use inline styling for the individual input.This gets passed into the formElements object as a key in the individual element object e.g. inputStyle='background-color:green'",
+            "method (optional): allows you to define an HTTP method. If not specified, this will default to 'POST'",
+            "formId (optional): uniquely identifies the form",
+            "formClass (optional): provides a class for the form. Tailwind can be used to adjust styling here",
+            "formStyle (optional): allows you to use inline styling for the form e.g. formStyle='background-color:orange",
+            "ariaLabel (optional): allows you to specifiy an accessibly aria-label for the form. If not specified, this will default to 'Form'",
+            "submitFormContent (optional): allows you to specifiy the content on the Submit button. If not specified, this will default to 'Submit'",
+            "submitButtonId (optional): uniquely identifies the Submit button",
+            "submitButtonClass (optional): provides a class for the Submit button. Tailwind can be used to adjust styling here",
+            "submitButtonStyle (optional): allows you to use inline styling for the Submit button e.g. submitButtonStyle='background-color:white",
+    ]
+    
+    </script>
+    
+    <div class= 'text-sm text-left'>
+    <Docs componentName="Form" propsDetails={docsProps}/>
+    </div> 
+    

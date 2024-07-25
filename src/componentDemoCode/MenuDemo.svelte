@@ -1,6 +1,5 @@
-<script lang='ts'>
-	import type { MenuItems } from '../../../types.ts';
-	import Menu from '$lib/Menu_ts.svelte';
+<script>
+	import Menu from 'svaria-toolkit';
 
 	function blue() {
 		console.log('blue')
