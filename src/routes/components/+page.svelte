@@ -7,14 +7,16 @@
     5. add it to components array
 -->
 
-<script lang=ts>
-	import SectionWrapper from '../../splashPageLib/SectionWrapper.svelte';
+<script lang="ts">
+import SectionWrapper from '../../splashPageLib/SectionWrapper.svelte';
     import {openModal} from "../../store/index.js";
     import logo from "../../splashPageLib/assets/SvAriaLogo.png";
+    import ButtonTab from "../../splashPageLib/ComponentDemos/ButtonTabs/ButtonTab.svelte";
+    import ModalTab from "../../splashPageLib/ComponentDemos/ModalTabs/ModalTab.svelte"
     import Sandbox from '../../splashPageLib/Sandbox.svelte';
-	import type { CompObj } from './../../types.js';
-
-// ======================> Component Imports <========================
+    import Button from '$lib/Button.svelte';	
+    import type { CompObj } from './../../types.js';
+	// ======================> Component Imports < ========================
 	import ButtonDocs from './lib/ButtonDocs.svelte';
 	import AccordionDocs from './lib/AccordionDocs.svelte';
 	import AccordionGroupDocs from './lib/AccordionGroupDocs.svelte';
@@ -164,6 +166,10 @@
     </div>
         <ButtonTab/>
 </div>
+
+</SectionWrapper>
+
+
 
 <div class='lib-display'>
     <h3>Modal Component</h3>
