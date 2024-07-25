@@ -23,7 +23,8 @@
 	className="bg-yellow-200 text-white text-bold hover:bg-gray-700"
 	id="bad"
 />
-<Toast autoShutDown="5000" />
+<Toast autoShutDown="3000" />
+<Toast containerClass="absolute top-60" />
 <Button content="okay button" className="bg-blue-700 text-white text-bold" id="ok" />
 <Alert bind:isOpen />
 <!-- <Modal /> -->
