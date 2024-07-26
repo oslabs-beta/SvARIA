@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { colorContrastCheck, parentColorContrastCheck } from './ARIAchecks.js';
 	export let isOpen: boolean = false;
 	export let title: string = 'Alert';
 	export let message: string = 'Your alert message here';
@@ -12,7 +13,14 @@
 	};
 </script>
 
-<div id={alertId} class={alertClass} role="alert" style="display: {isOpen ? 'block' : 'none'};">
+<div
+	use:colorContrastCheck
+	use:parentColorContrastCheck
+	id={alertId}
+	class={alertClass}
+	role="alert"
+	style="display: {isOpen ? 'block' : 'none'};"
+>
 	<div class="flex items-center space-x-2">
 		<span><slot name="icon" /></span>
 		<div class="flex-grow">

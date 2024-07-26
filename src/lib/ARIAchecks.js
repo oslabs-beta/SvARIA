@@ -1,9 +1,11 @@
+import { rgb, score } from 'wcag-contrast';
+
+const toRGBArray = (rgbStr) => rgbStr.match(/\d+/g).map(Number);
+
 export function ariaLabelcheck(curNode) {
 	if (import.meta.env.VITE_SVARIA_MODE != 'debug') {
 		return;
 	}
-
-	// console.log(parameters)
 	// console.log(curNode.attributes);
 	// console.log('current node', curNode.nodeName);
 
@@ -17,7 +19,7 @@ export function ariaLabelcheck(curNode) {
 	}
 }
 
-function getColors(curNode) {
+export function getColors(curNode) {
 	const compStyles = window.getComputedStyle(curNode);
 	// console.log('color: ', curNode.nodeName, curNode.id, compStyles.getPropertyValue('color'));
 	// console.log(
@@ -67,7 +69,7 @@ function getColors(curNode) {
 	return { backgroundColor, foregroundColor, parentBackgroundColor };
 }
 
-export function colorContrastCheck(curNode, parameters) {
+export function colorContrastCheck(curNode) {
 	if (import.meta.env.VITE_SVARIA_MODE != 'debug') {
 		return;
 	}
@@ -92,28 +94,53 @@ function checkColors(curNode, foregroundColor, backgroundColor, isParent) {
 		return;
 	}
 
-	fetch('https://www.aremycolorsaccessible.com/api/are-they', {
-		mode: 'cors',
-		method: 'POST',
-		body: JSON.stringify({ colors: [backgroundColor, foregroundColor] })
-	})
-		.then((response) => response.json())
-		.then((json) => {
-			//console.log(json)
-			if (json.overall == 'Yup') {
-				// console.log(`${curNode.nodeName}${parentString}, with id of ${curNode.id}: color contrast check passed`);
-			} else if (json.overall == 'Kinda') {
-				console.warn(
-					`${curNode.nodeName}${parentString}, with id of ${curNode.id}: Background and foreground colors contrast colors can be improved`
-				);
-			} else {
-				console.error(
-					`${curNode.nodeName}${parentString}, with id of ${curNode.id}: Background and foreground colors do not meet contrast requirement, please adjust colors`
-				);
-				// console.error(
-				// 	`${curNode.nodeName}${parentString}, with id of ${curNode.id}: BG: ${backgroundColor} FG: ${foregroundColor}`
-				// );
-			}
-		});
+	// =================> API check logic <==================
+	// // convert rgb values to an array of numbers
+	const fgArray = toRGBArray(foregroundColor);
+	const bgArray = toRGBArray(backgroundColor);
+
+	// run color contrast checker install
+	const resultA = rgb(fgArray, bgArray);
+	const resultB = rgb(bgArray, fgArray);
+	const scoreA = score(resultA);
+	const scoreB = score(resultB);
+	// console.log('id: ', curNode.id, 'result: ', result, 'score: ', _score)
+	if (scoreA == 'Fail' && scoreB == 'Fail') {
+		console.error(
+			`${curNode.nodeName}${parentString}, with id of ${curNode.id}: Background and foreground colors do not meet contrast requirement, please adjust colors ${(scoreA, scoreB)}`
+		);
+	} else if (scoreA == 'AA' || scoreB == 'AA') {
+		console.warn(
+			`${curNode.nodeName}${parentString}, with id of ${curNode.id}: Background and foreground colors contrast colors can be improved`
+		);
+	}
+
+	// =============================================================
+
+	// =================> API check logic <==================
+	// fetch('https://www.aremycolorsaccessible.com/api/are-they', {
+	// 	mode: 'cors',
+	// 	method: 'POST',
+	// 	body: JSON.stringify({ colors: [backgroundColor, foregroundColor] })
+	// })
+	// 	.then((response) => response.json())
+	// 	.then((json) => {
+	// 		//console.log(json)
+	// 		if (json.overall == 'Yup') {
+	// 			// console.log(`${curNode.nodeName}${parentString}, with id of ${curNode.id}: color contrast check passed`);
+	// 		} else if (json.overall == 'Kinda') {
+	// 			console.warn(
+	// 				`${curNode.nodeName}${parentString}, with id of ${curNode.id}: Background and foreground colors contrast colors can be improved`
+	// 			);
+	// 		} else {
+	// 			console.error(
+	// 				`${curNode.nodeName}${parentString}, with id of ${curNode.id}: Background and foreground colors do not meet contrast requirement, please adjust colors`
+	// 			);
+	// 			// console.error(
+	// 			// 	`${curNode.nodeName}${parentString}, with id of ${curNode.id}: BG: ${backgroundColor} FG: ${foregroundColor}`
+	// 			// );
+	// 		}
+	// 	});
 	//console.log('class', curNode.attributes["class"])
+	// =============================================================
 }
