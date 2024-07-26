@@ -13,21 +13,21 @@
 <Button
 	id="default-button"
 	content="Click to see Default Alert"
-	className="bg-red-100 border shadow-lg text-red-700"
+	className="bg-red-300 border shadow-lg text-red-900"
 	on:click={openDefault}
 />
 <Button
-	id="custum-button"
+	id="costum-button"
 	on:click={openCustom}
-	className="bg-yellow-100 border shadow-lg text-yellow-700"
+	className="bg-yellow-300 border shadow-lg text-yellow-900"
 	content="Click to see Customized Alert"
 />
 <Alert
 	bind:isOpen
 	title="Warning"
-	titleClass="text-orange-800"
+	titleClass="text-black"
 	message="you pushed a button!"
-	alertClass="bg-yellow-100 border border-yellow-400 text-yellow-700 px-4 py-3 rounded relative w-max"
+	alertClass="bg-yellow-300 border shadow-lg text-yellow-900 px-4 py-3 rounded relative w-max"
 	alertId="button-push-alert"
 	messageClass="italic"
 >

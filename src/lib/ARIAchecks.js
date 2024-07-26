@@ -109,7 +109,7 @@ function checkColors(curNode, foregroundColor, backgroundColor, isParent) {
 		console.error(
 			`${curNode.nodeName}${parentString}, with id of ${curNode.id}: Background and foreground colors do not meet contrast requirement, please adjust colors ${(scoreA, scoreB)}`
 		);
-	} else if (scoreA == 'AA' || scoreB == 'AA') {
+	} else if (scoreA == 'AA' && scoreB == 'AA') {
 		console.warn(
 			`${curNode.nodeName}${parentString}, with id of ${curNode.id}: Background and foreground colors contrast colors can be improved`
 		);

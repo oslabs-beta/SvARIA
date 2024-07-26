@@ -1,10 +1,10 @@
-<script lang='js'>
-	import { colorContrastCheck } from './ARIAChecks.js';
+<script lang="js">
+	import { colorContrastCheck } from './ARIAchecks.js';
 	import Button from './Button_ts.svelte';
 
 	export let showModal = false; // boolean
-	export let modalId='';
-	export let modalClass = 'bg-white rounded-lg shadow dark:bg-white-700 p-4 md:p-5 space-y-4'
+	export let modalId = '';
+	export let modalClass = 'bg-white rounded-lg shadow dark:bg-white-700 p-4 md:p-5 space-y-4';
 	//export let modalClass = ''
 	export let closeModalMessage = 'Close Modal';
 	export let modalHeaderId = 'modalHeader';

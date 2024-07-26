@@ -1,27 +1,28 @@
-<script lang='ts'>
-	import { colorContrastCheck } from './ARIAChecks.js';
+<script lang="ts">
+	import { colorContrastCheck } from './ARIAchecks.js';
 	import Button from './Button_ts.svelte';
 
 	export let showModal: boolean; // boolean
-	export let modalId: string|undefined = 'modal';
-	export let modalClass: string|undefined = 'bg-white rounded-lg shadow dark:bg-white-700 p-4 md:p-5 space-y-4'
+	export let modalId: string | undefined = 'modal';
+	export let modalClass: string | undefined =
+		'bg-white rounded-lg shadow dark:bg-white-700 p-4 md:p-5 space-y-4';
 	//export let modalClass = ''
-	export let closeModalMessage: string|undefined = 'Close Modal';
-	export let closeButtonId: string|undefined = 'closeModalButtonId';
-	export let closeButtonClass: string|undefined = 'bg-black text-white';
-	export let closeButtonStyle: string|undefined = 'closeModalStyle';
-	export let style: string|undefined = '';
+	export let closeModalMessage: string | undefined = 'Close Modal';
+	export let closeButtonId: string | undefined = 'closeModalButtonId';
+	export let closeButtonClass: string | undefined = 'bg-black text-white';
+	export let closeButtonStyle: string | undefined = 'closeModalStyle';
+	export let style: string | undefined = '';
 
 	let dialog: HTMLDialogElement; // HTMLDialogElement
-	$: if(dialog && showModal) dialog.showModal();
+	$: if (dialog && showModal) dialog.showModal();
 
 	function handleKeyDown(event: KeyboardEvent) {
-		if(event.key === 'Escape') {
+		if (event.key === 'Escape') {
 			showModal = false;
 		}
 	}
 
-	$: if(showModal) {
+	$: if (showModal) {
 		document.body.style.overflow = 'hidden';
 		dialog.focus();
 	}
@@ -30,7 +31,7 @@
 <!-- svelte-ignore a11y-click-events-have-key-events a11y-no-noninteractive-element-interactions -->
 
 <dialog
-	id = {modalId}
+	id={modalId}
 	{style}
 	bind:this={dialog}
 	on:close={() => {
@@ -40,7 +41,7 @@
 	on:click|self={() => dialog.close()}
 	use:colorContrastCheck
 	on:keydown={handleKeyDown}
-	class = {modalClass}
+	class={modalClass}
 >
 	<div
 		role="dialog"

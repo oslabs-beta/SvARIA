@@ -3,9 +3,9 @@
 	[] have functionality for if the panel cant be collapsed and aria-disabled set to tru
 -->
 
-<script lang='ts'>
-	import { colorContrastCheck } from './ARIAChecks.ts';
-	
+<script lang="ts">
+	import { colorContrastCheck } from './ARIAchecks.js';
+
 	export let heading: string = 'svARIA accordion component';
 	export let open: boolean = false;
 	export let headingContainerClass: string = 'flex items-center justify-between w-full';
@@ -16,7 +16,7 @@
 	export let contentContainerId: string = `${heading}-content`;
 	export let role: string = 'heading';
 
-	const handleClick = ():void => {
+	const handleClick = (): void => {
 		open = !open;
 	};
 </script>
@@ -30,7 +30,6 @@
 		class={buttonClass}
 		id={buttonId}
 	>
-
 		<span class={headingContainerClass} {role}>
 			<span class={headingClass}>{heading}</span>
 			{#if open}
@@ -78,11 +77,7 @@
 </div>
 
 {#if open}
-	<div
-		role="region"
-		class={contentContainerClass}
-		id={contentContainerId}
-	>
+	<div role="region" class={contentContainerClass} id={contentContainerId}>
 		<slot name="content"></slot>
 	</div>
 {/if}

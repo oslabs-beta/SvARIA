@@ -1,10 +1,10 @@
 <script lang="ts">
 	import { colorContrastCheck, parentColorContrastCheck } from './ARIAchecks.js';
-	export let isOpen: boolean = false;
+	import { toggle } from '../store/index.js';
+	export let isOpen: boolean;
 	export let title: string = 'Alert';
 	export let message: string = 'Your alert message here';
-	export let alertClass: string =
-		'bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative w-max';
+	export let alertClass: string = 'bg-red-300 text-black px-4 py-3 rounded relative w-max';
 	export let titleClass: string = 'font-bold';
 	export let messageClass: string = 'block sm:inline';
 	export let alertId: string = 'alertID';
@@ -15,7 +15,6 @@
 
 <div
 	use:colorContrastCheck
-	use:parentColorContrastCheck
 	id={alertId}
 	class={alertClass}
 	role="alert"
@@ -30,7 +29,7 @@
 		<slot name="close-button">
 			<button
 				type="button"
-				class="bg-inherit ms-auto -mx-1.5 -my-1.5 text-gray-400 hover:text-gray-900 rounded-lg focus:ring-2 focus:ring-gray-300 p-1.5 hover:bg-inherit inline-flex items-center justify-center h-8 w-8 dark:text-red-100 dark:hover:text-white dark:bg-inherit dark:hover:bg-inherit"
+				class="bg-inherit text-black hover:text-gray-900 rounded-lg p-1.5 hover:bg-inherit inline-flex items-center justify-center h-8 w-8 dark:text-red-100 dark:hover:text-white dark:bg-inherit dark:hover:bg-inherit"
 				data-dismiss-target="#toast-default"
 				aria-label="Close"
 				on:click={handleClick}
