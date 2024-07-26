@@ -1,32 +1,21 @@
+// @ts-nocheck 
 import express from 'express';
 // import { handler } from '../build/handler.js';
-//import { handler } from '../build/handler.js';
-// import type { ErrObj } from './types.ts'
-
+import router from './routes/api.js';
 
 const app = express();
-const PORT = 4173;
+const PORT = 3000;
 
 
 app.use(express.json());
-//app.use(handler);
+app.use(express.urlencoded({ extended: true }));
+// app.use(handler);
 
-app.use ('/', (req, res) => {res.status(200).json({test: "testing"})})
 
-// app.get('/', (req, res, next) => {
-//     // res.set('Content-Type', 'text/html'); 
-//     res.set('Content-Type', 'text/html').sendFile('/Users/josh/Documents/Svelte OSP/SvARIA/src/routes/+page.svelte', (err) => {
-//         if(err) {
-//             next(err, 'Get: / Middleware')
-//         }
-//         else{
-//             console.log(`Server started successfully on port ${PORT}`)
-//         }
-//     });
-// });
+app.use('/', router) ;
 
 //404 error handling
-app.use('*', (req, res) => res.status(404).send({message:'404ed'}));
+app.use('*', (req, res) => res.status(404).send({message:'WELP! You\'ve been 404ed!'}));
 
 //global error handling
 app.use((err) => {
@@ -48,4 +37,3 @@ app.listen(PORT, () => {
     console.log(`Server listening on port: ${PORT}`);
 });
 
-export default app;

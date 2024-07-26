@@ -22,7 +22,7 @@
     </h3>
     <ul>
         {#each propsDetails as prop}
-        <li>{prop}</li><br>
+        <br><li>{prop}</li>
         {/each}
     </ul>
     <br>

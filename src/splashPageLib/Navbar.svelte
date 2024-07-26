@@ -10,17 +10,17 @@ components used that we might need to make:
 
 	const links = [
 		{
-			href: '#WhySvARIA',
+			href: '/#WhySvARIA',
 			name: 'Why SvARIA',
-			linkClass: 'duration-200 hover:text-indigo-400 cursor-pointer',
+			linkClass: 'duration-200 hover:text-indigo-400 cursor-pointer'
 		},
 		{
-			href: '#GettingStarted',
+			href: '/#GettingStarted',
 			name: 'Getting Started',
-			linkClass: 'duration-200 hover:text-indigo-400 cursor-pointer',
+			linkClass: 'duration-200 hover:text-indigo-400 cursor-pointer'
 		},
 		{
-			href: '#CompTab',
+			href: '/components',
 			name: 'Components',
 			linkClass: 'duration-200 hover:text-indigo-400 cursor-pointer'
 		},
@@ -30,7 +30,7 @@ components used that we might need to make:
 			linkClass: 'duration-200 hover:text-indigo-400 cursor-pointer'
 		},
 		{
-			href: '#GitHubFAQ',
+			href: '/#GitHubFAQ',
 			name: 'FAQ/News',
 			linkClass: 'duration-200 hover:text-indigo-400 cursor-pointer'
 		}
@@ -41,16 +41,15 @@ components used that we might need to make:
 <header class="flex flex-col relative z-20">
 	<Nav
 		routes={links}
-		navListClass ="hidden pr-8 text-2xl md:flex items-center gap-4 lg:gap-6"
-        navBarClass = "max-w-[1400] mx-auto w-full flex items-center justify-between px-4"
-        id='SvARIAnavBar'
+		navListClass="hidden pr-8 text-2xl md:flex items-center gap-4 lg:gap-6"
+		navBarClass="max-w-[1400] mx-auto w-full flex items-center justify-between px-4"
+		id="SvARIAnavBar"
 	>
 		<div slot="headingPlus">
-
 			<a href="/">
 				<img class="min-w-[250px] h-[125px] w-[250px]" alt="SvARIA Logo" src={logo} />
 			</a>
-			<button on:click={() => $openModal = true} class="md:hidden grid place-items-center">
+			<button on:click={() => ($openModal = true)} class="md:hidden grid place-items-center">
 				<i class="fa-solid fa-bars"></i>
 			</button>
 		</div>
