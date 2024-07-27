@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { colorContrastCheck, ariaLabelcheck } from '../ARIAChecks.ts';
+	import { colorContrastCheck, ariaLabelcheck } from '../ARIAChecks.js';
 	import type { Routes } from '../../types.ts'
 	export let heading: string|undefined = undefined;
 	export let routes: Routes[]|undefined = undefined;

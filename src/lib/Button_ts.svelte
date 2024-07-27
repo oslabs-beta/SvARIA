@@ -5,7 +5,7 @@
 	export let ariaLabel: string = content;
 	export let id: string = '';
 	export let style: string = '';
-	export let className: string = 'bg-black text-white text-bold hover:bg-gray-700';
+	export let className: string = 'bg-black text-white text-bold hover:bg-gray-700 rounded py-2 px-4 rounded';
 	export let type: ButtonType = 'button';
 </script>
 

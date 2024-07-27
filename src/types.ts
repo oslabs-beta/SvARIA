@@ -39,12 +39,13 @@ export type Routes = {
 export type ButtonType = 'button' | 'reset' | 'submit';
 
 export type MenuItems = {
-	label?: string;
-	linkStyle?: string;
-	linkID?: string;
-	linkClass?: string;
-	onClick?: () => void;
-};
+    label?: string,
+    linkStyle?: string,
+    linkID?: string,
+    linkClass?: string,
+    link?: string,
+    onClick?: () => void,
+}
 
 export type NavItems = {
 	href: string;
@@ -82,7 +83,7 @@ export type ARIAColorsObj = {
 
 export type RadioObj = {
 	label: string;
-	labelId: string;
+	labelId?: string;
 	labelClass?: string;
 	labelStyle?: string;
 	inputClass?: string;
@@ -98,3 +99,12 @@ export type CompObj = {
 	label: string;
 	source: string;
 };
+
+export type TreeValue = {
+    label: string,
+    children?: TreeValue[],
+    link?: string,
+    onClick?: () => void,
+    labelId?: string,
+    arrowId?: string
+}

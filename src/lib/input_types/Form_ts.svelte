@@ -11,7 +11,7 @@
 	export let ariaLabel: string = 'Form';
 	export let formClass: string = ''
 	export let formStyle: string = ''
-	export let submitButtonClass: string = ''
+	export let submitButtonClass: string = 'bg-black text-white text-bold hover:bg-gray-700 rounded py-2 px-4 rounded'
 	export let submitButtonStyle: string = ''
 
 	$: formElements = formElements.map((row) => {

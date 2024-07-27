@@ -1,5 +1,5 @@
 <script lang='ts'>
-    import { ariaLabelcheck, colorContrastCheck } from "./ARIAchecks.ts";
+    import { ariaLabelcheck, colorContrastCheck } from "./ARIAChecks.js";
     import Button from "./Button_ts.svelte";
     import { onMount } from 'svelte';
 

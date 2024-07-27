@@ -2,7 +2,7 @@
 	import type { FormElementsObj } from '../../../types.js';
 	import Form from '$lib/input_types/Form_ts.svelte';
 
-	let elements: FormElementsObj[] = [
+	let formElements: FormElementsObj[] = [
 		{
 			name: 'username',
 			type: 'input',
@@ -30,7 +30,7 @@
 </script>
 
 <Form
-	formElements = {elements}
+	{formElements}
 	method = 'POST'
 	on:submit={onSubmit}
 	submitFormContent="Submit"

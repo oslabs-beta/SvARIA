@@ -1,6 +1,6 @@
 <!-- This is where the footer lives -->
 <script>
-  import logo from './assets/SvAriaLogo.png'
+  import footerLogo from './assets/SvAriaLogoFooter.png'
 </script>
 
 <style>
@@ -40,7 +40,7 @@
     <div class='footer-container'>
         <ul class='footer'>
             <ul class='footerBlock' id='logo'>
-                <img class="min-w-[250px] h-[125px] w-[250px]" alt="SvARIA Logo" src={logo} />
+                <img class="min-w-[200px] h-[80px] w-[200px]" alt="SvARIA Logo" src={footerLogo} />
             </ul>
             <ul class='footerBlock' id='docs'>
                 <li><h5>Documentation</h5></li>
