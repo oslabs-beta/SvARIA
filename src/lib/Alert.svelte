@@ -3,7 +3,7 @@
 	import { onMount } from 'svelte';
 	import type { Toggle } from '../types.js';
 	export let toggle: Toggle;
-	let isOpen: boolean;
+	export let isOpen: boolean;
 	export let title: string = 'Alert';
 	export let message: string = 'Your alert message here';
 	export let alertClass: string = 'bg-red-300 text-black px-4 py-3 rounded relative w-max';
@@ -18,6 +18,9 @@
 	});
 	const handleClick = () => {
 		toggle.close();
+	};
+	const close = () => {
+		isOpen = false;
 	};
 </script>
 
@@ -40,7 +43,7 @@
 				class="bg-inherit text-black hover:text-gray-900 rounded-lg p-1.5 hover:bg-inherit inline-flex items-center justify-center h-8 w-8 dark:text-red-100 dark:hover:text-white dark:bg-inherit dark:hover:bg-inherit"
 				data-dismiss-target="#toast-default"
 				aria-label="Close"
-				on:click={handleClick}
+				on:click={close}
 			>
 				<span class="sr-only">Close</span>
 				<svg

@@ -46,4 +46,4 @@
 >
 	<Cat slot="icon" />
 </Alert>
-<Alert toggle={openDefaultAlert} />
+<Alert isOpen={openDefaultAlert} />

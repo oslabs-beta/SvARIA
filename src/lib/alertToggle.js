@@ -2,14 +2,14 @@
 import { createToggleStore } from '../store/index.js';
 
 const createToggle = () => {
-	const alertToggle = createToggleStore(false);
+	const toggle = createToggleStore(false);
 	const open = () => {
-		alertToggle.set(true);
+		toggle.set(true);
 	};
 
 	const close = () => {
-		alertToggle.set(false);
+		toggle.set(false);
 	};
-	return { open, close, subscribe: alertToggle.subscribe };
+	return { open, close, subscribe: toggle.subscribe };
 };
 export default createToggle;
