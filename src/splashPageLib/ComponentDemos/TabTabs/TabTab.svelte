@@ -1,5 +1,5 @@
 <script>
-	import Tab from '$lib/Tab.svelte';
+	import Tab from '$lib/Tab_ts.svelte';
 	import TabDemoTab from './TabDemo.svelte';
 	import TabSandBoxTab from './TabSandbox.svelte';
 	import TabDocsTab from './TabDocs.svelte';

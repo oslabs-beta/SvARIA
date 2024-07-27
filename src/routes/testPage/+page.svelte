@@ -220,6 +220,7 @@
 	}
 
 </script>
+
 <!-- <Docs componentName="Popover" propsDetails={docsProps}>
 
 </Docs> -->
@@ -279,8 +280,3 @@
 <!-- <Switch defValue='On' altValue='off' ariaDefValue="Turned On" ariaAltValue="Turned Off"/>
 <AccordionDemo/> -->
 
-<style>
-	.test {
-		background-color: #a52a2a;
-	}
-</style>
