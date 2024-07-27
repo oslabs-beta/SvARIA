@@ -1,5 +1,5 @@
 <script>
-    import Docs from "../../Docs.svelte"
+    import Docs from "../../../routes/components/Docs.svelte"
 
     let propsDetails = [
         "options (required): Uniquely identifies the popover as a whole. Everything else is nested inside this element.",

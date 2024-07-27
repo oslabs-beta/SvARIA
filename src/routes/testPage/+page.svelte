@@ -17,7 +17,8 @@
 	import Popover from '$lib/Popover.svelte';
 	import AccordionDemo from '../../splashPageLib/ComponentDemos/AccordionGroupTabs/AccordionGroupDemo.svelte';
 	import RadioGroupDemo from '../../splashPageLib/ComponentDemos/RadioGroupTabs/RadioGroupDemo.svelte';
-	import Docs from '../../splashPageLib/Docs.svelte';
+	import Docs from '../components/Docs.svelte';
+	import PopoverDocs from '../components/lib/PopoverDocs.svelte';
 
 	const catIpsum = `Cat ipsum dolor sit amet, always hungry jump on fridge, while happily ignoring when being
 			called shove bum in owner's face like camera lens. Meowsiers meow the best thing in the
@@ -150,6 +151,8 @@
 	];
 </script>
 
+<PopoverDocs/>
+<!-- 
 <Popover
 	popoverId="dialog"
 	popoverHeaderId="PopoverHeader"
@@ -168,12 +171,7 @@
 			<br/>Now you can close the Popover with "X".
 		</p>
 	</div>
-</Popover>
-
-<Docs componentName="Popover" propsDetails={docsProps}>
-	<!-- <h3 slot='details'>
-	</h3> -->
-</Docs>
+</Popover> -->
 <!-- <RadioGroupDemo {options}/> -->
 
 <!-- <Tree {tree} /> -->

@@ -1,5 +1,5 @@
 <script>
-    import AccordionGroup from "$lib/AccordionGroup.svelte";
+    import AccordionGroup from "../../../lib/AccordionGroup_ts.svelte";
     import AccordionGroupTab from "./AccordionGroupTab.svelte";
     import ButtonTab from "../ButtonTabs/ButtonTab.svelte";
     import CheckboxTab from "../CheckboxTabs/CheckboxTab.svelte";

@@ -1,1 +1,1 @@
-<h1> Accordion Documentation will go here </h1>
+<h1> Tab Documentation will go here </h1>

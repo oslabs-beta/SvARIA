@@ -21,7 +21,7 @@
 			heading: 'Accordion Group Component',
 			slot: AccordionGroupTab,
 			headingClass: 'p-9',
-			componentClass: 'min-h-96'
+			componentClass: 'OOGY BOOGEY MAN'
 		},
 		{
 			name: 'Button',
