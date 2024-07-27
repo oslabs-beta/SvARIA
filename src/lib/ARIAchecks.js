@@ -68,6 +68,7 @@ function getColors(curNode) {
 }
 
 export function colorContrastCheck(curNode, parameters) {
+
 	if (import.meta.env.VITE_SVARIA_MODE != 'debug') {
 		return;
 	}
@@ -76,9 +77,15 @@ export function colorContrastCheck(curNode, parameters) {
 }
 
 export function parentColorContrastCheck(curNode) {
+	if (import.meta.env.VITE_SVARIA_MODE != 'debug') {
+		return;
+	}
+
 	const { parentBackgroundColor, foregroundColor, backgroundColor } = getColors(curNode);
 
-	if (parentBackgroundColor == null) console.log('Cannot check parent background color');
+	if (parentBackgroundColor == null) { 
+		//console.log('Cannot check parent background color');
+	}
 	else checkColors(curNode, backgroundColor, parentBackgroundColor, true);
 }
 

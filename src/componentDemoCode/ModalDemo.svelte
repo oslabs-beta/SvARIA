@@ -3,7 +3,7 @@
 	import Button from 'svaria-toolkit';
 	import { colorContrastCheck } from 'svaria-toolkit';
 
-	let showModal;
+	let showModal = false;
 </script>
 
 <Button

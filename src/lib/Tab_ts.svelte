@@ -61,7 +61,7 @@
 					role="tab"
 					aria-selected={item.value == activeTabValue}
 					aria-controls={item.tabContentId}
-					tabindex={item.value == activeTabValue ? '0' : '-1'}
+					tabindex={item.value == activeTabValue ? 0 : -1}
 					on:click={handleClick(item.value)}
 					bind:this={itemComponents[item.value]}
 					on:keydown={(e) => handleKeyPress(e, item.value)}

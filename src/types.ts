@@ -98,9 +98,9 @@ export type CompObj = {
 	source: string;
 };
 
-export type Tree = {
+export type TreeValue = {
     label: string,
-    children?: Tree[],
+    children?: TreeValue[],
     link?: string,
     onClick?: () => void,
     labelId?: string,

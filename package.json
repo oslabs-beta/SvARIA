@@ -1,6 +1,6 @@
 {
-	"name": "svaria",
-	"version": "0.0.1",
+	"name": "svaria-toolkit-test",
+	"version": "0.0.26",
 	"scripts": {
 		"dev-test": "vite --host & nodemon ./server/server.js",
 		"docker-dev:hot": "docker-compose -f docker-compose-dev-hot.yml up",

@@ -205,7 +205,27 @@
 		}
 	];
 
+	let tabItems = [
+	{
+		label: 'Demo',
+		component: Tab1,
+		tabLabelClass:"inline-block p-4 rounded-t-lg hover:text-gray-600 hover:bg-gray-50 dark:hover:bg-gray-800 dark:hover:text-gray-300 focus:text-gray-600 focus:bg-gray-50 dark:focus:bg-gray-800 dark:focus:text-gray-300 ",
+		tabContentClass:"p-6 bg-gray-50 text-medium text-black dark:text-gray-400 dark:bg-gray-800 rounded-lg"
+	},
+	{
+		label: 'Sandbox',
+		component: Tab2,
+		tabLabelClass:"inline-block p-4 rounded-t-lg hover:text-gray-600 hover:bg-gray-50 dark:hover:bg-gray-800 dark:hover:text-gray-300 focus:text-gray-600 focus:bg-gray-50 dark:focus:bg-gray-800 dark:focus:text-gray-300 ",
+		tabContentClass:"p-6 bg-gray-50 text-medium text-gray-500 dark:text-gray-400 dark:bg-gray-800 rounded-lg"
+	}
+];
+
+
 </script>
+
+<Tab
+items={tabItems}
+/>
 <!-- <Docs componentName="Popover" propsDetails={docsProps}>
 
 </Docs> -->
@@ -220,7 +240,7 @@
 	arrows={['▼', '►']}
 /> -->
 
-<Menu
+<!-- <Menu
 	items={menuItems}
 	buttonContent="Menu"
 	buttonId="menuButton"
@@ -228,7 +248,9 @@
 	buttonClass="w-32 h-9 text-xl bg-slate-200 items-center justify-between  py-2 px-3 text-gray-900 hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-black md:dark:hover:text-blue-500 dark:focus:text-black dark:hover:bg-gray-700 md:dark:hover:bg-transparent"
     listId='menuItems'
 	listClass="bg-blue-200 text-lg w-32 text-center	rounded-md"
-/>
+/> -->
+
+
 
 <title>Our testing page</title>
 <br />
@@ -261,8 +283,3 @@
 <!-- <Switch defValue='On' altValue='off' ariaDefValue="Turned On" ariaAltValue="Turned Off"/>
 <AccordionDemo/> -->
 
-<style>
-	.test {
-		background-color: #a52a2a;
-	}
-</style>

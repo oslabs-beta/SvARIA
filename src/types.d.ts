@@ -1,4 +1,3 @@
-import type { SvelteComponent } from 'svelte';
 import type { HTMLAttributes } from 'svelte/elements';
 import type { MouseEventHandler } from 'svelte/elements';
 export type FormElementsObj = {
@@ -24,11 +23,6 @@ export type CheckboxObj = {
 export interface CustomDivAttributes extends HTMLAttributes<HTMLDivElement> {
     heading?: string;
 }
-export type DialogObj = {
-    showModal: () => void;
-    focus: () => void;
-    close: () => void;
-};
 export type Routes = {
     href: string;
     name: string;
@@ -42,6 +36,7 @@ export type MenuItems = {
     linkStyle?: string;
     linkID?: string;
     linkClass?: string;
+    link?: string;
     onClick?: () => void;
 };
 export type NavItems = {
@@ -74,8 +69,8 @@ export type ARIAColorsObj = {
 };
 export type RadioObj = {
     label: string;
-    labelClass?: string;
     labelId?: string;
+    labelClass?: string;
     labelStyle?: string;
     inputClass?: string;
     inputStyle?: string;
@@ -84,7 +79,15 @@ export type EventObj = {
     getAttribute: string;
 };
 export type CompObj = {
-    docs: typeof SvelteComponent;
+    docs: ConstructorOfATypedSvelteComponent;
     label: string;
     source: string;
+};
+export type TreeValue = {
+    label: string;
+    children?: TreeValue[];
+    link?: string;
+    onClick?: () => void;
+    labelId?: string;
+    arrowId?: string;
 };
