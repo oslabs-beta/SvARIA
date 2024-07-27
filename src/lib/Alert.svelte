@@ -1,15 +1,23 @@
 <script lang="ts">
-	import { colorContrastCheck, parentColorContrastCheck } from './ARIAchecks.js';
-	import { toggle } from '../store/index.js';
-	export let isOpen: boolean;
+	import { colorContrastCheck } from './ARIAchecks.js';
+	import { onMount } from 'svelte';
+	import type { Toggle } from '../types.js';
+	export let toggle: Toggle;
+	let isOpen: boolean;
 	export let title: string = 'Alert';
 	export let message: string = 'Your alert message here';
 	export let alertClass: string = 'bg-red-300 text-black px-4 py-3 rounded relative w-max';
 	export let titleClass: string = 'font-bold';
 	export let messageClass: string = 'block sm:inline';
 	export let alertId: string = 'alertID';
+	onMount(() => {
+		const unsubscribe = toggle.subscribe((value) => {
+			isOpen = value;
+		});
+		return () => unsubscribe();
+	});
 	const handleClick = () => {
-		isOpen = !isOpen;
+		toggle.close();
 	};
 </script>
 
@@ -54,3 +62,5 @@
 		</slot>
 	</div>
 </div>
+
+// sandbox = https://svelte.dev/repl/1161a113613840b1b765e384e734eadf?version=4.2.18
