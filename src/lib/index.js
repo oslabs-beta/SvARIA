@@ -15,7 +15,7 @@ import ProgressBar from './ProgressBar.svelte';
 import RadioGroup from './RadioGroup_ts.svelte';
 import Switch from './Switch.svelte';
 import Tab from './Tab_ts.svelte';
-import { colorContrastCheck, ariaLabelcheck, parentColorContrastCheck } from './ARIAChecks.js';
+import { colorContrastCheck, ariaLabelcheck, parentColorContrastCheck } from './ARIAchecks.js';
 
 export {
 	Navigation,
