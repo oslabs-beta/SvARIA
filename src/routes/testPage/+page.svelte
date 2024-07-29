@@ -83,7 +83,8 @@
 			type: 'password',
 			labelValue: 'New Password',
 			inputId: 'newPw',
-			labelId: 'pwLabel'
+			labelId: 'pwLabel',
+			inputClass: 'bg-black'
 		}
 	];
 
@@ -209,23 +210,22 @@
 	{
 		label: 'Demo',
 		component: Tab1,
-		tabLabelClass:"inline-block p-4 rounded-t-lg hover:text-gray-600 hover:bg-gray-50 dark:hover:bg-gray-800 dark:hover:text-gray-300 focus:text-gray-600 focus:bg-gray-50 dark:focus:bg-gray-800 dark:focus:text-gray-300 ",
-		tabContentClass:"p-6 bg-gray-50 text-medium text-black dark:text-gray-400 dark:bg-gray-800 rounded-lg"
 	},
 	{
 		label: 'Sandbox',
 		component: Tab2,
-		tabLabelClass:"inline-block p-4 rounded-t-lg hover:text-gray-600 hover:bg-gray-50 dark:hover:bg-gray-800 dark:hover:text-gray-300 focus:text-gray-600 focus:bg-gray-50 dark:focus:bg-gray-800 dark:focus:text-gray-300 ",
-		tabContentClass:"p-6 bg-gray-50 text-medium text-gray-500 dark:text-gray-400 dark:bg-gray-800 rounded-lg"
 	}
 ];
-
 
 </script>
 
 <Tab
 items={tabItems}
 />
+
+<!-- <Form {formElements}
+groupInputClass = 'bg-yellow-400'
+></Form> -->
 <!-- <Docs componentName="Popover" propsDetails={docsProps}>
 
 </Docs> -->

@@ -3,9 +3,13 @@
 	export let tabListClass: string = 'flex flex-wrap';
 	export let tabListId: string = '';
 	export let tabListStyle: string = '';
-	export let id = '';
-	export let style = '';
-	export let className = '';
+	export let id:string = '';
+	export let style:string = '';
+	export let className:string = '';
+	export let groupLabelClass:string = 'inline-block bg-gray-400 rounded-t focus:bg-sky-800 focus:ring text-black w-32';
+	export let groupLabelStyle: string = ''
+	export let groupContentClass: string = 'bg-blue-300 text-black'
+	export let groupContentStyle: string = ''
 	import { colorContrastCheck } from './ARIAChecks.js';
 	import type { TabItems } from '../types.js'
 
@@ -26,7 +30,6 @@
 				activeTabValue = tabValue - 1;
 			}
 		}
-
 		if (activeTabValue >= items.length) {
 			activeTabValue = 0;
 		}
@@ -65,8 +68,8 @@
 					on:click={handleClick(item.value)}
 					bind:this={itemComponents[item.value]}
 					on:keydown={(e) => handleKeyPress(e, item.value)}
-					class={item.tabLabelClass}
-					style={item.tabLabelStyle}
+					class={item.tabLabelClass ? item.tabLabelClass : groupLabelClass}
+					style={item.tabLabelStyle ? item.tabLabelStyle : groupLabelStyle}
 					id={item.tabLabelId}
 					use:colorContrastCheck
 					on:click
@@ -77,8 +80,8 @@
 	</ul>
 	{#each items as item}
 		<div
-			class={item.tabContentClass}
-			style={item.tabContentStyle}
+			class={item.tabContentClass ? item.tabContentClass : groupContentClass}
+			style={item.tabContentStyle ? item.tabContentStyle : groupContentStyle}
 			id={item.tabContentId}
 			role="tabpanel"
 			aria-labelledby={item.id}

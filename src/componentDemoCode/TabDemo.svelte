@@ -11,7 +11,7 @@
 			component: DemoTab1,
 			tabLabelId: 'aria-label',
 			tabContentId: 'aria-label-content',
-            tabLabelClass: 'inline-block bg-gray-100 rounded-t bg-sky-700 focus:bg-sky-800 focus:ring text-black',
+			tabLabelClass: 'inline-block bg-blue-400 rounded-t focus:bg-sky-800 focus:ring text-black w-32',
             tabContentClass: 'bg-blue-300 text-black'
 		},
 		{
@@ -19,7 +19,7 @@
 			component: DemoTab2,
 			tabLabelId: 'aria-labelledby',
 			tabContentId: 'aria-labelledby-content',
-            tabLabelClass: 'inline-block bg-gray-100 rounded-t bg-sky-700 focus:bg-sky-800 focus:ring text-black',
+			tabLabelClass: 'inline-block bg-purple-400 rounded-t focus:bg-sky-800 focus:ring text-black w-32',
             tabContentClass: 'bg-blue-300 text-black'
 		},
 		{
@@ -41,5 +41,7 @@
 		{items}
 		tabListStyle="flex flex-wrap inline-block p-2 rounded-t bg-sky-200 focus:bg-black focus:ring"
 		tabListId = 'tab-labels'
+		groupLabelClass = 'inline-block bg-gray-400 rounded-t focus:bg-sky-800 focus:ring text-black w-32'
+		groupContentClass = 'bg-blue-300 text-black'
 	/>
 </div>

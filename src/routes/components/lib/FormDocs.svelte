@@ -23,6 +23,10 @@
             "submitButtonId (optional): uniquely identifies the Submit button",
             "submitButtonClass (optional): provides a class for the Submit button. Tailwind can be used to adjust styling here",
             "submitButtonStyle (optional): allows you to use inline styling for the Submit button e.g. submitButtonStyle='background-color:white",
+            "groupLabelClass (optional): provides the same class for all the labels. Tailwind can be used to adjust styling here.",
+            "groupLabelStyle (optional): allows you to use inline styling for for all the labels e.g. style='color:orange'",
+            "groupInputClass (optional): provides the same class for the content of all the inputs. Tailwind can be used to adjust styling here.",
+            "groupInputStyle (optional): allows you to use inline styling for the content of all the inputs e.g. style='background-color:purple'"
     ]
     
     </script>
