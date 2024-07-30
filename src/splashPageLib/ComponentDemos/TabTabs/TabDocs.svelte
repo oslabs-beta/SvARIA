@@ -1,9 +1,9 @@
 <script>
 
-    import Docs from '../../Docs.svelte';
+import Docs from '../../../routes/components/Docs.svelte';
     
     
-    let docsProps=[
+    let docsProps = [
             "items (required): an object that contains the labels and components for all elements in tab", 
             "tabLabelId (optional): Uniquely identifies the label of an individual tab, this gets passed into the items object as a key in the individual element. This will default to `tab-${row.value}` id not specified",
             "tabContentId (optional):  Uniquely identifies the content of an individual tab, this gets passed into the items object as a key in the individual element. This will default to `tabcontent-${row.value}` id not specified",

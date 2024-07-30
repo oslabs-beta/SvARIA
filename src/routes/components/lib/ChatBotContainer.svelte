@@ -2,8 +2,8 @@
 
 <script>
 
-	import Popover from '../components/lib/ChatBotPopover.svelte'
-	import ChatBot from '../components/lib/ChatBot.svelte';
+	import Popover from './ChatBotPopover.svelte'
+	import ChatBot from './ChatBot.svelte';
 
 
 	let formElements = [
@@ -33,12 +33,12 @@
 </script>
 
 <div class="fixed bottom-4 right-4 z-50">
-	<Popover closeButtonClass='fixed right-6 bg-black text-white'>
+	<Popover closeButtonClass='fixed right-6 bg-black text-white' openButtonContent="Build with SvARIA Bot" openButtonAriaLabel="Build Components with SvARIA Bot" popoverId="chatbot">
 		<div slot='header'>
 			<h3>SvARIA Bot</h3>
 		</div>
 		<div slot='content'>
-			<ChatBot openButtonContent="Build with SvARIA Bot" openButtonAriaLabel="Build Components with SvARIA Bot" popoverId="chatbot"/>
+			<ChatBot/>
 		</div>
 	</Popover>
 </div>

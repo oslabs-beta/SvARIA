@@ -1,7 +1,6 @@
 <script>
 
-    import Docs from '../../Docs.svelte';
-    
+import Docs from '../../../routes/components/Docs.svelte';
     
     let docsProps=[
             "menuItems (required): an array that contains the labels for all elements in menu", 

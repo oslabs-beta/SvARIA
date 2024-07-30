@@ -27,7 +27,7 @@
 	>
 	Popover123 Opened
 	</h3>
-	<div slot="popover123content">
+	<div slot="content">
 		<p id="">
 			<br>You have successfully opened the Popover,
 			<br/>Now you can close the Popover with "X".

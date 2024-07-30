@@ -1,7 +1,5 @@
 <script>
-
-	import Docs from '../../Docs.svelte';
-	
+	import Docs from '../../../routes/components/Docs.svelte';
 	
 	let docsProps=[
 			"progress (optional): Can be used to set the initial progress on page load",
@@ -16,8 +14,8 @@
 			"** of note, the in line styling of the progress within the progress bar cannot be used for this component **"
 	]
 	
-	</script>
+</script>
 	
-	<div class= 'text-sm text-left'>
+<div class= 'text-sm text-left'>
 	<Docs componentName="Progress Bar" propsDetails={docsProps}/>
-	</div> 
+</div> 

@@ -8,13 +8,12 @@
 -->
 
 <script lang="ts">
-import SectionWrapper from '../../splashPageLib/SectionWrapper.svelte';
+    import SectionWrapper from '../../splashPageLib/SectionWrapper.svelte';
     import {openModal} from "../../store/index.js";
     import logo from "../../splashPageLib/assets/SvAriaLogo.png";
     import ButtonTab from "../../splashPageLib/ComponentDemos/ButtonTabs/ButtonTab.svelte";
     import ModalTab from "../../splashPageLib/ComponentDemos/ModalTabs/ModalTab.svelte"
     import Sandbox from '../../splashPageLib/Sandbox.svelte';
-    import Button from '$lib/Button.svelte';	
     import type { CompObj } from './../../types.js';
 	// ======================> Component Imports < ========================
 	import ButtonDocs from './lib/ButtonDocs.svelte';
@@ -34,7 +33,7 @@ import SectionWrapper from '../../splashPageLib/SectionWrapper.svelte';
 
 	// ====================================================================
 
-	const componentsArray: CompObj[] = [
+	export const componentsArray: CompObj[] = [
 		{ docs: ButtonDocs, label: 'Button', source: 'https://svelte.dev/repl/963bf9cd29244ab0a52f5b788293f95f?version=4.2.18' },
 		{ docs: AccordionDocs, label: 'Accordion', source: 'https://svelte.dev/repl/6f215987234e471fbe241df938789695?version=4.2.18' },
 		{ docs: AccordionGroupDocs, label: 'Accordion Group', source: 'https://svelte.dev/repl/6f215987234e471fbe241df938789695?version=4.2.18' },

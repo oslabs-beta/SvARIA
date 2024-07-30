@@ -1,11 +1,12 @@
 <script>
     import "../app.css";
-    import Nav from '$lib/navigation/Navigation.svelte'
+    import ChatBotContainer from "./components/lib/ChatBotContainer.svelte";
     import Navbar from "../splashPageLib/Navbar.svelte";
     import Footer from "../splashPageLib/Footer.svelte";
     import logo from "../splashPageLib/assets/SvAriaLogo.png";
 
     import {openModal} from "../store";
+	import ChatBotPopover from "./components/lib/ChatBotPopover.svelte";
 
     let y;
     $: outerHeight = 0;
@@ -17,7 +18,6 @@
 
     let links= [{ link: '/', name: 'Home' }, { link: 'https://github.com/oslabs-beta/SvARIA', name: 'GitHub' }, { link: '/components', name: 'Components' }, { link: '/about', name: 'About'} ]
 </script>
-<!-- <Nav heading='SvARIA' link={links} /> -->
 {#if $openModal}
 <div class="fixed top-0 left-0 w-screen h-screen border-b bg-white z-50 flex flex-col gap-8 p-5 px-8 md:hidden">
     <div class="flex items-center justify-between gap-4 border-b pb-2">
@@ -58,6 +58,7 @@
 </div>
 {/if}
 <slot />
+<ChatBotContainer />
 {#if y > outerHeight}
 <div class="fixed bottom-0 left-0 w-full flex flex-col z-20 fadeIn">
     <Footer/>
@@ -65,14 +66,3 @@
 {/if}
 
 <svelte:window bind:scrollY={y} bind:outerHeight/>
-<!-- 
-    *General Page Structure*
-    header/navbar
-    hero
-    product description
-    Getting Started 
-    CompTab: Components/Docs/Code
-    Github/faq
-    footer ()
-
- -->
