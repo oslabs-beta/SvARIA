@@ -15,7 +15,9 @@
     "lint": "prettier --check . && eslint .",
     "format": "prettier --write .",
     "test:integration": "playwright test",
-    "test:unit": "vitest"
+    "test:unit": "vitest",
+    "test:ct": "playwright test -c playwright-ct.config.ts",
+    "test:ct:ui": "playwright test -c playwright-ct.config.ts --ui"
   },
   "exports": {
     ".": {
@@ -32,6 +34,7 @@
     "svelte": "^4.0.0"
   },
   "devDependencies": {
+    "@playwright/experimental-ct-svelte": "^1.45.3",
     "@playwright/test": "^1.45.3",
     "@rollup/plugin-typescript": "^11.1.6",
     "@sveltejs/adapter-auto": "^3.2.1",
@@ -56,7 +59,7 @@
     "svelte-preprocess": "^5.1.4",
     "tailwindcss": "^3.4.3",
     "tslib": "^2.4.1",
-    "typescript": "^5.4.5",
+    "typescript": "^5.5.4",
     "vite": "^5.2.11",
     "vitest": "^1.2.0"
   },
