@@ -169,15 +169,15 @@ groupInputClass = 'bg-yellow-400'
 <!-- <RadioGroupDemo {options}/> -->
 
 
-<!-- <Tree
+<Tree 
 	{tree}
-/> -->
+/>
 
 <!-- <Menu
 	{menuItems}
 /> -->
 
-<Checkbox {options}></Checkbox>
+<!-- <Checkbox {options}></Checkbox> -->
 
 <!-- <Menu
 	items={menuItems}

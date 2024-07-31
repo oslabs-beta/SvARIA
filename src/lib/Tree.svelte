@@ -60,6 +60,7 @@
 		class={liClassName}
 		style={liStyle}
 		id={liId}
+		use:colorContrastCheck
 	>
 		{#if children}
 			<span

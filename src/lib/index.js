@@ -12,6 +12,7 @@ import RadioGroup from './RadioGroup_ts.svelte';
 import Switch from './Switch.svelte';
 import Tab from './Tab_ts.svelte';
 import Tree from './Tree.svelte';
+import Checkbox from './input_types/Checkbox_ts.svelte'
 
 import { colorContrastCheck, ariaLabelcheck, parentColorContrastCheck } from './ARIAChecks.js';
 
@@ -29,6 +30,7 @@ export {
 	Switch,
 	Tab,
 	Tree,
+	Checkbox,
 	colorContrastCheck,
 	ariaLabelcheck,
 	parentColorContrastCheck

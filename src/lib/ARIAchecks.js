@@ -19,7 +19,7 @@ export function ariaLabelcheck(curNode) {
 
 function getColors(curNode) {
 	const compStyles = window.getComputedStyle(curNode);
-	// console.log('color: ', curNode.nodeName, curNode.id, compStyles.getPropertyValue('color'));
+	//console.log('color: ', curNode.nodeName, curNode.id, compStyles.getPropertyValue('color'));
 	// console.log(
 	// 	'bg-color: ',
 	// 	curNode.nodeName,
@@ -32,7 +32,7 @@ function getColors(curNode) {
 	let iterations = 0;
 	//check parent for background color for up to 3 iterations
 	let parentNode = curNode.parentNode;
-	while (backgroundColor == 'rgba(0, 0, 0, 0)' && iterations < 3) {
+	while (backgroundColor == 'rgba(0, 0, 0, 0)' && iterations < 3 && parentNode.nodeName !== "HTML") {
 		//console.log('parent node: ',parentNode.nodeName, 'parent node id:', parentNode.id)
 		//console.log('parent color', window.getComputedStyle(parentNode).getPropertyValue("background-color"))
 		const compStylesParent = window.getComputedStyle(parentNode);
@@ -50,7 +50,7 @@ function getColors(curNode) {
 
 	const compStylesParent = window.getComputedStyle(parentNode);
 	let parentBackgroundColor = compStylesParent.getPropertyValue('background-color');
-	while (parentBackgroundColor == 'rgba(0, 0, 0, 0)' && iterations < 3) {
+	while (parentBackgroundColor == 'rgba(0, 0, 0, 0)' && iterations < 3 && parentNode.nodeName !== "HTML") {
 		//console.log('parent node: ',parentNode.nodeName, 'parent node id:', parentNode.id)
 		//console.log('parent color', window.getComputedStyle(parentNode).getPropertyValue("background-color"))
 		const compStylesParent = window.getComputedStyle(parentNode);

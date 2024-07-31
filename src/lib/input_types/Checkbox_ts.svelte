@@ -29,7 +29,7 @@
 	{style}
 >
 	{#each options as option, index}
-		<label class={option.labelClass ? option.labelClass : groupLabelClass} id={option.labelId} style={option.labelStyle ? option.labelStyle : groupLabelStyle}>
+		<label class={option.labelClass ? option.labelClass : groupLabelClass} id={option.labelId} style={option.labelStyle ? option.labelStyle : groupLabelStyle} use:colorContrastCheck>
 			<input
 				type="checkbox"
 				bind:group={selectedOption}
