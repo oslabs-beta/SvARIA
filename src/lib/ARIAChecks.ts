@@ -12,7 +12,7 @@ export function ariaLabelcheck(curNode: HTMLElement): void {
 	// console.log('current node', curNode.nodeName);
 
 	if (curNode.attributes['aria-label']) {
-		console.log(`${curNode.nodeName}, with id of ${curNode.id}: check passed: aria-label present`);
+		//console.log(`${curNode.nodeName}, with id of ${curNode.id}: check passed: aria-label present`);
 	}
 	if (!curNode.attributes['aria-label']) {
 		console.warn(
