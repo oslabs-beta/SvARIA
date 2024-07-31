@@ -4,10 +4,14 @@
 
 	export let options: CheckboxObj[] = [];
 	export let ariaLabel: string = 'checkbox';
-	export let id: string = '';
-	export let style: string = '';
-	export let className: string = 'checkbox-group';
-	export let selectedOption: string[] = [];
+	export let id: string|undefined = '';
+	export let style: string|undefined = '';
+	export let className: string|undefined = 'checkbox-group';
+	export let selectedOption: string[]|undefined = [];
+	export let groupInputClass: string|undefined = ''
+	export let groupInputStyle: string|undefined = ''
+	export let groupLabelClass : string | undefined = ''
+	export let groupLabelStyle : string | undefined = ''
 
 	$: options.map((option, index) => {
 		if (!option['labelId']) {
@@ -25,15 +29,15 @@
 	{style}
 >
 	{#each options as option, index}
-		<label class={option.labelClass} id={option.labelId} style={option.labelStyle}>
+		<label class={option.labelClass ? option.labelClass : groupLabelClass} id={option.labelId} style={option.labelStyle ? option.labelStyle : groupLabelStyle}>
 			<input
 				type="checkbox"
 				bind:group={selectedOption}
 				value={option.label}
 				id={`checkbox-` + index}
 				aria-checked={selectedOption.includes(option.label)}
-				class={option.inputClass}
-				style={option.inputStyle}
+				class={option.inputClass ? option.inputClass : groupInputClass}
+				style={option.inputStyle ? option.inputStyle : groupInputStyle}
 				aria-labelledby={option.labelId}
 			/>
 			{option.label}

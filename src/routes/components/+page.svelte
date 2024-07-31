@@ -45,7 +45,7 @@ import SectionWrapper from '../../splashPageLib/SectionWrapper.svelte';
 			source: 'https://svelte.dev/repl/6f215987234e471fbe241df938789695?version=4.2.18'
 		},
 		{ docs: AccordionGroupDocs, label: 'Accordion Group', source: 'https://svelte.dev/repl/' },
-		{ docs: CheckboxDocs, label: 'Checkbox', source: 'https://svelte.dev/repl/' },
+		{ docs: CheckboxDocs, label: 'Checkbox', source: 'https://svelte.dev/repl/1655765010ce4ec287f1a41a92e0a42b?version=4.2.18' },
 		{
 			docs: FormDocs,
 			label: 'Form',
