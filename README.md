@@ -35,20 +35,25 @@ This will create a button labeled "example button" with a red background.
 
 You can also style using regular CSS and access the className on the component. See the documentation for each component on our splash page to access any property name you want to access.
 
-## Another benefit of our toolkit is the ARIA background checker tool.
+## Another benefit of our toolkit is the ARIA checker tools.
+
+These are tools used to check the color contrast using [wcag](https://www.w3.org/TR/WCAG20/#contrast-ratiodef) standards and aria labels on appropriate compoents to ensure that components are meeting standards.
 
 In order for the background checks to run, you must configure your ENV file to be running in a test environment.
 
-<add that specific line of code here>
+`<add that specific line of code here>`
+
 To disable the checks, you can set the ENV mode to <not sure>.
 
 The ARIA checks will run on all SvARIA components to ensure that as you edit the components, they stay within the parameters of ARIA compliance.
 
-You can also add the checks to any component that is not in our library by adding the ARIA check to use:
+You can also add the checks to any component that is not in our library by adding the ARIA check to your components.
 
-`import {colorContrastCheck, parentColorContrastCheck} from 'svaria-toolkit'
+```
+import {colorContrastCheck, parentColorContrastCheck} from 'svaria-toolkit'
 
-<div use:colorContrastCheck , use:parentColorContrastCheck > </div>`
+<div use:colorContrastCheck , use:parentColorContrastCheck > </div>
+```
 
 ## find the team on linkedin
 
