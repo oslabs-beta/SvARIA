@@ -1,7 +1,7 @@
 <script lang='ts'>
     import Sandbox from "../../Sandbox.svelte"
 
-    let source = 'https://svelte.dev/repl/85c906eb6cdb48c1a95d50b746a662a2?version=4.2.18'
+    let source = 'https://svelte.dev/repl/67d050ac1ddd41d2be31d5921d29e288?version=4.2.18'
 </script>
 
 <Sandbox {source}/>

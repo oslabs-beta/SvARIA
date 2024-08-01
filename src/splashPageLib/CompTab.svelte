@@ -14,6 +14,7 @@
 	import SwitchTabs from './ComponentDemos/SwitchTabs/SwitchTab.svelte';
 	import PopoverTab from './ComponentDemos/PopoverTabs/PopoverTab.svelte';
 	import ProgressBarTab from './ComponentDemos/ProgressBarTabs/ProgressBarTab.svelte';
+	import TreeTab from './ComponentDemos/TreeTabs/TreeTab.svelte';
 
 	const accordions = [
 		{
@@ -99,7 +100,14 @@
 			slot: ProgressBarTab,
 			headingClass: 'p-9',
 			componentClass: 'min-h-96'
-		}
+		},
+		{
+			name: 'Tree',
+			heading: 'Tree Component',
+			slot: TreeTab,
+			headingClass: 'p-9',
+			componentClass: 'min-h-96'
+		},
 	];
 </script>
 

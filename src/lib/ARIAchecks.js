@@ -4,11 +4,11 @@ export function ariaLabelcheck(curNode) {
 	}
 
 	// console.log(parameters)
-	console.log(curNode.attributes);
-	console.log('current node', curNode.nodeName);
+	// console.log(curNode.attributes);
+	// console.log('current node', curNode.nodeName);
 
 	if (curNode.attributes['aria-label']) {
-		console.log(`${curNode.nodeName}, with id of ${curNode.id}: check passed: aria-label present`);
+		//console.log(`${curNode.nodeName}, with id of ${curNode.id}: check passed: aria-label present`);
 	}
 	if (!curNode.attributes['aria-label']) {
 		console.warn(
@@ -19,13 +19,13 @@ export function ariaLabelcheck(curNode) {
 
 function getColors(curNode) {
 	const compStyles = window.getComputedStyle(curNode);
-	console.log('color: ', curNode.nodeName, curNode.id, compStyles.getPropertyValue('color'));
-	console.log(
-		'bg-color: ',
-		curNode.nodeName,
-		curNode.id,
-		compStyles.getPropertyValue('background-color')
-	);
+	// console.log('color: ', curNode.nodeName, curNode.id, compStyles.getPropertyValue('color'));
+	// console.log(
+	// 	'bg-color: ',
+	// 	curNode.nodeName,
+	// 	curNode.id,
+	// 	compStyles.getPropertyValue('background-color')
+	// );
 
 	let backgroundColor = compStyles.getPropertyValue('background-color');
 
