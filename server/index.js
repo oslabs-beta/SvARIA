@@ -25,12 +25,10 @@ const db = new pg.Client(config);
 db.connect(function (err) {
     console.log('connected to db')
     if (err){
-       
         throw err;
     } 
    
     db.query("SELECT VERSION()", [], function (err, result) {
-      
         if (err) {
             throw err;
         }

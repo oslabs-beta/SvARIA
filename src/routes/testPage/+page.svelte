@@ -17,8 +17,8 @@
 	import Popover from '$lib/Popover.svelte';
 	import AccordionDemo from '../../splashPageLib/ComponentDemos/AccordionGroupTabs/AccordionGroupDemo.svelte';
 	import RadioGroupDemo from '../../splashPageLib/ComponentDemos/RadioGroupTabs/RadioGroupDemo.svelte';
-	import Docs from '../../splashPageLib/Docs.svelte';
-	import Tree from '$lib/Tree.svelte';
+	import Docs from '../components/Docs.svelte';
+	import PopoverDocs from '../components/lib/PopoverDocs.svelte';
 
 	const catIpsum = `Cat ipsum dolor sit amet, always hungry jump on fridge, while happily ignoring when being
 			called shove bum in owner's face like camera lens. Meowsiers meow the best thing in the
@@ -258,6 +258,19 @@
 		</p>
 	</div>
 </Popover> -->
+<!-- <RadioGroupDemo {options}/> -->
+
+<!-- <Tree {tree} /> -->
+
+<title>Our testing page</title>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
 <!-- <Switch defValue='On' altValue='off' ariaDefValue="Turned On" ariaAltValue="Turned Off"/>
 <AccordionDemo/> -->
 

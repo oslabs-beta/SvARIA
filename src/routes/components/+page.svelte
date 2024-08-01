@@ -14,7 +14,6 @@ import SectionWrapper from '../../splashPageLib/SectionWrapper.svelte';
     import ButtonTab from "../../splashPageLib/ComponentDemos/ButtonTabs/ButtonTab.svelte";
     import ModalTab from "../../splashPageLib/ComponentDemos/ModalTabs/ModalTab.svelte"
     import Sandbox from '../../splashPageLib/Sandbox.svelte';
-    import Button from '$lib/Button.svelte';	
     import type { CompObj } from './../../types.js';
 	// ======================> Component Imports < ========================
 	import ButtonDocs from './lib/ButtonDocs.svelte';
@@ -25,6 +24,7 @@ import SectionWrapper from '../../splashPageLib/SectionWrapper.svelte';
 	import MenuDocs from './lib/MenuDocs.svelte';
 	import ModalDocs from './lib/ModalDocs.svelte';
 	import NavigationDocs from './lib/NavigationDocs.svelte';
+	import PopoverDocs from './lib/PopoverDocs.svelte'
 	import ProgressBarDocs from './lib/ProgressBarDocs.svelte';
 	import RadioGroupDocs from './lib/RadioGroupDocs.svelte';
 	import SwitchDocs from './lib/SwitchDocs.svelte';
@@ -34,51 +34,19 @@ import SectionWrapper from '../../splashPageLib/SectionWrapper.svelte';
 	// ====================================================================
 
 	const componentsArray: CompObj[] = [
-		{
-			docs: ButtonDocs,
-			label: 'Button',
-			source: 'https://svelte.dev/repl/3de22bc71e6c42f680c0e5dc80b42ba1?version=4.2.18'
-		},
-		{
-			docs: AccordionDocs,
-			label: 'Accordion',
-			source: 'https://svelte.dev/repl/6f215987234e471fbe241df938789695?version=4.2.18'
-		},
-		{ docs: AccordionGroupDocs, label: 'Accordion Group', source: 'https://svelte.dev/repl/' },
+		{ docs: ButtonDocs, label: 'Button', source: 'https://svelte.dev/repl/3de22bc71e6c42f680c0e5dc80b42ba1?version=4.2.18' },
+		{ docs: AccordionDocs, label: 'Accordion', source: 'https://svelte.dev/repl/6f215987234e471fbe241df938789695?version=4.2.18' },
+		{ docs: AccordionGroupDocs, label: 'Accordion Group', source: 'https://svelte.dev/repl/6f215987234e471fbe241df938789695?version=4.2.18' },
 		{ docs: CheckboxDocs, label: 'Checkbox', source: 'https://svelte.dev/repl/' },
-		{
-			docs: FormDocs,
-			label: 'Form',
-			source: 'https://svelte.dev/repl/e390654778f54982875cae674e39f646?version=4.2.18'
-		},
-		{
-			docs: MenuDocs,
-			label: 'Menu',
-			source: 'https://svelte.dev/repl/cfc5475329ec4bf7a39597d7ed304629?version=4.2.18'
-		},
-		{
-			docs: ModalDocs,
-			label: 'Modal',
-			source: 'https://svelte.dev/repl/67d050ac1ddd41d2be31d5921d29e288?version=4.2.18'
-		},
+		{ docs: FormDocs, label: 'Form', source: 'https://svelte.dev/repl/e390654778f54982875cae674e39f646?version=4.2.18' },
+		{ docs: MenuDocs, label: 'Menu', source: 'https://svelte.dev/repl/cfc5475329ec4bf7a39597d7ed304629?version=4.2.18' },
+		{ docs: ModalDocs, label: 'Modal', source: 'https://svelte.dev/repl/67d050ac1ddd41d2be31d5921d29e288?version=4.2.18' },
 		{ docs: NavigationDocs, label: 'Navigation', source: 'https://svelte.dev/repl/' },
-		{
-			docs: ProgressBarDocs,
-			label: 'Progress Bar',
-			source: 'https://svelte.dev/repl/8b768afeb4d0453da297275d2132dcf3?version=4.2.18'
-		},
-		{ docs: RadioGroupDocs, label: 'Radio Group', source: 'https://svelte.dev/repl/' },
-		{ docs: SwitchDocs, label: 'Switch', source: 'https://svelte.dev/repl/' },
-		{
-			docs: TabDocs,
-			label: 'Tabs',
-			source: 'https://svelte.dev/repl/1bc4a75b73964591800ba13f44417a3b?version=4.2.18'
-		},
-		{
-			docs: TreeDocs,
-			label: 'Tree',
-			source: 'https://svelte.dev/repl/d18158eaa68a450aa62e8e4ae6c98f75?version=4.2.18'
-		}
+		{ docs: ProgressBarDocs, label: 'Progress Bar', source: 'https://svelte.dev/repl/8b768afeb4d0453da297275d2132dcf3?version=4.2.18' },
+		{ docs: RadioGroupDocs, label: 'Radio Group', source: 'https://svelte.dev/repl/a156fc8b39454aa7a573881f334a88b5?version=4.2.18' },
+		{ docs: SwitchDocs, label: 'Switch', source: 'https://svelte.dev/repl/3d98cb99b89f476ebca51f5be484dde8?version=4.2.18' },
+		{ docs: TabDocs, label: 'Tabs', source: 'https://svelte.dev/repl/1bc4a75b73964591800ba13f44417a3b?version=4.2.18' },
+	    { docs: TreeDocs, label: 'Tree', source: 'https://svelte.dev/repl/d18158eaa68a450aa62e8e4ae6c98f75?version=4.2.18' }
 	];
 	let component: CompObj = componentsArray[0];
 	const handleClick = (comp: CompObj): void => {
