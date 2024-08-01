@@ -6,11 +6,11 @@ A comprehensive component library built from the ground-up for Svelte offering p
 
 `npm install svaria-toolkit`
 
-SvARIA has default components styled with Tailwind. To use our default styles, you must install Tailwind into your project. To configure Tailwind to work with our components, make sure to add svaria-toolkit to the default contents:
+SvARIA has default components styled with Tailwind. To use our default styles, you must install Tailwind into your project. To configure Tailwind to work with our components, node modules must be included in the tailwind config:
 
 `content: [
 "./src/**/*.{html,js,svelte,ts}",
-"./node_modules/svaria-toolkit-test/**/*.{html,js,svelte,ts}",
+"./node_modules/your-project-name/**/*.{html,js,svelte,ts}",
 ],`
 
 Now you are ready to import our components into your project!
@@ -52,7 +52,7 @@ You can also add the checks to any component that is not in our library by addin
 ```
 import {colorContrastCheck, parentColorContrastCheck} from 'svaria-toolkit'
 
-<div use:colorContrastCheck , use:parentColorContrastCheck > </div>
+<div use:colorContrastCheck use:parentColorContrastCheck > </div>
 ```
 
 ## find the team on linkedin
