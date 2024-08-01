@@ -39,11 +39,9 @@ You can also style using regular CSS and access the className on the component. 
 
 These are tools used to check the color contrast using [wcag](https://www.w3.org/TR/WCAG20/#contrast-ratiodef) standards and aria labels on appropriate compoents to ensure that components are meeting standards.
 
-In order for the background checks to run, you must configure your ENV file to be running in a test environment.
+in order for the background checks to run, declare the following environmental variable
 
-`<add that specific line of code here>`
-
-To disable the checks, you can set the ENV mode to <not sure>.
+`VITE_SVARIA_MODE="debug"`
 
 The ARIA checks will run on all SvARIA components to ensure that as you edit the components, they stay within the parameters of ARIA compliance.
 
