@@ -1,22 +1,12 @@
 <script>
 	import { Alert, Button, createToggle } from '$lib/index.js';
 	import Cat from '../components/CatIcon.svelte';
-	const openDefaultAlert = createToggle();
 	const openCustomAlert = createToggle();
 	const openCustom = () => {
 		openCustomAlert.open();
 	};
-	const openDefault = () => {
-		openDefaultAlert.open();
-	};
 </script>
 
-<Button
-	id="default-button"
-	content="Click to see Default Alert"
-	className="bg-red-300 border shadow-lg text-red-900"
-	on:click={openDefault}
-/>
 <Button
 	id="costum-button"
 	on:click={openCustom}
@@ -34,4 +24,3 @@
 >
 	<Cat slot="icon" />
 </Alert>
-<Alert isOpen={openDefaultAlert} />

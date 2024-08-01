@@ -111,6 +111,5 @@ export type Tree = {
 export interface Toggle {
 	open: () => void;
 	close: () => void;
-	isOpen: boolean;
 	subscribe: Writable<boolean>['subscribe'];
 }

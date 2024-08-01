@@ -16,12 +16,6 @@
 		});
 		return () => unsubscribe();
 	});
-	const handleClick = () => {
-		toggle.close();
-	};
-	const close = () => {
-		isOpen = false;
-	};
 </script>
 
 <div
@@ -43,7 +37,7 @@
 				class="bg-inherit text-black hover:text-gray-900 rounded-lg p-1.5 hover:bg-inherit inline-flex items-center justify-center h-8 w-8 dark:text-red-100 dark:hover:text-white dark:bg-inherit dark:hover:bg-inherit"
 				data-dismiss-target="#toast-default"
 				aria-label="Close"
-				on:click={close}
+				on:click={toggle.close}
 			>
 				<span class="sr-only">Close</span>
 				<svg
@@ -65,5 +59,3 @@
 		</slot>
 	</div>
 </div>
-
-<!-- sandbox = https://svelte.dev/repl/1161a113613840b1b765e384e734eadf?version=4.2.18 -->

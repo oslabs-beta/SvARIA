@@ -1,8 +1,10 @@
-// import { isJsxClosingFragment } from 'typescript';
-import { createToggleStore } from '../store/index.js';
+import { writable } from 'svelte/store';
+function createToggleStore(b) {
+	return writable(b);
+}
 
-const createToggle = () => {
-	const toggle = createToggleStore(false);
+const createToggle = (n) => {
+	const toggle = createToggleStore(n);
 	const open = () => {
 		toggle.set(true);
 	};
