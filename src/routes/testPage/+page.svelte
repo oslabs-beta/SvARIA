@@ -19,6 +19,7 @@
 	import RadioGroupDemo from '../../splashPageLib/ComponentDemos/RadioGroupTabs/RadioGroupDemo.svelte';
 	import Docs from '../../splashPageLib/Docs.svelte';
 	import Tree from '$lib/Tree.svelte';
+	import SpinButton from '$lib/SpinButton.svelte';
 
 
 	let formElements = [
@@ -154,7 +155,20 @@
 	}
 ];
 
+// let values = []
+// for (let i = 0; i <= 50; i++) {
+// 	values.push(i)
+// }
+
+
+
+let values = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday']
+
+
 </script>
+<SpinButton
+{values}
+></SpinButton>
 
 <!-- <Tab
 items={tabItems}
@@ -169,9 +183,9 @@ groupInputClass = 'bg-yellow-400'
 <!-- <RadioGroupDemo {options}/> -->
 
 
-<Tree 
+<!-- <Tree 
 	{tree}
-/>
+/> -->
 
 <!-- <Menu
 	{menuItems}
