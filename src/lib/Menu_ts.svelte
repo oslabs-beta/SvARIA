@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { ariaLabelcheck, colorContrastCheck } from './ARIAChecks.js';
+	import { ariaLabelcheck, colorContrastCheck } from './ARIAchecks.js';
 	import type { MenuItems } from '../types.ts';
 	export let buttonContent: string | undefined = 'Menu';
 	export let menuItems: MenuItems[] = [];
@@ -32,8 +32,6 @@
 	$: for (let i = 0; i < menuItems.length; i++) {
 		menuItems[i]['value'] = i;
 	}
-
-
 </script>
 
 <div class={menuContainerClass} style={menuContainerStyle} id={menuContainerId}>
@@ -55,26 +53,26 @@
 	{#if showItems}
 		<ul id={listId} class={listClass} style={listStyle} role="menu">
 			{#each menuItems as item}
-			<li>
-				<a
-					role="menuitem"
-					id={item.linkID}
-					href={item.link}
-					class={item.linkClass}
-					aria-label={item.label}
-					style={item.linkStyle}
-					use:ariaLabelcheck
-					use:colorContrastCheck
-					tabindex="0"
-					on:click={item.onClick}
-					on:keypress={(e) => {
-						if (e.key == 'Enter') {
-							item.onClick()
-						}
-					}}
-					>{item.label}
-				</a>
-			</li>
+				<li>
+					<a
+						role="menuitem"
+						id={item.linkID}
+						href={item.link}
+						class={item.linkClass}
+						aria-label={item.label}
+						style={item.linkStyle}
+						use:ariaLabelcheck
+						use:colorContrastCheck
+						tabindex="0"
+						on:click={item.onClick}
+						on:keypress={(e) => {
+							if (e.key == 'Enter') {
+								item.onClick();
+							}
+						}}
+						>{item.label}
+					</a>
+				</li>
 			{/each}
 		</ul>
 	{/if}

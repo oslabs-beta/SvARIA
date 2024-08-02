@@ -1,6 +1,7 @@
 import type { SvelteComponent } from 'svelte';
 import type { HTMLAttributes } from 'svelte/elements';
 import type { MouseEventHandler } from 'svelte/elements';
+import type { Writable } from 'svelte/store';
 
 export type FormElementsObj = {
 	name: string;
@@ -39,13 +40,13 @@ export type Routes = {
 export type ButtonType = 'button' | 'reset' | 'submit';
 
 export type MenuItems = {
-    label?: string,
-    linkStyle?: string,
-    linkID?: string,
-    linkClass?: string,
-    link?: string,
-    onClick?: () => void,
-}
+	label?: string;
+	linkStyle?: string;
+	linkID?: string;
+	linkClass?: string;
+	link?: string;
+	onClick?: () => void;
+};
 
 export type NavItems = {
 	href: string;
@@ -101,10 +102,16 @@ export type CompObj = {
 };
 
 export type Tree = {
-    label: string,
-    children?: Tree[],
-    link?: string,
-    onClick?: () => void,
-    labelId?: string,
-    arrowId?: string
+	label: string;
+	children?: Tree[];
+	link?: string;
+	onClick?: () => void;
+	labelId?: string;
+	arrowId?: string;
+};
+
+export interface Toggle {
+	open: () => void;
+	close: () => void;
+	subscribe: Writable<boolean>['subscribe'];
 }
