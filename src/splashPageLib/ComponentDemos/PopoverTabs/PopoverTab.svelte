@@ -1,7 +1,7 @@
 <script>
 	import Tab from '$lib/Tab_ts.svelte';
     import PopoverSandboxTab from "./PopoverSandbox.svelte";
-    import PopoverDocsTab from "./PopoverDocs.svelte"
+    import PopoverDocsTab from "../../../routes/components/lib/PopoverDocs.svelte"
 
     let items = [
     {

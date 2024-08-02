@@ -4,7 +4,7 @@
 -->
 
 <script lang="ts">
-	import { colorContrastCheck } from './ARIAchecks.js';
+	import { colorContrastCheck } from './index.js';
 
 	export let heading: string = 'svARIA accordion component';
 	export let open: boolean = false;

@@ -1,5 +1,5 @@
 <script>
-	import Docs from '../Docs.svelte';
+	import Docs from '../Docs.svelte.js';
 
 	let docsProps = [
 		"content (optional): Provides the content for the button. If not specified this will default to 'This is a button'",

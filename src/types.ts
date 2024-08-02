@@ -69,9 +69,11 @@ export type TabItems = {
 };
 
 export type AccordionObj = {
-	name: string;
 	heading: string;
+	id?: string;
 	slot: ConstructorOfATypedSvelteComponent;
+	headingClass?: string;
+	headingStyle?: string;
 };
 
 export type ARIAColorsObj = {

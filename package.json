@@ -2,7 +2,7 @@
 	"name": "svaria-test",
 	"version": "0.0.0",
 	"scripts": {
-		"dev-test": "vite --host & nodemon ./server/server.js",
+		"dev-test": "vite --host & node ./server/server.js",
 		"docker-dev:hot": "docker-compose -f docker-compose-dev-hot.yml up",
 		"dev": "vite & nodemon ./server/server.js",
 		"build": "vite build && npm run package",
@@ -15,7 +15,9 @@
 		"lint": "prettier --check . && eslint .",
 		"format": "prettier --write .",
 		"test:integration": "playwright test",
-		"test:unit": "vitest"
+		"test:unit": "vitest",
+		"test:ct": "playwright test -c playwright-ct.config.ts",
+		"test:ct:ui": "playwright test -c playwright-ct.config.ts --ui"
 	},
 	"exports": {
 		".": {
@@ -32,7 +34,8 @@
 		"svelte": "^4.0.0"
 	},
 	"devDependencies": {
-		"@playwright/test": "^1.28.1",
+		"@playwright/experimental-ct-svelte": "^1.45.3",
+		"@playwright/test": "^1.45.3",
 		"@rollup/plugin-typescript": "^11.1.6",
 		"@sveltejs/adapter-auto": "^3.2.1",
 		"@sveltejs/kit": "^2.0.0",
@@ -40,6 +43,7 @@
 		"@sveltejs/vite-plugin-svelte": "^3.1.1",
 		"@tsconfig/svelte": "^5.0.4",
 		"@types/eslint": "^8.56.0",
+		"@types/node": "^22.0.0",
 		"@typescript-eslint/parser": "^7.12.0",
 		"autoprefixer": "^10.4.19",
 		"cross-env": "^7.0.3",
@@ -55,7 +59,7 @@
 		"svelte-preprocess": "^5.1.4",
 		"tailwindcss": "^3.4.3",
 		"tslib": "^2.4.1",
-		"typescript": "^5.4.5",
+		"typescript": "^5.5.4",
 		"vite": "^5.2.11",
 		"vitest": "^1.2.0"
 	},

@@ -25,6 +25,7 @@
 	import MenuDocs from './lib/MenuDocs.svelte';
 	import ModalDocs from './lib/ModalDocs.svelte';
 	import NavigationDocs from './lib/NavigationDocs.svelte';
+	import PopoverDocs from './lib/PopoverDocs.svelte';
 	import ProgressBarDocs from './lib/ProgressBarDocs.svelte';
 	import RadioGroupDocs from './lib/RadioGroupDocs.svelte';
 	import SwitchDocs from './lib/SwitchDocs.svelte';
@@ -45,7 +46,11 @@
 			label: 'Accordion',
 			source: 'https://svelte.dev/repl/6f215987234e471fbe241df938789695?version=4.2.18'
 		},
-		{ docs: AccordionGroupDocs, label: 'Accordion Group', source: 'https://svelte.dev/repl/' },
+		{
+			docs: AccordionGroupDocs,
+			label: 'Accordion Group',
+			source: 'https://svelte.dev/repl/6f215987234e471fbe241df938789695?version=4.2.18'
+		},
 		{ docs: CheckboxDocs, label: 'Checkbox', source: 'https://svelte.dev/repl/' },
 		{
 			docs: FormDocs,
