@@ -11,10 +11,7 @@
 	import SectionWrapper from '../../splashPageLib/SectionWrapper.svelte';
 	import { openModal } from '../../store/index.js';
 	import logo from '../../splashPageLib/assets/SvAriaLogo.png';
-	import ButtonTab from '../../splashPageLib/ComponentDemos/ButtonTabs/ButtonTab.svelte';
-	import ModalTab from '../../splashPageLib/ComponentDemos/ModalTabs/ModalTab.svelte';
 	import Sandbox from '../../splashPageLib/Sandbox.svelte';
-	import Button from '$lib/Button.svelte';
 	import type { CompObj } from './../../types.js';
 	// ======================> Component Imports < ========================
 	import ButtonDocs from './lib/ButtonDocs.svelte';

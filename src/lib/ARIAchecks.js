@@ -63,7 +63,6 @@ export function parentColorContrastCheck(curNode) {
 	if (parentBackgroundColor) checkColors(curNode, backgroundColor, parentBackgroundColor, true);
 }
 function checkColors(curNode, foregroundColor, backgroundColor, isParent) {
-	console.log('checking clolor contrast');
 	const parentString = isParent ? "'s parent" : '';
 	if (foregroundColor === backgroundColor) {
 		console.error(

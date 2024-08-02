@@ -11,6 +11,9 @@ import ProgressBar from './ProgressBar.svelte';
 import RadioGroup from './RadioGroup_ts.svelte';
 import Switch from './Switch.svelte';
 import Tab from './Tab_ts.svelte';
+import createToggle from './toggle.js';
+import Toast from './Toast.svelte';
+import Alert from './Alert.svelte';
 import { colorContrastCheck, ariaLabelcheck, parentColorContrastCheck } from './ARIAchecks.js';
 
 export {
@@ -28,5 +31,8 @@ export {
 	Tab,
 	colorContrastCheck,
 	ariaLabelcheck,
-	parentColorContrastCheck
+	parentColorContrastCheck,
+	createToggle,
+	Alert,
+	Toast
 };

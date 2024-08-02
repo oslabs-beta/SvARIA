@@ -1,12 +1,12 @@
 <script lang="ts">
-	import { createToggle } from '$lib/index.js';
+	import { createToggle, parentColorContrastCheck, colorContrastCheck } from '$lib/index.js';
 	import type { Toggle } from '../types.js';
 	let toggle: Toggle = createToggle(true);
 	let isOpen: boolean;
 	export let message: string = 'Your toast message here';
 	export let containerClass: string = 'absolute top-40';
 	export let toastContainerId: string = '';
-	export let toastClass: string = ` left-0 flex items-center w-full max-w-xs p-4 text-white bg-gray-800 rounded-lg shadow dark:text-gray-500 dark:bg-white`;
+	export let toastClass: string = `flex justify-between items-center w-full max-w-xs p-4 text-white bg-gray-800 rounded-lg shadow dark:text-gray-500 dark:bg-white`;
 	export let messageClass: string = 'ms-3 text-sm font-normal';
 	export let toastId: string = 'toastId';
 	export let autoShutDown: number = 0;
@@ -20,7 +20,13 @@
 
 {#if isOpen}
 	<div class={containerClass} id={toastContainerId}>
-		<div id={toastId} class={toastClass} role="alert">
+		<div
+			id={toastId}
+			class={toastClass}
+			role="alert"
+			use:parentColorContrastCheck
+			use:colorContrastCheck
+		>
 			<div class={messageClass}>{message}</div>
 
 			<button
@@ -50,5 +56,3 @@
 		</div>
 	</div>
 {/if}
-
-<!-- https://svelte.dev/repl/dce213fa6c084fc193244bebd34900c9?version=4.2.18 -->
