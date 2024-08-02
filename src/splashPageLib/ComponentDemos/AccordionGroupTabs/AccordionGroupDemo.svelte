@@ -1,9 +1,9 @@
 <script>
-    import AccordionGroup from "$lib/AccordionGroup.svelte";
+    import AccordionGroup from "../../../lib/AccordionGroup_ts.svelte";
     import AccordionGroupTab from "./AccordionGroupTab.svelte";
     import ButtonTab from "../ButtonTabs/ButtonTab.svelte";
     import CheckboxTab from "../CheckboxTabs/CheckboxTab.svelte";
-const accordions = [
+const group = [
     {
         name: 'Accordion Group',
         heading: "Accordion Group Component",
@@ -25,6 +25,7 @@ const accordions = [
 <AccordionGroup
     groupHeadingClass = 'p-9'
     groupComponentClass = 'min-h-96'
-    group={accordions}
+    {group}
     ariaLabel="Accordion Demo"
+    style=''
 />

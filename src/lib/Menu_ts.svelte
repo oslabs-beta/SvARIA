@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { ariaLabelcheck, colorContrastCheck } from './ARIAChecks.js';
+	import { ariaLabelcheck, colorContrastCheck, parentColorContrastCheck } from './ARIAChecks.js';
 	import type { MenuItems } from '../types.ts';
 	export let buttonContent: string | undefined = 'Menu';
 	export let menuItems: MenuItems[] = [];
@@ -49,6 +49,8 @@
 		class={buttonClass}
 		use:ariaLabelcheck
 		use:colorContrastCheck
+		use:parentColorContrastCheck
+
 	>
 		{buttonContent}
 	</button>

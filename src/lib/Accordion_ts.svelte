@@ -83,7 +83,7 @@
 		class={contentContainerClass}
 		id={contentContainerId}
 	>
-		<slot name="content"></slot>
+		<slot name="content" ></slot>
 	</div>
 {/if}
 

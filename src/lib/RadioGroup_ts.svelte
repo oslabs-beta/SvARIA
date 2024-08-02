@@ -6,11 +6,10 @@
     export let ariaLabel: string|undefined;
 	export let className: string|undefined;
 	export let style: string|undefined;
-    export let groupStyle: string|undefined = '';
 	export let groupLabelClass: string|undefined = '';
+	export let groupLabelStyle: string|undefined = '';
 	export let groupInputClass: string|undefined = '';
 	export let groupInputStyle: string|undefined = '';
-
 	export let selectedOption: string = '';
 
     $: options.map((option, index) => {
@@ -31,8 +30,8 @@
 	{#each options as option, index}
 		<label
 			class={option.labelClass ? option.labelClass : groupLabelClass}
-			id={option.labelId}
-			style={option.labelStyle ? option.labelStyle : groupStyle}
+			aria-labelledby={option.labelId}
+			style={option.labelStyle ? option.labelStyle : groupLabelStyle}
 		>
 			<input
 				type="radio"

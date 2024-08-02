@@ -1,4 +1,8 @@
 <script lang='ts'>
+
+	import { colorContrastCheck } from './ARIAChecks.js';
+	import type { TabItems } from '../types.js'
+	
 	export let items: TabItems[] = [];
 	export let tabListClass: string = 'flex flex-wrap';
 	export let tabListId: string = '';
@@ -10,8 +14,7 @@
 	export let groupLabelStyle: string = ''
 	export let groupContentClass: string = 'bg-blue-300 text-black'
 	export let groupContentStyle: string = ''
-	import { colorContrastCheck } from './ARIAChecks.js';
-	import type { TabItems } from '../types.js'
+
 
 	let activeTabValue: number = 0;
 	let itemComponents: HTMLButtonElement[] = [];

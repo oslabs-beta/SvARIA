@@ -45,9 +45,3 @@
 	{/each}
 </div>
 
-<style>
-	.checkbox-group {
-		display: flex;
-		flex-direction: column;
-	}
-</style>

@@ -5,9 +5,6 @@
 
     export let popoverId: string = '';
     export let popoverClass: string = 'bg-white text-black rounded-lg shadow dark:bg-gray-700 dark:text-white p-4 md:p-5 space-y-4';
-    export let popoverHeaderId: string|undefined = 'popoverHeader';
-	export let popoverDescribeId: string|undefined = 'popoverContent';
-	export let contentClass: string|undefined = 'mb-10';
 	export let contentId: string|undefined = 'popoverContentId';
     export let style: string|undefined = '';
     export let openButtonId: string|undefined = 'openPopover'
@@ -83,11 +80,10 @@
     >
         <div
             role="dialog"
-            class={contentClass}
             id={contentId}
             aria-Modal="true"
-            aria-labelledby={popoverHeaderId}
-            aria-describedby={popoverDescribeId}
+            aria-labelledby={popoverId}
+            aria-describedby={popoverId}
         >
             <Button
                 on:click={() => {

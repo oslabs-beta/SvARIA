@@ -1,3 +1,9 @@
+import { rgb, score } from 'wcag-contrast';
+
+const toRGBArray = (rgbStr) => rgbStr.match(/\d+/g).map(Number);
+
+
+
 export function ariaLabelcheck(curNode) {
 	if (import.meta.env.VITE_SVARIA_MODE != 'debug') {
 		return;
@@ -89,9 +95,13 @@ export function parentColorContrastCheck(curNode) {
 	else checkColors(curNode, backgroundColor, parentBackgroundColor, true);
 }
 
-function checkColors(curNode, foregroundColor, backgroundColor, isParent) {
+function checkColors(
+	curNode,
+	foregroundColor,
+	backgroundColor,
+	isParent) {
 	const parentString = isParent ? "'s parent" : '';
-
+	
 	if (foregroundColor === backgroundColor) {
 		console.error(
 			`${curNode.nodeName}${parentString}, with id of ${curNode.id}: Background and text colors do not meet contrast requirement, please adjust colors`
@@ -99,28 +109,55 @@ function checkColors(curNode, foregroundColor, backgroundColor, isParent) {
 		return;
 	}
 
-	fetch('https://www.aremycolorsaccessible.com/api/are-they', {
-		mode: 'cors',
-		method: 'POST',
-		body: JSON.stringify({ colors: [backgroundColor, foregroundColor] })
-	})
-		.then((response) => response.json())
-		.then((json) => {
-			//console.log(json)
-			if (json.overall == 'Yup') {
-				// console.log(`${curNode.nodeName}${parentString}, with id of ${curNode.id}: color contrast check passed`);
-			} else if (json.overall == 'Kinda') {
-				console.warn(
-					`${curNode.nodeName}${parentString}, with id of ${curNode.id}: Background and foreground colors contrast colors can be improved`
-				);
-			} else {
-				console.error(
-					`${curNode.nodeName}${parentString}, with id of ${curNode.id}: Background and foreground colors do not meet contrast requirement, please adjust colors`
-				);
-				// console.error(
-				// 	`${curNode.nodeName}${parentString}, with id of ${curNode.id}: BG: ${backgroundColor} FG: ${foregroundColor}`
-				// );
-			}
-		});
-	//console.log('class', curNode.attributes["class"])
-}
+	// convert rgb values to an array of numbers 
+	const fgArray = toRGBArray(foregroundColor)
+	const bgArray = toRGBArray(backgroundColor)
+	
+	// run color contrast checker install 
+	const result = rgb(fgArray, bgArray);
+	const _score = score(result)
+	// console.log('id: ', curNode.id, 'result: ', result, 'score: ', _score)
+	if(_score == "AA") {console.warn(
+		`${curNode.nodeName}${parentString}, with id of ${curNode.id}: Background and foreground colors contrast colors can be improved`
+	);}
+	if(_score == "Fail"){
+		console.error(
+			`${curNode.nodeName}${parentString}, with id of ${curNode.id}: Background and foreground colors do not meet contrast requirement, please adjust colors`
+		);}
+	}
+
+// function checkColors(curNode, foregroundColor, backgroundColor, isParent) {
+// 	const parentString = isParent ? "'s parent" : '';
+
+// 	if (foregroundColor === backgroundColor) {
+// 		console.error(
+// 			`${curNode.nodeName}${parentString}, with id of ${curNode.id}: Background and text colors do not meet contrast requirement, please adjust colors`
+// 		);
+// 		return;
+// 	}
+
+// 	fetch('https://www.aremycolorsaccessible.com/api/are-they', {
+// 		mode: 'cors',
+// 		method: 'POST',
+// 		body: JSON.stringify({ colors: [backgroundColor, foregroundColor] })
+// 	})
+// 		.then((response) => response.json())
+// 		.then((json) => {
+// 			//console.log(json)
+// 			if (json.overall == 'Yup') {
+// 				// console.log(`${curNode.nodeName}${parentString}, with id of ${curNode.id}: color contrast check passed`);
+// 			} else if (json.overall == 'Kinda') {
+// 				console.warn(
+// 					`${curNode.nodeName}${parentString}, with id of ${curNode.id}: Background and foreground colors contrast colors can be improved`
+// 				);
+// 			} else {
+// 				console.error(
+// 					`${curNode.nodeName}${parentString}, with id of ${curNode.id}: Background and foreground colors do not meet contrast requirement, please adjust colors`
+// 				);
+// 				// console.error(
+// 				// 	`${curNode.nodeName}${parentString}, with id of ${curNode.id}: BG: ${backgroundColor} FG: ${foregroundColor}`
+// 				// );
+// 			}
+// 		});
+// 	//console.log('class', curNode.attributes["class"])
+// }

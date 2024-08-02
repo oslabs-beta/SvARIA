@@ -17,7 +17,6 @@
 	import Popover from '$lib/Popover.svelte';
 	import AccordionDemo from '../../splashPageLib/ComponentDemos/AccordionGroupTabs/AccordionGroupDemo.svelte';
 	import RadioGroupDemo from '../../splashPageLib/ComponentDemos/RadioGroupTabs/RadioGroupDemo.svelte';
-	import Docs from '../../splashPageLib/Docs.svelte';
 	import Tree from '$lib/Tree.svelte';
 	import SpinButton from '$lib/SpinButton.svelte';
 
@@ -25,14 +24,14 @@
 	let formElements = [
 		{ name: 'address', type: 'input', labelValue: 'New Address' },
 		{ name: 'firstName', type: 'input', labelValue: 'New First Name' },
-		{ name: 'userName', type: 'input', labelValue: 'New User Name' },
+		{ name: 'userName', type: 'input', labelValue: 'New User Name'},
 		{
 			name: 'password',
 			type: 'password',
 			labelValue: 'New Password',
 			inputId: 'newPw',
 			labelId: 'pwLabel',
-			inputClass: 'bg-black'
+			inputClass: 'bg-black text-white'
 		}
 	];
 
@@ -162,12 +161,23 @@
 
 
 
-let values = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday']
+let values = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday']
 
 
 </script>
 <SpinButton
 {values}
+value = 0
+className = 'flex flex-col items-center'
+id = 'spinButton'
+increaseButtonContent = '+'
+increaseButtonId = 'increase'
+increaseButtonClass = 'h-8 w-8 bg-green-500 text-black text-sm p-0'
+currentValueId = 'currentValue'
+decreaseButtonContent = '-'
+currentValueClass = 'text-blue-800 text-xl'
+decreaseButtonId = 'decrease'
+decreaseButtonClass = 'h-8 w-8 bg-red-500 text-sm text-white p-0'
 ></SpinButton>
 
 <!-- <Tab
@@ -175,7 +185,7 @@ items={tabItems}
 /> -->
 
 <!-- <Form {formElements}
-groupInputClass = 'bg-yellow-400'
+ submitButtonClass='text-white bg-black'
 ></Form> -->
 <!-- <Docs componentName="Popover" propsDetails={docsProps}>
 
@@ -233,6 +243,19 @@ groupInputClass = 'bg-yellow-400'
 		</p>
 	</div>
 </Popover> -->
+<!-- <RadioGroupDemo {options}/> -->
+
+<!-- <Tree {tree} /> -->
+
+<title>Our testing page</title>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
 <!-- <Switch defValue='On' altValue='off' ariaDefValue="Turned On" ariaAltValue="Turned Off"/>
 <AccordionDemo/> -->
 
