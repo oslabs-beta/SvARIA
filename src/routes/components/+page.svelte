@@ -76,6 +76,11 @@
 		},
 		{ docs: NavigationDocs, label: 'Navigation', source: 'https://svelte.dev/repl/' },
 		{
+			docs: PopoverDocs,
+			label: 'Popover',
+			source: 'https://svelte.dev/repl/326ee2b9cc0f445c82354b2c166b58b4?version=4.2.18'
+		},
+		{
 			docs: ProgressBarDocs,
 			label: 'Progress Bar',
 			source: 'https://svelte.dev/repl/8b768afeb4d0453da297275d2132dcf3?version=4.2.18'
