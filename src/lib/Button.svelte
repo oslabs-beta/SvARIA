@@ -1,15 +1,16 @@
-<script lng='js'>
-	import { ariaLabelcheck, colorContrastCheck, parentColorContrastCheck } from './ARIAChecks.js';
-	export let content = 'This is a button';
-	export let ariaLabel = content
-	export let id = '';
-	export let style = '';
-	export let className = 'bg-black text-white text-bold hover:bg-gray-700';
-	export let type = 'button';
+<script lang="ts">
+	import { ariaLabelcheck, colorContrastCheck, parentColorContrastCheck } from './ARIAchecks.js';
+	import type { ButtonType } from '../types.js';
+	export let content: string = 'This is a button';
+	export let ariaLabel: string = content;
+	export let id: string = '';
+	export let style: string = '';
+	export let className: string = 'bg-black text-white text-bold hover:bg-gray-700 rounded py-2 px-4 rounded';
+	export let type: ButtonType = 'button';
 </script>
 
 <button
-	use:ariaLabelcheck={2}
+	use:ariaLabelcheck
 	use:colorContrastCheck
 	use:parentColorContrastCheck
 	{id}

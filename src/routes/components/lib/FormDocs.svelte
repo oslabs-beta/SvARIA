@@ -8,12 +8,12 @@
             "name (required): the name that the form element will be associated with. This gets passed into the formElements object as a key in the individual element object",
             "type (required): the input type for the form element e.g. 'text' or 'password'. This gets passed into the formElements object as a key in the individual element object",
             "labelValue (required): the value that will show up for the form label. This gets passed into the formElements object as a key in the individual element object",
-            "labelId (optional): Uniquely identifies an individual label. This gets passed into the formElements object as a key in the individual element object. Tailwind can be used to adjust styling here",
-            "labelClass (optional): provides a class for all the individual label. This gets passed into the formElements object as a key in the individual element object. Tailwind can be used to adjust styling here",
-            "labelStyle (optional): allows you to use inline styling for the individual label.This gets passed into the formElements object as a key in the individual element object e.g. labelStyle='color:red'",
+            "labelId (optional): Uniquely identifies an individual label. This gets passed into the formElements object as a key in the individual element object.",
+            "labelClass (optional): provides a class for the individual label. This gets passed into the formElements object as a key in the individual element object. Tailwind can be used to adjust styling here",
+            "labelStyle (optional): allows you to use inline styling for the individual label.This gets passed into the formElements object as a key in the individual element object e.g. labelStyle:'color:red'",
             "inputId (optional): Uniquely identifies an individual input. This gets passed into the formElements object as a key in the individual element object",
             "inputClass (optional): provides a class for the individual input. This gets passed into the formElements object as a key in the individual element object. Tailwind can be used to adjust styling here",
-            "inputStyle (optional): allows you to use inline styling for the individual input.This gets passed into the formElements object as a key in the individual element object e.g. inputStyle='background-color:green'",
+            "inputStyle (optional): allows you to use inline styling for the individual input.This gets passed into the formElements object as a key in the individual element object e.g. inputStyle:'background-color:green'",
             "method (optional): allows you to define an HTTP method. If not specified, this will default to 'POST'",
             "formId (optional): uniquely identifies the form",
             "formClass (optional): provides a class for the form. Tailwind can be used to adjust styling here",
@@ -23,6 +23,10 @@
             "submitButtonId (optional): uniquely identifies the Submit button",
             "submitButtonClass (optional): provides a class for the Submit button. Tailwind can be used to adjust styling here",
             "submitButtonStyle (optional): allows you to use inline styling for the Submit button e.g. submitButtonStyle='background-color:white",
+            "groupLabelClass (optional): provides the same class for all the labels. Tailwind can be used to adjust styling here.",
+            "groupLabelStyle (optional): allows you to use inline styling for for all the labels e.g. style='color:orange'",
+            "groupInputClass (optional): provides the same class for the content of all the inputs. Tailwind can be used to adjust styling here.",
+            "groupInputStyle (optional): allows you to use inline styling for the content of all the inputs e.g. style='background-color:purple'"
     ]
     
     </script>

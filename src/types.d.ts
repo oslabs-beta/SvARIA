@@ -1,5 +1,6 @@
 import type { HTMLAttributes } from 'svelte/elements';
 import type { MouseEventHandler } from 'svelte/elements';
+import type { Writable } from 'svelte/store';
 export type FormElementsObj = {
     name: string;
     type: string;
@@ -58,9 +59,11 @@ export type TabItems = {
     tabLabelStyle?: string;
 };
 export type AccordionObj = {
-    name: string;
     heading: string;
+    id?: string;
     slot: ConstructorOfATypedSvelteComponent;
+    headingClass?: string;
+    headingStyle?: string;
 };
 export type ARIAColorsObj = {
     parentBackgroundColor: string;
@@ -91,3 +94,8 @@ export type TreeValue = {
     labelId?: string;
     arrowId?: string;
 };
+export interface Toggle {
+    open: () => void;
+    close: () => void;
+    subscribe: Writable<boolean>['subscribe'];
+}

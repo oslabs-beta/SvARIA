@@ -3,29 +3,25 @@
 	[] have functionality for if the panel cant be collapsed and aria-disabled set to tru
 -->
 
-
-
-
-
-<script>
-	import { colorContrastCheck } from './ARIAChecks.js';
+<script lang='ts'>
+	import { colorContrastCheck } from './ARIAchecks.js';
 	
-	export let heading = 'svARIA accordion component';
-	export let open = false;
-	export let headingContainerClass = 'flex items-center justify-between w-full';
-	export let headingClass = 'flex items-center justify-between w-full';
-	export let buttonClass = 'bg-gray-700 text-white hover:bg-gray-500 rounded-none w-full';
-	export let buttonId = `accordion-${heading}-id`;
-	export let contentContainerClass = 'bg-gray-200';
-	export let contentContainerId = `${heading}-content`;
-	export let role = 'h3';
+	export let heading: string = 'svARIA accordion component';
+	export let open: boolean = false;
+	export let headingContainerClass: string = 'flex items-center justify-between w-full';
+	export let headingClass: string = 'flex items-center justify-between w-full';
+	export let buttonClass: string = 'bg-gray-700 text-white hover:bg-gray-500 rounded-none w-full';
+	export let buttonId: string = `accordion-${heading}-id`;
+	export let contentContainerClass: string = 'bg-gray-200';
+	export let contentContainerId: string = `${heading}-content`;
+	export let role: string = 'heading';
 
-	const handleClick = () => {
+	const handleClick = (): void => {
 		open = !open;
 	};
 </script>
 
-<div {role}>
+<div>
 	<button
 		aria-controls={contentContainerId}
 		aria-expanded={open}
@@ -34,8 +30,7 @@
 		class={buttonClass}
 		id={buttonId}
 	>
-
-		<span class={headingContainerClass}>
+		<span class={headingContainerClass} {role}>
 			<span class={headingClass}>{heading}</span>
 			{#if open}
 				<svg
@@ -82,12 +77,7 @@
 </div>
 
 {#if open}
-	<div transition:fly={{ y: -200, duration: 200 }}
-		role="region"
-		class={contentContainerClass}
-		id={contentContainerId}
-		aria-labelledby={buttonId}
-	>
+	<div role="region" class={contentContainerClass} id={contentContainerId}>
 		<slot name="content"></slot>
 	</div>
 {/if}

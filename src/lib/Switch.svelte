@@ -4,14 +4,15 @@
     // On Designing and Building Toggle Switches by Sara Soueidan https://www.sarasoueidan.com/blog/toggle-switch-design/
     // and this example by Scott O'hara https://codepen.io/scottohara/pen/zLZwNv
 
-    import { ariaLabelcheck, colorContrastCheck } from './ARIAChecks.js'
+    import { ariaLabelcheck, colorContrastCheck } from './ARIAchecks.js'
 
     export let defValue: string = 'ON';
     export let altValue: string = 'OFF';
     export let className: string = "s s--inner"
+    export let style: string|undefined = ''
     export let ariaDefValue: string = 'ON Position'
     export let ariaAltValue: string = 'OFF Position'
-    export let showLabel: boolean = true;
+
     
     let ariaLabel: string = `Switch between ${ariaDefValue} and ${ariaAltValue}`;
     let value: string = defValue;
@@ -35,10 +36,9 @@
     use:ariaLabelcheck
     use:colorContrastCheck
     class={className}
+    {style}
     aria-label={ariaLabel}>
-    {#if showLabel}
     <span id={`switch-${uniqueID}`}>{label}</span>
-    {/if}
     <button
         role="switch"
         aria-checked={checked}

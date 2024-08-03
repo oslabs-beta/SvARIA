@@ -1,114 +1,8 @@
 <!-- This is where the tab with the components/code/sandbox live -->
 <script lang="ts">
 	import SectionWrapper from './SectionWrapper.svelte';
-	import AccordionGroupTab from './ComponentDemos/AccordionGroupTabs/AccordionGroupTab.svelte';
-	import ButtonTab from './ComponentDemos/ButtonTabs/ButtonTab.svelte';
-	import CheckboxTab from './ComponentDemos/CheckboxTabs/CheckboxTab.svelte';
-	import FormTab from './ComponentDemos/FormTabs/FormTab.svelte';
-	import MenuTab from './ComponentDemos/MenuTabs/MenuTab.svelte';
-	import ModalTab from './ComponentDemos/ModalTabs/ModalTab.svelte';
-	import NavBarTab from './ComponentDemos/NavBarTabs/NavBarTab.svelte';
-	import RadioGroupTab from './ComponentDemos/RadioGroupTabs/RadioGroupTab.svelte';
-	import TabTab from './ComponentDemos/TabTabs/TabTab.svelte';
-	import AccordionGroup from '$lib/AccordionGroup_ts.svelte';
-	import SwitchTabs from './ComponentDemos/SwitchTabs/SwitchTab.svelte';
-	import PopoverTab from './ComponentDemos/PopoverTabs/PopoverTab.svelte';
-	import ProgressBarTab from './ComponentDemos/ProgressBarTabs/ProgressBarTab.svelte';
-	import TreeTab from './ComponentDemos/TreeTabs/TreeTab.svelte';
 
-	const accordions = [
-		{
-			name: 'Accordion Group',
-			heading: 'Accordion Group Component',
-			slot: AccordionGroupTab,
-			headingClass: 'p-9',
-			componentClass: 'min-h-96'
-		},
-		{
-			name: 'Button',
-			heading: 'Button Component',
-			slot: ButtonTab,
-			headingClass: 'p-9',
-			componentClass: 'min-h-96'
-		},
-		{
-			name: 'Checkbox',
-			heading: 'Checkbox Component',
-			slot: CheckboxTab,
-			headingClass: 'p-9',
-			componentClass: 'min-h-96'
-		},
-		{
-			name: 'Form',
-			heading: 'Form Component',
-			slot: FormTab,
-			headingClass: 'p-9',
-			componentClass: 'min-h-96'
-		},
-		{
-			name: 'Menu',
-			heading: 'Menu Component',
-			slot: MenuTab,
-			headingClass: 'p-9',
-			componentClass: 'min-h-96'
-		},
-		{
-			name: 'Modal',
-			heading: 'Modal Component',
-			slot: ModalTab,
-			headingClass: 'p-9',
-			componentClass: 'min-h-96'
-		},
-		{
-			name: 'NavBar',
-			heading: 'NavBar Component',
-			slot: NavBarTab,
-			headingClass: 'p-9',
-			componentClass: 'min-h-96'
-		},
-		{
-			name: 'Popover',
-			heading: 'Popover Component',
-			slot: PopoverTab,
-			headingClass: 'p-9',
-			componentClass: 'min-h-96'
-		},
-		{
-			name: 'RadioGroup',
-			heading: 'RadioGroup Component',
-			slot: RadioGroupTab,
-			headingClass: 'p-9',
-			componentClass: 'min-h-96'
-		},
-		{
-			name: 'Switch',
-			heading: 'Switch Component',
-			slot: SwitchTabs,
-			headingClass: 'p-9',
-			componentClass: 'min-h-96'
-		},
-		{
-			name: 'Tab',
-			heading: 'Tab Component',
-			slot: TabTab,
-			headingClass: 'p-9',
-			componentClass: 'min-h-96'
-		},
-		{
-			name: 'Progress Bar',
-			heading: 'Progress Bar Component',
-			slot: ProgressBarTab,
-			headingClass: 'p-9',
-			componentClass: 'min-h-96'
-		},
-		{
-			name: 'Tree',
-			heading: 'Tree Component',
-			slot: TreeTab,
-			headingClass: 'p-9',
-			componentClass: 'min-h-96'
-		},
-	];
+
 </script>
 
 <SectionWrapper id="CompTab">
@@ -136,7 +30,7 @@
 			</p>
 			<br />
 			<div class=" max-h-95% overflow-scroll">
-				<AccordionGroup group={accordions} ariaLabel="Component Accordion"></AccordionGroup>
+				<!-- <AccordionGroup group={accordions} ariaLabel="Component Accordion"></AccordionGroup> -->
 			</div>
 		</h7>
 	</div>
