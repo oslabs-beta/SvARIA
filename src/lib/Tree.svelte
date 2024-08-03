@@ -7,7 +7,7 @@
 
 <script lang="ts">
 	import type { TreeValue } from '../types.ts';
-	import { colorContrastCheck } from './ARIAChecks.js';
+	import { colorContrastCheck } from './ARIAchecks.js';
 
 	export let tree: TreeValue;
 	export let arrows: string[] = ['▼', '►'];

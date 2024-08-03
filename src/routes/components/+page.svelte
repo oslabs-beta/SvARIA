@@ -1,7 +1,7 @@
 <!-- DEV NOTES:
     to add a component to the page:
     1. create the docs and add it in src/routes/components/lib
-    2. create the demo and add it to (idk the file path but it should be in a top level)
+    2. create the demo and add it to src/componentDemoCode
     3. create the sandbox in the svelte REPL and save the url
     4. import in the docs to this page
     5. add it to components array
@@ -11,8 +11,6 @@
 	import SectionWrapper from '../../splashPageLib/SectionWrapper.svelte';
 	import { openModal } from '../../store/index.js';
 	import logo from '../../splashPageLib/assets/SvAriaLogo.png';
-	import ButtonTab from '../../splashPageLib/ComponentDemos/ButtonTabs/ButtonTab.svelte';
-	import ModalTab from '../../splashPageLib/ComponentDemos/ModalTabs/ModalTab.svelte';
 	import Sandbox from '../../splashPageLib/Sandbox.svelte';
 	import type { CompObj } from './../../types.js';
 	// ======================> Component Imports < ========================
@@ -31,7 +29,8 @@
 	import SwitchDocs from './lib/SwitchDocs.svelte';
 	import TabDocs from './lib/TabDocs.svelte';
 	import TreeDocs from './lib/TreeDocs.svelte';
-
+	import AlertDocs from './lib/AlertDocs.svelte';
+	import ToastDocs from './lib/ToastDocs.svelte';
 	// ====================================================================
 
 	const componentsArray: CompObj[] = [
@@ -49,6 +48,11 @@
 			docs: AccordionGroupDocs,
 			label: 'Accordion Group',
 			source: 'https://svelte.dev/repl/6f215987234e471fbe241df938789695?version=4.2.18'
+		},
+		{
+			docs: AlertDocs,
+			label: 'Alert',
+			source: 'https://svelte.dev/repl/1161a113613840b1b765e384e734eadf?version=4.2.18'
 		},
 		{
 			docs: CheckboxDocs,
@@ -95,6 +99,11 @@
 			docs: TabDocs,
 			label: 'Tabs',
 			source: 'https://svelte.dev/repl/1bc4a75b73964591800ba13f44417a3b?version=4.2.18'
+		},
+		{
+			docs: ToastDocs,
+			label: 'Toast',
+			source: 'https://svelte.dev/repl/dce213fa6c084fc193244bebd34900c9?version=4.2.18'
 		},
 		{
 			docs: TreeDocs,
@@ -174,13 +183,72 @@
 			</button>
 		</div>
 	</div>
+	<div
+		class="fixed top-0 left-0 w-screen h-screen border-b bg-white z-50 flex flex-col gap-8 p-5 px-8 md:hidden"
+	>
+		<div class="flex items-center justify-between gap-4 border-b pb-2">
+			<a href="/">
+				<img class="min-w-[250px] h-[125px] w-[250px]" alt="SvARIA Logo" src={logo} />
+			</a>
+			<button
+				on:click={() => {
+					$openModal = false;
+					console.log('clicked');
+				}}
+				class="outline-none border-none"
+			>
+				<i class="fa-solid fa-xmark text-2xl"> </i>
+			</button>
+		</div>
+		<div class="flex flex-col gap-4 flex-1">
+			<button
+				on:click={() => reroute('/#WhySvARIA')}
+				class="border-none outline-none p-2 group duration-200 cursor-pointer text-left"
+			>
+				<p class="duration-200 group-hover:pl-2 poppins text-3xl font-semibold">
+					Why SvARIA <i class="fa-solid fa-chevron-right text-xl pl-4" />
+				</p>
+			</button>
+			<button
+				on:click={() => reroute('/#GettingStarted')}
+				class="border-none outline-none p-2 group duration-200 cursor-pointer text-left"
+			>
+				<p class="duration-200 group-hover:pl-2 poppins text-3xl font-semibold">
+					Getting Started <i class="fa-solid fa-chevron-right text-xl pl-4" />
+				</p>
+			</button>
+			<button
+				on:click={() => reroute('/components')}
+				class="border-none outline-none p-2 group duration-200 cursor-pointer text-left"
+			>
+				<p class="duration-200 group-hover:pl-2 poppins text-3xl font-semibold">
+					Components <i class="fa-solid fa-chevron-right text-xl pl-4" />
+				</p>
+			</button>
+			<button
+				on:click={() => reroute('https://github.com/oslabs-beta/SvARIA')}
+				class="border-none outline-none p-2 group duration-200 cursor-pointer text-left"
+			>
+				<p class="duration-200 group-hover:pl-2 poppins text-3xl font-semibold">
+					GitHub <i class="fa-solid fa-chevron-right text-xl pl-4" />
+				</p>
+			</button>
+			<button
+				on:click={() => reroute('/#GitHubFAQ')}
+				class="border-none outline-none p-2 group duration-200 cursor-pointer text-left"
+			>
+				<p class="duration-200 group-hover:pl-2 poppins text-3xl font-semibold">
+					FAQ/News <i class="fa-solid fa-chevron-right text-xl pl-4" />
+				</p>
+			</button>
+		</div>
+	</div>
 {/if}
 
 <SectionWrapper id="components">
 	<div
 		class="flex flex-col gap-5 sm:gap-10 md:gap-15 flex-1 items-center justify-center pb-10 md:pb-14"
 	></div>
-
 	<div class="flex">
 		<aside id="default-sidebar" class="flex-shrink-0 w-64 h-screen overflow-y-auto">
 			<ul class="py-4 font-medium">

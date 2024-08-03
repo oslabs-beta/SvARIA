@@ -1,1 +1,0 @@
-<p>The aria-label attribute can be used to define a string that labels the interactive element on which it is set. This provides the interactive element with its accessible name.</p>

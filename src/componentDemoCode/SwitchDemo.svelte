@@ -1,5 +1,5 @@
 <script>
-    import Switch from '$lib/Switch.svelte'
+    import Switch from 'svaria-toolkit'
 </script>
 
 <Switch

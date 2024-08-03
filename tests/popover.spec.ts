@@ -1,9 +1,9 @@
-import { test, expect } from '@playwright/experimental-ct-svelte';
+import { test, expect, type MountResult } from '@playwright/experimental-ct-svelte';
 import Popover from '$lib/Popover.svelte';
 
 
 test.describe('Popover', () => {
-    let popover;
+    let popover: MountResult<Popover>;
     test.beforeEach( async ({ mount }) => {
       popover = await mount(Popover, {
         props: {

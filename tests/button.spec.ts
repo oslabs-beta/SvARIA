@@ -1,8 +1,8 @@
-import { test, expect } from '@playwright/experimental-ct-svelte';
-import Button from '../src/lib/Button_ts.svelte';
+import { test, expect, type MountResult } from '@playwright/experimental-ct-svelte';
+import Button from '../src/lib/Button.svelte';
 
 test.describe('Button', () => {
-  let button;
+  let button: MountResult<Button>;
   let clicked = true;
 
   test.beforeEach( async ( {mount} ) => {

@@ -1,22 +1,20 @@
 <!-- use this page to test out components with URL "/testPage" -->
 
 <script land="ts">
-	import RadioGroup from '$lib/RadioGroup_ts.svelte';
-	import Checkbox from '$lib/input_types/Checkbox_ts.svelte';
-	import Button from '../../lib/Button_ts.svelte';
-	import Modal from '$lib/Modal_ts.svelte';
-	import Form from '$lib/input_types/Form_ts.svelte';
-	import Nav from '$lib/navigation/Navigation_ts.svelte';
-	import Tab from '$lib/Tab_ts.svelte';
+	import RadioGroup from '$lib/RadioGroup.svelte';
+	import Checkbox from '$lib/Checkbox.svelte';
+	import Button from '../../lib/Button.svelte';
+	import Modal from '$lib/Modal.svelte';
+	import Form from '$lib/Form.svelte';
+	import Nav from '$lib/Navigation.svelte';
+	import Tab from '$lib/Tab.svelte';
 	import Tab1 from './tabsForTestPage/Tab1.svelte';
 	import Tab2 from './tabsForTestPage/Tab2.svelte';
-	import Menu from '$lib/Menu_ts.svelte';
-	import Accordion from '$lib/Accordion_ts.svelte';
+	import Menu from '$lib/Menu.svelte';
+	import Accordion from '$lib/Accordion.svelte';
 	import ProgressBar from '$lib/ProgressBar.svelte';
 	import Switch from '$lib/Switch.svelte';
 	import Popover from '$lib/Popover.svelte';
-	import AccordionDemo from '../../splashPageLib/ComponentDemos/AccordionGroupTabs/AccordionGroupDemo.svelte';
-	import RadioGroupDemo from '../../splashPageLib/ComponentDemos/RadioGroupTabs/RadioGroupDemo.svelte';
 	import Tree from '$lib/Tree.svelte';
 	import SpinButton from '$lib/SpinButton.svelte';
 
@@ -165,7 +163,7 @@ let values = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 
 
 
 </script>
-<SpinButton
+<!-- <SpinButton
 {values}
 value = 0
 className = 'flex flex-col items-center'
@@ -178,8 +176,10 @@ decreaseButtonContent = '-'
 currentValueClass = 'text-blue-800 text-xl'
 decreaseButtonId = 'decrease'
 decreaseButtonClass = 'h-8 w-8 bg-red-500 text-sm text-white p-0'
-></SpinButton>
+></SpinButton> -->
+<Button>
 
+</Button>
 <!-- <Tab
 items={tabItems}
 /> -->
