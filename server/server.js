@@ -31,7 +31,6 @@ app.get('/chatbot', async (req, res) => {
 
 app.post("/chatbot", async (req, res) => {
   //console.log('req is', req)
-  console.log('in here', req.body)
   chatbotRoute(ragChain, req, res)
 })
 

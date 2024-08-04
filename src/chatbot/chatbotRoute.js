@@ -1,7 +1,7 @@
 
-import {
-    HumanMessage,
-  } from "@langchain/core/messages";
+// import {
+//     HumanMessage,
+//   } from "@langchain/core/messages";
 
 const chat_history = {}
 
@@ -29,7 +29,7 @@ const chatbotRoute = async (ragChain, req, res) => {
     console.log("question is ", question)
     const aiMsg = await ragChain.invoke({ question, chat_history: userChatHistory });
     
-    userChatHistory.push(new HumanMessage(question))
+    //userChatHistory.push(new HumanMessage(question))
     userChatHistory.push(aiMsg);
     chat_history[currentUser] = userChatHistory
     console.log(aiMsg.content)
