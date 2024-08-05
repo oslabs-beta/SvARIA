@@ -1,6 +1,6 @@
 <script>
     import "../app.css";
-    import Nav from '$lib/navigation/Navigation.svelte'
+    import Nav from '$lib/Navigation.svelte'
     import Navbar from "../splashPageLib/Navbar.svelte";
     import Footer from "../splashPageLib/Footer.svelte";
     import logo from "../splashPageLib/assets/SvAriaLogo.png";

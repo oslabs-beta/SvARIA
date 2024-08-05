@@ -1,20 +1,30 @@
-<script>
-	export let items = [];
-	export let activeTabValue = 0;
-	export let itemComponents = [];
-	export let tabListClass = 'flex flex-wrap';
-	export let tabListId = '';
-	export let tabListStyle = '';
-	export let id = '';
-	export let style = '';
-	export let className = '';
-	import { colorContrastCheck } from './ARIAChecks.js';
+<script lang='ts'>
 
-	const handleClick = (tabValue) => () => {
+	import { colorContrastCheck } from './ARIAchecks.js';
+	import type { TabItems } from '../types.js'
+	
+	export let items: TabItems[] = [];
+	export let tabListClass: string = 'flex flex-wrap';
+	export let tabListId: string = '';
+	export let tabListStyle: string = '';
+	export let id:string = '';
+	export let style:string = '';
+	export let className:string = '';
+	export let groupLabelClass:string = 'inline-block bg-gray-400 rounded-t focus:bg-sky-800 focus:ring text-black w-32';
+	export let groupLabelStyle: string = ''
+	export let groupContentClass: string = 'bg-blue-300 text-black'
+	export let groupContentStyle: string = ''
+
+
+	let activeTabValue: number = 0;
+	let itemComponents: HTMLButtonElement[] = [];
+
+
+	const handleClick = (tabValue: number):void => {
 		activeTabValue = tabValue;
 	};
 
-	function handleKeyPress(e, tabValue) {
+	function handleKeyPress(e, tabValue: number) {
 		// Move right
 		if (e.key === 'ArrowRight' || e.key === 'ArrowLeft') {
 			if (e.key === 'ArrowRight') {
@@ -23,7 +33,6 @@
 				activeTabValue = tabValue - 1;
 			}
 		}
-
 		if (activeTabValue >= items.length) {
 			activeTabValue = 0;
 		}
@@ -58,12 +67,12 @@
 					role="tab"
 					aria-selected={item.value == activeTabValue}
 					aria-controls={item.tabContentId}
-					tabindex={item.value == activeTabValue ? '0' : '-1'}
+					tabindex={item.value == activeTabValue ? 0 : -1}
 					on:click={handleClick(item.value)}
 					bind:this={itemComponents[item.value]}
 					on:keydown={(e) => handleKeyPress(e, item.value)}
-					class={item.tabLabelClass}
-					style={item.tabLabelStyle}
+					class={item.tabLabelClass ? item.tabLabelClass : groupLabelClass}
+					style={item.tabLabelStyle ? item.tabLabelStyle : groupLabelStyle}
 					id={item.tabLabelId}
 					use:colorContrastCheck
 					on:click
@@ -74,8 +83,8 @@
 	</ul>
 	{#each items as item}
 		<div
-			class={item.tabContentClass}
-			style={item.tabContentStyle}
+			class={item.tabContentClass ? item.tabContentClass : groupContentClass}
+			style={item.tabContentStyle ? item.tabContentStyle : groupContentStyle}
 			id={item.tabContentId}
 			role="tabpanel"
 			aria-labelledby={item.id}
@@ -87,24 +96,3 @@
 		</div>
 	{/each}
 </div>
-
-<!-- <style>
-	.box {
-		margin-bottom: 10px;
-		padding: 40px;
-		border: 1px solid #dee2e6;
-		border-radius: 0 0 0.5rem 0.5rem;
-		border-top: 0;
-	}
-	ul {
-		display: flex;
-		flex-wrap: wrap;
-		padding-left: 0;
-		margin-bottom: 0;
-		list-style: none;
-		border-bottom: 1px solid #dee2e6;
-	}
-	li {
-		margin-bottom: -1px;
-	}
-</style> -->
