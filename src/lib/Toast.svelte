@@ -1,5 +1,6 @@
 <script lang="ts">
-	import { createToggle, parentColorContrastCheck, colorContrastCheck } from '$lib/index.js';
+	import { parentColorContrastCheck, colorContrastCheck } from './ARIAchecks.js';
+	import createToggle from './toggle.js';
 	import type { Toggle } from '../types.js';
 	let toggle: Toggle = createToggle(true);
 	let isOpen: boolean;

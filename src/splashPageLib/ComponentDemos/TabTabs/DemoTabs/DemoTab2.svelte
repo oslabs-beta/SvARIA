@@ -1,1 +1,0 @@
-<p>The aria-labelledby property enables authors to reference other elements on the page to define an accessible name. This is useful when using elements that don't have native support for associating elements to provide an accessible name.</p>

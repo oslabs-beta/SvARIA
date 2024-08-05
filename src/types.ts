@@ -101,14 +101,14 @@ export type CompObj = {
 	source: string;
 };
 
-export type Tree = {
-	label: string;
-	children?: Tree[];
-	link?: string;
-	onClick?: () => void;
-	labelId?: string;
-	arrowId?: string;
-};
+export type TreeValue = {
+    label: string,
+    children?: TreeValue[],
+    link?: string,
+    onClick?: () => void,
+    labelId?: string,
+    arrowId?: string
+}
 
 export interface Toggle {
 	open: () => void;

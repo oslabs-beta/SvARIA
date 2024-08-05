@@ -1,5 +1,5 @@
 <script>
-	import { Alert, Button, createToggle } from '$lib/index.js';
+	import { Alert, Button, createToggle } from 'svaria-toolkit';
 	import Cat from '../components/CatIcon.svelte';
 	const openCustomAlert = createToggle();
 	const openCustom = () => {
