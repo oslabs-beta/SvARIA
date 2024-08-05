@@ -28,9 +28,3 @@
 </div>
 <label id={labelId} class={labelClass} style={labelStyle} for={progressBarId}>{barWidth}</label>
 
-<!-- <label class='progress-label' for={progressBarId}>{barWidth}</label> -->
-
-<!-- <div role="progressbar" class='w-full bg-gray-200 rounded-full h-2.5 dark:bg-black' id={progressBarId} max="100" value={progress} style={progressBarStyle}>
-    <div id = {progressId} class='progress' style={progressStyle}>{barWidth}</div>
-  </div>
-<label class='progress-label' for={progressBarId}>{barWidth}</label>  -->

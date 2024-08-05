@@ -1,6 +1,5 @@
 import { test, expect, type MountResult } from '@playwright/experimental-ct-svelte';
 import Tree from '$lib/Tree.svelte';
-import { link } from 'fs';
 
 test.describe('Tree', () => {
     let riojaClicked = false;
