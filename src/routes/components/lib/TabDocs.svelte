@@ -14,9 +14,13 @@
             "id (optional): uniquely identifies the div that the entire tab component is nested in", 
             "className (optional): provides a class for the div that the entire tab component is nested in. Tailwind can be used to adjust styling here", 
             "style (optional): allows you to use inline styling for the div that the entire tab component is nested in e.g. style='background-color:orange", 
-            "tabListId (optional): Uniquely identifies all the tab labels together",
-            "tabListClass (optional): provides a class for all the tab labels together. Tailwind can be used to adjust styling here ",
-            "tabListStyle (optional): allows you to use inline styling for for all the tab labels together e.g. style='background-color:red"
+            "tabListId (optional): Uniquely identifies the div that contains all the tab labels",
+            "tabListClass (optional): provides a class the div that contains all the tab labels. Tailwind can be used to adjust styling here ",
+            "tabListStyle (optional): allows you to use inline styling for the div that contains all the tab labels e.g. style='background-color:red",
+            "groupLabelClass (optional): provides the same class for all the labels. Tailwind can be used to adjust styling here.",
+            "groupLabelStyle (optional): allows you to use inline styling for for all the labels e.g. style='background-color:orange'",
+            "groupContentClass (optional): provides the same class for the content of all the tabs. Tailwind can be used to adjust styling here.",
+            "groupLabelStyle (optional): allows you to use inline styling for the content of all the tabs e.g. style='background-color:purple'"
     ]
     
     </script>

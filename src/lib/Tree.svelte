@@ -6,13 +6,13 @@
 </script>
 
 <script lang="ts">
-	import type { Tree } from '../types.ts';
-	import { colorContrastCheck } from './ARIAChecks.js';
+	import type { TreeValue } from '../types.ts';
+	import { colorContrastCheck } from './ARIAchecks.js';
 
-	export let tree: Tree;
+	export let tree: TreeValue;
 	export let arrows: string[] = ['▼', '►'];
 	export let liId:string | undefined = ''
-	export let liClassName: string | undefined = 'px-5';
+	export let liClassName: string | undefined = 'px-5 text-black';
 	export let liStyle: string | undefined = '';
 	export let arrowClass: string | undefined = 'arrow';
 	export let arrowStyle: string | undefined = '';
@@ -60,6 +60,7 @@
 		class={liClassName}
 		style={liStyle}
 		id={liId}
+		use:colorContrastCheck
 	>
 		{#if children}
 			<span
