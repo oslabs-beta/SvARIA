@@ -16,6 +16,8 @@ import Checkbox from './Checkbox.svelte'
 import createToggle from './toggle.js';
 import Toast from './Toast.svelte';
 import Alert from './Alert.svelte';
+import SpinButton from './SpinButton.svelte';
+
 
 import { colorContrastCheck, ariaLabelcheck, parentColorContrastCheck } from './ARIAchecks.js';
 
@@ -39,5 +41,6 @@ export {
 	parentColorContrastCheck,
 	createToggle,
 	Alert,
-	Toast
+	Toast,
+	SpinButton
 };
