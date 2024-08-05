@@ -2,57 +2,50 @@
 	import type { MenuItems } from '../../../types.ts';
 	import Menu from '$lib/Menu_ts.svelte';
 
-	function handleClick(): void {
-		alert('Menu button clicked');
+	function blue() {
+		console.log('blue')
 	}
 
-	let menuItems: MenuItems[] = [
+	function yellow() {
+		console.log('yellow')
+	}
+
+	let menuItems = [
 		{
 			label: 'purple',
-			onClick: function click(): void {
-				window.location.href = 'https://en.wikipedia.org/wiki/Purple';
-			},
+			link: "https://en.wikipedia.org/wiki/Purple",
             linkID: 'purple',
-			linkClass:
-				'mx-96 w-32  bg-slate-300 px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-black'
+			linkClass: 'text-purple-800'
 		},
 		{
 			label: 'blue',
-			onClick: function click(): void {
-				alert(menuItems[1].label);
-			},
             linkID: 'blue',
-			linkClass:
-				'mx-96 w-32  bg-slate-300 px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-black'
+			onClick: blue,
+			linkClass: 'text-blue-800'
 		},
 		{
 			label: 'yellow',
-			onClick: function click(): void {
-				alert(menuItems[2].label);
-			},
             linkID: 'yellow',
-			linkClass:
-				'mx-96 w-32 bg-slate-300 px-4 py-2  hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white'
+			onClick: yellow,
+			linkClass: 'text-yellow-800'
 		},
 		{
 			label: 'green',
-			onClick: function click(): void {
-				window.location.href = 'https://en.wikipedia.org/wiki/Greene';
-			},
+			link: "https://en.wikipedia.org/wiki/Green",
             linkID: 'green',
-			linkClass:
-			'mx-96 w-32 bg-slate-300 px-4 py-2  hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white'
+			linkClass: 'text-green-800'
 		}
 	];
+
+	
 </script>
 
 <Menu
-	items={menuItems}
+	{menuItems}
 	buttonContent="Menu"
 	buttonId="menuButton"
 	buttonAriaLabel="menu button"
-	buttonClass="w-32 h-16 text-2xl bg-slate-400 items-center justify-between  py-2 px-3 text-gray-900 hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-black md:dark:hover:text-blue-500 dark:focus:text-black dark:hover:bg-gray-700 md:dark:hover:bg-transparent"
+	buttonClass="w-32 h-9 text-xl bg-slate-200 items-center justify-between  py-2 px-3 text-gray-900 hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-black md:dark:hover:text-blue-500 dark:focus:text-black dark:hover:bg-gray-700 md:dark:hover:bg-transparent"
     listId='menuItems'
-	listClass="py-2 text-sm text-gray-700 dark:text-black "
-	on:click={handleClick}
+	listClass="bg-blue-200 text-lg w-32 text-center	rounded-md"
 />

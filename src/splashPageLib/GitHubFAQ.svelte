@@ -43,7 +43,6 @@
 <SectionWrapper id="GitHubFAQ">
     <div class=" -mt-[50px] flex flex-col gap-5 sm:gap-10 md:gap-15 flex-1 items-center justify-center pb-10 md:pb-14">
         <div class="flex flex-col gap-2">
-      
             <!-- <h8 class="text-4xl sm:text-5xl md:text-6xl max-w-[1000px] mx-auto w-full font-semibold text-center">
                 GitHub/FAQ
             </h8>

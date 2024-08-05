@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { ariaLabelcheck, colorContrastCheck, parentColorContrastCheck } from './ARIAChecks.js';
+	import { ariaLabelcheck, colorContrastCheck, parentColorContrastCheck } from './ARIAchecks.js';
 	import type { ButtonType } from '../types.ts';
 	export let content: string = 'This is a button';
 	export let ariaLabel: string = content;

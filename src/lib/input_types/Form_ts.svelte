@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { ariaLabelcheck, colorContrastCheck } from '../ARIAChecks.js';
+	import { ariaLabelcheck, colorContrastCheck } from '../ARIAchecks.js';
 	import Button from '../Button_ts.svelte';
 	import type { FormElementsObj } from '../../types.js';
 
@@ -9,10 +9,10 @@
 	export let submitButtonId: string = 'submit';
 	export let formElements: FormElementsObj[] = [];
 	export let ariaLabel: string = 'Form';
-	export let formClass: string = ''
-	export let formStyle: string = ''
-	export let submitButtonClass: string = ''
-	export let submitButtonStyle: string = ''
+	export let formClass: string = '';
+	export let formStyle: string = '';
+	export let submitButtonClass: string = '';
+	export let submitButtonStyle: string = '';
 
 	$: formElements = formElements.map((row) => {
 		if (!row['inputId']) {
@@ -28,7 +28,15 @@
 	});
 </script>
 
-<form {method} on:submit|preventDefault id={formId} aria-label={ariaLabel} class={formClass} style={formStyle} use:ariaLabelcheck>
+<form
+	{method}
+	on:submit|preventDefault
+	id={formId}
+	aria-label={ariaLabel}
+	class={formClass}
+	style={formStyle}
+	use:ariaLabelcheck
+>
 	{#each formElements as element}
 		<label
 			id={element.labelId}
@@ -50,5 +58,12 @@
 			use:colorContrastCheck
 		/>
 	{/each}
-	<Button type="submit" ariaLabel="Submit Button" id={submitButtonId} content={submitFormContent} className={submitButtonClass} style={submitButtonStyle} />
+	<Button
+		type="submit"
+		ariaLabel="Submit Button"
+		id={submitButtonId}
+		content={submitFormContent}
+		className={submitButtonClass}
+		style={submitButtonStyle}
+	/>
 </form>

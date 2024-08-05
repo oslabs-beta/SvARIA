@@ -1,8 +1,8 @@
 <script lang="ts">
-	import { colorContrastCheck, ariaLabelcheck } from '../ARIAChecks.ts';
-	import type { Routes } from '../../types.ts'
-	export let heading: string|undefined = undefined;
-	export let routes: Routes[]|undefined = undefined;
+	import { colorContrastCheck, ariaLabelcheck } from '../index.js';
+	import type { Routes } from '../../types.ts';
+	export let heading: string | undefined = undefined;
+	export let routes: Routes[] | undefined = undefined;
 	export let id: string = 'navBar';
 	export let style: string = '';
 	export let headerContainerStyle: string = '';
@@ -11,7 +11,6 @@
 	export let navHeadingClass: string = '';
 	export let navListClass: string = '';
 </script>
-
 
 <div
 	role="navigation"
@@ -22,7 +21,12 @@
 	use:colorContrastCheck
 	use:ariaLabelcheck
 >
-<div aria-label="header container" class={navHeadingClass} id={id + '-headercontainer'} style={headerContainerStyle}>
+	<div
+		aria-label="header container"
+		class={navHeadingClass}
+		id={id + '-headercontainer'}
+		style={headerContainerStyle}
+	>
 		<slot name="headingPlus"></slot>
 	</div>
 	{#if routes}
