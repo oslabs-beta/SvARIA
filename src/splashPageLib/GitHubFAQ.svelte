@@ -1,17 +1,44 @@
 <!-- This is where the GitHub Link and FAQ live -->
-<script>
+<script lang="ts">
     import SectionWrapper from "./SectionWrapper.svelte";
-    import Form from "../lib/input_types/Form_ts.svelte"
+    import SplashPageForm from "./SplashPageForm_ts.svelte"
+
+    let firstName ='';
+	let lastName ='';
+	let email ='';
 
     let formElements = [
         {
-			name: 'username',
+			name: 'firstName',
 			type: 'input',
-			labelValue: 'Username',
-			labelClass: 'inline-block mb-2 text-sm font-medium text-gray-900',
+			labelValue: 'First Name',
+            labelId:' ',
+            inputStyle: 'width:95% ',
+            labelStyle: 'width:95%',
+            labelClass: 'inline-block mb-2 text-lg font-medium text-gray-900',
+            inputClass: 'bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white mr-5 dark:focus:ring-blue-500 dark:focus:border-blue-500'
+		},
+        {
+			name: 'lastName',
+			type: 'input',
+			labelValue: 'Last Name',
+            labelId:' ',
+            inputStyle: 'width:95%', 
+            labelStyle: 'width:95%',
+			labelClass: 'inline-block mb-2 text-lg font-medium text-gray-900',
+            inputClass: 'bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white ml-5 dark:focus:ring-blue-500 dark:focus:border-blue-500'
+		},
+        {
+			name: 'email',
+			type: 'input',
+			labelValue: 'Email',
+            labelId:' ',
+            inputStyle: 'width:100%', 
+			labelClass: 'inline-block mb-2 text-lg font-medium text-gray-900',
             inputClass: 'bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500'
 		}
     ]
+
 </script>
 <SectionWrapper id="GitHubFAQ">
     <div class=" -mt-[50px] flex flex-col gap-5 sm:gap-10 md:gap-15 flex-1 items-center justify-center pb-10 md:pb-14">
@@ -37,8 +64,19 @@
             </h9>   
             <br><br> -->
             <h10 class="text-4xl sm:text-5xl md:text-6xl max-w-[1000px] mx-auto w-full font-semibold text-center">
+                <br>
+                <br>
+                <br>
                 FAQ/News
                 <br>
+                <div>
+                    <p class="text-xl sm:text-2xl md:text-3xl max-w-[1000px] mx-auto w-full italic font-light text-center">
+                        Signup here to stay connected!
+
+                    </p>
+                   
+                    <SplashPageForm formElements={formElements}/>
+                </div>
                 <p class="text-xl sm:text-2xl md:text-3xl max-w-[1000px] mx-auto w-full italic font-light text-center">
                     <br>
                     Medium Article
@@ -47,6 +85,11 @@
                     FastCompany Article
                 </p>
             </h10>  
+            <br>
+            <br>
+            <br>
+            <br>
+
           
             <!-- <h11 class="text-2xl sm:text-3xl md:text-4xl max-w-[1000px] mx-auto w-full  text-center">
                 SvARIA in the News
