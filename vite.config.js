@@ -5,16 +5,16 @@ export default defineConfig({
 	plugins: [sveltekit()],
 	server: {
 		proxy: {
-		  '/chatbot': {
-			target: 'http://localhost:3000/',
-			changeOrigin: true,
-			secure: false,
-		  },
-		  //'/user': {
-	// 		target: 'http://localhost:3000',
-	// 		changeOrigin: true,
-	// 		secure: false,
-	// 	  }
+			'/user': {
+				target: 'http://localhost:3000/',
+				changeOrigin: true,
+				secure: false,
+			},
+			'/chatbot': {
+				target: 'http://localhost:3000/',
+				changeOrigin: true,
+				secure: false,
+			}
 		}
 	},
 	test: {

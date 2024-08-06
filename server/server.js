@@ -23,19 +23,13 @@ app.use(express.urlencoded({ extended: true }));
 //app.use(handler);
 app.use(cookieParser())
 
-app.get('/chatbot', async (req, res) => {
-  res.append('Access-Control-Allow-Origin', '*');
-  res.append('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE');
-  res.append('Access-Control-Allow-Headers', 'Content-Type')
-  return res.json({result: 'success'})
-})
 
 app.post("/chatbot", async (req, res) => {
   //console.log('req is', req)
   chatbotRoute(ragChain, req, res)
 })
 
-app.use('/', router) ;
+app.use('/user', router) ;
 
 // app.get('/', (req, res, next) => {
 //     // res.set('Content-Type', 'text/html'); 
