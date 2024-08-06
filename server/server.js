@@ -5,6 +5,7 @@ import loadModel from "../src/chatbot/chatbot.js"
 import cookieParser from 'cookie-parser';
 import chatbotRoute from "../src/chatbot/chatbotRoute.js"
 
+import cors from 'cors';
 
 const app = express();
 const PORT = 3000;
@@ -49,6 +50,7 @@ app.use('/', router) ;
 // });
 app.use(express.urlencoded({ extended: true }));
 // app.use(handler);
+app.use(cors());
 
 
 app.use('/', router) ;

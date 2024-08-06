@@ -5,10 +5,12 @@ const svAriaController = {};
 
 // To add a new user 
 svAriaController.addUser = (req, res, next) => {
-    const {firstName, lastName, email} = req.query;
+    console.log('adding some things')
+    const {first_Name, last_Name, email_} = req.body;
+    console.log('first name here' + first_Name)
     const queryString = {
         text: 'INSERT INTO users (firstName, lastName, email) VALUES ($1, $2, $3)',
-        values: [firstName, lastName, email]
+        values: [first_Name, last_Name, email_]
     };
 
     db.query(queryString)
@@ -56,21 +58,22 @@ svAriaController.getAllUsers = (req, res, next) => {
 
 // If we need to update a user
 svAriaController.updateUser = (req, res, next) => {
+    console.log('req ' + JSON.stringify(req.query))
     const oldEmail = req.params.email; 
-    let {firstName, lastName, email} = req.query;
+    let {first_Name, last_Name, email_} = req.query;
 
-    if(!firstName){
-        firstName = res.locals.user.firstname;
+    if(!first_Name){
+        first_Name = res.locals.user.firstname;
     }
-    if(!lastName){
-        lastName = res.locals.user.lastname;
+    if(!last_Name){
+        last_Name = res.locals.user.lastname;
     }
-    if(!email){
-        email = oldEmail;
+    if(!email_){
+        email_ = oldEmail;
     }
     const queryString = {
         text: 'UPDATE users SET firstName = $1, lastName = $2, email = $3 WHERE email = $4',  
-        values:[firstName, lastName, email, oldEmail]
+        values:[first_Name, last_Name, email_, oldEmail]
     };
     
     db.query(queryString)
