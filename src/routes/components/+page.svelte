@@ -42,7 +42,7 @@
 		{
 			docs: AccordionDocs,
 			label: 'Accordion',
-			source: 'https://svelte.dev/repl/6f215987234e471fbe241df938789695?version=4.2.18'
+			source: 'https://svelte.dev/repl/8391f5d6f9fb4cafbdc6de9dc24624b6?version=4.2.18'
 		},
 		{
 			docs: AccordionGroupDocs,
@@ -90,7 +90,7 @@
 			label: 'Radio Group',
 			source: 'https://svelte.dev/repl/a156fc8b39454aa7a573881f334a88b5?version=4.2.18'
 		},
-        {
+		{
 			docs: SpinButtonDocs,
 			label: 'Spin Button',
 			source: 'https://svelte.dev/repl/be924261d3f041cb887584054989feef?version=4.2.18'
