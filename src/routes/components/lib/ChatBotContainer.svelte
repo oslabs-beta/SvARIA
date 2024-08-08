@@ -33,7 +33,7 @@
 </script>
 
 <div class="fixed bottom-4 right-4 z-50">
-	<Popover closeButtonClass='fixed right-6 bg-black text-white' openButtonContent="Build with SvARIA Bot" openButtonAriaLabel="Build Components with SvARIA Bot" popoverId="chatbot">
+	<Popover closeButtonClass='fixed right-6 bg-black text-white' openButtonClass='bg-sky-950 text-white'openButtonContent="Build with SvARIA Bot" openButtonAriaLabel="Build Components with SvARIA Bot" popoverId="chatbot">
 		<div slot='header'>
 			<h3>SvARIA Bot</h3>
 		</div>

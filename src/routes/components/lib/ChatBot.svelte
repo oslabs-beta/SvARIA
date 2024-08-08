@@ -1,10 +1,8 @@
 <script>
     import Form from "$lib/input_types/Form.svelte";
 
-    let components = ['Accordion', 'Accordion Group', 'Button', 'Checkbox', 'Menu', 'Modal', 'Popover', 'Progress Bar', 'Radio Group', 'Switch', 'Tab', 'Tree']
-
     let formElements = [
-		{ name: 'question', type: 'text', labelValue: 'Enter question here', inputClass: 'w-full text-black' },
+		{ name: 'question', type: 'text', labelValue: 'Tell SvARIABot the type of component you\'d like to build, and what you\'d like on it.', inputClass: 'w-full text-black' },
 	];
 
 	let answer = ""
@@ -29,11 +27,5 @@
 
 <div>
     <pre>{answer}</pre>
-    <!-- <Form {formElements} on:submit={onSubmit} submitButtonClass='bg-blue-500 text-white rounded-lg'/> -->
-    <h3>Select which component you'd like to build from the dropdown below!</h3>
-    <select name="components" id="components">
-        {#each components as comp}
-        <option value={comp}>{comp}</option>
-        {/each}
-    </select>
+    <Form {formElements} on:submit={onSubmit} formClass='inline' submitButtonClass='bg-blue-500 text-white rounded-lg'/>
 </div>

@@ -1,0 +1,160 @@
+{
+  "version": "1.45.3",
+  "viteVersion": "5.3.3",
+  "registerSourceHash": "4254adecf5079e12ff6690d1870cf312c42e1840",
+  "components": [
+    {
+      "id": "_Users_josh_Documents_Svelte_OSP_SvARIA_src_lib_Button_ts_svelte",
+      "filename": "/Users/josh/Documents/Svelte OSP/SvARIA/tests/Button.spec.ts",
+      "importSource": "../src/lib/Button_ts.svelte"
+    },
+    {
+      "id": "_Users_josh_Documents_Svelte_OSP_SvARIA_tests__lib_Popover_svelte",
+      "filename": "/Users/josh/Documents/Svelte OSP/SvARIA/tests/Popover.spec.ts",
+      "importSource": "$lib/Popover.svelte"
+    }
+  ],
+  "sources": {
+    "/Users/josh/Documents/Svelte OSP/SvARIA/playwright/index.html": {
+      "timestamp": 1722886140858.7644
+    },
+    "/Users/josh/Documents/Svelte OSP/SvARIA/playwright/index.ts": {
+      "timestamp": 1722886140860.1687
+    },
+    "/Users/josh/Documents/Svelte OSP/SvARIA/node_modules/svelte/src/runtime/internal/index.js": {
+      "timestamp": 1718907700174.4023
+    },
+    "/Users/josh/Documents/Svelte OSP/SvARIA/src/lib/Button_ts.svelte": {
+      "timestamp": 1722887202956.1086
+    },
+    "/Users/josh/Documents/Svelte OSP/SvARIA/node_modules/svelte/src/runtime/internal/animations.js": {
+      "timestamp": 1718907698064.68
+    },
+    "/Users/josh/Documents/Svelte OSP/SvARIA/node_modules/svelte/src/runtime/internal/each.js": {
+      "timestamp": 1718907698879.3694
+    },
+    "/Users/josh/Documents/Svelte OSP/SvARIA/node_modules/svelte/src/runtime/internal/loop.js": {
+      "timestamp": 1718907700177.4392
+    },
+    "/Users/josh/Documents/Svelte OSP/SvARIA/node_modules/svelte/src/runtime/internal/lifecycle.js": {
+      "timestamp": 1718907700177.3179
+    },
+    "/Users/josh/Documents/Svelte OSP/SvARIA/node_modules/svelte/src/runtime/internal/ssr.js": {
+      "timestamp": 1718907700810.3877
+    },
+    "/Users/josh/Documents/Svelte OSP/SvARIA/node_modules/svelte/src/runtime/internal/globals.js": {
+      "timestamp": 1718907699510.946
+    },
+    "/Users/josh/Documents/Svelte OSP/SvARIA/node_modules/svelte/src/runtime/internal/scheduler.js": {
+      "timestamp": 1718907700622.318
+    },
+    "/Users/josh/Documents/Svelte OSP/SvARIA/node_modules/svelte/src/runtime/internal/spread.js": {
+      "timestamp": 1718907700624.058
+    },
+    "/Users/josh/Documents/Svelte OSP/SvARIA/node_modules/svelte/src/runtime/internal/dom.js": {
+      "timestamp": 1718907698878.729
+    },
+    "/Users/josh/Documents/Svelte OSP/SvARIA/node_modules/svelte/src/runtime/internal/await_block.js": {
+      "timestamp": 1718907698272.0405
+    },
+    "/Users/josh/Documents/Svelte OSP/SvARIA/node_modules/svelte/src/runtime/internal/utils.js": {
+      "timestamp": 1718907701016.525
+    },
+    "/Users/josh/Documents/Svelte OSP/SvARIA/node_modules/svelte/src/runtime/internal/transitions.js": {
+      "timestamp": 1718907701016.2188
+    },
+    "/Users/josh/Documents/Svelte OSP/SvARIA/node_modules/svelte/src/runtime/internal/Component.js": {
+      "timestamp": 1718907698684.8516
+    },
+    "/Users/josh/Documents/Svelte OSP/SvARIA/node_modules/svelte/src/runtime/internal/environment.js": {
+      "timestamp": 1718907699294.5532
+    },
+    "/Users/josh/Documents/Svelte OSP/SvARIA/node_modules/svelte/src/runtime/internal/dev.js": {
+      "timestamp": 1718907698688.7979
+    },
+    "/Users/josh/Documents/Svelte OSP/SvARIA/src/lib/Popover.svelte": {
+      "timestamp": 1722887202956.8843
+    },
+    "/Users/josh/Documents/Svelte OSP/SvARIA/node_modules/svelte/src/runtime/internal/disclose-version/index.js": {
+      "timestamp": 1718907700174.341
+    },
+    "/Users/josh/Documents/Svelte OSP/SvARIA/node_modules/svelte/src/shared/boolean_attributes.js": {
+      "timestamp": 1718907698273.5623
+    },
+    "/Users/josh/Documents/Svelte OSP/SvARIA/node_modules/svelte/src/shared/utils/names.js": {
+      "timestamp": 1718907700397.7588
+    },
+    "/Users/josh/Documents/Svelte OSP/SvARIA/node_modules/svelte/src/shared/version.js": {
+      "timestamp": 1718907701016.7112
+    },
+    "/Users/josh/Documents/Svelte OSP/SvARIA/node_modules/svelte/src/runtime/internal/ResizeObserverSingleton.js": {
+      "timestamp": 1718907700622.1917
+    },
+    "/Users/josh/Documents/Svelte OSP/SvARIA/node_modules/svelte/src/runtime/internal/style_manager.js": {
+      "timestamp": 1718907700812.239
+    },
+    "/Users/josh/Documents/Svelte OSP/SvARIA/src/lib/ARIAChecks.ts": {
+      "timestamp": 1722887202954.2466
+    },
+    "/Users/josh/Documents/Svelte OSP/SvARIA/node_modules/svelte/src/runtime/index.js": {
+      "timestamp": 1718907700173.8953
+    }
+  },
+  "deps": {
+    "/Users/josh/Documents/Svelte OSP/SvARIA/src/lib/Button_ts.svelte": [
+      "/Users/josh/Documents/Svelte OSP/SvARIA/src/lib/Button_ts.svelte",
+      "/Users/josh/Documents/Svelte OSP/SvARIA/node_modules/svelte/src/runtime/internal/index.js",
+      "/Users/josh/Documents/Svelte OSP/SvARIA/node_modules/svelte/src/runtime/internal/animations.js",
+      "/Users/josh/Documents/Svelte OSP/SvARIA/node_modules/svelte/src/runtime/internal/utils.js",
+      "/Users/josh/Documents/Svelte OSP/SvARIA/node_modules/svelte/src/runtime/internal/environment.js",
+      "/Users/josh/Documents/Svelte OSP/SvARIA/node_modules/svelte/src/runtime/internal/loop.js",
+      "/Users/josh/Documents/Svelte OSP/SvARIA/node_modules/svelte/src/runtime/internal/style_manager.js",
+      "/Users/josh/Documents/Svelte OSP/SvARIA/node_modules/svelte/src/runtime/internal/dom.js",
+      "/Users/josh/Documents/Svelte OSP/SvARIA/node_modules/svelte/src/runtime/internal/ResizeObserverSingleton.js",
+      "/Users/josh/Documents/Svelte OSP/SvARIA/node_modules/svelte/src/runtime/internal/globals.js",
+      "/Users/josh/Documents/Svelte OSP/SvARIA/node_modules/svelte/src/runtime/internal/await_block.js",
+      "/Users/josh/Documents/Svelte OSP/SvARIA/node_modules/svelte/src/runtime/internal/transitions.js",
+      "/Users/josh/Documents/Svelte OSP/SvARIA/node_modules/svelte/src/runtime/internal/scheduler.js",
+      "/Users/josh/Documents/Svelte OSP/SvARIA/node_modules/svelte/src/runtime/internal/lifecycle.js",
+      "/Users/josh/Documents/Svelte OSP/SvARIA/node_modules/svelte/src/runtime/internal/each.js",
+      "/Users/josh/Documents/Svelte OSP/SvARIA/node_modules/svelte/src/runtime/internal/spread.js",
+      "/Users/josh/Documents/Svelte OSP/SvARIA/node_modules/svelte/src/runtime/internal/ssr.js",
+      "/Users/josh/Documents/Svelte OSP/SvARIA/node_modules/svelte/src/shared/boolean_attributes.js",
+      "/Users/josh/Documents/Svelte OSP/SvARIA/node_modules/svelte/src/shared/utils/names.js",
+      "/Users/josh/Documents/Svelte OSP/SvARIA/node_modules/svelte/src/runtime/internal/Component.js",
+      "/Users/josh/Documents/Svelte OSP/SvARIA/node_modules/svelte/src/runtime/internal/dev.js",
+      "/Users/josh/Documents/Svelte OSP/SvARIA/node_modules/svelte/src/shared/version.js",
+      "/Users/josh/Documents/Svelte OSP/SvARIA/node_modules/svelte/src/runtime/internal/disclose-version/index.js",
+      "/Users/josh/Documents/Svelte OSP/SvARIA/src/lib/ARIAChecks.ts"
+    ],
+    "/Users/josh/Documents/Svelte OSP/SvARIA/src/lib/Popover.svelte": [
+      "/Users/josh/Documents/Svelte OSP/SvARIA/src/lib/Popover.svelte",
+      "/Users/josh/Documents/Svelte OSP/SvARIA/node_modules/svelte/src/runtime/internal/index.js",
+      "/Users/josh/Documents/Svelte OSP/SvARIA/node_modules/svelte/src/runtime/internal/animations.js",
+      "/Users/josh/Documents/Svelte OSP/SvARIA/node_modules/svelte/src/runtime/internal/utils.js",
+      "/Users/josh/Documents/Svelte OSP/SvARIA/node_modules/svelte/src/runtime/internal/environment.js",
+      "/Users/josh/Documents/Svelte OSP/SvARIA/node_modules/svelte/src/runtime/internal/loop.js",
+      "/Users/josh/Documents/Svelte OSP/SvARIA/node_modules/svelte/src/runtime/internal/style_manager.js",
+      "/Users/josh/Documents/Svelte OSP/SvARIA/node_modules/svelte/src/runtime/internal/dom.js",
+      "/Users/josh/Documents/Svelte OSP/SvARIA/node_modules/svelte/src/runtime/internal/ResizeObserverSingleton.js",
+      "/Users/josh/Documents/Svelte OSP/SvARIA/node_modules/svelte/src/runtime/internal/globals.js",
+      "/Users/josh/Documents/Svelte OSP/SvARIA/node_modules/svelte/src/runtime/internal/await_block.js",
+      "/Users/josh/Documents/Svelte OSP/SvARIA/node_modules/svelte/src/runtime/internal/transitions.js",
+      "/Users/josh/Documents/Svelte OSP/SvARIA/node_modules/svelte/src/runtime/internal/scheduler.js",
+      "/Users/josh/Documents/Svelte OSP/SvARIA/node_modules/svelte/src/runtime/internal/lifecycle.js",
+      "/Users/josh/Documents/Svelte OSP/SvARIA/node_modules/svelte/src/runtime/internal/each.js",
+      "/Users/josh/Documents/Svelte OSP/SvARIA/node_modules/svelte/src/runtime/internal/spread.js",
+      "/Users/josh/Documents/Svelte OSP/SvARIA/node_modules/svelte/src/runtime/internal/ssr.js",
+      "/Users/josh/Documents/Svelte OSP/SvARIA/node_modules/svelte/src/shared/boolean_attributes.js",
+      "/Users/josh/Documents/Svelte OSP/SvARIA/node_modules/svelte/src/shared/utils/names.js",
+      "/Users/josh/Documents/Svelte OSP/SvARIA/node_modules/svelte/src/runtime/internal/Component.js",
+      "/Users/josh/Documents/Svelte OSP/SvARIA/node_modules/svelte/src/runtime/internal/dev.js",
+      "/Users/josh/Documents/Svelte OSP/SvARIA/node_modules/svelte/src/shared/version.js",
+      "/Users/josh/Documents/Svelte OSP/SvARIA/node_modules/svelte/src/runtime/internal/disclose-version/index.js",
+      "/Users/josh/Documents/Svelte OSP/SvARIA/src/lib/ARIAChecks.ts",
+      "/Users/josh/Documents/Svelte OSP/SvARIA/src/lib/Button_ts.svelte",
+      "/Users/josh/Documents/Svelte OSP/SvARIA/node_modules/svelte/src/runtime/index.js",
+      "/Users/josh/Documents/Svelte OSP/SvARIA/src/lib/Popover.svelte?svelte&type=style&lang.css"
+    ]
+  }
+}
