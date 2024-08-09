@@ -4,31 +4,27 @@
 
 	import { json } from '@sveltejs/kit';
 
-	import Popover from '../components/lib/ChatBotPopover.svelte'
+	import ChatBotPopover from '../components/lib/ChatBotPopover.svelte'
 	import ChatBot from '../components/lib/ChatBot.svelte';
-	import RadioGroup from '$lib/RadioGroup_ts.svelte';
-	import Checkbox from '$lib/input_types/Checkbox_ts.svelte';
-	import Button from '../../lib/Button_ts.svelte';
-	import Modal from '$lib/Modal_ts.svelte';
-	import Form from '$lib/input_types/Form_ts.svelte';
-	import Nav from '$lib/navigation/Navigation_ts.svelte';
-	import Tab from '$lib/Tab_ts.svelte';
+	import RadioGroup from '$lib/RadioGroup.svelte';
+	import Checkbox from '$lib/Checkbox.svelte';
+	import Button from '../../lib/Button.svelte';
+	import Modal from '$lib/Modal.svelte';
+	import Form from '$lib/Form.svelte';
+	import Nav from '$lib/Navigation.svelte';
+	import Tab from '$lib/Tab.svelte';
 	import Tab1 from './tabsForTestPage/Tab1.svelte';
 	import Tab2 from './tabsForTestPage/Tab2.svelte';
-	import Menu from '$lib/Menu_ts.svelte';
-	import Accordion from '$lib/Accordion_ts.svelte';
+	import Menu from '$lib/Menu.svelte';
+	import Accordion from '$lib/Accordion.svelte';
 	import ProgressBar from '$lib/ProgressBar.svelte';
 	import Switch from '$lib/Switch.svelte';
 	import Popover from '$lib/Popover.svelte';
 	import AccordionDemo from '../../splashPageLib/ComponentDemos/AccordionGroupTabs/AccordionGroupDemo.svelte';
 	import RadioGroupDemo from '../../splashPageLib/ComponentDemos/RadioGroupTabs/RadioGroupDemo.svelte';
-<<<<<<<<< Temporary merge branch 1
-	import Docs from '../../splashPageLib/Docs.svelte';
 	import Tree from '$lib/Tree.svelte';
-=========
 	import Docs from '../components/Docs.svelte';
 	import PopoverDocs from '../components/lib/PopoverDocs.svelte';
->>>>>>>>> Temporary merge branch 2
 
 	const catIpsum = `Cat ipsum dolor sit amet, always hungry jump on fridge, while happily ignoring when being
 			called shove bum in owner's face like camera lens. Meowsiers meow the best thing in the
@@ -228,8 +224,6 @@
 
 </script>
 
-import Popover from '../components/lib/ChatBotPopover.svelte'
-import ChatBot from '../components/lib/ChatBot.svelte';
 
 <!-- <Docs componentName="Popover" propsDetails={docsProps}>
 
