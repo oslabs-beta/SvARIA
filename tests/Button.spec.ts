@@ -1,5 +1,5 @@
 import { test, expect } from '@playwright/experimental-ct-svelte';
-import Button from '../src/lib/Button_ts.svelte';
+import Button from '../src/lib/Button.svelte';
 
 test.describe('Button', () => {
   let button;
@@ -42,5 +42,4 @@ test.describe('Button', () => {
     await button.click();
     expect(clicked).toBeFalsy();
   })
-  
 })
