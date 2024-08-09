@@ -6,11 +6,11 @@ A comprehensive component library built from the ground-up for Svelte offering p
 
 `npm install svaria-toolkit`
 
-SvARIA has default components styled with Tailwind. To use our default styles, you must install Tailwind into your project. To configure Tailwind to work with our components, make sure to add svaria-toolkit to the default contents:
+SvARIA has default components styled with Tailwind. To use our default styles, you must install Tailwind into your project. To configure Tailwind to work with our components, node modules must be included in the tailwind config:
 
 `content: [
 "./src/**/*.{html,js,svelte,ts}",
-"./node_modules/svaria-toolkit-test/**/*.{html,js,svelte,ts}",
+"./node_modules/your-project-name/**/*.{html,js,svelte,ts}",
 ],`
 
 Now you are ready to import our components into your project!
@@ -35,20 +35,23 @@ This will create a button labeled "example button" with a red background.
 
 You can also style using regular CSS and access the className on the component. See the documentation for each component on our splash page to access any property name you want to access.
 
-## Another benefit of our toolkit is the ARIA background checker tool.
+## Another benefit of our toolkit is the ARIA checker tools.
 
-In order for the background checks to run, you must configure your ENV file to be running in a test environment.
+These are tools used to check the color contrast using [wcag](https://www.w3.org/TR/WCAG20/#contrast-ratiodef) standards and aria labels on appropriate compoents to ensure that components are meeting standards.
 
-<add that specific line of code here>
-To disable the checks, you can set the ENV mode to <not sure>.
+in order for the background checks to run, declare the following environmental variable
+
+`VITE_SVARIA_MODE="debug"`
 
 The ARIA checks will run on all SvARIA components to ensure that as you edit the components, they stay within the parameters of ARIA compliance.
 
-You can also add the checks to any component that is not in our library by adding the ARIA check to use:
+You can also add the checks to any component that is not in our library by adding the ARIA check to your components.
 
-`import {colorContrastCheck, parentColorContrastCheck} from 'svaria-toolkit'
+```
+import {colorContrastCheck, parentColorContrastCheck} from 'svaria-toolkit'
 
-<div use:colorContrastCheck , use:parentColorContrastCheck > </div>`
+<div use:colorContrastCheck use:parentColorContrastCheck > </div>
+```
 
 ## find the team on linkedin
 
