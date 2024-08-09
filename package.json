@@ -1,6 +1,6 @@
 {
-	"name": "svaria",
-	"version": "0.0.1",
+	"name": "svaria-test",
+	"version": "0.0.3",
 	"scripts": {
 		"dev-test": "vite --host & node ./server/server.js",
 		"docker-dev:hot": "docker-compose -f docker-compose-dev-hot.yml up",
@@ -70,6 +70,7 @@
 		"@sveltejs/adapter-node": "^5.2.0",
 		"@sveltejs/adapter-static": "^3.0.2",
 		"@sveltejs/vite-plugin-svelte": "^2.0.0",
+		"cors": "^2.8.5",
 		"dotenv": "^16.4.5",
 		"express": "^4.19.2",
 		"nodemon": "^3.1.4",

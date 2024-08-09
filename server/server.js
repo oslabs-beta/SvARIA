@@ -2,6 +2,7 @@
 import express from 'express';
 // import { handler } from '../build/handler.js';
 import router from './routes/api.js';
+import cors from 'cors';
 
 const app = express();
 const PORT = 3000;
@@ -10,6 +11,7 @@ const PORT = 3000;
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 // app.use(handler);
+app.use(cors());
 
 
 app.use('/', router) ;

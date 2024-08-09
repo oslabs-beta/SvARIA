@@ -1,5 +1,5 @@
 <script>
-	import AccordionGroup from './AccordionGroup.svelte';
+	import AccordionGroup from 'svaria-toolkit';
 	import ExampleSlot from './ExampleSlot.svelte';
 
 	let group = [

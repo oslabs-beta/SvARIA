@@ -51,6 +51,11 @@ button:focus-visible {
     max-width: 90vw;
 }
 
+#GitHubFAQ {
+    overflow: scroll;
+    
+}
+
 .fadeIn {
     animation: fadeIn 300ms ease-in forwards;    
 }

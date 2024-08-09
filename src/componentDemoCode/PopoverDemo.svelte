@@ -1,5 +1,5 @@
 <script>
-    import Popover from '$lib/Popover.svelte';
+    import Popover from 'svaria-toolkit';
 </script>
 
 <Popover
