@@ -1,5 +1,5 @@
 import { test, expect } from '@playwright/experimental-ct-svelte';
-import Button from '../src/lib/Button.svelte';
+import Button from '../src/lib/Button_ts.svelte';
 
 test.describe('Button', () => {
   let button;
