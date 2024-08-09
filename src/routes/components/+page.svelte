@@ -74,7 +74,11 @@
 			label: 'Modal',
 			source: 'https://svelte.dev/repl/67d050ac1ddd41d2be31d5921d29e288?version=4.2.18'
 		},
-		{ docs: NavigationDocs, label: 'Navigation', source: 'https://svelte.dev/repl/' },
+		{
+			docs: NavigationDocs,
+			label: 'Navigation',
+			source: 'https://svelte.dev/repl/88f0fc1e880a4903bb30148c1beb52ba?version=4.2.18'
+		},
 		{
 			docs: PopoverDocs,
 			label: 'Popover',
