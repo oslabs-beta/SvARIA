@@ -42,5 +42,4 @@ test.describe('Button', () => {
     await button.click();
     expect(clicked).toBeFalsy();
   })
-  
 })
