@@ -3,10 +3,10 @@
 	[] have functionality for if the panel cant be collapsed and aria-disabled set to tru
 -->
 
-<script lang='ts'>
+<script lang="ts">
 	import { colorContrastCheck } from './ARIAchecks.js';
-	
-	export let heading: string = 'svARIA accordion component';
+
+	export let heading: string = 'SvARIA accordion component';
 	export let open: boolean = false;
 	export let headingContainerClass: string = 'flex items-center justify-between w-full';
 	export let headingClass: string = 'flex items-center justify-between w-full';
@@ -83,3 +83,4 @@
 {/if}
 
 <!-- ARIA source => https://www.w3.org/WAI/ARIA/apg/patterns/accordion/examples/accordion/#javascriptandcsssourcecode -->
+<!-- https://svelte.dev/repl/8391f5d6f9fb4cafbdc6de9dc24624b6?version=4.2.18 -->
