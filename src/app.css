@@ -69,3 +69,102 @@ button:focus-visible {
     opacity: 1;
    }
 }
+
+.SandboxImage {
+    height: 2em;
+    width: 2em;
+    display: inline;
+    position: relative;
+    bottom: 20px;
+}
+
+#HeaderWithIcons {
+    display: inline;
+}
+
+#toolTip {
+    visibility: hidden;
+    width: 120px;
+    background: black;
+    color: white;
+    text-align: center;
+    border-radius: 5px;
+    padding: 5px;
+    position: absolute;
+    z-index: 1;
+    bottom: 135%;
+    left: -14%;
+    margin-left: -60px;
+    opacity: 0;
+    transition: opacity 0.3s;
+
+}
+
+#clipBoardButton:hover #toolTip{
+    visibility: visible;
+    opacity: 1;
+}
+
+#hero {
+    position: relative;
+}
+
+.quote {
+    position: relative;
+    font-family: 'Poppins';
+    bottom: 98%;
+    font-size: 3em;
+    /* -webkit-text-stroke-color: rgb(250, 248, 248);
+    -webkit-text-stroke-width: 1px; */
+    color: rgb(66, 62, 62);
+    width: 80%;
+    margin:0 auto;
+    line-height: 1.5;
+    font-weight: 1000;
+    /* text-shadow: 3px 3px white; */
+    text-align: center;
+}
+
+.scrim {
+    height: 100%;
+    width: 100vw;
+    background: white;
+    opacity: 80%;
+    top: 2%;
+    position: relative;
+
+}
+
+#heroAnimate {
+    animation: fadeIn 9s;
+    animation-fill-mode: forwards;
+    position: relative;
+    top: -50%;
+}
+#heroCall{
+    color:white; 
+    font-size: .75em; 
+    border:solid black; 
+    border-radius:15px/50%; 
+    padding:10px 15px; 
+    background:#07abdb; 
+    text-shadow: 0px 0px white;
+    -webkit-text-stroke-width: 0px;
+    box-shadow: 5px 5px gray;
+    
+}
+
+#heroCall:hover {
+    transform: scale(5);
+    background:black; 
+}
+
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
+}
