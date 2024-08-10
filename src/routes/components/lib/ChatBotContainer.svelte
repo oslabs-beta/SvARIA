@@ -10,14 +10,19 @@
 		const numWords = answer.split(' ').length;
 		let sizeValue = Math.floor(numWords / 10);
 		sizeValue = Math.min(Math.max(sizeValue, 2), 5);
-		popoverClassValue = `text-xs bg-zinc-100 text-black rounded-lg dark:bg-slate-800 dark:text-white border-orange-700 dark:border-white border-2 -translate-y-full -translate-x-8 p-4 w-fit overflow-y-auto h-${sizeValue}/6`;
-	} else {
+		popoverClassValue = `text-sm bg-zinc-100 text-black rounded-lg dark:bg-slate-800 dark:text-white border-orange-700 dark:border-white border-2 -translate-y-full -translate-x-8 p-4 w-fit overflow-y-auto h-${sizeValue}/6`;
+	 } else {
 		popoverClassValue =
-			'text-sm bg-zinc-100  text-black rounded-lg dark:bg-slate-800 dark:text-white -translate-y-full border-orange-700 dark:border-white border-2 -translate-x-8 p-4 w-fit overflow-y-auto h-fit';
-	}
+			'text-sm bg-zinc-100 text-black rounded-lg dark:bg-slate-800 dark:text-white -translate-y-full border-orange-700 dark:border-white border-2 -translate-x-8 p-4 w-fit overflow-y-auto h-fit';
+		}
 </script>
 
 <div class="fixed bottom-4 right-32 z-50">
+	<!-- These are necessary so that tailwind creates the definitions for these on compilation since the classes are generated dynamically -->
+	<span class='h-5/6'></span>
+	<span class='h-4/6'></span>
+	<span class='h-3/6'></span>
+	<span class='h-2/6'></span>
 	<Popover
 		closeButtonClass="fixed right-6 h-7 w-7 p-0 bg-zinc-200 border-orange-700 dark:bg-zinc-100 text-orange-600 text-lg font-bold"
 		openButtonClass="text-black bg-zinc-100 w-64 border-4 text-[17px] border-orange-700"

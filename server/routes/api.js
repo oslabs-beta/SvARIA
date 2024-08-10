@@ -3,7 +3,7 @@ import controller from '../Controllers/svAriaController.js';
 
 const router = express.Router();
 
-router.post('/user',
+router.post('/',
   controller.addUser,
   (req, res) => res.status(200).json(res.locals.message)
 );
