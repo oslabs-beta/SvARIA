@@ -7,7 +7,6 @@
     import logo from "../splashPageLib/assets/SvAriaLogo.png";
 
     import {openModal} from "../store";
-	import ChatBotPopover from "./components/lib/ChatBotPopover.svelte";
 
     let y;
     $: outerHeight = 0;

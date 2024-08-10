@@ -84,4 +84,5 @@
 		className={submitButtonClass}
 		style={submitButtonStyle}
 	/>
+	<slot name='content'/>
 </form>

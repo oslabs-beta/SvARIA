@@ -26,7 +26,8 @@
             "groupLabelClass (optional): provides the same class for all the labels. Tailwind can be used to adjust styling here.",
             "groupLabelStyle (optional): allows you to use inline styling for for all the labels e.g. style='color:orange'",
             "groupInputClass (optional): provides the same class for the content of all the inputs. Tailwind can be used to adjust styling here.",
-            "groupInputStyle (optional): allows you to use inline styling for the content of all the inputs e.g. style='background-color:purple'"
+            "groupInputStyle (optional): allows you to use inline styling for the content of all the inputs e.g. style='background-color:purple'",
+            'slot (optional): a slot with the name of content is available if if users wish to add another div to their form. To do this they can add a div with: <div slot="content"></div> in the Form component'
     ]
     
     </script>
