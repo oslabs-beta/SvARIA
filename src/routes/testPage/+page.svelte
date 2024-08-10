@@ -4,7 +4,6 @@
 
 	import { json } from '@sveltejs/kit';
 
-	import ChatBotPopover from '../components/lib/ChatBotPopover.svelte'
 	import ChatBot from '../components/lib/ChatBot.svelte';
 	import RadioGroup from '$lib/RadioGroup.svelte';
 	import Checkbox from '$lib/Checkbox.svelte';

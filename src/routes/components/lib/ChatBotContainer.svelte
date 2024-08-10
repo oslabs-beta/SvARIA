@@ -7,7 +7,7 @@
 	let popoverClassValue;
 	$: if (answer != '') {
 		const numWords = answer.split(' ').length;
-		let sizeValue = Math.floor(numWords / 10);
+		let sizeValue = Math.floor(numWords / 8);
 		sizeValue = Math.min(Math.max(sizeValue, 2), 5);
 		let heightValue = sizeValue >= 5 ? 'h-5/6' : 'h-fit';
 

@@ -1,5 +1,7 @@
 // @ts-nocheck 
 import express from 'express';
+// import fs from 'fs';
+
 import router from './routes/api.js';
 import loadModel from "../src/chatbot/chatbot.js"
 import cookieParser from 'cookie-parser';
@@ -33,7 +35,7 @@ app.use('/user', router) ;
 
 // app.get('/', (req, res, next) => {
 //     // res.set('Content-Type', 'text/html'); 
-//     res.set('Content-Type', 'text/html').sendFile('/Users/josh/Documents/Svelte OSP/SvARIA/src/routes/+page.svelte', (err) => {
+//     res.set('Content-Type', 'text/html').readFile(__dirname + '/src/routes/+page.svelte', (err) => {
 //         if(err) {
 //             next(err, 'Get: / Middleware')
 //         }
@@ -42,6 +44,7 @@ app.use('/user', router) ;
 //         }
 //     });
 // });
+
 app.use(express.urlencoded({ extended: true }));
 // app.use(handler);
 app.use(cors());
