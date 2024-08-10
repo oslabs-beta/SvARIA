@@ -1,7 +1,6 @@
 <script>
-	import AccordionDocs from '../components/lib/AccordionDocs.svelte';
-	import { Accordion } from '$lib/index.js';
-	import CatIcon from '../components/CatIcon.svelte';
+	import { Accordion } from 'svaria-toolkit';
+	import CatIcon from './CatIcon.svelte';
 </script>
 
 <Accordion
@@ -20,5 +19,3 @@
 		<CatIcon class="mt-2" />
 	</div>
 </Accordion>
-
-<AccordionDocs />

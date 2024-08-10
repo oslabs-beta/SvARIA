@@ -1,8 +1,8 @@
 <script lang="ts">
 	import { colorContrastCheck, ariaLabelcheck } from './ARIAchecks.js';
-	import type { Routes } from '../types.js'
-	export let heading: string|undefined = undefined;
-	export let routes: Routes[]|undefined = undefined;
+	import type { Routes } from '../types.js';
+	export let heading: string | undefined = undefined;
+	export let routes: Routes[] | undefined = undefined;
 	export let id: string = 'navBar';
 	export let style: string = '';
 	export let headerContainerStyle: string = '';
@@ -47,6 +47,8 @@
 		</ul>
 	{/if}
 </div>
+
+<!-- https://svelte.dev/repl/88f0fc1e880a4903bb30148c1beb52ba?version=4.2.18 -->
 
 <style>
 	:global(.sv-navagation) {
