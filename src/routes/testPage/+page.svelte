@@ -20,8 +20,6 @@
 	import ProgressBar from '$lib/ProgressBar.svelte';
 	import Switch from '$lib/Switch.svelte';
 	import Popover from '$lib/Popover.svelte';
-	import AccordionDemo from '../../splashPageLib/ComponentDemos/AccordionGroupTabs/AccordionGroupDemo.svelte';
-	import RadioGroupDemo from '../../splashPageLib/ComponentDemos/RadioGroupTabs/RadioGroupDemo.svelte';
 	import Tree from '$lib/Tree.svelte';
 	import Docs from '../components/Docs.svelte';
 	import PopoverDocs from '../components/lib/PopoverDocs.svelte';

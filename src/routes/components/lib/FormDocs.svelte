@@ -6,7 +6,7 @@
     let docsProps=[
             "formElements (required): an object that contains the form categories. 'name', 'type' and 'labelValue' are required.", 
             "name (required): the name that the form element will be associated with. This gets passed into the formElements object as a key in the individual element object",
-            "type (required): the input type for the form element e.g. 'text' or 'password'. This gets passed into the formElements object as a key in the individual element object",
+            "type (required): the input type for the form element e.g. 'text' or 'password'. This gets passed into the formElements object as a key in the individual element object. If you set this to 'textarea' it will create a textarea html element, otherwise it will create an input element",
             "labelValue (required): the value that will show up for the form label. This gets passed into the formElements object as a key in the individual element object",
             "labelId (optional): Uniquely identifies an individual label. This gets passed into the formElements object as a key in the individual element object.",
             "labelClass (optional): provides a class for the individual label. This gets passed into the formElements object as a key in the individual element object. Tailwind can be used to adjust styling here",

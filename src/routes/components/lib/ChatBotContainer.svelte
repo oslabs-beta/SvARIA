@@ -1,45 +1,41 @@
-<!-- use this page to test out components with URL "/testPage" -->
-
 <script>
-
-	import Popover from './ChatBotPopover.svelte'
+	//import Popover from './ChatBotPopover.svelte'
 	import ChatBot from './ChatBot.svelte';
+	import Popover from '$lib/Popover.svelte';
 
+	let answer = '';
 
-	let formElements = [
-		{ name: 'question', type: 'text', labelValue: 'Enter question here', inputClass: 'w-full' },
-	];
-
-	let answer = ""
-
-		async function onSubmit (event) {
-		event.preventDefault();
-		const form = event.currentTarget
-		const body = {
-		question: form.question.value
+	let popoverClassValue;
+	$: if (answer != '') {
+		const numWords = answer.split(' ').length;
+		let sizeValue = Math.floor(numWords / 10);
+		sizeValue = Math.min(Math.max(sizeValue, 2), 5);
+		popoverClassValue = `text-xs bg-zinc-100 text-black rounded-lg dark:bg-slate-800 dark:text-white border-orange-700 dark:border-white border-2 -translate-y-full -translate-x-8 p-4 w-fit overflow-y-auto h-${sizeValue}/6`;
+	} else {
+		popoverClassValue =
+			'text-sm bg-zinc-100  text-black rounded-lg dark:bg-slate-800 dark:text-white -translate-y-full border-orange-700 dark:border-white border-2 -translate-x-8 p-4 w-fit overflow-y-auto h-fit';
 	}
-
-	const res = await fetch('/chatbot', {
-		headers: {'Content-Type': 'application/json'},
-		method: 'POST',
-		body: JSON.stringify({question: form.question.value}),
-	})
-
-	// const res = await fetch('http://localhost:3000/chatbot')
-	const json = await res.json()
-	answer = json.response
-	}
-
 </script>
 
-<div class="fixed bottom-4 right-4 z-50">
-	<Popover closeButtonClass='fixed right-6 bg-black text-white' openButtonClass='bg-sky-950 text-white'openButtonContent="Build with SvARIA Bot" openButtonAriaLabel="Build Components with SvARIA Bot" popoverId="chatbot">
-		<div slot='header'>
-			<h3>SvARIA Bot</h3>
+<div class="fixed bottom-4 right-32 z-50">
+	<Popover
+		closeButtonClass="fixed right-6 h-7 w-7 p-0 bg-zinc-200 border-orange-700 dark:bg-zinc-100 text-orange-600 text-lg font-bold"
+		openButtonClass="text-black bg-zinc-100 w-64 border-4 text-[17px] border-orange-700"
+		openButtonContent="Build with SvARIA Bot<img style='width:30px;height:30px;float:left;' src='/src/splashPageLib/assets/SvAriaCat.png'></img>"
+		openButtonAriaLabel="Build Components with SvARIA Bot"
+		popoverId="chatbot"
+		popoverClass={popoverClassValue}
+	>
+		<div slot="header">
+			<img
+				style="width:40px;height:40px;float:left;"
+				src="/src/splashPageLib/assets/SvAriaCat.png"
+				alt="svaria cat"
+			/>
+			<h1 class="font-bold text-2xl">SvARIA Bot</h1>
 		</div>
-		<div slot='content'>
-			<ChatBot/>
+		<div slot="content" class="w-fit mt-3 mb-2">
+			<ChatBot bind:answer />
 		</div>
 	</Popover>
 </div>
-
