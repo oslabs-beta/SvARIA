@@ -2,6 +2,7 @@
 	import Form from '$lib/Form.svelte';
 	import { Circle } from 'svelte-loading-spinners';
 
+
 	export let answer = '';
 	let navigating = false;
 

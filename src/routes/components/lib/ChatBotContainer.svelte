@@ -1,6 +1,8 @@
 <script>
 	import ChatBot from './ChatBot.svelte';
 	import Popover from '$lib/Popover.svelte';
+	import svariacat from './assets/SvAriaCat.png'
+
 
 	let answer = '';
 
@@ -27,7 +29,7 @@
 	<Popover
 		closeButtonClass="fixed right-6 h-7 w-7 p-0 bg-zinc-200 border-orange-700 dark:bg-zinc-100 text-orange-600 text-lg font-bold"
 		openButtonClass="text-black bg-zinc-100 w-64 border-4 text-[17px] border-orange-700"
-		openButtonContent="Build with SvARIA Bot<img style='width:30px;height:30px;float:left;' src='/src/splashPageLib/assets/SvAriaCat.png'></img>"
+		openButtonContent="Build with SvARIA Bot<img style='width:30px;height:30px;float:left;' src={svariacat}></img>"
 		openButtonAriaLabel="Build Components with SvARIA Bot"
 		popoverId="chatbot"
 		popoverClass={popoverClassValue}
@@ -35,7 +37,7 @@
 		<div slot="header">
 			<img
 				style="width:40px;height:40px;float:left;"
-				src="/src/splashPageLib/assets/SvAriaCat.png"
+				src={svariacat}
 				alt="svaria cat"
 			/>
 			<h1 class="font-bold text-2xl">SvARIA Bot</h1>
