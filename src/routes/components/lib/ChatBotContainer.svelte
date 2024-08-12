@@ -1,8 +1,7 @@
 <script>
 	import ChatBot from './ChatBot.svelte';
 	import Popover from '$lib/Popover.svelte';
-	import svariacat from './assets/SvAriaCat.png'
-
+	import svariacat from './assets/SvAriaCat.png';
 
 	let answer = '';
 
@@ -35,14 +34,10 @@
 		popoverClass={popoverClassValue}
 	>
 		<div slot="header">
-			<img
-				style="width:40px;height:40px;float:left;"
-				src={svariacat}
-				alt="svaria cat"
-			/>
+			<img style="width:40px;height:40px;float:left;" src={svariacat} alt="svaria cat" />
 			<h1 class="font-bold text-2xl">SvARIA Bot</h1>
 		</div>
-		<div slot="content" class="w-fit mt-3 mb-2">
+		<div slot="content" class="w-84 mt-3 mb-2">
 			<ChatBot bind:answer />
 		</div>
 	</Popover>

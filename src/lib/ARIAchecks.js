@@ -19,7 +19,7 @@ function getColors(curNode) {
 	let parentNode = curNode.parentNode;
 	while (
 		backgroundColor == 'rgba(0, 0, 0, 0)' &&
-		iterations < 3 &&
+		iterations < 6 &&
 		parentNode.nodeName !== 'HTML'
 	) {
 		const compStylesParent = window.getComputedStyle(parentNode);
@@ -35,7 +35,7 @@ function getColors(curNode) {
 	let parentBackgroundColor = compStylesParent.getPropertyValue('background-color');
 	while (
 		parentBackgroundColor == 'rgba(0, 0, 0, 0)' &&
-		iterations < 3 &&
+		iterations < 6 &&
 		parentNode.nodeName !== 'HTML'
 	) {
 		const compStylesParent = window.getComputedStyle(parentNode);
