@@ -277,42 +277,14 @@
 		</aside>
 	
 		<div class="ml-6 mr-96 p-1 flex-1 ">
-			<h1 id='HeaderWithIcons' class="text-4xl ml-6 sm:text-5xl md:text-6xl max-w-[1000px] mx-auto w-full font-semibold text-center">
+			<h1 id='HeaderWithIcons' class="text-4xl ml-6 sm:text-5xl md:text-6xl max-w-[1000px] mx-auto w-full font-semibold text-center relative z-10">
 				<img class='SandboxImage' alt='Sandbox Icon' src='src/IconAssets/sandbox_Flaticon.png'/>
 				SvARIA Playground
 				<img class='SandboxImage' alt='Sandbox Icon' src='src/IconAssets/sandbox_Flaticon.png'/>
 			</h1>
-			<br>
-			<br>
-			<Sandbox source={component.source} />
+						
+			<Sandbox source={component.source} label={component.label}/>
 				<svelte:component this={component.docs} />
 		</div>
 	</div>
 </SectionWrapper>
-
-<!-- <style>
-    .lib-display {
-        align-items: center;
-        width: 50%;
-        height: 50%;
-    }
-</style>
-
-<h3>Components</h3>
-<div class='lib-display'>
-    <h3>Button Component</h3>
-    <div class='component'>
-    </div>
-        <ButtonTab/>
-</div>
-
-</SectionWrapper>
-
-
-
-<div class='lib-display'>
-    <h3>Modal Component</h3>
-    <div class='component'>
-    </div>
-        <ModalTab/>
-</div> -->
