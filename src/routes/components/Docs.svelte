@@ -6,7 +6,7 @@
 <div style='margin-bottom: 15%'>
     <h1 style="font-weight: bold">SvARIA {componentName}</h1>
     <h3>All SvARIA components must be installed through the NPM package by running the command below in node.js:</h3><br>
-    <i>npm install SvARIA-toolkit</i>
+    <i>npm install svaria-toolkit</i>
     <br><br>
     <h3>Tailwind CSS styling is enabled by default, if you have it installed on your project. You can override
         this with your own class names, or by using the style property for inline styling. For more
