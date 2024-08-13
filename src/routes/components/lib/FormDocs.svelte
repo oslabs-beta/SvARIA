@@ -6,7 +6,7 @@
     let docsProps=[
             "formElements (required): an object that contains the form categories. 'name', 'type' and 'labelValue' are required.", 
             "name (required): the name that the form element will be associated with. This gets passed into the formElements object as a key in the individual element object",
-            "type (required): the input type for the form element e.g. 'text' or 'password'. This gets passed into the formElements object as a key in the individual element object",
+            "type (required): the input type for the form element e.g. 'text' or 'password'. This gets passed into the formElements object as a key in the individual element object. If you set this to 'textarea' it will create a textarea html element, otherwise it will create an input element",
             "labelValue (required): the value that will show up for the form label. This gets passed into the formElements object as a key in the individual element object",
             "labelId (optional): Uniquely identifies an individual label. This gets passed into the formElements object as a key in the individual element object.",
             "labelClass (optional): provides a class for the individual label. This gets passed into the formElements object as a key in the individual element object. Tailwind can be used to adjust styling here",
@@ -26,7 +26,8 @@
             "groupLabelClass (optional): provides the same class for all the labels. Tailwind can be used to adjust styling here.",
             "groupLabelStyle (optional): allows you to use inline styling for for all the labels e.g. style='color:orange'",
             "groupInputClass (optional): provides the same class for the content of all the inputs. Tailwind can be used to adjust styling here.",
-            "groupInputStyle (optional): allows you to use inline styling for the content of all the inputs e.g. style='background-color:purple'"
+            "groupInputStyle (optional): allows you to use inline styling for the content of all the inputs e.g. style='background-color:purple'",
+            'slot (optional): a slot with the name of content is available if if users wish to add another div to their form. To do this they can add a div with: <div slot="content"></div> in the Form component'
     ]
     
     </script>

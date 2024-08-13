@@ -13,6 +13,7 @@
 	import logo from '../../splashPageLib/assets/SvAriaLogo.png';
 	import Sandbox from '../../splashPageLib/Sandbox.svelte';
 	import type { CompObj } from './../../types.js';
+	import sandboxicon from './lib/assets/sandbox_Flaticon.png'
 	// ======================> Component Imports < ========================
 	import ButtonDocs from './lib/ButtonDocs.svelte';
 	import AccordionDocs from './lib/AccordionDocs.svelte';
@@ -192,7 +193,7 @@
 			</button>
 		</div>
 	</div>
-	
+
 	<div
 		class="fixed top-0 left-0 w-screen h-screen border-b bg-white z-50 flex flex-col gap-8 p-5 px-8 md:hidden"
 	>
@@ -257,35 +258,37 @@
 
 <SectionWrapper id="components">
 	<div
-	class="flex flex-col gap-5 sm:gap-10 md:gap-15 flex-1 items-center justify-center pb-10 md:pb-5"
-	>
-	</div>
+		class="flex flex-col gap-5 sm:gap-10 md:gap-15 flex-1 items-center justify-center pb-10 md:pb-5"
+	></div>
 	<div class="flex">
 		<aside id="default-sidebar" class="flex-shrink-0 w-64 h-screen overflow-y-auto">
 			<ul class="py-4 font-medium">
 				{#each componentsArray as comp}
-				<li>
-					<button
-					class="block w-full px-4 py-2 text-left text-2xl hover:bg-gray-300"
-					on:click={() => handleClick(comp)}
-					>
-					{comp.label}
-					</button>
-				</li>
+					<li>
+						<button
+							class="block w-full px-4 py-2 text-left text-2xl hover:bg-gray-300"
+							on:click={() => handleClick(comp)}
+						>
+							{comp.label}
+						</button>
+					</li>
 				{/each}
 			</ul>
 		</aside>
-	
-		<div class="ml-6 mr-96 p-1 flex-1 ">
-			<h1 id='HeaderWithIcons' class="text-4xl ml-6 sm:text-5xl md:text-6xl max-w-[1000px] mx-auto w-full font-semibold text-center">
-				<img class='SandboxImage' alt='Sandbox Icon' src='src/IconAssets/sandbox_Flaticon.png'/>
+
+		<div class="ml-6 mr-96 p-1 flex-1">
+			<h1
+				id="HeaderWithIcons"
+				class="text-4xl ml-6 sm:text-5xl md:text-6xl max-w-[1000px] mx-auto w-full font-semibold text-center"
+			>
+				<img class="SandboxImage" alt="Sandbox Icon" src={sandboxicon} />
 				SvARIA Playground
-				<img class='SandboxImage' alt='Sandbox Icon' src='src/IconAssets/sandbox_Flaticon.png'/>
+				<img class="SandboxImage" alt="Sandbox Icon" src={sandboxicon} />
 			</h1>
-			<br>
-			<br>
+			<br />
+			<br />
 			<Sandbox source={component.source} />
-				<svelte:component this={component.docs} />
+			<svelte:component this={component.docs} />
 		</div>
 	</div>
 </SectionWrapper>

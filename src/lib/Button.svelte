@@ -18,5 +18,5 @@
 	class={className}
 	on:click
 	{style}
-	{type}>{content}</button
+	{type}>{@html content}</button
 >
