@@ -16,8 +16,8 @@ const config = {
     port: 21060,
     database: "defaultdb",
     ssl: {
-        rejectUnauthorized: true,
-        ca: `${certificate}`,
+        rejectUnauthorized: false,
+        // ca: `${certificate}`,
     },
 };
 const db = new pg.Client(config);

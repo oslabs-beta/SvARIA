@@ -1,14 +1,13 @@
-<script lang='ts'>
-    export let componentName: string|undefined;
-    export let propsDetails: string[] = ["Example: this is an example"];
-async function handleClick () {
-    try {
-        await navigator.clipboard.writeText('npm install SvARIA-toolkit');
-    }
-    catch (e) {
-        console.error('Error copying to clipboard')
-    }
-}
+<script lang="ts">
+	export let componentName: string | undefined;
+	export let propsDetails: string[] = ['Example: this is an example'];
+	async function handleClick() {
+		try {
+			await navigator.clipboard.writeText('npm install svaria-toolkit');
+		} catch (e) {
+			console.error('Error copying to clipboard');
+		}
+	}
 </script>
 
 <div style='margin-bottom: 15% ; margin-top:2%; font-size: 1.25em; line-height:1.6'>
@@ -25,34 +24,45 @@ async function handleClick () {
             Copy to clipboard
         </span>
 
-        <svg fill="none" viewBox="0 0 25 25" stroke="currentColor" stroke-width="1.5" class="h-5 w-5">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2">
-            </path>
-        </svg>
-    </button>
-</div>
-    <br>
-    <h3>Tailwind CSS styling is enabled by default, if you have it installed on your project. You can override
-        this with your own class names, or by using the style property for inline styling. For more
-        information on using Tailwind Classes, check out the
-        <a href='https://tailwindcss.com/docs/installation' target='_blank' title='Visit tailwindcss.com for installation & use info'>Tailwind CSS website</a>.
-    </h3>
-    <br>
-    <h2 style="font-weight: bold; margin-top:20px; margin-bottom: 20px">Properties</h2>
-    <h3>Below you'll find the properties available on the {componentName} component. Some of these are required
-        for the component to appear or function, while others may have a default value that does not need to be
-        changed at all. Feel free to experiment with the props in the sandbox above if you want to see how your
-        changes will affect your implementation.
-    </h3>
-    <br>
-    <ul>
-        {#each propsDetails as prop}
-        <br><li style={"font-weight: bold"}>{prop}</li>
-        {/each}
-    </ul>
-    <br>
-    {#if $$slots.details}
-        <h2 style="font-weight: bold">Details</h2>
-        <slot name='details'></slot>
-    {/if}
+			<svg fill="none" viewBox="0 0 25 25" stroke="currentColor" stroke-width="1.5" class="h-5 w-5">
+				<path
+					stroke-linecap="round"
+					stroke-linejoin="round"
+					d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"
+				>
+				</path>
+			</svg>
+		</button>
+	</div>
+	<br />
+	<h3>
+		Tailwind CSS styling is enabled by default, if you have it installed on your project. You can
+		override this with your own class names, or by using the style property for inline styling. For
+		more information on using Tailwind Classes, check out the
+		<a
+			href="https://tailwindcss.com/docs/installation"
+			target="_blank"
+			title="Visit tailwindcss.com for installation & use info">Tailwind CSS website</a
+		>.
+	</h3>
+	<br />
+	<h2 style="font-weight: bold; margin-top:20px; margin-bottom: 20px">Properties</h2>
+	<h3>
+		Below you'll find the properties available on the {componentName} component. Some of these are required
+		for the component to appear or function, while others may have a default value that does not need
+		to be changed at all. Feel free to experiment with the props in the sandbox above if you want to
+		see how your changes will affect your implementation.
+	</h3>
+	<br />
+	<ul>
+		{#each propsDetails as prop}
+			<br />
+			<li style={'font-weight: bold'}>{prop}</li>
+		{/each}
+	</ul>
+	<br />
+	{#if $$slots.details}
+		<h2 style="font-weight: bold">Details</h2>
+		<slot name="details"></slot>
+	{/if}
 </div>
