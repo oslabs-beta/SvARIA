@@ -1,6 +1,6 @@
 <script>
 
-import SpinButton from 'svaria-toolkit';
+import { SpinButton } from 'svaria-toolkit';
 
 let values = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday']
 

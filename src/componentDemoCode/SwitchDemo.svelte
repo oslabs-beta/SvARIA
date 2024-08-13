@@ -1,5 +1,5 @@
 <script>
-    import Switch from 'svaria-toolkit'
+    import { Switch}  from 'svaria-toolkit'
 </script>
 
 <Switch

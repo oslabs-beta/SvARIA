@@ -1,5 +1,5 @@
 <script>
-	import Checkbox from 'svaria-toolkit';
+	import { Checkbox } from 'svaria-toolkit';
 
 	let options = [
 		{ label: 'Subscribe for updates', labelClass: 'text-green-600 text-md' },

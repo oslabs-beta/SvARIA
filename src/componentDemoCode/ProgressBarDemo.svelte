@@ -1,5 +1,5 @@
 <script>
-	import ProgressBar from 'svaria-toolkit';
+	import { ProgressBar } from 'svaria-toolkit';
 
 	let currentProgress = 50; // Example: set the current progress
 

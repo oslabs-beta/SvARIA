@@ -1,5 +1,5 @@
 <script>
-	import Nav from 'svaria-toolkit';
+	import { Nav } from 'svaria-toolkit';
     import { colorContrastCheck } from 'svaria-toolkit'
 
 

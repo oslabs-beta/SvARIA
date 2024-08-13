@@ -1,6 +1,4 @@
-import fs from 'fs';
 import pg from 'pg';
-import url from 'url';
 import dotenv from 'dotenv';
 
 dotenv.config();
@@ -8,18 +6,31 @@ const password = process.env.Database_Password
 const database_url = process.env.Database_URL
 const certificate = process.env.Database_Certificate
 const user = process.env.Database_User
+const database_name = process.env.Database_Name
+const database_port = process.env.Database_Port
 
+//commented out aiven db config
+// const config = {
+//     user: `${user}`,
+//     password: `${password}`,
+//     host: `${database_url}`,
+//     port: 21060,
+//     database: "defaultdb",
+//     ssl: {
+//         rejectUnauthorized: true,
+//         ca: `${certificate}`,
+//     },
+// };
+
+//use environmental variables for port and database name for RDS
 const config = {
     user: `${user}`,
     password: `${password}`,
     host: `${database_url}`,
-    port: 21060,
-    database: "defaultdb",
-    ssl: {
-        rejectUnauthorized: true,
-        ca: `${certificate}`,
-    },
+    port: `${database_port}`,
+    database: `${database_name}`,
 };
+
 const db = new pg.Client(config);
 
 db.connect(function (err) {
