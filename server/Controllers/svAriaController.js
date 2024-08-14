@@ -7,7 +7,7 @@ const svAriaController = {};
 svAriaController.addUser = (req, res, next) => {
     console.log('adding some things')
     const {first_Name, last_Name, email_} = req.body;
-    console.log('first name here' + first_Name)
+    console.log('first name here: ' + first_Name)
     const queryString = {
         text: 'INSERT INTO users (firstName, lastName, email) VALUES ($1, $2, $3)',
         values: [first_Name, last_Name, email_]

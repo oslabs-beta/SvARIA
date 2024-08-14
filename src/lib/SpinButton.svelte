@@ -5,7 +5,7 @@
 	export let value: number = 0;
 	export let min: number = 0;
 	export let max: number = values.length - 1;
-	export let className: string | undefined = '';
+	export let className: string | undefined = 'flex flex-col items-center';
 	export let style: string | undefined = '';
 	export let id: string | undefined = '';
 	export let increaseButtonContent: string | undefined = '+';

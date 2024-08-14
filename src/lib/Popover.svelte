@@ -1,7 +1,7 @@
-<script lang='ts'>
-    import { ariaLabelcheck, colorContrastCheck } from "./ARIAchecks.js";
-    import Button from "./Button.svelte";
-    import { onMount } from 'svelte';
+<script lang="ts">
+	import { ariaLabelcheck, colorContrastCheck } from './ARIAchecks.js';
+	import Button from './Button.svelte';
+	import { onMount } from 'svelte';
 
 	export let popoverId: string = '';
 	export let popoverClass: string =
