@@ -9,27 +9,18 @@ const user = process.env.Database_User
 const database_name = process.env.Database_Name
 const database_port = process.env.Database_Port
 
-//commented out aiven db config
-// const config = {
-//     user: `${user}`,
-//     password: `${password}`,
-//     host: `${database_url}`,
-//     port: 21060,
-//     database: "defaultdb",
-//     ssl: {
-//         rejectUnauthorized: true,
-//         ca: `${certificate}`,
-//     },
-// };
-
-//use environmental variables for port and database name for RDS
 const config = {
     user: `${user}`,
     password: `${password}`,
     host: `${database_url}`,
-    port: `${database_port}`,
-    database: `${database_name}`,
+    port: `${[database_port]}`,
+    database: "defaultdb",
+    ssl: {
+        rejectUnauthorized: true,
+        ca: `${certificate}`,
+    },
 };
+
 
 const db = new pg.Client(config);
 
