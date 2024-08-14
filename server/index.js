@@ -6,7 +6,6 @@ const password = process.env.Database_Password
 const database_url = process.env.Database_URL
 const certificate = process.env.Database_Certificate
 const user = process.env.Database_User
-const database_name = process.env.Database_Name
 const database_port = process.env.Database_Port
 
 const config = {
@@ -16,8 +15,8 @@ const config = {
     port: `${[database_port]}`,
     database: "defaultdb",
     ssl: {
-        rejectUnauthorized: true,
-        ca: `${certificate}`,
+        rejectUnauthorized: false,
+        // ca: `${certificate}`,
     },
 };
 
