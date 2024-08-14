@@ -12,7 +12,7 @@ const config = {
     user: `${user}`,
     password: `${password}`,
     host: `${database_url}`,
-    port: `${[database_port]}`,
+    port: `${database_port}`,
     database: "defaultdb",
     ssl: {
         rejectUnauthorized: false,
