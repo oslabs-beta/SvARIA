@@ -12,7 +12,7 @@
 
 <div style='margin-bottom: 15% ; margin-top:2%; font-size: 1.25em; line-height:1.6'>
     <h1 style="font-weight: bold; font-size: 1.5em">SvARIA {componentName} Docs</h1>
-    <h3 style="margin-top: 20px">All SvARIA components must be installed through the NPM package by running the command below in <a href="https://nodejs.org/en" target="_blank" title="Visit Nodejs.org for installation info">Node.js</a>:</h3><br>
+    <h3 style="margin-top: 20px">All SvARIA components must be installed through the NPM package by running the command below in <a href="https://nodejs.org/en" target="_blank" title="Visit Nodejs.org for installation info" class="hover:text-indigo-400 underline">Node.js</a>:</h3><br>
     <div class="pt-4 rounded-lg sm:rounded-xl [[data-dialog]_&amp;]:rounded-md leading-[21px] relative z-10 flex w-3/4 max-h-[inherit] text-m text-black dark:text-white border border-black/[15%] ml-auto mr-auto dark:border-gray-650 bg-black dark:bg-gray-850"><code class="w-full grid h-9"><div class="sm:!pl-8 [[data-dialog]_&amp;]:!pl-4 px-4 pr-14 sm:pl-[26px] block dark:hidden"><span class="" style="color: rgb(121, 94, 38);">npm</span><span class="" style="color: rgb(0, 0, 0);"> </span><span class="" style="color: rgb(163, 21, 21);">install</span><span class="" style="color: rgb(0, 0, 0);"> </span><span class="" style="color: rgb(163, 21, 21);">svaria-toolkit</span>
     </div><div class="sm:!pl-8 [[data-dialog]_&amp;]:!pl-4 px-4 pr-14 sm:pl-[26px] hidden dark:block"><span class="" style="color: rgb(220, 220, 170);">npm </span><span class="" style="color: rgb(212, 212, 212);"> </span><span class="" style="color: rgb(206, 145, 120);">install </span><span class="" style="color: rgb(212, 212, 212);"> </span><span class="" style="color: rgb(206, 145, 120);">svaria-toolkit</span>
     </div>
@@ -41,6 +41,7 @@
 		more information on using Tailwind Classes, check out the
 		<a
 			href="https://tailwindcss.com/docs/installation"
+			class="hover:text-indigo-400 underline"
 			target="_blank"
 			title="Visit tailwindcss.com for installation & use info">Tailwind CSS website</a
 		>.

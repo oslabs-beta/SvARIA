@@ -27,11 +27,12 @@ components used that we might need to make:
 		{
 			href: 'https://github.com/oslabs-beta/SvARIA',
 			name: 'GitHub',
-			linkClass: 'duration-200 hover:text-indigo-400 cursor-pointer'
+			linkClass: 'duration-200 hover:text-indigo-400 cursor-pointer',
+			target:"_blank"
 		},
 		{
 			href: '/#GitHubFAQ',
-			name: 'FAQ/News',
+			name: 'News',
 			linkClass: 'duration-200 hover:text-indigo-400 cursor-pointer'
 		}
 	];

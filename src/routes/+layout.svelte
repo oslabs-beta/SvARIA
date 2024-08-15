@@ -79,7 +79,7 @@
 				class="border-none outline-none p-2 group duration-200 cursor-pointer text-left"
 			>
 				<p class="duration-200 group-hover:pl-2 poppins text-3xl font-semibold">
-					FAQ/News <i class="fa-solid fa-chevron-right text-xl pl-4" />
+					News <i class="fa-solid fa-chevron-right text-xl pl-4" />
 				</p>
 			</button>
 		</div>
