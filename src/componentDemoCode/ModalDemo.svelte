@@ -1,6 +1,6 @@
 <script>
-	import Modal from 'svaria-toolkit';
-	import Button from 'svaria-toolkit';
+	import { Modal } from 'svaria-toolkit';
+	import { Button } from 'svaria-toolkit';
 	import { colorContrastCheck } from 'svaria-toolkit';
 
 	let showModal = false;

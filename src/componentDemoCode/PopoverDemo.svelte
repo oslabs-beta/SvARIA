@@ -1,5 +1,5 @@
 <script>
-    import Popover from 'svaria-toolkit';
+    import { Popover } from 'svaria-toolkit';
 </script>
 
 <Popover

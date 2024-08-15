@@ -3,8 +3,8 @@
 A comprehensive component library built from the ground-up for Svelte offering plug-and-play ARIA-compliant components and features to help your project meet and exceed accessibility standards while streamlining the design process.
 
 ## To install SvARIA in your project, run:
-
-`npm install svaria-toolkit`
+##
+        `npm install svaria-toolkit`
 
 SvARIA has default components styled with Tailwind. To use our default styles, you must install Tailwind into your project. To configure Tailwind to work with our components, node modules must be included in the tailwind config:
 
@@ -35,9 +35,9 @@ This will create a button labeled "example button" with a red background.
 
 You can also style using regular CSS and access the className on the component. See the documentation for each component on our splash page to access any property name you want to access.
 
-## Another benefit of our toolkit is the ARIA checker tools.
+## Another benefit of our toolkit is the ARIA checker tool.
 
-These are tools used to check the color contrast using [wcag](https://www.w3.org/TR/WCAG20/#contrast-ratiodef) standards and aria labels on appropriate compoents to ensure that components are meeting standards.
+This tool is used to check the color contrast using [wcag](https://www.w3.org/TR/WCAG20/#contrast-ratiodef) standards and aria labels on appropriate compoents to ensure that components are meeting standards.
 
 in order for the background checks to run, declare the following environmental variable
 
