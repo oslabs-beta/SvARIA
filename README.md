@@ -3,8 +3,8 @@
 A comprehensive component library built from the ground-up for Svelte offering plug-and-play ARIA-compliant components and features to help your project meet and exceed accessibility standards while streamlining the design process.
 
 ## To install SvARIA in your project, run:
-
-`npm install svaria-toolkit`
+##
+        `npm install svaria-toolkit`
 
 SvARIA has default components styled with Tailwind. To use our default styles, you must install Tailwind into your project. To configure Tailwind to work with our components, node modules must be included in the tailwind config:
 
