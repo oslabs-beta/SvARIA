@@ -31,13 +31,14 @@
 			Visit the <a href="/components">
 				<img
 					src={PlaygroundLabel}
+					id='playgroundLabel'
 					title="Visit SvAria Playground"
 					alt="SvARIA Playground Logo"
-					style="width:15.25em; height: 1.5em; display:inline-block"
+					style="width:15.25em; height: 1.5em;margin-top: -15px; display:inline-block; padding-right: 4px"
 				/></a
 			> for customized component demos in the sandbox, to obtain/share code, or to read the docs.
 		</span>
-		<h5 class="text-2xl sm:text-3xl md:text-4xl max-w-[1000px] mx-auto w-full text-center">
+		<h5 class="text-2xl sm:text-3xl md:text-4xl max-w-[1000px] mx-auto w-full text-center ">
 			Installation
 			<p
 				class="text-xl sm:text-2xl md:text-3xl max-w-[1000px] mx-auto w-full italic font-light text-center"
@@ -46,16 +47,19 @@
 				First, make sure you have
 				<a
 					href="https://svelte.dev/docs/introduction"
+					class="hover:text-indigo-400 underline"
 					target="_blank"
 					title="Visit Svelte.dev for installation info">Svelte</a
 				>,
 				<a
 					href="https://nodejs.org/en"
+					class="hover:text-indigo-400 underline"
 					target="_blank"
 					title="Visit Nodejs.org for installation info">Node</a
 				>, and
 				<a
 					href="https://tailwindcss.com/docs/installation"
+					class="hover:text-indigo-400 underline"
 					target="_blank"
 					title="Visit tailwindcss.com for installation info">Tailwind CSS (optional)</a
 				>

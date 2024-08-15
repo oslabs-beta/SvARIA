@@ -45,7 +45,9 @@
 		const first_Name = form.firstName.value.trim();
 		const last_Name = form.lastName.value.trim();
 		const email_ = form.email.value.trim();
-
+		form.firstName.value='';
+		form.lastName.value='';
+		form.email.value='';
 		try {
 			const response = await fetch('/user', {
 				method: 'POST',
@@ -57,6 +59,7 @@
 				})
 			});
 			if (response.ok) {
+				alert('Submission Successful!');
 				const result = await response.json();
 				console.log('success:', result);
 			} else {
@@ -73,32 +76,14 @@
 		class=" -mt-[50px] flex flex-col gap-5 sm:gap-10 md:gap-15 flex-1 items-center justify-center pb-10 md:pb-14"
 	>
 		<div class="flex flex-col gap-2">
-			<!-- <h8 class="text-4xl sm:text-5xl md:text-6xl max-w-[1000px] mx-auto w-full font-semibold text-center">
-                GitHub/FAQ
-            </h8>
-        </div>
-            <h9 class="text-2xl sm:text-3xl md:text-4xl max-w-[1000px] mx-auto w-full  text-center">
-                Check out the repository
-                <p class="text-xl sm:text-2xl md:text-3xl max-w-[1000px] mx-auto w-full italic font-light text-center">
-                    <br>
-                   Have suggestions for new components or fixes for existing ones? <br>
-                   Need to report a pesky bug? 
-                   <br>
-                   Need to crowd source some additional info? 
-                   <br>
-                   Visit the SvARIA GitHub
-                   <br><br>
-                   *GitHub Link*
-                </p>
-            </h9>   
-            <br><br> -->
+			
 			<h10
 				class="text-4xl sm:text-5xl md:text-6xl max-w-[1000px] mx-auto w-full font-semibold text-center"
 			>
 				<br />
 				<br />
 				<br />
-				FAQ/News
+				News
 				<br />
 				<div>
 					<p
@@ -113,15 +98,19 @@
 						on:submit={formSubmit}
 					/>
 				</div>
-				<p
-					class="text-xl sm:text-2xl md:text-3xl max-w-[1000px] mx-auto w-full italic font-light text-center"
-				>
-					<br />
-					Medium Article
-					<br />
-					Latest Press Release <br />
-					FastCompany Article
-				</p>
+				<br>
+				<!-- <div
+					class="text-xl sm:text-2xl flex justify-around md:text-3xl max-w-[2000px] mr-0 italic font-light text-center" style='width:1000px'>
+					<p class='mr-1'>
+						Medium Article
+					</p>
+					<p class='mr-1'>
+						Latest Press Release 
+					</p>
+					<p class='mr-1'>
+						FastCompany Article
+					</p>
+				</div> -->
 			</h10>
 			<br />
 			<br />

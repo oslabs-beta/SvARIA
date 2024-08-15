@@ -19,16 +19,18 @@
     <a href='#WhySvARIA'><img src={A11yImage} alt='A11y Accessibility'/></a>
     <div id='heroAnimate'>
         <div class='scrim'></div>
-        <p class='quote'>
+        <div class='quote'>
             “98% of U.S.-based webpages are not accessible to the disability community from a legal perspective…”
         <br>
         <span style='font-style: italic; font-size: .5em '>
             - 2020 Web Accessibility Annual Report compiled by the accessiBe initiative
         </span>
-        <a id='heroCall' href='#WhySvARIA'>
-            Learn how SvARIA can help
-        </a>
-        </p>
+        <div>
+            <a id='heroCall' href='#WhySvARIA'>
+                Learn how SvARIA can help
+            </a>
+        </div>
+        </div>
     </div>
              
 </SectionWrapper>

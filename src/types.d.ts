@@ -27,6 +27,7 @@ export interface CustomDivAttributes extends HTMLAttributes<HTMLDivElement> {
 export type Routes = {
     href: string;
     name: string;
+    target?:string;
     linkStyle?: string;
     linkClass?: string;
     onClick?: MouseEventHandler<HTMLAnchorElement> | undefined;
