@@ -1,0 +1,224 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+    scroll-behavior: smooth;
+}
+
+* {
+    font-family: 'Roboto', sans-serif;
+}
+
+h1, h2, h3, .poppins {
+    font-family: 'Poppins', sans-serif;
+}
+
+span {
+    font-family: inherit;
+    font-weight: inherit;
+}
+
+.bgGrid {
+   background-size: 40px 40px;
+   background-image: linear-gradient(to right, grey 1px, transparent 1px), linear-gradient(to bottom, grey 1px, transparent 1px) 
+}
+
+button,
+.button {
+    border-radius: 8px;
+    border: 1px solid transparent;
+    padding: 0.6em 1.2em;
+    font-size: 1em;
+    font-weight: 500;
+    font-family: inherit;
+    background-color: white;
+    transition: boarder-coler 0.2s;
+}
+
+button:hover {
+    border-color: #646cff;  
+}
+
+button:focus,
+button:focus-visible {
+    outline: 4px auto -webkit-focus-ring-color;
+}
+
+#hero {
+    height: 50rem;
+    min-width: 250px;
+    max-width: 90vw;
+}
+
+#GitHubFAQ {
+    overflow: scroll;
+    
+}
+
+.fadeIn {
+    animation: fadeIn 300ms ease-in forwards;    
+}
+
+@keyframes fadeIn {
+   from {
+    opacity: 0;
+   } 
+
+   to {
+    opacity: 1;
+   }
+}
+
+.SandboxImage {
+    height: 2em;
+    width: 2em;
+    display: inline;
+    position: relative;
+    bottom: 20px;
+}
+
+#HeaderWithIcons {
+    display: inline;
+}
+
+#toolTip {
+    visibility: hidden;
+    width: 120px;
+    background: black;
+    color: white;
+    text-align: center;
+    border-radius: 5px;
+    padding: 5px;
+    position: absolute;
+    z-index: 1;
+    bottom: 135%;
+    left: -14%;
+    margin-left: -60px;
+    opacity: 0;
+    transition: opacity 0.3s;
+
+}
+
+#clipBoardButton:hover #toolTip{
+    visibility: visible;
+    opacity: 1;
+}
+
+#hero {
+    position: relative;
+}
+
+.quote {
+    position: relative;
+    font-family: 'Poppins';
+    bottom: 98%;
+    font-size: 3em;
+    color: rgb(66, 62, 62);
+    width: 80%;
+    margin:0 auto;
+    line-height: 1.5;
+    font-weight: 1000;
+    text-align: center;
+}
+
+.scrim {
+    height: 100%;
+    width: 100vw;
+    background: white;
+    opacity: 90%;
+    top: 2%;
+    position: relative;
+
+}
+
+#heroAnimate {
+    animation: fadeIn 9s;
+    animation-fill-mode: forwards;
+    position: relative;
+    top: -50%;
+}
+
+#heroCall {
+    color:white; 
+    font-size: .75em; 
+    border:solid black; 
+    border-radius:15px/50%; 
+    padding:10px 15px; 
+    background:#07abdb; 
+    text-shadow: 0px 0px white;
+    -webkit-text-stroke-width: 0px;
+    box-shadow: 5px 5px gray;
+}
+
+#heroCall:hover {
+    transform: scale(5);
+    background:black; 
+}
+#svariabot {
+    bottom: 2%;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    15% {
+        opacity:0;
+    }
+    50% {
+        opacity: 1;
+    }
+}
+
+@media (max-width:920px){
+    #socials{
+       flex-direction: column; 
+    }
+    #heroAnimate{
+        top:0;
+    }
+    .quote{
+        font-size:1em;
+    }
+    .scrim{
+        visibility: hidden;
+    }
+   
+}
+
+@media (max-width:1180px){
+    #svariabot{
+        bottom: 20%;
+        width:fit-content;
+        margin:0 auto;
+        
+    }
+}
+
+@keyframes bounce {
+	0%, 100%, 20%, 50%, 80% {
+		-webkit-transform: translateY(0);
+		-ms-transform:     translateY(0);
+		transform:         translateY(0)
+	}
+	40% {
+		-webkit-transform: translateY(-30px);
+		-ms-transform:     translateY(-30px);
+		transform:         translateY(-30px)
+	}
+	60% {
+		-webkit-transform: translateY(-15px);
+		-ms-transform:     translateY(-15px);
+		transform:         translateY(-15px)
+	}
+}
+
+#playgroundLabel:hover {
+        cursor: pointer;
+        animation-name: bounce;
+        -moz-animation-name: bounce;
+        animation-duration: 3s;
+        animation-iteration-count: infinite;
+}
+
