@@ -188,7 +188,7 @@
 				class="border-none outline-none p-2 group duration-200 cursor-pointer text-left"
 			>
 				<p class="duration-200 group-hover:pl-2 poppins text-3xl font-semibold">
-					FAQ/News <i class="fa-solid fa-chevron-right text-xl pl-4" />
+					News <i class="fa-solid fa-chevron-right text-xl pl-4" />
 				</p>
 			</button>
 		</div>
@@ -249,7 +249,7 @@
 				class="border-none outline-none p-2 group duration-200 cursor-pointer text-left"
 			>
 				<p class="duration-200 group-hover:pl-2 poppins text-3xl font-semibold">
-					FAQ/News <i class="fa-solid fa-chevron-right text-xl pl-4" />
+					News <i class="fa-solid fa-chevron-right text-xl pl-4" />
 				</p>
 			</button>
 		</div>
@@ -275,47 +275,16 @@
 				{/each}
 			</ul>
 		</aside>
-
-		<div class="ml-6 mr-96 p-1 flex-1">
-			<h1
-				id="HeaderWithIcons"
-				class="text-4xl ml-6 sm:text-5xl md:text-6xl max-w-[1000px] mx-auto w-full font-semibold text-center"
-			>
+	
+		<div class="ml-6 mr-96 p-1 flex-1 ">
+			<h1 id='HeaderWithIcons' class="text-4xl ml-6 sm:text-5xl md:text-6xl max-w-[1000px] mx-auto w-full font-semibold text-center relative z-10">
 				<img class="SandboxImage" alt="Sandbox Icon" src={sandboxicon} />
 				SvARIA Playground
 				<img class="SandboxImage" alt="Sandbox Icon" src={sandboxicon} />
 			</h1>
-			<br />
-			<br />
-			<Sandbox source={component.source} />
-			<svelte:component this={component.docs} />
+						
+			<Sandbox source={component.source} label={component.label}/>
+				<svelte:component this={component.docs} />
 		</div>
 	</div>
 </SectionWrapper>
-
-<!-- <style>
-    .lib-display {
-        align-items: center;
-        width: 50%;
-        height: 50%;
-    }
-</style>
-
-<h3>Components</h3>
-<div class='lib-display'>
-    <h3>Button Component</h3>
-    <div class='component'>
-    </div>
-        <ButtonTab/>
-</div>
-
-</SectionWrapper>
-
-
-
-<div class='lib-display'>
-    <h3>Modal Component</h3>
-    <div class='component'>
-    </div>
-        <ModalTab/>
-</div> -->

@@ -1,63 +1,52 @@
-<!-- This is where the footer lives -->
 <script>
-  import footerLogo from './assets/SvAriaLogoFooter.png'
-</script>
+    import footerLogo from './assets/SvAriaLogoFooter.png'
+  </script>
 
-<style>
-    footer {
-      background-color: #333;
-      color: white;
-      padding: 1rem;
-      text-align: center;
-    }
-  
-    /* Flex container for the footer sections */
-    .footer-container {
-      display: flex;
-      justify-content: space-around; /* Distribute space around the items */
-    }
-  
-    .footer-container ul {
-      list-style: none; /* Remove default list styling */
-      padding: 0;
-      margin: 0;
-      margin: 0 2rem;
-    }
-  
-    /* Horizontal list for the top-level ul */
-    .footer-container > ul {
-      display: flex;
-    }
-  
-    /* Nested uls will remain vertical */
-    .footer-container ul ul {
-      display: block;
-    }
-</style>
-  
+<footer class="bg-[#333] py-16 sm:py-20 md:py-4 px-4 md:px-8">
+        
+    <!-- <div class="max-w-[1200px] mx-auto w-full grid grid-cols-1 sm:grid-cols-2 md:grid-cols-5 gap-8 text-base"> -->
+    <div class="max-w-[1200px] mx-auto w-full flex items-center text-base">
+            <div class="flex mr-16 flex-col gap-4 md:col-span-2">
+               <a href="/">
+				<img class="min-w-[175px] h-[70px] w-[175px]" alt="SvARIA Logo" src={footerLogo}/>
+                </a>
+                <p class='text-white text-sm'>
+                    ©SvARIA. All rights reserved.
+                </p>
+            </div>
+            <div class="flex mt-6 mr-16 flex-col">
+                <!-- <div class="flex flex-col gap-4"> -->
+                    <a href="https://github.com/oslabs-beta/SvARIA/issues" 
+                    class="cursor-pointer duration-200"
+                    alt="Report an issue" target="_blank" title="Report an issue">
+                    <p class="poppins text-md text-white sm:text-lg hover:text-indigo-400" >Report an issue</p>
+                </a>
+                <!-- </div> -->
+                <div class="flex flex-col gap-4">
+                    <a href="mailto:svarialibrary@gmail.com"
+                    class="cursor-pointer text-white duration-200"
+                    alt="svarialibrary@gmail.com" target="_blank" title="Contact us">
+                    <p class="poppins text-base text-white sm:text-lg hover:text-indigo-400">Contact Us</p>
+                    </a>
+                </div>
+            </div>
+            <div id='socials' class="flex gap-4">
+                <a href="https://www.linkedin.com/company/svaria"
+                class="cursor-pointer text-white hover:text-indigo-400 duration-200"
+                alt="LinkedIn" target="_blank" title="SvARIA LinkedIn">
+                <i class="fa-brands fa-linkedin text-white pr-2"/> LinkedIn </a>
+                
+                <a href="https://github.com/oslabs-beta/SvARIA"
+                class="cursor-pointer text-white hover:text-indigo-400 duration-200"
+                alt="Github" target="_blank" title="SvARIA GitHub">
+                <i class="fa-brands text-white fa-github pr-2"/> GitHub </a>
+                
+                <a href="https://www.youtube.com/@SvARIA-Toolkit"
+                class="cursor-pointer text-white hover:text-indigo-400 duration-200"
+                alt="YouTube" target="_blank" title="SvARIA YouTube">
+                <i class="fa-brands text-white fa-youtube pr-2"/> YouTube </a>
+            </div>
+        </div>
 
-<footer>
-    <div class='footer-container'>
-        <ul class='footer'>
-            <ul class='footerBlock' id='logo'>
-                <img class="min-w-[200px] h-[80px] w-[200px]" alt="SvARIA Logo" src={footerLogo} />
-            </ul>
-            <ul class='footerBlock' id='docs'>
-                <li><h5>Documentation</h5></li>
-                <a href="https://github.com/oslabs-beta/SvARIA/blob/main/README.md" alt="Documentation"><li><h6>How-To's and ReadMe</h6></li></a>
-                <a href="#CompTab" alt="Components"><li><h6>Components</h6></li></a>
-            </ul>
-            <ul class='footerBlock' id='community'>
-                <li><h5>Community</h5></li>
-                <a href="https://github.com/oslabs-beta/SvARIA/" alt="Find us on GitHub"><li><h6>Find us on GitHub</h6></li></a>
-                <a href="https://github.com/oslabs-beta/SvARIA/issues" alt="Report an issue"><li><h6>Report an issue</h6></li></a>
-                <a href="mailto:svarialibrary@gmail.com"><li><h6>Contact Us</h6></li></a>
-            </ul>
-            <ul class='footerBlock' id='updates'>
-                <li><h5>Updates</h5></li>
-                <li><h6>Changelog</h6></li>
-                <li><h6>News</h6></li>
-            </ul>
-        </ul>
-    </div>
+
 </footer>

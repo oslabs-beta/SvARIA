@@ -15,7 +15,7 @@ SvARIA has default components styled with Tailwind. To use our default styles, y
 
 Now you are ready to import our components into your project!
 
-## For comprehensive docs, see [SvARIA](the-splash-page-url).
+## For comprehensive docs, see [SvARIA](http://svaria.com/).
 
 you can also check out the SvARIA [GitHub](https://github.com/oslabs-beta/SvARIA/tree/main)
 

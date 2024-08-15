@@ -19,7 +19,7 @@
 	}
 </script>
 
-<div class="fixed bottom-4 right-32 z-50">
+<div id='svariabot' class="fixed right-32 z-50">
 	<!-- These are necessary so that tailwind creates the definitions for these on compilation since the classes are generated dynamically -->
 	<span class="h-5/6"></span>
 	<span class="h-4/6"></span>
@@ -27,8 +27,8 @@
 	<span class="h-2/6"></span>
 	<Popover
 		closeButtonClass="fixed right-6 h-7 w-7 p-0 bg-zinc-200 border-orange-700 dark:bg-zinc-100 text-orange-600 text-lg font-bold"
-		openButtonClass="text-black bg-zinc-100 w-64 border-4 text-[17px] border-orange-700"
-		openButtonContent="Build with SvARIA Bot<img style='width:30px;height:30px;float:left;' src={svariacat}></img>"
+		openButtonClass="text-black flex items-center p-0 px-3 justify-around bg-zinc-100 w-72 border-4 text-[17px] border-orange-700"
+		openButtonContent="<img style='width:70px' src={svariacat}></img> Build with SvARIA Bot"
 		openButtonAriaLabel="Build Components with SvARIA Bot"
 		popoverId="chatbot"
 		popoverClass={popoverClassValue}
