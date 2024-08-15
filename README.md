@@ -35,9 +35,9 @@ This will create a button labeled "example button" with a red background.
 
 You can also style using regular CSS and access the className on the component. See the documentation for each component on our splash page to access any property name you want to access.
 
-## Another benefit of our toolkit is the ARIA checker tools.
+## Another benefit of our toolkit is the ARIA checker tool.
 
-These are tools used to check the color contrast using [wcag](https://www.w3.org/TR/WCAG20/#contrast-ratiodef) standards and aria labels on appropriate compoents to ensure that components are meeting standards.
+This tool is used to check the color contrast using [wcag](https://www.w3.org/TR/WCAG20/#contrast-ratiodef) standards and aria labels on appropriate compoents to ensure that components are meeting standards.
 
 in order for the background checks to run, declare the following environmental variable
 
