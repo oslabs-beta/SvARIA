@@ -12,12 +12,11 @@
     <Hero />
     <WhySvARIA />
     <GettingStarted />
-    <!-- <CompTab /> -->
     <GitHubFAQ />
 </main>
 
 <MetaTags
     title = 'Comprehensive Accessible Component Library and Toolkit'
     titleTemplate = '%s | Build Accessible UIs for Svelte'
-    description = "SvARIA puts the power of building accesible UIs into the hands of any developer with an easy-to-use NPM package."
+    description = "SvARIA puts the power of building accessible UIs into the hands of any developer with an easy-to-use NPM package."
 />

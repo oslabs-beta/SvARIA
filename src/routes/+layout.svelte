@@ -25,13 +25,14 @@
 
 {#if $openModal}
 	<div
+		id='componentPageModal'
 		class="fixed top-0 left-0 w-screen h-screen border-b bg-white z-50 flex flex-col gap-8 p-5 px-8 md:hidden"
 	>
 		<div class="flex items-center justify-between gap-4 border-b pb-2">
 			<a href="/">
-				<img class="min-w-[250px] h-[125px] w-[250px]" alt="SvARIA Logo" src={logo} />
+				<img class="min-w-[250px] h-[125px] w-[250px smallLogo" alt="SvARIA Logo" src={logo} />
 			</a>
-			<button
+			<button 
 				on:click={() => {
 					$openModal = false;
 					console.log('clicked');
