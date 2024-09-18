@@ -73,7 +73,7 @@
 
 <SectionWrapper id="GitHubFAQ">
 	<div
-		class=" -mt-[50px] flex flex-col gap-5 sm:gap-10 md:gap-15 flex-1 items-center justify-center pb-10 md:pb-14"
+		class=" -mt-[50px] flex flex-col gap-5 sm:gap-10 md:gap-15 flex-1 items-center justify-center pb-10 md:pb-14 smallGap"
 	>
 		<div class="flex flex-col gap-2">
 			
@@ -94,6 +94,7 @@
 					<Form
 						{formElements}
 						formClass="grid grid-cols-9 gap-y-0 grid-rows-4"
+						submitButtonId='formSubmit'
 						submitButtonClass="mt-5 row-start-5 col-start-4 col-span-3 text-[.4em]"
 						on:submit={formSubmit}
 					/>

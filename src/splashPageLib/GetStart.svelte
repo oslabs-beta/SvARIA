@@ -15,18 +15,18 @@
 
 <SectionWrapper id="GettingStarted">
 	<div
-		class="flex flex-col gap-5 sm:gap-10 md:gap-15 flex-1 items-center justify-center pb-10 md:pb-14"
+		class="flex flex-col gap-5 sm:gap-10 md:gap-15 flex-1 items-center justify-center pb-10 md:pb-14 doubleShiftUp"
 	>
 		<div class="flex flex-col gap-2">
-			<br />
+			<br class='hiddenLineBreak'>
 			<h4
-				class="text-4xl sm:text-5xl md:text-6xl max-w-[1000px] mx-auto w-full font-semibold text-center"
+				class="text-4xl sm:text-5xl md:text-6xl max-w-[1000px] mx-auto w-full font-semibold text-center mobileTitle"
 			>
 				Getting Started
 			</h4>
 		</div>
 		<span
-			class="text-xl sm:text-2xl md:text-3xl max-w-[1000px] mx-auto w-full italic font-light text-center"
+			class="text-xl sm:text-2xl md:text-3xl max-w-[1000px] mx-auto w-full italic font-light text-center shiftUp"
 		>
 			Visit the <a href="/components">
 				<img
@@ -38,12 +38,12 @@
 				/></a
 			> for customized component demos in the sandbox, to obtain/share code, or to read the docs.
 		</span>
-		<h5 class="text-2xl sm:text-3xl md:text-4xl max-w-[1000px] mx-auto w-full text-center ">
+		<h5 class="text-2xl sm:text-3xl md:text-4xl max-w-[1000px] mx-auto w-full text-center font-semibold mobileTitle">
 			Installation
 			<p
 				class="text-xl sm:text-2xl md:text-3xl max-w-[1000px] mx-auto w-full italic font-light text-center"
 			>
-				<br />
+				<br class='hiddenLineBreak'>
 				First, make sure you have
 				<a
 					href="https://svelte.dev/docs/introduction"

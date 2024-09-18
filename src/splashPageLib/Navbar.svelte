@@ -42,16 +42,16 @@ components used that we might need to make:
 <header class="flex flex-col relative z-20">
 	<Nav
 		routes={links}
-		navListClass="hidden pr-8 text-2xl md:flex items-center gap-4 lg:gap-6"
-		navBarClass="max-w-[1400] mx-auto w-full flex items-center justify-between px-4"
+		navListClass="hidden pr-8 text-2xl md:flex items-center gap-4 lg:gap-6 landscapeNavList"
+		navBarClass="max-w-[1400] mx-auto w-full flex items-center justify-between px-4 landscapeNavBar"
 		id="SvARIAnavBar"
 	>
-		<div slot="headingPlus">
+		<div id='headingPlus' slot="headingPlus">
 			<a href="/">
-				<img class="min-w-[250px] h-[125px] w-[250px]" alt="SvARIA Logo" src={logo} />
+				<img class="min-w-[250px] h-[125px] w-[250px] smallLogo" alt="SvARIA Logo" src={logo} />
 			</a>
-			<button on:click={() => ($openModal = true)} class="md:hidden grid place-items-center">
-				<i class="fa-solid fa-bars"></i>
+			<button on:click={() => ($openModal = true)} id='menuHamburger' class="md:hidden grid place-items-center landscapeModalButton">
+				<i class="fa-solid fa-bars fa-2xl mt-6"></i>
 			</button>
 		</div>
 	</Nav>

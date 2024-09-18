@@ -2,31 +2,28 @@
     import footerLogo from './assets/SvAriaLogoFooter.png'
   </script>
 
-<footer class="bg-[#333] py-16 sm:py-20 md:py-4 px-4 md:px-8">
+<footer id='footer' class="bg-[#333] py-16 sm:py-20 md:py-4 px-4 md:px-8">
         
-    <!-- <div class="max-w-[1200px] mx-auto w-full grid grid-cols-1 sm:grid-cols-2 md:grid-cols-5 gap-8 text-base"> -->
-    <div class="max-w-[1200px] mx-auto w-full flex items-center text-base">
-            <div class="flex mr-16 flex-col gap-4 md:col-span-2">
+    <div id='footerDiv' class="max-w-[1200px] mx-auto w-full flex items-center text-base">
+            <div id='logoCopyright' class="flex mr-16 flex-col gap-4 md:col-span-2 noGap">
                <a href="/">
-				<img class="min-w-[175px] h-[70px] w-[175px]" alt="SvARIA Logo" src={footerLogo}/>
+				<img id='footerLogo' class="min-w-[175px] h-[70px] w-[175px]" alt="SvARIA Logo" src={footerLogo}/>
                 </a>
-                <p class='text-white text-sm'>
+                <p id='copyright' class='text-white text-sm'>
                     ©SvARIA. All rights reserved.
                 </p>
             </div>
-            <div class="flex mt-6 mr-16 flex-col">
-                <!-- <div class="flex flex-col gap-4"> -->
+            <div id='contactReport' class="flex mt-6 mr-16 flex-col smallScreen" >
                     <a href="https://github.com/oslabs-beta/SvARIA/issues" 
                     class="cursor-pointer duration-200"
                     alt="Report an issue" target="_blank" title="Report an issue">
-                    <p class="poppins text-md text-white sm:text-lg hover:text-indigo-400" >Report an issue</p>
-                </a>
-                <!-- </div> -->
+                    <p id='reportLandscape' class="poppins text-md text-white sm:text-lg hover:text-indigo-400 " >Report an issue</p>
+                    </a>
                 <div class="flex flex-col gap-4">
                     <a href="mailto:svarialibrary@gmail.com"
                     class="cursor-pointer text-white duration-200"
                     alt="svarialibrary@gmail.com" target="_blank" title="Contact us">
-                    <p class="poppins text-base text-white sm:text-lg hover:text-indigo-400">Contact Us</p>
+                    <p id='contactLandscape' class="poppins text-base text-white sm:text-lg hover:text-indigo-400 ">Contact Us</p>
                     </a>
                 </div>
             </div>
@@ -46,7 +43,7 @@
                 alt="YouTube" target="_blank" title="SvARIA YouTube">
                 <i class="fa-brands text-white fa-youtube pr-2"/> YouTube </a>
             </div>
-        </div>
+    </div>
 
 
 </footer>

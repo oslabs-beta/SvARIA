@@ -13,7 +13,9 @@
 	import logo from '../../splashPageLib/assets/SvAriaLogo.png';
 	import Sandbox from '../../splashPageLib/Sandbox.svelte';
 	import type { CompObj } from './../../types.js';
-	import sandboxicon from './lib/assets/sandbox_Flaticon.png'
+	import sandboxicon from './lib/assets/sandbox_Flaticon.png';
+	import landscapePhoneSwitch from './lib/assets/landscapePhoneSwitch.png';
+	// import Menu from '../../lib/Menu.svelte';
 	// ======================> Component Imports < ========================
 	import ButtonDocs from './lib/ButtonDocs.svelte';
 	import AccordionDocs from './lib/AccordionDocs.svelte';
@@ -130,6 +132,36 @@
 		$openModal = false;
 		window.location.href = href;
 	}
+
+	// ======================> drop down menu for small screens < =============
+
+	// let menuItems = [
+	// 	{
+	// 		label: 'Button',
+	// 		link: 'https://svelte.dev/repl/3de22bc71e6c42f680c0e5dc80b42ba1?version=4.2.18',
+	// 		onClick: handleClick,
+	// 		linkID: 'Button',
+	// 		linkClass: 'text-white'
+	// 	},
+	// 	{
+	// 		label: 'blue',
+    //   linkID: 'blue',
+			
+	// 		linkClass: 'text-blue-800'
+	// 	},
+	// 	{
+	// 		label: 'yellow',
+    //   linkID: 'yellow',
+			
+	// 		linkClass: 'text-yellow-800'
+	// 	},
+	// 	{
+	// 		label: 'green',
+	// 		link: "https://en.wikipedia.org/wiki/Green",
+    //   linkID: 'green',
+	// 		linkClass: 'text-green-800'
+	// 	}
+	// ];
 </script>
 
 {#if $openModal}
@@ -147,7 +179,7 @@
 				}}
 				class="outline-none border-none"
 			>
-				<i class="fa-solid fa-xmark text-2xl"> </i>
+				<i id='hamburgerLandscape' class="fa-solid fa-xmark text-2xl"> </i>
 			</button>
 		</div>
 		<div class="flex flex-col gap-4 flex-1">
@@ -199,7 +231,7 @@
 	>
 		<div class="flex items-center justify-between gap-4 border-b pb-2">
 			<a href="/">
-				<img class="min-w-[250px] h-[125px] w-[250px]" alt="SvARIA Logo" src={logo} />
+				<img class="min-w-[250px] h-[125px] w-[250px] smallLogo" alt="SvARIA Logo" src={logo} />
 			</a>
 			<button
 				on:click={() => {
@@ -257,10 +289,10 @@
 {/if}
 
 <SectionWrapper id="components">
-	<div
+	<!-- <div
 		class="flex flex-col gap-5 sm:gap-10 md:gap-15 flex-1 items-center justify-center pb-10 md:pb-5"
-	></div>
-	<div class="flex">
+	></div> -->
+	<div id='bigScreenComponentPage' class="flex">
 		<aside id="default-sidebar" class="flex-shrink-0 w-64 h-screen overflow-y-auto">
 			<ul class="py-4 font-medium">
 				{#each componentsArray as comp}
@@ -275,16 +307,75 @@
 				{/each}
 			</ul>
 		</aside>
-	
+
 		<div class="ml-6 mr-96 p-1 flex-1 ">
 			<h1 id='HeaderWithIcons' class="text-4xl ml-6 sm:text-5xl md:text-6xl max-w-[1000px] mx-auto w-full font-semibold text-center relative z-10">
 				<img class="SandboxImage" alt="Sandbox Icon" src={sandboxicon} />
 				SvARIA Playground
 				<img class="SandboxImage" alt="Sandbox Icon" src={sandboxicon} />
 			</h1>
-						
+			
 			<Sandbox source={component.source} label={component.label}/>
+			<svelte:component this={component.docs} />
+		</div>
+	</div>
+	<!-- ================> drop down menu for small screens < ============= -->
+	<!-- <div id='smallScreenComponentPage'>
+		<Menu
+				{menuItems}
+				buttonContent="Menu"
+				buttonId="menuButton"
+				buttonAriaLabel="menu button"
+				buttonClass="w-32 h-9 text-xl bg-blue-300 rounded-md items-center justify-between px-3 text-gray-900 hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-black md:dark:hover:text-blue-500 dark:focus:text-black dark:hover:bg-gray-700 md:dark:hover:bg-transparent"
+				listId='menuItems'
+				listClass="bg-blue-200 text-lg w-32 text-center	rounded-md"
+			/>
+			<div class="ml-6 mr-96 p-1 flex-1 ">
+				<h1 id='HeaderWithIcons' class="text-4xl ml-6 sm:text-5xl md:text-6xl max-w-[1000px] mx-auto w-full font-semibold text-center relative z-10">
+					<img class="SandboxImage" alt="Sandbox Icon" src={sandboxicon} />
+					SvARIA Playground
+					<img class="SandboxImage" alt="Sandbox Icon" src={sandboxicon} />
+				</h1>
+				
+				<Sandbox source={component.link} label={component.label}/>
 				<svelte:component this={component.docs} />
+			</div>
+	</div>	 -->
+<!-- ================> small screens component page < ============= -->
+<div id='landscapeComponentChoice'>
+	Choose a component below:
+</div>	
+<div id='smallScreenComponentPage' class="flex">
+		<aside id="smallSidebar" class="w-screen overflow-x-auto">
+			<ul class="px-4 flex font-small">
+				{#each componentsArray as comp}
+					<li>
+						<button
+							class="block w-32 py-4 px-2 text-center text-sm hover:bg-gray-300"
+							on:click={() => handleClick(comp)}
+						>
+							{comp.label}
+						</button>
+					</li>
+				{/each}
+			</ul>
+		</aside>
+		<br>
+		<div class="mr-96 p-1 flex-1 ">
+			<h1 id='smallHeaderWithIcons' class="text-4xl ml-6 sm:text-5xl md:text-6xl max-w-[1000px] mx-auto w-full font-semibold text-center relative z-10">
+				<img class="SandboxImage" alt="Sandbox Icon" src={sandboxicon} />
+				SvARIA Playground
+				<img class="SandboxImage" alt="Sandbox Icon" src={sandboxicon} />
+			</h1>
+			<br>
+			<Sandbox source={component.source} label={component.label}/>
+			<svelte:component this={component.docs} />
 		</div>
 	</div>
 </SectionWrapper>
+<div id='portraitOverlay' >
+	<h1 class='text-white text-center text-3xl mt-14'>
+		Please rotate your phone to landscape
+	</h1>
+	<img alt="Switch phone from portrait to landscape" src={landscapePhoneSwitch} />
+</div>

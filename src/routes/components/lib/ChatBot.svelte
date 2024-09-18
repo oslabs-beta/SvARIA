@@ -65,7 +65,7 @@
 	}
 </script>
 
-<div>
+<div id='openBot'>
 	<div class="whitespace-pre-line text-md">
 		{#if copyAnswerSection}
 			{answer.slice(0, copyAnswerStart - 13)}
