@@ -8,6 +8,9 @@ html {
 
 * {
     font-family: 'Roboto', sans-serif;
+    box-sizing: border-box;
+    padding: 0;
+    margin:0;
 }
 
 h1, h2, h3, .poppins {
@@ -33,7 +36,7 @@ button,
     font-weight: 500;
     font-family: inherit;
     background-color: white;
-    transition: boarder-coler 0.2s;
+    transition: border-color 0.2s;
 }
 
 button:hover {
@@ -45,6 +48,11 @@ button:focus-visible {
     outline: 4px auto -webkit-focus-ring-color;
 }
 
+#menuHamburger {
+    position:absolute;
+    top:0;
+    right:0;
+}
 #hero {
     height: 50rem;
     min-width: 250px;
@@ -69,3 +77,435 @@ button:focus-visible {
     opacity: 1;
    }
 }
+
+.SandboxImage {
+    height: 2em;
+    width: 2em;
+    display: inline;
+    position: relative;
+    bottom: 20px;
+}
+
+#HeaderWithIcons {
+    display: inline;
+}
+
+#toolTip {
+    visibility: hidden;
+    width: 120px;
+    background: black;
+    color: white;
+    text-align: center;
+    border-radius: 5px;
+    padding: 5px;
+    position: absolute;
+    z-index: 1;
+    bottom: 135%;
+    left: -14%;
+    margin-left: -60px;
+    opacity: 0;
+    transition: opacity 0.3s;
+
+}
+
+#clipBoardButton:hover #toolTip{
+    visibility: visible;
+    opacity: 1;
+}
+
+#hero {
+    position: relative;
+}
+
+#lineBreak {
+    display: none;
+}
+
+.quote {
+    position: relative;
+    font-family: 'Poppins';
+    bottom: 98%;
+    font-size: 3em;
+    color: rgb(66, 62, 62);
+    width: 80%;
+    margin:0 auto;
+    line-height: 1.5;
+    font-weight: 1000;
+    text-align: center;
+}
+
+#subQuote {
+    font-style: italic;
+    font-size: .5em; 
+}
+
+.scrim {
+    height: 100%;
+    width: 100vw;
+    background: white;
+    opacity: 90%;
+    top: 2%;
+    position: relative;
+
+}
+
+#heroAnimate {
+    animation: fadeIn 9s;
+    animation-fill-mode: forwards;
+    position: relative;
+    top: -50%;
+}
+
+#heroCall {
+    color:white; 
+    font-size: .75em; 
+    border:solid black; 
+    border-radius:15px/50%; 
+    padding:10px 15px; 
+    background:#07abdb; 
+    text-shadow: 0px 0px white;
+    -webkit-text-stroke-width: 0px;
+    box-shadow: 5px 5px gray;
+}
+
+#heroCall:hover {
+    transform: scale(5);
+    background:black; 
+}
+
+#svelteLogo, #whySvariaLogo {
+    width:20rem;
+    display:inline-block;
+}
+
+#whySvariaText {
+    line-height:1.6;
+    margin-top:-30px;
+}
+
+#formSubmit {
+    border: solid;
+    padding: .1em .25em;
+    background: #374151;
+    color: white;
+}
+
+#svariabot {
+    bottom: 2%;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    15% {
+        opacity:0;
+    }
+    50% {
+        opacity: 1;
+    }
+}
+
+#sandboxOverlay {
+    background:white; 
+    height:20%; 
+    position:relative;     
+    top:-500px;
+}
+#smallScreenComponentPage {
+    display: none;
+}
+#landscapeComponentChoice {
+    display: none;
+}
+
+#portraitOverlay {
+    display: none;
+    position: absolute;
+    top:0;
+    left: 0;
+    height:100vh;
+    width:100vw;
+    background: black;
+    z-index:60;
+}
+
+/* tablet responsiveness */
+@media (max-width:1180px){
+    #socials{
+        flex-direction: column; 
+     }
+     #heroAnimate{
+         top:0;
+     }
+     .quote{
+         font-size:1em;
+     }
+     .scrim{
+         visibility: hidden;
+     }
+    #svariabot{
+        bottom: 20%;
+        width:fit-content;
+        margin:0 auto;
+        
+    }
+}
+
+
+/* mobile responsiveness */
+@media (max-width:375px){
+    #heroAnimate{
+        top:0;
+    }
+    .quote{
+        font-size:1.25em;
+    }
+    #subQuote{
+        font-size: .75em;  
+    }
+    #heroCall{
+        position:relative;
+        top:25px;
+        font-size: .75em;
+    }
+    .scrim{
+        visibility: hidden;
+    }
+    #svelteLogo {
+        width:10rem;        
+    }
+    #whySvariaLogo {
+        width: 15rem;
+    }
+    #whySvariaText {
+        margin-top: -15px;
+        font-size: 1.3em;
+    }
+    #svariabot{
+        bottom: 14%;
+        width:fit-content;
+        margin:0 auto;
+        right: 15px;
+        /* display: none; */
+    }
+    #openBot {
+        width: 275px;  
+    }
+    #footer {
+        padding-top:10px;
+        padding-bottom:10px;
+        width: 100%;
+        text-align: center;
+        margin-right: 50px;
+    }
+    #footerDiv {
+        flex-direction: column;
+        width: 100%;
+    }
+    #footerLogo {
+        display:none;  
+    }
+    #copyright {
+        position: relative;
+        left: 50%;
+        transform: translateX(-30%);
+        font-size: .75em;
+    }
+    #logoCopyright {
+        order: 3;
+        position: relative;
+    }
+    #contactReport {
+        order:2;
+        position: relative;
+        right: 8px;
+        flex-direction: row;
+        justify-content: space-around;
+    }
+    #socials{
+        order:1;
+        flex-direction: row;
+        position:relative;
+        right: 8px;
+    }
+    .smallScreen{
+        margin: 0;
+        width: 100%;
+        margin-top:4px;
+    }
+    .noGap {
+        gap: 10px;
+    }
+    .smallLogo {
+        min-width: 0;
+        width:40%;
+        height: 20%;
+    }
+    .smallGap{
+        gap:1;
+    }
+    #lineBreak {
+        display: block;
+    }
+    .hiddenLineBreak {
+        display: none;
+    }
+    .mobileTitle {
+        font-size: 1.5em;
+    }
+    .shiftUp {
+        margin-top: -20px;
+    }
+    .doubleShiftUp {
+        margin-top: -25px;
+    }
+    #portraitOverlay {
+        display:block;
+    }
+}
+
+@media (orientation: landscape) and (max-width:800px) {
+    #portraitOverlay {
+        display: none;
+    }
+    #bigScreenComponentPage {
+        display: none;
+    }
+    #smallScreenComponentPage {
+        display: block;
+    }
+    .smallLogo {
+        min-width: 0;
+        width:75%;
+        height: 25%;
+    }
+    .landscapeNavList {
+        display: flex;
+        font-size: 1em;
+        padding-right: 0;
+        margin-left: auto;
+    }
+   #landscapeComponentChoice {
+        display: block;
+        margin-bottom: -15px;
+        font-family: Roboto;
+        z-index: 2;
+        font-size: .85em;
+        padding-top: 20px;
+    }
+    .landscapeModalButton {
+        display:none;
+    }
+    #SvARIAnavBar-headercontainer {
+        width: 20%;
+    }
+   #smallHeaderWithIcons {
+        width: 625px;
+        font-size: 1.5em;
+        margin-left: 0;
+    }
+	#sandbox{
+            width: 625px; 
+          
+    }
+    #sandboxOverlay {
+        width: 625px;
+        height: 17%;
+        top: -500px;
+    }
+    #svariabot{
+        bottom: 14%;
+        width:fit-content;
+        margin:0 auto;
+        right: 15px;
+        display: none;
+    }
+    .SandboxImage {
+        bottom: 10px;
+    }
+    #componentPageModal {
+        display:none;
+    }
+    #docs {
+        margin-right: -375px;
+    }
+    #footer {
+        /* display:none */
+        height: 75px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        text-align: center;
+        width: 150vw;
+    }
+    #footerDiv {
+        flex-direction: row;
+        width: 70%;
+        position: relative;
+        bottom: 24px;
+        padding-left: 0;
+        padding-right: 0;
+        margin-left:25px;
+    }
+    #footerLogo {
+        display:none;  
+    }
+    #logoCopyright {
+        order: 3;
+        position: absolute;
+        bottom: 4px;
+        width: 165px;
+        right: 0;
+    }
+    #copyright {
+        font-size: .75em;
+        flex-grow:2;
+    }
+    #contactReport {
+        order:2;
+        position: relative;
+        /* right: 8px; */
+        left: 10px;
+        flex-direction: column;
+        justify-content: space-around;
+        width: 130px;
+        
+    }
+    #reportLandscape, #contactLandscape {
+        font-size: 1em;
+    }
+    #socials{
+        order:1;
+        flex-direction: row;
+        position:relative;
+        left: -25px;
+        top: 14px;
+    }
+}
+
+@keyframes bounce {
+	0%, 100%, 20%, 50%, 80% {
+		-webkit-transform: translateY(0);
+		-ms-transform:     translateY(0);
+		transform:         translateY(0)
+	}
+	40% {
+		-webkit-transform: translateY(-30px);
+		-ms-transform:     translateY(-30px);
+		transform:         translateY(-30px)
+	}
+	60% {
+		-webkit-transform: translateY(-15px);
+		-ms-transform:     translateY(-15px);
+		transform:         translateY(-15px)
+	}
+}
+
+#playgroundLabel:hover {
+        cursor: pointer;
+        animation-name: bounce;
+        -moz-animation-name: bounce;
+        animation-duration: 3s;
+        animation-iteration-count: infinite;
+}
+

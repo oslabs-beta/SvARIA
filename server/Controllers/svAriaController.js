@@ -5,9 +5,7 @@ const svAriaController = {};
 
 // To add a new user 
 svAriaController.addUser = (req, res, next) => {
-    console.log('adding some things')
     const {first_Name, last_Name, email_} = req.body;
-    console.log('first name here' + first_Name)
     const queryString = {
         text: 'INSERT INTO users (firstName, lastName, email) VALUES ($1, $2, $3)',
         values: [first_Name, last_Name, email_]
@@ -58,7 +56,6 @@ svAriaController.getAllUsers = (req, res, next) => {
 
 // If we need to update a user
 svAriaController.updateUser = (req, res, next) => {
-    console.log('req ' + JSON.stringify(req.query))
     const oldEmail = req.params.email; 
     let {first_Name, last_Name, email_} = req.query;
 

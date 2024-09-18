@@ -29,6 +29,9 @@
 				<li>href: Set to the route of whatever page you would like to route to.</li>
 				<li>name: Set to the string the link will be represented by.</li>
 				<li>
+					target: Set to "_blank" to open link in new tab.
+				</li>
+				<li>
 					linkClass: This is an optional property in case you would like to give each element an
 					individual class.
 				</li>

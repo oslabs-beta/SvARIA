@@ -34,6 +34,7 @@
 			{#each routes as linkElem, i}
 				<a
 					href={linkElem.href}
+					target={linkElem.target}
 					class={linkElem.linkClass}
 					id={id + '-link-' + i}
 					aria-label={`link to ${linkElem.name}`}

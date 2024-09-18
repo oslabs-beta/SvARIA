@@ -1,6 +1,6 @@
 {
 	"name": "svaria-test",
-	"version": "0.0.3",
+	"version": "0.0.5",
 	"scripts": {
 		"dev-test": "vite --host & node ./server/server.js",
 		"docker-dev:hot": "docker-compose -f docker-compose-dev-hot.yml up",
@@ -56,6 +56,7 @@
 		"publint": "^0.1.9",
 		"svelte": "^4.2.7",
 		"svelte-check": "^3.8.0",
+		"svelte-loading-spinners": "^0.3.6",
 		"svelte-preprocess": "^5.1.4",
 		"tailwindcss": "^3.4.3",
 		"tslib": "^2.4.1",
@@ -67,12 +68,16 @@
 	"types": "./dist/index.d.ts",
 	"type": "module",
 	"dependencies": {
+		"@langchain/community": "^0.2.17",
+		"@langchain/openai": "^0.2.1",
 		"@sveltejs/adapter-node": "^5.2.0",
 		"@sveltejs/adapter-static": "^3.0.2",
 		"@sveltejs/vite-plugin-svelte": "^2.0.0",
+		"cookie-parser": "^1.4.6",
 		"cors": "^2.8.5",
 		"dotenv": "^16.4.5",
 		"express": "^4.19.2",
+		"langchain": "^0.2.8",
 		"nodemon": "^3.1.4",
 		"pg": "^8.12.0",
 		"svelte": "^4.0.0",

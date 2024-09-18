@@ -1,6 +1,6 @@
 <!--
 	NEXT LEVEL:
-	[] have functionality for if the panel cant be collapsed and aria-disabled set to tru
+	[] have functionality for if the panel cant be collapsed and aria-disabled set to true
 -->
 
 <script lang="ts">

@@ -1,6 +1,6 @@
 <script>
 
-	import RadioGroup from 'svaria-toolkit';
+	import { RadioGroup } from 'svaria-toolkit';
 
 	let selectedOption;
 	$: console.log('selected option', selectedOption);

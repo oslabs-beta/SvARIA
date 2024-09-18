@@ -1,5 +1,5 @@
 <script>
-	import Toast from 'svaria-toolkit';
+	import { Toast } from 'svaria-toolkit';
 </script>
 
 <Toast

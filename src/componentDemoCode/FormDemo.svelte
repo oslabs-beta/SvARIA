@@ -1,5 +1,5 @@
 <script>
-	import Form from 'svaria-toolkit';
+	import { Form } from 'svaria-toolkit';
 
 	let formElements = [
 		{

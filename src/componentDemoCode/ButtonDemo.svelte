@@ -1,5 +1,5 @@
 <script>
-	import Button from 'svaria-toolkit';
+	import { Button } from 'svaria-toolkit';
 	function handleClick() {
 		alert('button clicked');
 	}
