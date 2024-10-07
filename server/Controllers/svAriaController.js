@@ -33,7 +33,7 @@ svAriaController.sendConfirm = (req, res, next) => {
     });
     
     const mailOptions = {
-      from: 'jewelclarkenyc@gmail.com',
+      from: 'svariaconfirm@gmail.com',
       to: `${req.body.email}`,
       subject: 'Welcome to SvARIA! Please confirm your email.',
       html: `<h1>${req.body.content}</h1>

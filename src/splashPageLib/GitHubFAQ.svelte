@@ -53,7 +53,7 @@
 			method: 'POST',
 			body: JSON.stringify({
 				email:`${email_}`,
-				content: 'Thank you for signing up to stay in touch! Please click this link to confirm your email.',
+				content: 'Thank you for signing up to stay in touch! Please click the link below to confirm your subscription:',
 				first_Name,
 				last_Name,
 
@@ -62,7 +62,7 @@
 				'Content-type': 'application/json; charset=UTF-8'
 			}	
 		} ) 
-		alert('Check your mail!')
+		alert('Check your email to confirm subscription!')
 	}
 
 </script>
@@ -83,7 +83,7 @@
 				<br />
 				<div
 					class="text-xl sm:text-2xl flex justify-around md:text-3xl max-w-[2000px] mr-0 italic font-light text-center">
-					<a href='https://medium.com/@jewelclarkenyc/svaria-streamlining-accessibility-in-svelte-development-00d6768820cd' class='article mr-1 hover:text-indigo-400 underline'>
+					<a href='https://medium.com/@jewelclarkenyc/svaria-streamlining-accessibility-in-svelte-development-00d6768820cd' class='article mr-1 hover:text-indigo-400 underline' target='_blank' >
 						SvARIA: Streamlining Accessibility <br>
 						in Svelte Development
 					</a>
