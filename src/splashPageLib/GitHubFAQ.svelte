@@ -39,7 +39,8 @@
 		}
 	];
 
-	async function formSubmit(e) {
+
+	function formSubmit(e){
 		e.preventDefault();
 		const form = e.currentTarget;
 		const first_Name = form.firstName.value.trim();
@@ -48,27 +49,22 @@
 		form.firstName.value='';
 		form.lastName.value='';
 		form.email.value='';
-		try {
-			const response = await fetch('/user', {
-				method: 'POST',
-				headers: { 'Content-Type': 'application/json' },
-				body: JSON.stringify({
-					first_Name,
-					last_Name,
-					email_
-				})
-			});
-			if (response.ok) {
-				alert('Submission Successful!');
-				const result = await response.json();
-				console.log('success:', result);
-			} else {
-				console.error('error:', response.statusText);
-			}
-		} catch (error) {
-			console.log(error);
-		}
+		fetch('http://localhost:3000/user', {
+			method: 'POST',
+			body: JSON.stringify({
+				email:`${email_}`,
+				content: 'Thank you for signing up to stay in touch! Please click this link to confirm your email.',
+				first_Name,
+				last_Name,
+
+			}), 
+			headers: {
+				'Content-type': 'application/json; charset=UTF-8'
+			}	
+		} ) 
+		alert('Check your mail!')
 	}
+
 </script>
 
 <SectionWrapper id="GitHubFAQ">
@@ -85,49 +81,34 @@
 				<br />
 				News
 				<br />
+				<div
+					class="text-xl sm:text-2xl flex justify-around md:text-3xl max-w-[2000px] mr-0 italic font-light text-center">
+					<a href='https://medium.com/@jewelclarkenyc/svaria-streamlining-accessibility-in-svelte-development-00d6768820cd' class='article mr-1 hover:text-indigo-400 underline'>
+						SvARIA: Streamlining Accessibility <br>
+						in Svelte Development
+					</a>
+				</div>
+				<br />
 				<div>
 					<p
-						class="text-xl sm:text-2xl md:text-3xl max-w-[1000px] mx-auto w-full italic font-light text-center"
+						class="text-xl sm:text-2xl md:text-3xl max-w-[1000px] mx-auto w-full italic font-semibold text-center mb-3"
 					>
-						Signup here to stay connected!
+						Sign up here to stay connected!
 					</p>
 					<Form
 						{formElements}
 						formClass="grid grid-cols-9 gap-y-0 grid-rows-4"
 						submitButtonId='formSubmit'
-						submitButtonClass="mt-5 row-start-5 col-start-4 col-span-3 text-[.4em]"
+						submitButtonClass="mt-5 bg-black row-start-5 col-start-4 col-span-3 text-[.4em]"
 						on:submit={formSubmit}
 					/>
 				</div>
 				<br>
-				<!-- <div
-					class="text-xl sm:text-2xl flex justify-around md:text-3xl max-w-[2000px] mr-0 italic font-light text-center" style='width:1000px'>
-					<p class='mr-1'>
-						Medium Article
-					</p>
-					<p class='mr-1'>
-						Latest Press Release 
-					</p>
-					<p class='mr-1'>
-						FastCompany Article
-					</p>
-				</div> -->
 			</h10>
 			<br />
 			<br />
 			<br />
 			<br />
-
-			<!-- <h11 class="text-2xl sm:text-3xl md:text-4xl max-w-[1000px] mx-auto w-full  text-center">
-                SvARIA in the News
-                <p class="text-xl sm:text-2xl md:text-3xl max-w-[1000px] mx-auto w-full italic font-light text-center">
-                    <br>
-                    Medium Article
-                    <br>
-                    Latest Press Release <br>
-                    FastCompany Article
-                </p>
-            </h11>    -->
 		</div>
 	</div></SectionWrapper
 >
