@@ -10,9 +10,12 @@
 	let y;
 	$: outerHeight = 0;
 
+	
+
 	function reroute(href) {
 		$openModal = false;
 		window.location.href = href;
+		window.scrollTo(0,0);
 	}
 
 	let links = [
@@ -26,7 +29,7 @@
 {#if $openModal}
 	<div
 		id='componentPageModal'
-		class="fixed top-0 left-0 w-screen h-screen border-b bg-white z-50 flex flex-col gap-8 p-5 px-8 md:hidden"
+		class="fixed top-0 left-0 w-screen h-screen border-b bg-white z-50 flex flex-col gap-8 p-5 pt-8 px-8 md:hidden"
 	>
 		<div class="flex items-center justify-between gap-4 border-b pb-2">
 			<a href="/">
@@ -35,7 +38,6 @@
 			<button 
 				on:click={() => {
 					$openModal = false;
-					console.log('clicked');
 				}}
 				class="outline-none border-none"
 			>
@@ -87,11 +89,11 @@
 	</div>
 {/if}
 
-<div class="top-0 left-0 w-full flex flex-col z-20 px-4">
+<div id="primaryNavbar" class=" top-0 left-0 w-full flex flex-col z-20 px-4">
 	<Navbar />
 </div>
 {#if y > outerHeight}
-	<div class="fixed top-0 left-0 w-full flex bg-white flex-col z-20 px-4 fadeIn">
+	<div id="secondaryNavbar" class="fixed top-0 left-0 w-full flex bg-white flex-col z-20 px-4 fadeIn">
 		<Navbar />
 	</div>
 {/if}

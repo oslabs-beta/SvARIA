@@ -184,10 +184,18 @@ button:focus-visible {
 }
 
 #formSubmit {
-    border: solid;
+    border: solid black;
     padding: .1em .25em;
-    background: #374151;
+    background: #07abdb;
     color: white;
+}
+
+#formSubmit:hover {
+    background: black;
+}
+
+#formSubmit:focus {
+    border: solid black;
 }
 
 #svariabot {
@@ -255,6 +263,17 @@ button:focus-visible {
 
 /* mobile responsiveness */
 @media (max-width:375px){
+    #primaryNavbar {
+        /* top: 30px; */
+        padding-top: 35px;
+    }
+    #secondaryNavbar {
+        /* top: 30px; */
+        padding-top: 30px;
+    }
+    #hero {
+        height: 35rem;
+    }
     #heroAnimate{
         top:0;
     }
@@ -281,6 +300,9 @@ button:focus-visible {
     #whySvariaText {
         margin-top: -15px;
         font-size: 1.3em;
+    }
+    .article{
+        width:85vw;
     }
     #svariabot{
         bottom: 14%;
@@ -368,6 +390,9 @@ button:focus-visible {
 @media (orientation: landscape) and (max-width:800px) {
     #portraitOverlay {
         display: none;
+    }
+    #secondaryNavbar {
+        padding-top: 10px;
     }
     #bigScreenComponentPage {
         display: none;
@@ -508,4 +533,3 @@ button:focus-visible {
         animation-duration: 3s;
         animation-iteration-count: infinite;
 }
-

@@ -4,15 +4,19 @@ import { handler } from "../build/handler.js";
 import router from './routes/api.js';
 import loadModel from "../src/chatbot/chatbot.js"
 import cookieParser from 'cookie-parser';
-import chatbotRoute from "../src/chatbot/chatbotRoute.js"
+import chatbotRoute from "../src/chatbot/chatbotRoute.js";
+
+// email confirmation for database submissions
+import nodemailer from 'nodemailer';
+
+import {config} from 'dotenv';
+import cors from 'cors';
 
 const app = express();
 const PORT = 3000;
 let ragChain
 
-//chat_history[user1] = []
-//chat_history[user2] = []
-//if user1 -> chat_history[user_1].push(aiMsg)
+app.use(cors());
 
 app.use(express.json({
   type: ['application/json', 'text/plain']
@@ -27,7 +31,7 @@ app.post("/chatbot", async (req, res) => {
 
 app.use('/user', router);
 
-//app.use(handler) needs to be after the other routes - if you put it about /chatbot or above /user route it will break those
+//app.use(handler) needs to be after the other routes - if you put it above /chatbot or above /user route it will break those
 app.use(handler);
 app.get('/', (req, res, next) => {
   res.set('Content-Type', 'text/html').readFile(__dirname + '/src/routes/+page.svelte', (err) => {
@@ -39,7 +43,6 @@ app.get('/', (req, res, next) => {
     }
   });
 });
-
 
 //404 error handling
 app.use('*', (req, res) => res.status(404).send({ message: 'WELP! You\'ve been 404ed!' }));

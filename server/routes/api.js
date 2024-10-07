@@ -4,10 +4,14 @@ import controller from '../Controllers/svAriaController.js';
 const router = express.Router();
 
 router.post('/',
-  controller.addUser,
+  controller.sendConfirm,
   (req, res) => res.status(200).json(res.locals.message)
 );
 
+
+router.get('/confirm', controller.checkConfirm, controller.addUser, controller.deleteFromTemp,(req, res) => {
+  (req, res) => res.status(200).json(res.locals.message)
+})
 
 router.patch('/:email', controller.getUser, controller.updateUser, (req,res) => res.status(200).json(res.locals.message)
 );
