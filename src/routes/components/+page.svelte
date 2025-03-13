@@ -8,7 +8,6 @@
 -->
 
 <script lang="ts">
-	import SectionWrapper from '../../splashPageLib/SectionWrapper.svelte';
 	import { openModal } from '../../store/index.js';
 	import logo from '../../splashPageLib/assets/SvAriaLogo.png';
 	import Sandbox from '../../splashPageLib/Sandbox.svelte';
@@ -216,7 +215,7 @@
 				</p>
 			</button>
 			<button
-				on:click={() => reroute('/#GitHubFAQ')}
+				on:click={() => reroute('/#News')}
 				class="border-none outline-none p-2 group duration-200 cursor-pointer text-left"
 			>
 				<p class="duration-200 group-hover:pl-2 poppins text-3xl font-semibold">
@@ -277,7 +276,7 @@
 				</p>
 			</button>
 			<button
-				on:click={() => reroute('/#GitHubFAQ')}
+				on:click={() => reroute('/#News')}
 				class="border-none outline-none p-2 group duration-200 cursor-pointer text-left"
 			>
 				<p class="duration-200 group-hover:pl-2 poppins text-3xl font-semibold">
@@ -288,7 +287,6 @@
 	</div>
 {/if}
 
-<SectionWrapper id="components">
 	<!-- <div
 		class="flex flex-col gap-5 sm:gap-10 md:gap-15 flex-1 items-center justify-center pb-10 md:pb-5"
 	></div> -->
@@ -372,7 +370,8 @@
 			<svelte:component this={component.docs} />
 		</div>
 	</div>
-</SectionWrapper>
+
+	
 <div id='portraitOverlay' >
 	<h1 class='text-white text-center text-3xl mt-14'>
 		Please rotate your phone to landscape

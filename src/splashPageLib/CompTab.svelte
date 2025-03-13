@@ -1,11 +1,8 @@
 <!-- This is where the tab with the components/code/sandbox live -->
 <script lang="ts">
-	import SectionWrapper from './SectionWrapper.svelte';
-
 
 </script>
 
-<SectionWrapper id="CompTab">
 	<div
 		class="flex flex-col gap-5 sm:gap-10 md:gap-15 flex-1 items-center justify-center pb-10 md:pb-14"
 	>
@@ -34,4 +31,3 @@
 			</div>
 		</h7>
 	</div>
-</SectionWrapper>

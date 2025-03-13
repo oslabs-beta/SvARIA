@@ -53,16 +53,6 @@ button:focus-visible {
     top:0;
     right:0;
 }
-#hero {
-    height: 50rem;
-    min-width: 250px;
-    max-width: 90vw;
-}
-
-#GitHubFAQ {
-    overflow: scroll;
-    
-}
 
 .fadeIn {
     animation: fadeIn 300ms ease-in forwards;    
@@ -111,10 +101,6 @@ button:focus-visible {
 #clipBoardButton:hover #toolTip{
     visibility: visible;
     opacity: 1;
-}
-
-#hero {
-    position: relative;
 }
 
 #lineBreak {

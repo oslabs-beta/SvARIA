@@ -1,6 +1,5 @@
 <!-- This is where the GitHub Link and FAQ live -->
 <script lang="ts">
-	import SectionWrapper from './SectionWrapper.svelte';
 	import Form from '$lib/Form.svelte';
 
 	let firstName = '';
@@ -71,63 +70,27 @@
 	}
 </script>
 
-<SectionWrapper id="GitHubFAQ">
-	<div
-		class=" -mt-[50px] flex flex-col gap-5 sm:gap-10 md:gap-15 flex-1 items-center justify-center pb-10 md:pb-14 smallGap"
-	>
-		<div class="flex flex-col gap-2">
-			
-			<h10
-				class="text-4xl sm:text-5xl md:text-6xl max-w-[1000px] mx-auto w-full font-semibold text-center"
-			>
-				<br />
-				<br />
-				<br />
-				News
-				<br />
-				<div>
-					<p
-						class="text-xl sm:text-2xl md:text-3xl max-w-[1000px] mx-auto w-full italic font-light text-center"
-					>
-						Signup here to stay connected!
-					</p>
-					<Form
-						{formElements}
-						formClass="grid grid-cols-9 gap-y-0 grid-rows-4"
-						submitButtonId='formSubmit'
-						submitButtonClass="mt-5 row-start-5 col-start-4 col-span-3 text-[.4em]"
-						on:submit={formSubmit}
-					/>
-				</div>
-				<br>
-				<!-- <div
-					class="text-xl sm:text-2xl flex justify-around md:text-3xl max-w-[2000px] mr-0 italic font-light text-center" style='width:1000px'>
-					<p class='mr-1'>
-						Medium Article
-					</p>
-					<p class='mr-1'>
-						Latest Press Release 
-					</p>
-					<p class='mr-1'>
-						FastCompany Article
-					</p>
-				</div> -->
-			</h10>
-			<br />
-			<br />
-			<br />
-			<br />
-
-			<!-- <h11 class="text-2xl sm:text-3xl md:text-4xl max-w-[1000px] mx-auto w-full  text-center">
-                SvARIA in the News
-                <p class="text-xl sm:text-2xl md:text-3xl max-w-[1000px] mx-auto w-full italic font-light text-center">
-                    <br>
-                    Medium Article
-                    <br>
-                    Latest Press Release <br>
-                    FastCompany Article
-                </p>
-            </h11>    -->
-		</div>
-	</div></SectionWrapper
->
+<div id="News" class="w-full h-full flex flex-col items-center justify-center md:pb-14 bg-red-500">
+	<div class="flex flex-col gap-2">
+		
+		<h10
+			class="text-4xl sm:text-5xl md:text-6xl max-w-[1000px] mx-auto w-full font-semibold text-center"
+		>
+		News
+			<div>
+				<p
+					class="text-xl sm:text-2xl md:text-3xl max-w-[1000px] mx-auto w-full italic font-light text-center"
+				>
+					Signup here to stay connected!
+				</p>
+				<Form
+					{formElements}
+					formClass="grid grid-cols-9 gap-y-0 grid-rows-4"
+					submitButtonId='formSubmit'
+					submitButtonClass="mt-5 row-start-5 col-start-4 col-span-3 text-[.4em]"
+					on:submit={formSubmit}
+				/>
+			</div>
+		</h10>
+	</div>
+</div>

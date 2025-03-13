@@ -4,15 +4,14 @@
     import Hero from "../splashPageLib/Hero.svelte";
     import WhySvARIA from "../splashPageLib/WhySvARIA.svelte";
     import GettingStarted from "../splashPageLib/GetStart.svelte";
-    import CompTab from "../splashPageLib/CompTab.svelte";
-    import GitHubFAQ from "../splashPageLib/GitHubFAQ.svelte";
+    import News from "../splashPageLib/News.svelte";
 </script>
 
-<main class="flex flex-col">
+<main class="flex flex-col items-center w-full h-full">
     <Hero />
     <WhySvARIA />
     <GettingStarted />
-    <GitHubFAQ />
+    <News />
 </main>
 
 <MetaTags

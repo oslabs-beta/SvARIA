@@ -15,12 +15,6 @@
 		window.location.href = href;
 	}
 
-	let links = [
-		{ link: '/', name: 'Home' },
-		{ link: 'https://github.com/oslabs-beta/SvARIA', name: 'GitHub' },
-		{ link: '/components', name: 'Components' },
-		{ link: '/about', name: 'About' }
-	];
 </script>
 
 {#if $openModal}
@@ -76,7 +70,7 @@
 				</p>
 			</button>
 			<button
-				on:click={() => reroute('/#GitHubFAQ')}
+				on:click={() => reroute('/#News')}
 				class="border-none outline-none p-2 group duration-200 cursor-pointer text-left"
 			>
 				<p class="duration-200 group-hover:pl-2 poppins text-3xl font-semibold">
@@ -95,10 +89,14 @@
 		<Navbar />
 	</div>
 {/if}
-<slot />
+
+<div id="mainContent" class="h-full w-full">
+	<slot />
+</div>
+
 <ChatBotContainer />
 {#if y > outerHeight}
-	<div class="fixed bottom-0 left-0 w-full flex flex-col z-20 fadeIn">
+	<div class="bottom-0 left-0 w-full flex flex-col z-20 fadeIn relative">
 		<Footer />
 	</div>
 {/if}

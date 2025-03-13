@@ -1,7 +1,7 @@
 // @ts-nocheck 
 import express from 'express';
 import { handler } from "../build/handler.js";
-import router from './routes/api.js';
+// import router from './routes/api.js';
 import loadModel from "../src/chatbot/chatbot.js"
 import cookieParser from 'cookie-parser';
 import chatbotRoute from "../src/chatbot/chatbotRoute.js"
@@ -25,7 +25,7 @@ app.post("/chatbot", async (req, res) => {
   chatbotRoute(ragChain, req, res)
 })
 
-app.use('/user', router);
+// app.use('/user', router);
 
 //app.use(handler) needs to be after the other routes - if you put it about /chatbot or above /user route it will break those
 app.use(handler);

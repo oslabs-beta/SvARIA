@@ -21,29 +21,29 @@ const config = {
 };
 
 
-const db = new pg.Client(config);
+// const db = new pg.Client(config);
 
-db.connect(function (err) {
-    console.log('connected to db')
-    if (err){
-        throw err;
-    } 
+// db.connect(function (err) {
+//     console.log('connected to db')
+//     if (err){
+//         throw err;
+//     } 
    
-    db.query("SELECT VERSION()", [], function (err, result) {
-        if (err) {
-            throw err;
-        }
+//     db.query("SELECT VERSION()", [], function (err, result) {
+//         if (err) {
+//             throw err;
+//         }
      
-        console.log(result.rows[0].version);
+//         console.log(result.rows[0].version);
    
-    });
-});
+//     });
+// });
 
-db.on('error', (err) => {
-    console.error('Unexpected error on database client', err);
-    // Attempt to reconnect
-    db.end().catch(() => {});
-    setTimeout(() => db.connect(), 1000);
-});
+// db.on('error', (err) => {
+//     console.error('Unexpected error on database client', err);
+//     // Attempt to reconnect
+//     db.end().catch(() => {});
+//     setTimeout(() => db.connect(), 1000);
+// });
 
-export default db; 
+// export default db; 
