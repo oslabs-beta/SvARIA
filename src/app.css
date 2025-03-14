@@ -2,6 +2,16 @@
 @tailwind components;
 @tailwind utilities;
 
+.noScroll {
+    overflow: auto;
+    scrollbar-width: none; /* For Firefox */
+    -ms-overflow-style: none;  /* For Internet Explorer 10+ */
+}
+
+.noScroll::-webkit-scrollbar {
+    display: none; /* For Chrome, Safari, and Opera */
+}
+
 html {
     scroll-behavior: smooth;
 }
@@ -11,6 +21,42 @@ html {
     box-sizing: border-box;
     padding: 0;
     margin:0;
+}
+
+.text-theme-blue {
+    color: #04abdb;
+}
+
+.text-theme-darkBlue {
+    color: #143d66;
+}
+
+
+@media (max-width: 639px) {
+    .xsText {
+        font-size: 36px;
+        line-height: 43px;
+    }
+}
+
+@media (max-width: 422px) {
+    .xsText {
+        font-size: 30px;
+        line-height: 38px;
+    }
+}
+
+@keyframes wiggleSm {
+    0% { transform: rotate(0deg); }
+    25% { transform: rotate(-4deg); }
+    50% { transform: rotate(4deg); }
+    75% { transform: rotate(-4deg); }
+    100% {transform: rotate(0deg);}
+}
+
+.animate-wiggleSm-hover {
+    display: inline-block;
+    animation: wiggleSm 2 0.5s ease-in-out;
 }
 
 h1, h2, h3, .poppins {
@@ -155,7 +201,7 @@ button:focus-visible {
 }
 
 #heroCall:hover {
-    transform: scale(5);
+    /* transform: scale(5); */
     background:black; 
 }
 
@@ -315,11 +361,11 @@ button:focus-visible {
         position:relative;
         right: 8px;
     }
-    .smallScreen{
+    /* .smallScreen{
         margin: 0;
         width: 100%;
         margin-top:4px;
-    }
+    } */
     .noGap {
         gap: 10px;
     }
@@ -355,12 +401,12 @@ button:focus-visible {
     #portraitOverlay {
         display: none;
     }
-    #bigScreenComponentPage {
+    /* #bigScreenComponentPage {
         display: none;
     }
     #smallScreenComponentPage {
         display: block;
-    }
+    } */
     .smallLogo {
         min-width: 0;
         width:75%;

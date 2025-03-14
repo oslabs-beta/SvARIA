@@ -1,90 +1,25 @@
 <script>
 	import '../app.css';
 	import ChatBotContainer from './components/lib/ChatBotContainer.svelte';
+	import MobileNav from '../splashPageLib/MobileNav.svelte';
 	import Navbar from '../splashPageLib/Navbar.svelte';
 	import Footer from '../splashPageLib/Footer.svelte';
-	import logo from '../splashPageLib/assets/SvAriaLogo.png';
 
-	import { openModal } from '../store';
-
-	let y;
-	$: outerHeight = 0;
-
-	function reroute(href) {
-		$openModal = false;
-		window.location.href = href;
-	}
+//these variables track page scrolling and are used to prompt header to fade in at fixed position
+	//scrollY tracks current vertical scroll value
+	let scrollY;
+	//innerHeight tracks initial viewport
+	$: innerHeight = 0;
 
 </script>
 
-{#if $openModal}
-	<div
-		id='componentPageModal'
-		class="fixed top-0 left-0 w-screen h-screen border-b bg-white z-50 flex flex-col gap-8 p-5 px-8 md:hidden"
-	>
-		<div class="flex items-center justify-between gap-4 border-b pb-2">
-			<a href="/">
-				<img class="min-w-[250px] h-[125px] w-[250px smallLogo" alt="SvARIA Logo" src={logo} />
-			</a>
-			<button 
-				on:click={() => {
-					$openModal = false;
-					console.log('clicked');
-				}}
-				class="outline-none border-none"
-			>
-				<i class="fa-solid fa-xmark text-2xl"> </i>
-			</button>
-		</div>
-		<div class="flex flex-col gap-4 flex-1">
-			<button
-				on:click={() => reroute('/#WhySvARIA')}
-				class="border-none outline-none p-2 group duration-200 cursor-pointer text-left"
-			>
-				<p class="duration-200 group-hover:pl-2 poppins text-3xl font-semibold">
-					Why SvARIA <i class="fa-solid fa-chevron-right text-xl pl-4" />
-				</p>
-			</button>
-			<button
-				on:click={() => reroute('/#GettingStarted')}
-				class="border-none outline-none p-2 group duration-200 cursor-pointer text-left"
-			>
-				<p class="duration-200 group-hover:pl-2 poppins text-3xl font-semibold">
-					Getting Started <i class="fa-solid fa-chevron-right text-xl pl-4" />
-				</p>
-			</button>
-			<button
-				on:click={() => reroute('/components')}
-				class="border-none outline-none p-2 group duration-200 cursor-pointer text-left"
-			>
-				<p class="duration-200 group-hover:pl-2 poppins text-3xl font-semibold">
-					Components <i class="fa-solid fa-chevron-right text-xl pl-4" />
-				</p>
-			</button>
-			<button
-				on:click={() => reroute('https://github.com/oslabs-beta/SvARIA')}
-				class="border-none outline-none p-2 group duration-200 cursor-pointer text-left"
-			>
-				<p class="duration-200 group-hover:pl-2 poppins text-3xl font-semibold">
-					GitHub <i class="fa-solid fa-chevron-right text-xl pl-4" />
-				</p>
-			</button>
-			<button
-				on:click={() => reroute('/#News')}
-				class="border-none outline-none p-2 group duration-200 cursor-pointer text-left"
-			>
-				<p class="duration-200 group-hover:pl-2 poppins text-3xl font-semibold">
-					News <i class="fa-solid fa-chevron-right text-xl pl-4" />
-				</p>
-			</button>
-		</div>
-	</div>
-{/if}
+<MobileNav />
 
 <div class="top-0 left-0 w-full flex flex-col z-20 px-4">
 	<Navbar />
 </div>
-{#if y > outerHeight}
+
+{#if scrollY > innerHeight}
 	<div class="fixed top-0 left-0 w-full flex bg-white flex-col z-20 px-4 fadeIn">
 		<Navbar />
 	</div>
@@ -94,11 +29,9 @@
 	<slot />
 </div>
 
-<ChatBotContainer />
-{#if y > outerHeight}
-	<div class="bottom-0 left-0 w-full flex flex-col z-20 fadeIn relative">
-		<Footer />
-	</div>
-{/if}
+<!-- <ChatBotContainer /> -->
+<div class="bottom-0 left-0 w-full flex flex-col z-20 relative">
+	<Footer />
+</div>
 
-<svelte:window bind:scrollY={y} bind:outerHeight />
+<svelte:window bind:scrollY={scrollY} bind:innerHeight />

@@ -70,7 +70,7 @@
 	}
 </script>
 
-<div id="News" class="w-full h-full flex flex-col items-center justify-center md:pb-14 bg-red-500">
+<div id="News" class="w-full h-full flex flex-col items-center justify-center md:py-[15rem] py-[7.5rem]">
 	<div class="flex flex-col gap-2">
 		
 		<h10

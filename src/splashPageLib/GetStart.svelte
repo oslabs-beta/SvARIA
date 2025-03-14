@@ -1,8 +1,6 @@
 <!-- This is where the 'Getting Started" info lives -->
 
 <script>
-    import PlaygroundLabel from './assets/PlaygroundLabel.png'
-
 	async function handleClick() {
 		try {
 			await navigator.clipboard.writeText('npm install svaria-toolkit');
@@ -12,7 +10,7 @@
 	}
 </script>
 
-<div id="GettingStarted" class="flex flex-col gap-5 sm:gap-10 md:gap-15 flex-1 items-center justify-center pb-10 md:pb-14">
+<div id="GettingStarted" class="flex flex-col gap-5 sm:gap-10 md:gap-15 flex-1 items-center justify-center md:pt-[15rem] pt-[8rem] md:px-0 px-3">
 	<div class="flex flex-col gap-2">
 		<h4
 			class="text-4xl sm:text-5xl md:text-6xl max-w-[1000px] mx-auto w-full font-semibold text-center mobileTitle"
@@ -23,15 +21,11 @@
 	<span
 		class="text-xl sm:text-2xl md:text-3xl max-w-[1000px] mx-auto w-full italic font-light text-center shiftUp"
 	>
-		Visit the <a href="/components">
-			<img
-				src={PlaygroundLabel}
-				id='playgroundLabel'
-				title="Visit SvAria Playground"
-				alt="SvARIA Playground Logo"
-				style="width:15.25em; height: 1.5em;margin-top: -15px; display:inline-block; padding-right: 4px"
-			/></a
-		> for customized component demos in the sandbox, to obtain/share code, or to read the docs.
+		Visit the
+		<a href="/components" class="text-theme-blue">
+		Components Page
+		</a
+		> for documentation, code snippets, and interactive demos in a sandbox environment.
 	</span>
 	<h5 class="text-2xl sm:text-3xl md:text-4xl max-w-[1000px] mx-auto w-full text-center font-semibold mobileTitle">
 		Installation

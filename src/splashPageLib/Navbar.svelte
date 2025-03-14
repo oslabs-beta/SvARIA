@@ -1,11 +1,5 @@
-<!-- This is where the header lives...
-components used that we might need to make:
-* menu button aka hamburger
-
--->
 <script>
 	import { openModal } from '../store';
-	import logo from './assets/SvAriaLogo.png';
 	import Nav from '../lib/Navigation.svelte';
 
 	const links = [
@@ -38,20 +32,20 @@ components used that we might need to make:
 	];
 </script>
 
-<!-- ariaLabel='Website navigation bar' < this was a prop in "Nav" but Nav does not expect or handle this prop -->
-<header class="flex flex-col relative z-20">
+<header class="flex flex-col relative w-full z-20">
 	<Nav
 		routes={links}
-		navListClass="hidden pr-8 text-2xl md:flex items-center gap-4 lg:gap-6 landscapeNavList"
-		navBarClass="max-w-[1400] mx-auto w-full flex items-center justify-between px-4 landscapeNavBar"
+		navListClass="hidden lg:flex pr-8 text-2xl items-center gap-4 lg:gap-6 landscapeNavList"
+		navBarClass="mx-auto w-full flex items-center justify-between px-4 landscapeNavBar"
+		navHeadingClass="lg:w-min w-full"
 		id="SvARIAnavBar"
 	>
-		<div id='headingPlus' slot="headingPlus">
+		<div id='headingPlus' slot="headingPlus" class="flex flex-row w-full justify-between">
 			<a href="/">
-				<img class="min-w-[250px] h-[125px] w-[250px] smallLogo" alt="SvARIA Logo" src={logo} />
+				<img class="min-w-[250px] h-[125px] w-[250px] smallLogo" alt="SvARIA Logo" src="/SvAriaLogo.png" />
 			</a>
-			<button on:click={() => ($openModal = true)} id='menuHamburger' class="md:hidden grid place-items-center landscapeModalButton">
-				<i class="fa-solid fa-bars fa-2xl mt-6"></i>
+			<button on:click={() => ($openModal = true)} class="lg:hidden">
+				<div class="fa-solid fa-bars fa-2xl mt-6"></div>
 			</button>
 		</div>
 	</Nav>
